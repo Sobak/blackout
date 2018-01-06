@@ -11,4 +11,7 @@
 <th>{adm_er_time}</th>
 </tr>
 {errors_list}
+<tr>
+<th class="b" colspan="5">{errors_count} {adm_er_number}</th>
+</tr>
 </table>
