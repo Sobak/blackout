@@ -1,8 +1,8 @@
 <br><br>
 <table width="519">
 <tr>
-	<td class="c"><font color="{color}">{title}</font></td>
+	<td class="c">{title}</td>
 </tr><tr>
-	<th class="errormessage">{mes}</th>
+	<th class="errormessage">{message}</th>
 </tr>
 </table>

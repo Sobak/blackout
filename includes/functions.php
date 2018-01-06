@@ -49,30 +49,26 @@ function is_email($email) {
 
 // ----------------------------------------------------------------------------------------------------------------
 //
-// Routine Affichage d'un message administrateur avec saut vers une autre page si souhait�
+// Function displaying a message with jump to another page if desired
 //
-function AdminMessage ($mes, $title = 'Error', $dest = "", $time = "3") {
-    $parse['color'] = $color;
+function message($message, $title = 'Error', $destination = null, $time = 3, $in_admin = false)
+{
     $parse['title'] = $title;
-    $parse['mes']   = $mes;
+    $parse['message']   = $message;
 
-    $page .= parsetemplate(gettemplate('admin/message_body'), $parse);
+    $page = parsetemplate(gettemplate('message_body'), $parse);
 
-    display ($page, $title, false, (($dest != "") ? "<meta http-equiv=\"refresh\" content=\"$time;URL=javascript:self.location='$dest';\">" : ""), true);
+    if ($destination) {
+        $headers = "<meta http-equiv=\"refresh\" content=\"$time;URL=javascript:self.location='$destination';\">";
+    } else {
+        $headers = '';
+    }
+
+    display($page, $title, false, $headers, $in_admin);
 }
 
-// ----------------------------------------------------------------------------------------------------------------
-//
-// Routine Affichage d'un message avec saut vers une autre page si souhait�
-//
-function message ($mes, $title = 'Error', $dest = "", $time = "3") {
-    $parse['color'] = $color;
-    $parse['title'] = $title;
-    $parse['mes']   = $mes;
-
-    $page .= parsetemplate(gettemplate('message_body'), $parse);
-
-    display ($page, $title, false, (($dest != "") ? "<meta http-equiv=\"refresh\" content=\"$time;URL=javascript:self.location='$dest';\">" : ""), false);
+function AdminMessage($message, $title = 'Error', $destination = null, $time = 3) {
+    message($message, $title, $destination, $time, true);
 }
 
 // ----------------------------------------------------------------------------------------------------------------
