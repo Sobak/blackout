@@ -25,6 +25,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
     - Overview
     - Notes
     - left menu
+- Refactored Banned players screen
 
 ### Removed
 - Eliminated usage of `$phpEx`
