@@ -8,7 +8,7 @@
  */
 
 function BuildRessourcePage ( $CurrentUser, $CurrentPlanet ) {
-	global $lang, $ProdGrid, $resource, $reslist, $game_config, $_POST;
+	global $lang, $ProdGrid, $resource, $reslist, $game_config;
 
 	CheckPlanetUsedFields ( $CurrentPlanet );
 

@@ -15,7 +15,7 @@ $ugamela_root_path = './../';
 include($ugamela_root_path . 'common.php');
 
 function DisplayGameSettingsPage ( $CurrentUser ) {
-	global $lang, $game_config, $_POST;
+	global $lang, $game_config;
 
 	includeLang('admin/settings');
 

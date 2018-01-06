@@ -8,7 +8,7 @@
  */
 
 function ShowTopNavigationBar ( $CurrentUser, $CurrentPlanet ) {
-	global $lang, $_GET;
+	global $lang;
 
 	if ($CurrentUser) {
 		if ( !$CurrentPlanet ) {

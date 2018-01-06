@@ -8,7 +8,7 @@
  */
 
 function BatimentBuildingPage (&$CurrentPlanet, $CurrentUser) {
-	global $lang, $resource, $reslist, $dpath, $game_config, $_GET;
+	global $lang, $resource, $reslist, $dpath, $game_config;
 
 	CheckPlanetUsedFields ( $CurrentPlanet );
 

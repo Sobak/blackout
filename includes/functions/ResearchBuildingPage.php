@@ -15,7 +15,7 @@
 // $InResearch    -> Indicateur qu'il y a une Recherche en cours
 // $ThePlanet     -> Planete sur laquelle se realise la technologie eventuellement
 function ResearchBuildingPage (&$CurrentPlanet, $CurrentUser, $InResearch, $ThePlanet) {
-	global $lang, $resource, $reslist, $dpath, $game_config, $_GET;
+	global $lang, $resource, $reslist, $dpath, $game_config;
 
 
 	$NoResearchMessage = "";

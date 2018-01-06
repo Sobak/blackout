@@ -14,7 +14,7 @@
 // $CurrentUser   -> Utilisateur qui a lancé la construction
 //
 function DefensesBuildingPage ( &$CurrentPlanet, $CurrentUser ) {
- 	global $lang, $resource, $dpath, $_POST;
+ 	global $lang, $resource, $dpath;
 
 	if (isset($_POST['fmenge'])) {
 		// On vient de Cliquer ' Construire '

@@ -14,7 +14,7 @@ $ugamela_root_path = './';
 include($ugamela_root_path . 'common.php');
 
 function ShowOfficierPage ( &$CurrentUser ) {
-	global $lang, $resource, $reslist, $_GET;
+	global $lang, $resource, $reslist;
 
 	includeLang('officier');
 

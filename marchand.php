@@ -14,7 +14,7 @@ $ugamela_root_path = './';
 include($ugamela_root_path . 'common.php');
 
 function ModuleMarchand ( $CurrentUser, &$CurrentPlanet ) {
-	global $lang, $_POST;
+	global $lang;
 
 	includeLang('marchand');
 
