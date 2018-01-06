@@ -11,8 +11,7 @@ define('INSIDE'  , true);
 define('INSTALL' , false);
 
 $ugamela_root_path = './';
-include($ugamela_root_path . 'extension.inc');
-include($ugamela_root_path . 'common.' . $phpEx);
+include($ugamela_root_path . 'common.php');
 // Recup des variables
 $Attaquant = $_GET['current'];
 $NbreMip   = $_POST['SendMI'];
@@ -39,7 +38,7 @@ echo $AntiMipRestant;
 if ($MipRestant <= 0) {
     doquery("UPDATE {{table}} SET `interplanetary_misil`='0' WHERE `id`='" . $Attaquant . "'", "planets");
     doquery("UPDATE {{table}} SET `interceptor_misil`='" . $AntiMipRestant . "' WHERE `id`='" . $PlaneteAdverse['id_owner'] . "'", "planets");
-    // Message à l'attaquant
+    // Message ï¿½ l'attaquant
     $Owner    = $user['id'];
     $Sender   = "0";
     $Time     = time();
@@ -49,7 +48,7 @@ if ($MipRestant <= 0) {
     $Message  = "Malheureusement tout vos missiles interplan&eacute;taire ont &eacute;t&eacute; d&eacute;truits par le syst&egrave;me de d&eacute;fense adverse.";
     SendSimpleMessage($Owner, $Sender, $Time, $Type, $From, $Subject, $Message);
 
-    // Message a l'attaqué
+    // Message a l'attaquï¿½
     $Owner2   = $PlaneteAdverse['id_owner'];
     $Message2 = "Vous avez d&eacute;truit " . $NbreMip . " Missiles Interplan&eacute;taire adverse. <br>Il vous reste " . $AntiMipRestant . " Missiles d'interception";
     SendSimpleMessage($Owner2, $Sender, $Time, $Type, $From, $Subject, $Message2);

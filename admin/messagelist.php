@@ -12,8 +12,7 @@ define('INSTALL' , false);
 define('IN_ADMIN', true);
 
 $ugamela_root_path = './../';
-include($ugamela_root_path . 'extension.inc');
-include($ugamela_root_path . 'common.' . $phpEx);
+include($ugamela_root_path . 'common.php');
 
 	if ($user['authlevel'] >= "2") {
 		includeLang('admin/messagelist');
@@ -120,7 +119,7 @@ include($ugamela_root_path . 'common.' . $phpEx);
 
 		if (isset($_POST['delit'])) {
 			doquery ("DELETE FROM {{table}} WHERE `message_id` = '". $_POST['delit'] ."';", 'messages');
-			AdminMessage ( $lang['mlst_mess_del'] ." ( ". $_POST['delit'] ." )", $lang['mlst_title'], "./messagelist.".$phpEx, 3);
+			AdminMessage ( $lang['mlst_mess_del'] ." ( ". $_POST['delit'] ." )", $lang['mlst_title'], "./messagelist.php", 3);
 		}
 		display ($display, $lang['mlst_title'], false, '', true);
 	} else {

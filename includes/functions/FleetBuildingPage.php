@@ -14,17 +14,17 @@
 // $CurrentUser   -> Utilisateur qui a lancÃ© la construction
 //
 function FleetBuildingPage ( &$CurrentPlanet, $CurrentUser ) {
- 	global $lang, $resource, $phpEx, $dpath, $_POST;
+ 	global $lang, $resource, $dpath, $_POST;
 
 	if (isset($_POST['fmenge'])) {
 		// On vient de Cliquer ' Construire '
-		// Et y a une liste de doléances
+		// Et y a une liste de dolï¿½ances
 		$AddedInQueue                     = false;
 		// Ici, on sait precisement ce qu'on aimerait bien construire ...
 		foreach($_POST['fmenge'] as $Element => $Count) {
-			// Construction d'Element recuperés sur la page de Flotte ...
+			// Construction d'Element recuperï¿½s sur la page de Flotte ...
 			// ATTENTION ! La file d'attente Flotte est Commune a celle des Defenses
-			// Dans fmenge, on devrait trouver un tableau des elements constructibles et du nombre d'elements souhaités
+			// Dans fmenge, on devrait trouver un tableau des elements constructibles et du nombre d'elements souhaitï¿½s
 
 			$Element = intval($Element);
 			$Count   = intval($Count);
@@ -83,13 +83,13 @@ function FleetBuildingPage ( &$CurrentPlanet, $CurrentUser ) {
 
 				// Imagette + Link vers la page d'info
 				$PageTable .= "<th class=l>";
-				$PageTable .= "<a href=infos.".$phpEx."?gid=".$Element.">";
+				$PageTable .= "<a href=infos.php?gid=".$Element.">";
 				$PageTable .= "<img border=0 src=\"".$dpath."gebaeude/".$Element.".gif\" align=top width=120 height=120></a>";
 				$PageTable .= "</th>";
 
 				// Description
 				$PageTable .= "<td class=l>";
-				$PageTable .= "<a href=infos.".$phpEx."?gid=".$Element.">".$ElementName."</a> ".$ElementNbre."<br>";
+				$PageTable .= "<a href=infos.php?gid=".$Element.">".$ElementName."</a> ".$ElementNbre."<br>";
 				$PageTable .= "".$lang['res']['descriptions'][$Element]."<br>";
 				// On affiche le 'prix' avec eventuellement ce qui manque en ressource
 				$PageTable .= GetElementPrice($CurrentUser, $CurrentPlanet, $Element, false);

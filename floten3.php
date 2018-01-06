@@ -11,8 +11,7 @@ define('INSIDE'  , true);
 define('INSTALL' , false);
 
 $ugamela_root_path = './';
-include($ugamela_root_path . 'extension.inc');
-include($ugamela_root_path . 'common.' . $phpEx);
+include($ugamela_root_path . 'common.php');
 
 	$dpath     = (!$user["dpath"]) ? DEFAULT_SKINPATH : $user["dpath"];
 
@@ -32,13 +31,13 @@ include($ugamela_root_path . 'common.' . $phpEx);
 	$fleetarray  = unserialize(base64_decode(str_rot13($_POST["usedfleet"])));
 
 	if (!is_array($fleetarray)) {
-		message ("<font color=\"red\"><b>". $lang['fl_fleet_err'] ."</b></font>", $lang['fl_error'], "fleet." . $phpEx, 2);
+		message ("<font color=\"red\"><b>". $lang['fl_fleet_err'] ."</b></font>", $lang['fl_error'], "fleet.php", 2);
 	}
 
 	// On verifie s'il y a assez de vaisseaux sur la planete !
 	foreach ($fleetarray as $Ship => $Count) {
 		if ($Count > $CurrentPlanet[$resource[$Ship]]) {
-			message ("<font color=\"red\"><b>". $lang['fl_fleet_err'] ."</b></font>", $lang['fl_error'], "fleet." . $phpEx, 2);
+			message ("<font color=\"red\"><b>". $lang['fl_fleet_err'] ."</b></font>", $lang['fl_error'], "fleet.php", 2);
 		}
 	}
 
@@ -50,7 +49,7 @@ include($ugamela_root_path . 'common.' . $phpEx);
     $fleetmission       = $_POST['mission'];
 
 	if ($planettype != 1 && $planettype != 2 && $planettype != 3) {
-		message ("<font color=\"red\"><b>". $lang['fl_fleet_err_pl'] ."</b></font>", $lang['fl_error'], "fleet." . $phpEx, 2);
+		message ("<font color=\"red\"><b>". $lang['fl_fleet_err_pl'] ."</b></font>", $lang['fl_error'], "fleet.php", 2);
 	}
 
 	if ($fleetmission == 8) {
@@ -67,24 +66,24 @@ include($ugamela_root_path . 'common.' . $phpEx);
 		$CurrentPlanet['system'] == $system &&
 		$CurrentPlanet['planet'] == $planet &&
 		$CurrentPlanet['planet_type'] == $planettype) {
-		message ("<font color=\"red\"><b>". $lang['fl_ownpl_err'] ."</b></font>", $lang['fl_error'], "fleet." . $phpEx, 2);
+		message ("<font color=\"red\"><b>". $lang['fl_ownpl_err'] ."</b></font>", $lang['fl_error'], "fleet.php", 2);
 	}
 
 	// Test d'existance de l'enregistrement dans la gaalxie !
 	if ($_POST['mission'] != 15) {
 		if (mysql_num_rows($select) < 1 && $fleetmission != 7) {
-			message ("<font color=\"red\"><b>". $lang['fl_unknow_target'] ."</b></font>", $lang['fl_error'], "fleet." . $phpEx, 2);
+			message ("<font color=\"red\"><b>". $lang['fl_unknow_target'] ."</b></font>", $lang['fl_error'], "fleet.php", 2);
 		} elseif ($fleetmission == 9 && mysql_num_rows($select)) {
-			message ("<font color=\"red\"><b>". $lang['fl_used_target'] ."</b></font>", $lang['fl_error'], "fleet." . $phpEx, 2);
+			message ("<font color=\"red\"><b>". $lang['fl_used_target'] ."</b></font>", $lang['fl_error'], "fleet.php", 2);
 		}
 	} else {
 	    $EnvoiMaxExpedition = $_POST['maxepedition'];
 	    $Expedition         = $_POST['curepedition'];
 
 	    if       ($EnvoiMaxExpedition == 0 ) {
-			message ("<font color=\"red\"><b>". $lang['fl_expe_notech'] ."</b></font>", $lang['fl_error'], "fleet." . $phpEx, 2);
+			message ("<font color=\"red\"><b>". $lang['fl_expe_notech'] ."</b></font>", $lang['fl_error'], "fleet.php", 2);
 		} elseif ($Expedition >= $EnvoiMaxExpedition ) {
-			message ("<font color=\"red\"><b>". $lang['fl_expe_max'] ."</b></font>", $lang['fl_error'], "fleet." . $phpEx, 2);
+			message ("<font color=\"red\"><b>". $lang['fl_expe_max'] ."</b></font>", $lang['fl_error'], "fleet.php", 2);
 		}
 	}
 
@@ -158,7 +157,7 @@ include($ugamela_root_path . 'common.' . $phpEx);
 	}
 
 	if (empty($missiontype[$fleetmission])) {
-		message ("<font color=\"red\"><b>". $lang['fl_bad_mission'] ."</b></font>", $lang['fl_error'], "fleet." . $phpEx, 2);
+		message ("<font color=\"red\"><b>". $lang['fl_bad_mission'] ."</b></font>", $lang['fl_error'], "fleet.php", 2);
 	}
 
 	CheckPlanetUsedFields($CurrentPlanet);
@@ -181,7 +180,7 @@ include($ugamela_root_path . 'common.' . $phpEx);
 		$_POST['mission']     == 1  AND
 		$protection           == 1  AND
 		$HeGameLevel < ($protectiontime * 1000)) {
-		message("<font color=\"lime\"><b>".$lang['fl_noob_mess_n']."</b></font>", $lang['fl_noob_title'], "fleet." . $phpEx, 2);
+		message("<font color=\"lime\"><b>".$lang['fl_noob_mess_n']."</b></font>", $lang['fl_noob_title'], "fleet.php", 2);
 	}
 
 	if ($MyGameLevel > ($HeGameLevel * $protectionmulti) AND
@@ -189,7 +188,7 @@ include($ugamela_root_path . 'common.' . $phpEx);
 		$_POST['mission']     == 5  AND
 		$protection           == 1  AND
 		$HeGameLevel < ($protectiontime * 1000)) {
-		message("<font color=\"lime\"><b>".$lang['fl_noob_mess_n']."</b></font>", $lang['fl_noob_title'], "fleet." . $phpEx, 2);
+		message("<font color=\"lime\"><b>".$lang['fl_noob_mess_n']."</b></font>", $lang['fl_noob_title'], "fleet.php", 2);
 	}
 
 	if ($MyGameLevel > ($HeGameLevel * $protectionmulti) AND
@@ -197,7 +196,7 @@ include($ugamela_root_path . 'common.' . $phpEx);
 		$_POST['mission']     == 6  AND
 		$protection           == 1  AND
 		$HeGameLevel < ($protectiontime * 1000)) {
-		message("<font color=\"lime\"><b>".$lang['fl_noob_mess_n']."</b></font>", $lang['fl_noob_title'], "fleet." . $phpEx, 2);
+		message("<font color=\"lime\"><b>".$lang['fl_noob_mess_n']."</b></font>", $lang['fl_noob_title'], "fleet.php", 2);
 	}
 
 	if (($MyGameLevel * $protectionmulti) < $HeGameLevel AND
@@ -205,7 +204,7 @@ include($ugamela_root_path . 'common.' . $phpEx);
 		$_POST['mission']     == 1  AND
 		$protection           == 1  AND
 		$MyGameLevel < ($protectiontime * 1000)) {
-		message("<font color=\"lime\"><b>".$lang['fl_noob_mess_n']."</b></font>", $lang['fl_noob_title'], "fleet." . $phpEx, 2);
+		message("<font color=\"lime\"><b>".$lang['fl_noob_mess_n']."</b></font>", $lang['fl_noob_title'], "fleet.php", 2);
 	}
 
 	if (($MyGameLevel * $protectionmulti) < $HeGameLevel AND
@@ -213,7 +212,7 @@ include($ugamela_root_path . 'common.' . $phpEx);
 		$_POST['mission']     == 5  AND
 		$protection           == 1  AND
 		$MyGameLevel < ($protectiontime * 1000)) {
-		message("<font color=\"lime\"><b>".$lang['fl_noob_mess_n']."</b></font>", $lang['fl_noob_title'], "fleet." . $phpEx, 2);
+		message("<font color=\"lime\"><b>".$lang['fl_noob_mess_n']."</b></font>", $lang['fl_noob_title'], "fleet.php", 2);
 	}
 
 	if (($MyGameLevel * $protectionmulti) < $HeGameLevel AND
@@ -221,43 +220,43 @@ include($ugamela_root_path . 'common.' . $phpEx);
 		$_POST['mission']     == 6  AND
 		$protection           == 1  AND
 		$MyGameLevel < ($protectiontime * 1000)) {
-		message("<font color=\"lime\"><b>".$lang['fl_noob_mess_n']."</b></font>", $lang['fl_noob_title'], "fleet." . $phpEx, 2);
+		message("<font color=\"lime\"><b>".$lang['fl_noob_mess_n']."</b></font>", $lang['fl_noob_title'], "fleet.php", 2);
 	}
 
 	if ($VacationMode AND $_POST['mission'] != 8) {
-		message("<font color=\"lime\"><b>".$lang['fl_vacation_pla']."</b></font>", $lang['fl_vacation_ttl'], "fleet." . $phpEx, 2);
+		message("<font color=\"lime\"><b>".$lang['fl_vacation_pla']."</b></font>", $lang['fl_vacation_ttl'], "fleet.php", 2);
 	}
 
 	$FlyingFleets = mysql_fetch_assoc(doquery("SELECT COUNT(fleet_id) as Number FROM {{table}} WHERE `fleet_owner`='{$user['id']}'", 'fleets'));
 	$ActualFleets = $FlyingFleets["Number"];
 	if (($user[$resource[108]] + 1) <= $ActualFleets) {
-		message("Pas de slot disponible", "Erreur", "fleet." . $phpEx, 1);
+		message("Pas de slot disponible", "Erreur", "fleet.php", 1);
 	}
 
 	if ($_POST['resource1'] + $_POST['resource2'] + $_POST['resource3'] < 1 AND $_POST['mission'] == 3) {
-		message("<font color=\"lime\"><b>".$lang['fl_noenoughtgoods']."</b></font>", $lang['type_mission'][3], "fleet." . $phpEx, 1);
+		message("<font color=\"lime\"><b>".$lang['fl_noenoughtgoods']."</b></font>", $lang['type_mission'][3], "fleet.php", 1);
 	}
 	if ($_POST['mission'] != 15) {
 		if ($TargetPlanet['id_owner'] == '' AND $_POST['mission'] < 7) {
-			message ("<font color=\"red\"><b>". $lang['fl_bad_planet01'] ."</b></font>", $lang['fl_error'], "fleet." . $phpEx, 2);
+			message ("<font color=\"red\"><b>". $lang['fl_bad_planet01'] ."</b></font>", $lang['fl_error'], "fleet.php", 2);
 		}
 		if ($TargetPlanet['id_owner'] != '' AND $_POST['mission'] == 7) {
-			message ("<font color=\"red\"><b>". $lang['fl_bad_planet02'] ."</b></font>", $lang['fl_error'], "fleet." . $phpEx, 2);
+			message ("<font color=\"red\"><b>". $lang['fl_bad_planet02'] ."</b></font>", $lang['fl_error'], "fleet.php", 2);
 		}
 		if ($HeDBRec['ally_id'] != $MyDBRec['ally_id'] AND $_POST['mission'] == 4) {
-			message ("<font color=\"red\"><b>". $lang['fl_dont_stay_here'] ."</b></font>", $lang['fl_error'], "fleet." . $phpEx, 2);
+			message ("<font color=\"red\"><b>". $lang['fl_dont_stay_here'] ."</b></font>", $lang['fl_error'], "fleet.php", 2);
 		}
 		if ($TargetPlanet['ally_deposit'] < 1 AND $HeDBRec != $MyDBRec AND $_POST['mission'] == 5) {
-			message ("<font color=\"red\"><b>". $lang['fl_no_allydeposit'] ."</b></font>", $lang['fl_error'], "fleet." . $phpEx, 2);
+			message ("<font color=\"red\"><b>". $lang['fl_no_allydeposit'] ."</b></font>", $lang['fl_error'], "fleet.php", 2);
 		}
 		if (($TargetPlanet["id_owner"] == $CurrentPlanet["id_owner"]) AND ($_POST["mission"] == 1)) {
-			message ("<font color=\"red\"><b>". $lang['fl_no_self_attack'] ."</b></font>", $lang['fl_error'], "fleet." . $phpEx, 2);
+			message ("<font color=\"red\"><b>". $lang['fl_no_self_attack'] ."</b></font>", $lang['fl_error'], "fleet.php", 2);
 		}
 		if (($TargetPlanet["id_owner"] == $CurrentPlanet["id_owner"]) AND ($_POST["mission"] == 6)) {
-			message ("<font color=\"red\"><b>". $lang['fl_no_self_spy'] ."</b></font>", $lang['fl_error'], "fleet." . $phpEx, 2);
+			message ("<font color=\"red\"><b>". $lang['fl_no_self_spy'] ."</b></font>", $lang['fl_error'], "fleet.php", 2);
 		}
 		if (($TargetPlanet["id_owner"] != $CurrentPlanet["id_owner"]) AND ($_POST["mission"] == 4)) {
-			message ("<font color=\"red\"><b>". $lang['fl_only_stay_at_home'] ."</b></font>", $lang['fl_error'], "fleet." . $phpEx, 2);
+			message ("<font color=\"red\"><b>". $lang['fl_only_stay_at_home'] ."</b></font>", $lang['fl_error'], "fleet.php", 2);
 		}
 	}
 
@@ -282,17 +281,17 @@ include($ugamela_root_path . 'common.' . $phpEx);
 	$MaxFleetSpeed  = min($AllFleetSpeed);
 
 	if (!in_array($GenFleetSpeed, $speed_possible)) {
-		message ("<font color=\"red\"><b>". $lang['fl_cheat_speed'] ."</b></font>", $lang['fl_error'], "fleet." . $phpEx, 2);
+		message ("<font color=\"red\"><b>". $lang['fl_cheat_speed'] ."</b></font>", $lang['fl_error'], "fleet.php", 2);
 	}
 
 	$CurrentPlanet = doquery("SELECT * FROM {{table}} WHERE `id` = '".$user['current_planet']."';", 'planets', true);
 
 	if ($MaxFleetSpeed != $_POST['speedallsmin']) {
-		message ("<font color=\"red\"><b>". $lang['fl_cheat_speed'] ."</b></font>", $lang['fl_error'], "fleet." . $phpEx, 2);
+		message ("<font color=\"red\"><b>". $lang['fl_cheat_speed'] ."</b></font>", $lang['fl_error'], "fleet.php", 2);
 	}
 
 	if (!$_POST['planettype']) {
-		message ("<font color=\"red\"><b>". $lang['fl_no_planet_type'] ."</b></font>", $lang['fl_error'], "fleet." . $phpEx, 2);
+		message ("<font color=\"red\"><b>". $lang['fl_no_planet_type'] ."</b></font>", $lang['fl_error'], "fleet.php", 2);
 	}
 
 	// Test de coherance de la destination (voir si elle se trouve dans les limites de l'univers connu
@@ -312,7 +311,7 @@ include($ugamela_root_path . 'common.' . $phpEx);
 	}
 
 	if ($error > 0) {
-		message ("<font color=\"red\"><ul>" . $errorlist . "</ul></font>", $lang['fl_error'], "fleet." . $phpEx, 2);
+		message ("<font color=\"red\"><ul>" . $errorlist . "</ul></font>", $lang['fl_error'], "fleet.php", 2);
 	}
 
 	// La flotte part bien de la planete courrante ??
@@ -320,11 +319,11 @@ include($ugamela_root_path . 'common.' . $phpEx);
 		$_POST['thissystem'] != $CurrentPlanet['system'] |
 		$_POST['thisplanet'] != $CurrentPlanet['planet'] |
 		$_POST['thisplanettype'] != $CurrentPlanet['planet_type']) {
-		message ("<font color=\"red\"><b>". $lang['fl_cheat_origine'] ."</b></font>", $lang['fl_error'], "fleet." . $phpEx, 2);
+		message ("<font color=\"red\"><b>". $lang['fl_cheat_origine'] ."</b></font>", $lang['fl_error'], "fleet.php", 2);
 	}
 
 	if (!isset($fleetarray)) {
-		message ("<font color=\"red\"><b>". $lang['fl_no_fleetarray'] ."</b></font>", $lang['fl_error'], "fleet." . $phpEx, 2);
+		message ("<font color=\"red\"><b>". $lang['fl_no_fleetarray'] ."</b></font>", $lang['fl_error'], "fleet.php", 2);
 	}
 
 	$distance      = GetTargetDistance ( $_POST['thisgalaxy'], $_POST['galaxy'], $_POST['thissystem'], $_POST['system'], $_POST['thisplanet'], $_POST['planet'] );
@@ -390,11 +389,11 @@ include($ugamela_root_path . 'common.' . $phpEx);
 		}
 	}
 	if ( !$StockOk ) {
-		message ("<font color=\"red\"><b>". $lang['fl_noressources'] . pretty_number($consumption) ."</b></font>", $lang['fl_error'], "fleet." . $phpEx, 2);
+		message ("<font color=\"red\"><b>". $lang['fl_noressources'] . pretty_number($consumption) ."</b></font>", $lang['fl_error'], "fleet.php", 2);
 	}
 
 	if ( $StorageNeeded > $FleetStorage) {
-		message ("<font color=\"red\"><b>". $lang['fl_nostoragespa'] . pretty_number($StorageNeeded - $FleetStorage) ."</b></font>", $lang['fl_error'], "fleet." . $phpEx, 2);
+		message ("<font color=\"red\"><b>". $lang['fl_nostoragespa'] . pretty_number($StorageNeeded - $FleetStorage) ."</b></font>", $lang['fl_error'], "fleet.php", 2);
 	}
 
 	if ($TargetPlanet['id_level'] > $user['authlevel']) {
@@ -416,7 +415,7 @@ include($ugamela_root_path . 'common.' . $phpEx);
 			default:
 		}
 		if ($Allowed == false) {
-			message ("<font color=\"red\"><b>". $lang['fl_adm_attak'] ."</b></font>", $lang['fl_warning'], "fleet." . $phpEx, 2);
+			message ("<font color=\"red\"><b>". $lang['fl_adm_attak'] ."</b></font>", $lang['fl_warning'], "fleet.php", 2);
 		}
 	}
 

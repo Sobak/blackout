@@ -13,7 +13,7 @@ define('IN_ADMIN', true);
 
 $ugamela_root_path = './../';
 include( $ugamela_root_path . 'extension.inc' );
-include( $ugamela_root_path . 'common.' . $phpEx );
+include( $ugamela_root_path . 'common.php' );
 
 if ( $CurrentUser['authlevel'] >= 1 ) {
 				$PageTpl = gettemplate( "admin/deletuser" );

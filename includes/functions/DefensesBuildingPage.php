@@ -14,7 +14,7 @@
 // $CurrentUser   -> Utilisateur qui a lancé la construction
 //
 function DefensesBuildingPage ( &$CurrentPlanet, $CurrentUser ) {
- 	global $lang, $resource, $phpEx, $dpath, $_POST;
+ 	global $lang, $resource, $dpath, $_POST;
 
 	if (isset($_POST['fmenge'])) {
 		// On vient de Cliquer ' Construire '
@@ -134,13 +134,13 @@ function DefensesBuildingPage ( &$CurrentPlanet, $CurrentUser ) {
 
 				// Imagette + Link vers la page d'info
 				$PageTable .= "<th class=l>";
-				$PageTable .= "<a href=infos.".$phpEx."?gid=".$Element.">";
+				$PageTable .= "<a href=infos.php?gid=".$Element.">";
 				$PageTable .= "<img border=0 src=\"".$dpath."gebaeude/".$Element.".gif\" align=top width=120 height=120></a>";
 				$PageTable .= "</th>";
 
 				// Description
 				$PageTable .= "<td class=l>";
-				$PageTable .= "<a href=infos.".$phpEx."?gid=".$Element.">".$ElementName."</a> ".$ElementNbre."<br>";
+				$PageTable .= "<a href=infos.php?gid=".$Element.">".$ElementName."</a> ".$ElementNbre."<br>";
 				$PageTable .= "".$lang['res']['descriptions'][$Element]."<br>";
 				// On affiche le 'prix' avec eventuellement ce qui manque en ressource
 				$PageTable .= GetElementPrice($CurrentUser, $CurrentPlanet, $Element, false);

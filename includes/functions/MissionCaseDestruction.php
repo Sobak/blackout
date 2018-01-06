@@ -2,21 +2,21 @@
 
 /**
  * MissionCaseDestruction.php
- * Par Tom, et oué enfin un truc bien codé par moi ^^
- * Largement inspiré de MissionCaseAttack quand même
+ * Par Tom, et ouï¿½ enfin un truc bien codï¿½ par moi ^^
+ * Largement inspirï¿½ de MissionCaseAttack quand mï¿½me
  *
  * @version 1
  * @copyright 2008
  */
 
 function MissionCaseDestruction($FleetRow) {
-	global $user, $phpEx, $ugamela_root_path, $lang;
+	global $user, $ugamela_root_path, $lang;
 
 	includeLang('system');
 
 	if ($FleetRow['fleet_mess'] == 0) {
 		if ($FleetRow['fleet_start_time'] < time()) {
-			// La flotte arrive pour démollir la lune
+			// La flotte arrive pour dï¿½mollir la lune
 			$QryTargetPlanet  = "SELECT * FROM {{table}} ";
 			$QryTargetPlanet .= "WHERE ";
 			$QryTargetPlanet .= "`galaxy` = '" . $FleetRow['fleet_end_galaxy'] . "' AND ";
@@ -68,17 +68,17 @@ function MissionCaseDestruction($FleetRow) {
 				}
 			}
 
-			// On inclue que le fichier d'attaque et pas de calcul de ressources car on est là pour DETRUIRE !
-			include_once($ugamela_root_path . 'includes/ataki.' . $phpEx);
+			// On inclue que le fichier d'attaque et pas de calcul de ressources car on est lï¿½ pour DETRUIRE !
+			include_once($ugamela_root_path . 'includes/ataki.php');
 			// Les petits calculs divers pour le futur rapport
 			// Initialisation
 			$mtime        = microtime();
 			$mtime        = explode(" ", $mtime);
 			$mtime        = $mtime[1] + $mtime[0];
 			$starttime    = $mtime;
-			// Et là on attaque le gros, l'attaque !
+			// Et lï¿½ on attaque le gros, l'attaque !
 			$Destruction  = walka($CurrentSet, $TargetSet, $CurrentTechno, $TargetTechno);
-			// la on a  les données de l'attaque on va commencer les petits calculs
+			// la on a  les donnï¿½es de l'attaque on va commencer les petits calculs
 			// Calcul de la duree de traitement (calcul) (Merci Chlorel)
 			$mtime        = microtime();
 			$mtime        = explode(" ", $mtime);
@@ -87,13 +87,13 @@ function MissionCaseDestruction($FleetRow) {
 			$totaltime    = ($endtime - $starttime);
 			// Ce qu'il reste de l'attaquant
 			$CurrentSet   = $Destruction["atakujacy"];
-			// Ce qu'il reste de l'attaqué
+			// Ce qu'il reste de l'attaquï¿½
 			$TargetSet    = $Destruction["wrog"];
 			// Le resultat de la bataille
 			$FleetResult  = $Destruction["wygrana"];
-			// Rapport long (rapport de bataille detaillé)
+			// Rapport long (rapport de bataille detaillï¿½)
 			$RapportLong  = $Destruction["dane_do_rw"];
-			// Rapport court (cdr + unitées perdues)
+			// Rapport court (cdr + unitï¿½es perdues)
 			$RapportCourt = $Destruction["zlom"];
 
 			$FleetAmount  = 0;

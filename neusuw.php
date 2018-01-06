@@ -11,12 +11,11 @@ define('INSIDE'  , true);
 define('INSTALL' , false);
 
 $ugamela_root_path = './';
-include($ugamela_root_path . 'extension.inc');
-include($ugamela_root_path . 'common.'.$phpEx);
+include($ugamela_root_path . 'common.php');
 
 includeLang('usuw');
 
-$lang['PHP_SELF'] = 'neusuw.'.$phpEx;
+$lang['PHP_SELF'] = 'neusuw.php';
 
 if($_POST && $mode == "change"){ //Array ( [db_character]
 

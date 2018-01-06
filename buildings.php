@@ -11,8 +11,7 @@ define('INSIDE'  , true);
 define('INSTALL' , false);
 
 $ugamela_root_path = './';
-include($ugamela_root_path . 'extension.inc');
-include($ugamela_root_path . 'common.' . $phpEx);
+include($ugamela_root_path . 'common.php');
 
 	includeLang('buildings');
 
@@ -45,6 +44,6 @@ include($ugamela_root_path . 'common.' . $phpEx);
 // -----------------------------------------------------------------------------------------------------------
 // History version
 // 1.0 - Nettoyage modularisation
-// 1.1 - Mise au point, mise en fonction pour linéarisation du fonctionnement
+// 1.1 - Mise au point, mise en fonction pour linï¿½arisation du fonctionnement
 // 1.2 - Liste de construction batiments
 ?>

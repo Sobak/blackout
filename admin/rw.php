@@ -12,8 +12,7 @@ define('INSTALL' , false);
 define('IN_ADMIN', true);
 
 $ugamela_root_path = './../';
-include($ugamela_root_path . 'extension.inc');
-include($ugamela_root_path . 'common.'.$phpEx);
+include($ugamela_root_path . 'common.php');
 
 	$raportrow = doquery("SELECT * FROM {{table}} WHERE `rid` = '". $_GET["raport"] ."';",'rw', true);
 	$Page  = "<html>";

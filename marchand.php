@@ -11,8 +11,7 @@ define('INSIDE'  , true);
 define('INSTALL' , false);
 
 $ugamela_root_path = './';
-include($ugamela_root_path . 'extension.inc');
-include($ugamela_root_path . 'common.' . $phpEx);
+include($ugamela_root_path . 'common.php');
 
 function ModuleMarchand ( $CurrentUser, &$CurrentPlanet ) {
 	global $lang, $_POST;
@@ -120,5 +119,5 @@ function ModuleMarchand ( $CurrentUser, &$CurrentPlanet ) {
 // History version
 // 1.0 - Version originelle (Tom1991)
 // 1.1 - Version 2.0 de Tom1991 ajout java
-// 1.2 - Réécriture Chlorel passage aux template, optimisation des appels et des requetes SQL
+// 1.2 - Rï¿½ï¿½criture Chlorel passage aux template, optimisation des appels et des requetes SQL
 ?>

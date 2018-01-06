@@ -12,8 +12,7 @@ define('INSTALL' , false);
 define('IN_ADMIN', true);
 
 $ugamela_root_path = './../';
-include($ugamela_root_path . 'extension.inc');
-include($ugamela_root_path . 'common.' . $phpEx);
+include($ugamela_root_path . 'common.php');
 
 	if ($user['authlevel'] >= 1) {
 		if ($_POST && $mode == "change") {
@@ -42,7 +41,7 @@ include($ugamela_root_path . 'common.' . $phpEx);
 				while ($u = mysql_fetch_array($sq)) {
 					SendSimpleMessage ( $u['id'], $user['id'], $Time, 97, $From, $Subject, $Message);
 				}
-				message("<font color=\"lime\">Wys³a³e¶ wiadomo¶æ do wszystkich graczy</font>", "Complete", "../overview." . $phpEx, 3);
+				message("<font color=\"lime\">Wysï¿½aï¿½eï¿½ wiadomoï¿½ï¿½ do wszystkich graczy</font>", "Complete", "../overview.php", 3);
 			}
 		} else {
 			$parse = $game_config;

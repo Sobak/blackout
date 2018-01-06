@@ -41,8 +41,8 @@ class debug
 		//else{
 			//A futuro, se creara una tabla especial, para almacenar
 			//los errores que ocurran.
-			global $user,$ugamela_root_path,$phpEx;
-			include($ugamela_root_path . 'config.'.$phpEx);
+			global $user,$ugamela_root_path;
+			include($ugamela_root_path . 'config.php');
 			if(!$link) die('mySQL no esta disponible por el momento, sentimos el inconveniente...');
 			$query = "INSERT INTO {{table}} SET
 				`error_sender` = '{$user['id']}' ,
@@ -57,9 +57,9 @@ class debug
 				
 
 			if (!function_exists('message'))
-				echo "Erreur, merci de contacter l'admin. Erreur n°: <b>".$q['rows']."</b>";
+				echo "Erreur, merci de contacter l'admin. Erreur nï¿½: <b>".$q['rows']."</b>";
 			else
-				message("Erreur, merci de contacter l'admin. Erreur n°: <b>".$q['rows']."</b>", "Erreur");
+				message("Erreur, merci de contacter l'admin. Erreur nï¿½: <b>".$q['rows']."</b>", "Erreur");
 		//}
 		
 		die();

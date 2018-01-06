@@ -7,6 +7,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 ### Changed
 - Changed extension of language files from `*.mo` to `*.php`
 
+### Removed
+- Eliminated usage of `$phpEx`
+
 ## [0.1.1] - 2018-01-06
 ### Changed
 - Added `config.php` to `.gitignore`

@@ -12,10 +12,9 @@ define('INSTALL' , false);
 define('IN_ADMIN', true);
 
 $ugamela_root_path = './../';
-include($ugamela_root_path . 'extension.inc');
-include($ugamela_root_path . 'common.' . $phpEx);
+include($ugamela_root_path . 'common.php');
 
-include($ugamela_root_path . 'admin/statfunctions.' . $phpEx);
+include($ugamela_root_path . 'admin/statfunctions.php');
 
 	includeLang('admin');
 

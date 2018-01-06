@@ -8,7 +8,7 @@
  */
 
 function BatimentBuildingPage (&$CurrentPlanet, $CurrentUser) {
-	global $lang, $resource, $reslist, $phpEx, $dpath, $game_config, $_GET;
+	global $lang, $resource, $reslist, $dpath, $game_config, $_GET;
 
 	CheckPlanetUsedFields ( $CurrentPlanet );
 
@@ -61,9 +61,9 @@ function BatimentBuildingPage (&$CurrentPlanet, $CurrentUser) {
 
 	$Queue = ShowBuildingQueue ( $CurrentPlanet, $CurrentUser );
 
-	// On enregistre ce que l'on a modifié dans planet !
+	// On enregistre ce que l'on a modifiï¿½ dans planet !
 	BuildingSavePlanetRecord ( $CurrentPlanet );
-	// On enregistre ce que l'on a eventuellement modifié dans users
+	// On enregistre ce que l'on a eventuellement modifiï¿½ dans users
 	BuildingSaveUserRecord ( $CurrentUser );
 
 	if ($Queue['lenght'] < MAX_BUILDING_QUEUE_SIZE) {
@@ -100,7 +100,7 @@ function BatimentBuildingPage (&$CurrentPlanet, $CurrentUser) {
 				$NextBuildLevel        = $CurrentPlanet[$resource[$Element]] + 1;
 
 				if ($Element == 31) {
-					// Spécial Laboratoire
+					// Spï¿½cial Laboratoire
 					if ($CurrentUser["b_tech_planet"] != 0 &&     // Si pas 0 y a une recherche en cours
 						$game_config['BuildLabWhileRun'] != 1) {  // Variable qui contient le parametre
 						// On verifie si on a le droit d'evoluer pendant les recherches (Setting dans config)

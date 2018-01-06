@@ -12,8 +12,7 @@ define('INSTALL' , false);
 define('IN_ADMIN', true);
 
 $ugamela_root_path = './../';
-include($ugamela_root_path . 'extension.inc');
-include($ugamela_root_path . 'common.' . $phpEx);
+include($ugamela_root_path . 'common.php');
 
 	if ($user['authlevel'] >= "1") {
 		includeLang('admin/md5enc');

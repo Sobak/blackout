@@ -8,6 +8,6 @@
  */
 
 if ( defined('INSIDE') ) {
-	include($ugamela_root_path . 'db/mysql.'.$phpEx);
+	include($ugamela_root_path . 'db/mysql.php');
 }
 ?>

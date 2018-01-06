@@ -11,8 +11,7 @@ define('INSIDE'  , true);
 define('INSTALL' , false);
 
 $ugamela_root_path = './';
-include($ugamela_root_path . 'extension.inc');
-include($ugamela_root_path . 'common.' . $phpEx);
+include($ugamela_root_path . 'common.php');
 
 	includeLang('fleet');
 
@@ -70,7 +69,7 @@ include($ugamela_root_path . 'common.' . $phpEx);
 	}
 
 	if (!$fleet['fleetlist']) {
-		message($lang['fl_unselectall'], $lang['fl_error'], "fleet." . $phpEx, 1);
+		message($lang['fl_unselectall'], $lang['fl_error'], "fleet.php", 1);
 	} else {
 		$speedallsmin = min($speedalls);
 	}

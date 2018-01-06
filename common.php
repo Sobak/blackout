@@ -11,7 +11,6 @@ define('VERSION','0.8');                // Passera en version 1.0 quand toutes l
                                                                 // Et c'est pas encore demain la veille !!!
 
 set_magic_quotes_runtime(0);
-$phpEx = "php";
 
 $game_config   = array();
 $user          = array();
@@ -25,19 +24,19 @@ define('DEFAULT_LANG'     , 'en');
 
 $HTTP_ACCEPT_LANGUAGE = DEFAULT_LANG;
 
-include($ugamela_root_path . 'includes/debug.class.'.$phpEx);
+include($ugamela_root_path . 'includes/debug.class.php');
 $debug = new debug();
 
-include($ugamela_root_path . 'includes/constants.'.$phpEx);
-include($ugamela_root_path . 'includes/functions.'.$phpEx);
-include($ugamela_root_path . 'includes/unlocalised.'.$phpEx);
-include($ugamela_root_path . 'includes/todofleetcontrol.'.$phpEx);
+include($ugamela_root_path . 'includes/constants.php');
+include($ugamela_root_path . 'includes/functions.php');
+include($ugamela_root_path . 'includes/unlocalised.php');
+include($ugamela_root_path . 'includes/todofleetcontrol.php');
 include($ugamela_root_path . 'language/'. DEFAULT_LANG .'/lang_info.cfg');
 
 if (INSTALL != true) {
-    include($ugamela_root_path . 'includes/vars.'.$phpEx);
-    include($ugamela_root_path . 'includes/db.'.$phpEx);
-    include($ugamela_root_path . 'includes/strings.'.$phpEx);
+    include($ugamela_root_path . 'includes/vars.php');
+    include($ugamela_root_path . 'includes/db.php');
+    include($ugamela_root_path . 'includes/strings.php');
 
     // Lecture de la table de configuration
     $query = doquery("SELECT * FROM {{table}}",'config');
@@ -86,7 +85,7 @@ if (INSTALL != true) {
 
                 unset($_fleets);
 
-                include($ugamela_root_path . 'rak.'.$phpEx);
+                include($ugamela_root_path . 'rak.php');
                 if ( defined('IN_ADMIN') ) {
                         $UserSkin  = $user['dpath'];
                         $local     = stristr ( $UserSkin, "http:");

@@ -11,8 +11,7 @@ define('INSIDE'  , true);
 define('INSTALL' , false);
 
 $ugamela_root_path = './';
-include($ugamela_root_path . 'extension.inc');
-include($ugamela_root_path . 'common.' . $phpEx);
+include($ugamela_root_path . 'common.php');
 
 	includeLang('stat');
 
@@ -214,5 +213,5 @@ include($ugamela_root_path . 'common.' . $phpEx);
 
 // -----------------------------------------------------------------------------------------------------------
 // History version
-// 1.0 - Réécriture module
+// 1.0 - Rï¿½ï¿½criture module
 ?>

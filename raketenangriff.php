@@ -11,8 +11,7 @@ define('INSIDE'  , true);
 define('INSTALL' , false);
 
 $ugamela_root_path = './';
-include($ugamela_root_path . 'extension.inc');
-include($ugamela_root_path . 'common.'.$phpEx);
+include($ugamela_root_path . 'common.php');
 
 $planet    = doquery("SELECT * FROM {{table}} WHERE `id` = '".$user['current_planet']."';", 'planets', true);
 $iraks = $planet['interplanetary_misil'];
@@ -93,13 +92,13 @@ $select = doquery("SELECT * FROM {{table}} WHERE id = ".$ziel_id, 'users', true)
  $def =
 		array(
 			0 => $planet['misil_launcher'], // Raketenwerfer
-			1 => $planet['small_laser'], // Leichtes Lasergeschütz
-			2 => $planet['big_laser'], // Schweres Lasergeschütz
-			3 => $planet['gauss_canyon'], // Gaußkanone
-			4 => $planet['ionic_canyon'], // Ionengeschütz
+			1 => $planet['small_laser'], // Leichtes Lasergeschï¿½tz
+			2 => $planet['big_laser'], // Schweres Lasergeschï¿½tz
+			3 => $planet['gauss_canyon'], // Gauï¿½kanone
+			4 => $planet['ionic_canyon'], // Ionengeschï¿½tz
 			5 => $planet['buster_canyon'], // Plasmawerfer
 			6 => $planet['small_protection_shield'], // Kleine Schildkuppel
-			7 => $planet['big_protection_shield'], // Große Schildkuppel
+			7 => $planet['big_protection_shield'], // Groï¿½e Schildkuppel
 			8 => $planet['interplanetary_misil'], // Interplanetarrakete
 			9 => $planet['interceptor_misil'], // Abfangrakete
 

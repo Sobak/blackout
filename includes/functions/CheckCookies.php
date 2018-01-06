@@ -12,13 +12,13 @@
 // TheCookie[3] = 1rst Connexion time + 365 J
 
 function CheckCookies ( $IsUserChecked ) {
-	global $lang, $game_config, $ugamela_root_path, $phpEx;
+	global $lang, $game_config, $ugamela_root_path;
 
 	includeLang('cookies');
 
 	$UserRow = array();
 
-	include($ugamela_root_path . 'config.' . $phpEx);
+	include($ugamela_root_path . 'config.php');
 
 	if (isset($_COOKIE[$game_config['COOKIE_NAME']])) {
 		$TheCookie  = explode("/%/", $_COOKIE[$game_config['COOKIE_NAME']]);

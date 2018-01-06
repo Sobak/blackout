@@ -22,8 +22,7 @@ $XNova_URI     = implode ('/', $Uri_Array);
 $XNovaRootURL  = "http://". $XNova_Host ."/". $XNova_URI ."/";
 
 $ugamela_root_path = './';
-include($ugamela_root_path . 'extension.inc');
-include($ugamela_root_path . 'common.'.$phpEx);
+include($ugamela_root_path . 'common.php');
 
 	$page  = "<html>";
 	$page .= "<head>";

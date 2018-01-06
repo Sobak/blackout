@@ -12,10 +12,9 @@ define('INSIDE'  , true);
 define('INSTALL' , true);
 
 $ugamela_root_path = './../';
-include($ugamela_root_path . 'extension.inc');
-include($ugamela_root_path . 'common.'.$phpEx);
-include($ugamela_root_path . 'includes/databaseinfos.'.$phpEx);
-include($ugamela_root_path . 'includes/migrateinfo.'.$phpEx);
+include($ugamela_root_path . 'common.php');
+include($ugamela_root_path . 'includes/databaseinfos.php');
+include($ugamela_root_path . 'includes/migrateinfo.php');
 
 
 $Mode     = $_GET['mode'];

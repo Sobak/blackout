@@ -12,8 +12,7 @@ define('INSIDE'  , true);
 define('INSTALL' , false);
 
 $ugamela_root_path = './';
-include($ugamela_root_path . 'extension.inc');
-include($ugamela_root_path . 'common.'.$phpEx);
+include($ugamela_root_path . 'common.php');
 
 $dpath = (!$user["dpath"]) ? DEFAULT_SKINPATH : $user["dpath"];
 
@@ -24,7 +23,7 @@ $lang['Please_Wait'] = "Patientez...";
 //lenguaje
 includeLang('notes');
 
-$lang['PHP_SELF'] = 'notes.'.$phpEx;
+$lang['PHP_SELF'] = 'notes.php';
 
 if($_POST["s"] == 1 || $_POST["s"] == 2){//Edicion y agregar notas
 
@@ -35,7 +34,7 @@ if($_POST["s"] == 1 || $_POST["s"] == 2){//Edicion y agregar notas
 
 	if($_POST["s"] ==1){
 		doquery("INSERT INTO {{table}} SET owner={$user['id']}, time=$time, priority=$priority, title='$title', text='$text'","notes");
-		message($lang['NoteAdded'], $lang['Please_Wait'],'notes.'.$phpEx,"3");
+		message($lang['NoteAdded'], $lang['Please_Wait'],'notes.php',"3");
 	}elseif($_POST["s"] == 2){
 		/*
 		  pequeño query para averiguar si la nota que se edita es del propio jugador
@@ -46,7 +45,7 @@ if($_POST["s"] == 1 || $_POST["s"] == 2){//Edicion y agregar notas
 		if(!$note_query){ error($lang['notpossiblethisway'],$lang['Notes']); }
 
 		doquery("UPDATE {{table}} SET time=$time, priority=$priority, title='$title', text='$text' WHERE id=$id","notes");
-		message($lang['NoteUpdated'], $lang['Please_Wait'], 'notes.'.$phpEx, "3");
+		message($lang['NoteUpdated'], $lang['Please_Wait'], 'notes.php', "3");
 	}
 
 }
@@ -70,8 +69,8 @@ elseif($_POST){//Borrar
 	}
 	if($deleted){
 		$mes = ($deleted == 1) ? $lang['NoteDeleted'] : $lang['NoteDeleteds'];
-		message($mes,$lang['Please_Wait'],'notes.'.$phpEx,"3");
-	}else{header("Location: notes.$phpEx");}
+		message($mes,$lang['Please_Wait'],'notes.php',"3");
+	}else{header("Location: notes.php");}
 
 }else{//sin post...
 	if($_GET["a"] == 1){//crear una nueva nota.

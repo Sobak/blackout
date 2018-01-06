@@ -11,8 +11,7 @@ define('INSIDE'  , true);
 define('INSTALL' , false);
 
 $ugamela_root_path = './';
-include($ugamela_root_path . 'extension.inc');
-include($ugamela_root_path . 'common.' . $phpEx);
+include($ugamela_root_path . 'common.php');
 
 $users   = doquery("SELECT * FROM {{table}} WHERE id='".$user['id']."';", 'users');
 $annonce = doquery("SELECT * FROM {{table}} ", 'annonce');
@@ -48,7 +47,7 @@ deuts='{$deutsouhait}'" , "annonce");
 <center>
 <br>
 <p>Ogloszenie dodane</p>
-<br><p><a href="annonce.php">Wróc</a></p>
+<br><p><a href="annonce.php">Wrï¿½c</a></p>
 
 HTML;
 
@@ -62,7 +61,7 @@ if ($action != 5) {
 <center>
 <br>
 <table width=\"600\">
-<td class=\"c\" colspan=\"10\"><font color=\"#FFFFFF\">Og³oszenia drobne</font></td></tr>
+<td class=\"c\" colspan=\"10\"><font color=\"#FFFFFF\">Ogï¿½oszenia drobne</font></td></tr>
 <tr><th colspan=\"3\">Dostawca</th><th colspan=\"3\">Do sprzedania</th><th colspan=\"3\">Do kupienia</th><th>Akcje</th></tr>
 <tr><th>Kto</th><th>Galaktyka</th><th>System</th><th>Metal</th><th>Krysztal</th><th>Deuter</th><th>Metal</th><th>Krysztal</th><th>Deuter</th><th>[]</th></tr>
 

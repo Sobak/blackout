@@ -40,8 +40,7 @@ if (empty($id))
 
 define('INSIDE', true);
 $ugamela_root_path = './';
-include($ugamela_root_path . 'extension.inc');
-include($ugamela_root_path . 'common.' . $phpEx);
+include($ugamela_root_path . 'common.php');
 
 $mode     = $_GET['mode'];
 $yes      = $_GET['yes'];

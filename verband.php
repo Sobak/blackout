@@ -11,8 +11,7 @@ define('INSIDE'  , true);
 define('INSTALL' , false);
 
 $ugamela_root_path = './';
-include($ugamela_root_path . 'extension.inc');
-include($ugamela_root_path . 'common.' . $phpEx);
+include($ugamela_root_path . 'common.php');
 
 	includeLang('fleet');
 
@@ -32,7 +31,7 @@ include($ugamela_root_path . 'common.' . $phpEx);
 	$daten = mysql_fetch_array($query);
 
 	if ($daten['fleet_start_time'] <= time() || $daten['fleet_end_time'] < time() || $daten['fleet_mess'] == 1) {
-		message('Votre flotte est déjà sur le chemin du retour!', 'Erreur');
+		message('Votre flotte est dï¿½jï¿½ sur le chemin du retour!', 'Erreur');
 	}
 
 	if (!isset($_POST['send'])) {
@@ -145,7 +144,7 @@ include($ugamela_root_path . 'common.' . $phpEx);
         <th>Arriv&eacute;e (cible)</th>
         <th>Objectif</th>
         <th>Arriv&eacute;e (retour)</th>
-        <th>Retour à</th>
+        <th>Retour ï¿½</th>
         <th>Ordre</th>
       </tr>';
 	/*
@@ -230,7 +229,7 @@ include($ugamela_root_path . 'common.' . $phpEx);
     <th>
      <table width="100%" border="0" cellpadding="0" cellspacing="1">
       <tr height="20">
-       <td class="c">Invités participants</td>
+       <td class="c">Invitï¿½s participants</td>
        <td class="c">Inviter des participants</td>
       </tr>
       <tr>
@@ -260,7 +259,7 @@ include($ugamela_root_path . 'common.' . $phpEx);
 		<form action="floten1.php" method="post">
 		<table width="519" border="0" cellpadding="0" cellspacing="1">
 		  <tr height="20">
-			<td colspan="4" class="c">Nouveau marché: Choix de la flotte</td>
+			<td colspan="4" class="c">Nouveau marchï¿½: Choix de la flotte</td>
 		  </tr>
 		  <tr height="20">
 			<th>Nom du vaisseau</th>

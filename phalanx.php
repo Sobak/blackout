@@ -11,8 +11,7 @@ define('INSIDE'  , true);
 define('INSTALL' , false);
 
 $ugamela_root_path = './';
-include($ugamela_root_path . 'extension.inc');
-include($ugamela_root_path . 'common.' . $phpEx);
+include($ugamela_root_path . 'common.php');
 
 
 $galaktyka = $planetrow['galaxy'];
@@ -25,14 +24,14 @@ if ($planetrow['deuterium'] > $liczba);
 doquery("UPDATE {{table}} SET deuterium=deuterium-10000 WHERE id='{$user['current_planet']}'", 'planets');
 if ($planetrow['deuterium'] = $planetrow['deuterium'] - $liczba);
 else {
-	message ("<b>Vous avez pas assez de carburant!!!!</b>", "Erreur", "overview." . $phpEx, 2);
+	message ("<b>Vous avez pas assez de carburant!!!!</b>", "Erreur", "overview.php", 2);
 }
 
 if ($planetrow['planet_type'] != '3') {
-	message("Le capteur fonctionne seulement sur la lune", "Error", "overview." . $phpEx, 1);
+	message("Le capteur fonctionne seulement sur la lune", "Error", "overview.php", 1);
 }
 if ($planetrow['sensor_phalax'] == '0') {
-	message("Vous devez améliorez votre phalange", "Erreur", "overview." . $phpEx, 1);
+	message("Vous devez amï¿½liorez votre phalange", "Erreur", "overview.php", 1);
 }
 
 $poziom = $planetrow['sensor_phalax'];
@@ -71,7 +70,7 @@ $fq = doquery("SELECT * FROM {{table}} WHERE  (
 if (mysql_num_rows($fq) == "0") {
 	$page .= "<table width=519>
 	<tr>
-	  <td class=c colspan=7>Derni&egrave;re manœuvres sur la lune</td>
+	  <td class=c colspan=7>Derni&egrave;re manï¿½uvres sur la lune</td>
 	</tr><th>Un mouvement de flotte &agrave; &eacute;tait d&eacute;tect&eacute;</th></table>";
 } else {
 	$page .= "<center><table>";
@@ -163,5 +162,5 @@ if (mysql_num_rows($fq) == "0") {
 
 display($page, "phalanx");
 
-// Créer par Bladegame et TMD
+// Crï¿½er par Bladegame et TMD
 ?>

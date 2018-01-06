@@ -13,8 +13,7 @@ define('INSTALL' , false);
 $InLogin = true;
 
 $ugamela_root_path = './';
-include($ugamela_root_path . 'extension.inc');
-include($ugamela_root_path . 'common.' . $phpEx);
+include($ugamela_root_path . 'common.php');
 
 	includeLang('login');
 

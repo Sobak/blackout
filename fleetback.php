@@ -11,8 +11,7 @@ define('INSIDE'  , true);
 define('INSTALL' , false);
 
 	$ugamela_root_path = './';
-	include($ugamela_root_path . 'extension.inc');
-	include($ugamela_root_path . 'common.' . $phpEx);
+		include($ugamela_root_path . 'common.php');
 
 	includeLang('fleet');
 
@@ -67,7 +66,7 @@ define('INSTALL' , false);
 		}
 	}
 
-	message ("<font color=\"".$TxtColor."\">". $BoxMessage ."</font>", $BoxTitle, "fleet.". $phpEx, 2);
+	message ("<font color=\"".$TxtColor."\">". $BoxMessage ."</font>", $BoxTitle, "fleet.php", 2);
 
 // -----------------------------------------------------------------------------------------------------------
 // History version

@@ -12,8 +12,7 @@ define('INSIDE'  , true);
 define('INSTALL' , false);
 
 $ugamela_root_path = './';
-include($ugamela_root_path . 'extension.inc');
-include($ugamela_root_path . 'common.'.$phpEx);
+include($ugamela_root_path . 'common.php');
 
 $dpath = (!$userrow["dpath"]) ? DEFAULT_SKINPATH : $userrow["dpath"];
 

@@ -11,8 +11,7 @@ define('INSIDE'  , true);
 define('INSTALL' , false);
 
 $ugamela_root_path = './';
-include($ugamela_root_path . 'extension.inc');
-include($ugamela_root_path . 'common.' . $phpEx);
+include($ugamela_root_path . 'common.php');
 
 	$lunarow   = doquery("SELECT * FROM {{table}} WHERE `id_owner` = '".$planetrow['id_owner']."' AND `galaxy` = '".$planetrow['galaxy']."' AND `system` = '".$planetrow['system']."' AND `lunapos` = '".$planetrow['planet']."';", 'lunas', true);
 
@@ -112,9 +111,9 @@ include($ugamela_root_path . 'common.' . $phpEx);
 			if ($user['new_message'] != 0) {
 				$Have_new_message .= "<tr>";
 				if       ($user['new_message'] == 1) {
-					$Have_new_message .= "<th colspan=4><a href=messages.$phpEx>". $lang['Have_new_message']."</a></th>";
+					$Have_new_message .= "<th colspan=4><a href=messages.php>". $lang['Have_new_message']."</a></th>";
 				} elseif ($user['new_message'] > 1) {
-					$Have_new_message .= "<th colspan=4><a href=messages.$phpEx>";
+					$Have_new_message .= "<th colspan=4><a href=messages.php>";
 					$m = pretty_number($user['new_message']);
 					$Have_new_message .= str_replace('%m', $m, $lang['Have_new_messages']);
 					$Have_new_message .= "</a></th>";
@@ -142,7 +141,7 @@ include($ugamela_root_path . 'common.' . $phpEx);
 					$QryUpdateUser .= "`id` = '". $user['id'] ."';";
 					doquery( $QryUpdateUser, 'users');
 					$HaveNewLevelMineur  = "<tr>";
-					$HaveNewLevelMineur .= "<th colspan=4><a href=officier.$phpEx>". $lang['Have_new_level_mineur']."</a></th>";
+					$HaveNewLevelMineur .= "<th colspan=4><a href=officier.php>". $lang['Have_new_level_mineur']."</a></th>";
 				}
 				if ($XPRaid >= $XpRaidUp) {
 					$QryUpdateUser  = "UPDATE {{table}} SET ";
@@ -152,7 +151,7 @@ include($ugamela_root_path . 'common.' . $phpEx);
 					$QryUpdateUser .= "`id` = '". $user['id'] ."';";
 					doquery( $QryUpdateUser, 'users');
 					$HaveNewLevelMineur  = "<tr>";
-					$HaveNewLevelMineur .= "<th colspan=4><a href=officier.$phpEx>". $lang['Have_new_level_raid']."</a></th>";
+					$HaveNewLevelMineur .= "<th colspan=4><a href=officier.php>". $lang['Have_new_level_raid']."</a></th>";
 				}
 			}
 			// -----------------------------------------------------------------------------------------------

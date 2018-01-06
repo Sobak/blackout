@@ -11,12 +11,12 @@
 // Mission Case 1: -> Attaquer
 //
 function MissionCaseAttack ( $FleetRow ) {
-	global $user, $phpEx, $ugamela_root_path, $pricelist, $lang, $resource, $CombatCaps;
+	global $user, $ugamela_root_path, $pricelist, $lang, $resource, $CombatCaps;
 
 	if ($FleetRow['fleet_start_time'] <= time()) {
 		if ($FleetRow['fleet_mess'] == 0) {
 			if (!isset($CombatCaps[202]['sd'])) {
-				message("<font color=\"red\">". $lang['sys_no_vars'] ."</font>", $lang['sys_error'], "fleet." . $phpEx, 2);
+				message("<font color=\"red\">". $lang['sys_no_vars'] ."</font>", $lang['sys_error'], "fleet.php", 2);
 			}
 			$QryTargetPlanet  = "SELECT * FROM {{table}} ";
 			$QryTargetPlanet .= "WHERE ";
@@ -67,7 +67,7 @@ function MissionCaseAttack ( $FleetRow ) {
 				}
 			}
 
-			include_once($ugamela_root_path . 'includes/ataki.' . $phpEx);
+			include_once($ugamela_root_path . 'includes/ataki.php');
 
 			// Calcul de la duree de traitement (initialisation)
 			$mtime        = microtime();

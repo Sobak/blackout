@@ -11,12 +11,11 @@ define('INSIDE'  , true);
 define('INSTALL' , false);
 
 $ugamela_root_path = './';
-include($ugamela_root_path . 'extension.inc');
-include($ugamela_root_path . 'common.' . $phpEx);
+include($ugamela_root_path . 'common.php');
 
 includeLang('options');
 
-$lang['PHP_SELF'] = 'options.' . $phpEx;
+$lang['PHP_SELF'] = 'options.php';
 
 $dpath = (!$user["dpath"]) ? DEFAULT_SKINPATH : $user["dpath"];
 $mode = $_GET['mode'];
