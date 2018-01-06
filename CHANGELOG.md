@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 ## [Unreleased]
 ### Changed
 - Added `config.php` to `.gitignore`
+- Installation process is now actually available in English
 - Switched default language to English
 
 ### Fixed
