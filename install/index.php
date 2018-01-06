@@ -183,6 +183,7 @@ $nextpage = $Page + 1;
 				$QryInsertAdm .= "`username`          = '". $adm_user ."', ";
 				$QryInsertAdm .= "`email`             = '". $adm_email ."', ";
 				$QryInsertAdm .= "`email_2`           = '". $adm_email ."', ";
+				$QryInsertAdm .= "`lang`              = '". DEFAULT_LANG ."', ";
 				$QryInsertAdm .= "`authlevel`         = '3', ";
 				$QryInsertAdm .= "`sex`               = '". $adm_sex ."', ";
 				$QryInsertAdm .= "`id_planet`         = '1', ";

@@ -390,7 +390,7 @@
 	$QryTableUsers      .= "`password` varchar(64) character set latin1 NOT NULL default '', ";
 	$QryTableUsers      .= "`email` varchar(64) character set latin1 NOT NULL default '', ";
 	$QryTableUsers      .= "`email_2` varchar(64) character set latin1 NOT NULL default '', ";
-	$QryTableUsers      .= "`lang` varchar(8) character set latin1 NOT NULL default 'fr', ";
+	$QryTableUsers      .= "`lang` varchar(8) character set latin1 NOT NULL, ";
 	$QryTableUsers      .= "`authlevel` tinyint(4) NOT NULL default '0', ";
 	$QryTableUsers      .= "`sex` char(1) character set latin1 default NULL, ";
 	$QryTableUsers      .= "`avatar` varchar(255) character set latin1 NOT NULL default '', ";
