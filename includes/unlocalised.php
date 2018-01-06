@@ -164,20 +164,6 @@ function ShowBuildTime ($time) {
 
 // ----------------------------------------------------------------------------------------------------------------
 //
-function add_points ($resources, $userid) {
-    return false;
-}
-
-function remove_points ($resources, $userid) {
-    return false;
-}
-
-function get_userdata () {
-    return '';
-}
-
-// ----------------------------------------------------------------------------------------------------------------
-//
 // Template-related functions
 //
 function parsetemplate($template, $array) {
