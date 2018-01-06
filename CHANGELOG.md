@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ### Fixed
 - Eliminate usage of deprecated PHP short tags (`<?`)
+- Fixed errors during database creation which resulted in no styles being loaded
 - Improved check for `config.php` so installation is triggered correctly
 
 ## [0.1.0] - 2018-01-06
