@@ -1,7 +1,6 @@
 <?php
 
 define('INSIDE'  , true);
-define('INSTALL' , false);
 
 $ugamela_root_path = './';
 require 'common.php';

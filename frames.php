@@ -8,7 +8,6 @@
  */
 
 define('INSIDE'  , true);
-define('INSTALL' , false);
 
 $InLogin = false;
 

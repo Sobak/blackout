@@ -7,7 +7,6 @@
  * @copyright 2008 by ??????? for XNova
  */
 
-define('INSTALL' , false);
 
 $mode = $_GET['mode'];
 if (empty($mode))   { unset($mode); }

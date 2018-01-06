@@ -11,7 +11,6 @@
 // Mais qu'est ce qu'il voullait demontrer lui ????
 
 define('INSIDE'  , true);
-define('INSTALL' , false);
 define('IN_ADMIN', true);
 
 $ugamela_root_path = '../';
