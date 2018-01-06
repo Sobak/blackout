@@ -20,6 +20,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 ### Changed
 - Changed extension of language files from `*.mo` to `*.php`
 - Improved translations of
+    - Buildings
     - Overview
     - left menu
 
