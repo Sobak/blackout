@@ -1,8 +1,6 @@
 <?php
 
 // User menu links
-$lang['Multiverse']   = '<b>Galaxy Game</b> Uni1';
-
 $lang['Overview']     = 'Overview';
 $lang['Officiers']    = 'Officiers';
 
@@ -13,24 +11,24 @@ $lang['Defense']      = 'Defense';
 
 $lang['Resources']    = 'Resources';
 $lang['Imperium']     = 'Imperium';
-$lang['Marchand']     = 'Marchad';
-$lang['Annonces']     = 'Annonces';
+$lang['Marchand']     = 'Merchant';
+$lang['Annonces']     = 'Announcements';
 $lang['Technology']   = 'Technology';
 
 $lang['Galaxy']       = 'Galaxy';
 $lang['Fleet']        = 'Fleet';
 $lang['Teleport']     = 'Stargate';
 
-$lang['Alliance']     = 'Allinace';
+$lang['Alliance']     = 'Alliance';
 $lang['Chat']         = 'Chat';
-$lang['Statistics']   = 'Statistic';
+$lang['Statistics']   = 'Statistics';
 $lang['Search']       = 'Search';
 $lang['blocked']      = 'Banned';
 $lang['Records']      = 'Records';
 
 $lang['Messages']     = 'Messages';
 $lang['Notes']        = 'Notes';
-$lang['Buddylist']    = 'Firends';
+$lang['Buddylist']    = 'Friends';
 
 $lang['Board']        = 'Forum';
 $lang['Contact']      = 'Contact';
@@ -42,21 +40,21 @@ $lang['Help']         = 'Help';
 $lang['Rules']        = 'Rules';
 
 // User menu titles
-$lang['devlp']        = 'First';
+$lang['devlp']        = 'Development';
 $lang['navig']        = 'Navigation';
-$lang['observ']       = 'Another';
-$lang['commun']       = 'Komunication';
-$lang['infog']        = 'Information';
+$lang['observ']       = 'Observatory';
+$lang['commun']       = 'Communication';
+$lang['infog']        = 'Info';
 
 // Administrator menu links
 $lang['adm_over']     = 'Overview';
-$lang['adm_conf']     = 'Configure';
+$lang['adm_conf']     = 'Configuration';
 $lang['adm_reset']    = 'Universum Reset';
 
 $lang['adm_plrlst']   = 'List Users';
 $lang['adm_plrsch']   = 'Search Users';
-$lang['adm_addres']   = 'Give Resources';
-$lang['adm_delres']   = 'Suppr de ressources';
+$lang['adm_addres']   = 'Add resources';
+$lang['adm_delres']   = 'Subtract resources';
 
 $lang['adm_pltlst']   = 'List of Planets';
 $lang['adm_actplt']   = 'Active Planets';
@@ -64,30 +62,28 @@ $lang['adm_actplt']   = 'Active Planets';
 $lang['adm_moonlst']  = 'List of moons';
 $lang['adm_addmoon']  = 'Give Moon';
 
-$lang['adm_fleet']    = 'Fleet in Action';
+$lang['adm_fleet']    = 'Flying fleets';
 
-$lang['adm_ban']      = 'Banned';
-$lang['adm_unban']    = 'UNBanned';
+$lang['adm_ban']      = 'Ban player';
+$lang['adm_unban']    = 'Unban player';
 
 $lang['adm_chat']     = 'Administration chat';
 $lang['adm_updpt']    = 'Refresh Points';
-$lang['adm_msg']      = 'List of Massages';
-$lang['adm_md5']      = 'NEDIRAJ';
-$lang['adm_build']    = 'NEDIRAJ';
+$lang['adm_msg']      = 'List of messages';
+$lang['adm_md5']      = 'md5 encoder';
+$lang['adm_build']    = '@TODO';
 
-$lang['adm_error']    = 'Erreurs';
+$lang['adm_error']    = 'Errors';
 $lang['adm_help']     = 'Forum';
-$lang['adm_back']     = 'Back to Game';
+$lang['adm_back']     = 'Back to game';
 
 // Administrator menu titles
 $lang['admin']        = 'Admin';
-$lang['player']       = 'Player';
-$lang['tool']         = 'Tool';
+$lang['player']       = 'Players';
+$lang['tool']         = 'Tools';
 
 // Informations serveur
 $lang['lm_ifo_serv']  = "Resources";
 $lang['lm_ifo_game']  = "Game";
 $lang['lm_ifo_fleet'] = "Fleet";
-$lang['lm_ifo_queue'] = "Another";
-
-?>
+$lang['lm_ifo_queue'] = "Queue";
