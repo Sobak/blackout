@@ -14,6 +14,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 - Fixed errors during database creation which resulted in no styles being loaded
 - Improved check for `config.php` so installation is triggered correctly
 
+### Removed
+- Remove French language files
+
 ## [0.1.0] - 2018-01-06
 ### Added
 - Initial import of _xNova 0.3 Multilanguage_ (which is based off xNova 0.8)
