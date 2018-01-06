@@ -320,5 +320,5 @@ $nextpage = $Page + 1;
 	$parse['dis_ins_btn']  = "?mode=$Mode&page=$nextpage";
 	$Displ                 = parsetemplate ($MainTPL, $parse);
 
-	display ($Displ, "Installeur", false, '', true);
+	display ($Displ, $lang['ins_title'], false, '', true);
 ?>

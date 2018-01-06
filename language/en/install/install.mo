@@ -1,5 +1,6 @@
 <?php
 
+$lang['ins_title']        = "XNova Installer";
 $lang['ins_appname']      = "XNova";
 $lang['ins_tx_state']     = "Step";
 $lang['ins_tx_sys']       = "System management";
