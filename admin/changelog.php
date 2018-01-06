@@ -1,12 +1,5 @@
 <?php
 
-/**
- * changelog.php
- *
- * @version 1.0
- * @copyright 2008 by ??????? for XNova
- */
-
 define('INSIDE'  , true);
 define('IN_ADMIN', true);
 
@@ -32,6 +25,3 @@ $parse['body'] = $body;
 
 $page .= parsetemplate(gettemplate('changelog_body'), $parse);
 display( $page, "Changelog", false, '', true);
-
-// Created by Perberos. All rights reversed (C) 2006
-?>

@@ -1,12 +1,5 @@
 <?php
 
-/**
- * StatBuilder.php
- *
- * @version 1
- * @copyright 2008 by Chlorel for XNova
- */
-
 define('INSIDE'  , true);
 define('IN_ADMIN', true);
 
@@ -303,4 +296,3 @@ doquery( "UPDATE {{table}} SET `config_value`='". $Useru_Poza ."' WHERE `config_
 }
 
     AdminMessage ( $lang['adm_done'], $lang['adm_stat_title'] );
-?>

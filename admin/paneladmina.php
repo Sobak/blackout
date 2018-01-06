@@ -1,12 +1,5 @@
 <?php
 
-/**
- * paneladmina.php
- *
- * @version 1.0
- * @copyright 2008 by ??????? for XNova
- */
-
 define('INSIDE'  , true);
 define('IN_ADMIN', true);
 
@@ -153,4 +146,3 @@ include($ugamela_root_path . 'common.php');
     } else {
         message( $lang['sys_noalloaw'], $lang['sys_noaccess'] );
     }
-?>

@@ -1,12 +1,5 @@
 <?php
 
-/**
- * settings.php
- *
- * @version 1.0
- * @copyright 2008 by ??????? for XNova
- */
-
 define('INSIDE'  , true);
 define('IN_ADMIN', true);
 
@@ -191,4 +184,3 @@ function DisplayGameSettingsPage ( $CurrentUser ) {
 }
 
     $Page = DisplayGameSettingsPage ( $user );
-?>

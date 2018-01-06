@@ -1,12 +1,5 @@
 <?php
 
-/**
- * ShowFlyingFleets.php
- *
- * @version 1
- * @copyright 2008 By Chlorel for XNova
- */
-
 define('INSIDE'  , true);
 define('IN_ADMIN', true);
 
@@ -21,4 +14,3 @@ include($ugamela_root_path . 'common.php');
 
     $page               = parsetemplate( $PageTPL, $parse );
     display ( $page, $lang['flt_title'], false, '', true);
-?>

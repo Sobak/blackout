@@ -1,12 +1,5 @@
 <?php
 
-/**
- * chat.php
- *
- * @version 1
- * @copyright 2008 By e-Zobar for XNova
- */
-
 define('INSIDE'  , true);
 define('IN_ADMIN', true);
 
@@ -43,4 +36,3 @@ $parse = $lang;
     } else {
         message( $lang['sys_noalloaw'], $lang['sys_noaccess'] );
     }
-?>

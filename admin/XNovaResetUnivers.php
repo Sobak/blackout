@@ -1,12 +1,5 @@
 <?php
 
-/**
- * XNovaResetUnivers.php
- *
- * @version 1
- * @copyright 2008 By Chlorel for XNova
- */
-
 define('INSIDE'  , true);
 define('IN_ADMIN', true);
 
@@ -110,4 +103,3 @@ function XNovaResetUnivers ( $CurrentUser ) {
         $Page = parsetemplate($PageTpl, $parse);
         display ($Page, $lang['Reset'], false, '', true);
     }
-?>

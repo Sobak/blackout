@@ -1,12 +1,5 @@
 <?php
 
-/**
- * messagelist.php
- *
- * @version 1
- * @copyright 2008 by Chlorel for XNova
- */
-
 define('INSIDE'  , true);
 define('IN_ADMIN', true);
 
@@ -124,4 +117,3 @@ include($ugamela_root_path . 'common.php');
     } else {
         message($lang['sys_noalloaw'], $lang['sys_noaccess']);
     }
-?>

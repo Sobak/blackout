@@ -1,12 +1,5 @@
 <?php
 
-/**
- * ElementQueueFixer.php
- *
- * @version 1
- * @copyright 2008 By Chlorel for XNova
- */
-
 define('INSIDE'  , true);
 define('IN_ADMIN', true);
 
@@ -50,4 +43,3 @@ include($ugamela_root_path . 'common.php');
     }
 
     AdminMessage ($QuitMessage, $lang['adm_cleaner_title']);
-?>

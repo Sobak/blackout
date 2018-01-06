@@ -1,12 +1,5 @@
 <?php
 
-/**
- * deletuser.php
- *
- * @version 1.0
- * @copyright 2008 by Tom1991 for XNova
- */
-
 define('INSIDE'  , true);
 define('IN_ADMIN', true);
 
@@ -24,4 +17,3 @@ if ( $CurrentUser['authlevel'] >= 1 ) {
         $Page = parsetemplate( $PageTpl, $parse );
         display ( $Page, $lang['adminpanel'], false, '', true );
 }
-?>

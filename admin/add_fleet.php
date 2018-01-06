@@ -1,12 +1,5 @@
 <?php
 
-/**
- * add_fleet.php
- *
- * @version 1.0
- * @copyright 2008 by Tom1991 for XNova
- */
-
 define('INSIDE'  , true);
 define('IN_ADMIN', true);
 
@@ -82,4 +75,3 @@ $mode = $_GET['mode'];
     }
 
     display(parsetemplate(gettemplate('admin/add_fleet'), $parse), '', false);
-?>

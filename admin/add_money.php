@@ -1,14 +1,5 @@
 <?php
 
-/**
- * add_money.php
- *
- * @version 1.1
- * @copyright 2008 By Chlorel for XNova
- * portion to e-Zobar
- */
-
-
 define('INSIDE'  , true);
 define('IN_ADMIN', true);
 
@@ -45,4 +36,3 @@ include($ugamela_root_path . 'common.php');
     } else {
         AdminMessage ( $lang['sys_noalloaw'], $lang['sys_noaccess'] );
     }
-?>

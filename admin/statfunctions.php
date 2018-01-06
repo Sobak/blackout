@@ -1,12 +1,5 @@
 <?php
 
-/**
- * StatFunctions.php
- *
- * @version 1
- * @copyright 2008 by Chlorel for XNova
- */
-
 function GetTechnoPoints ( $CurrentUser ) {
     global $resource, $pricelist, $reslist;
 
@@ -84,4 +77,3 @@ function GetFleetPoints ( $CurrentPlanet ) {
 
     return $RetValue;
 }
-?>
