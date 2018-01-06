@@ -7,7 +7,7 @@
  * @copyright 2008 by e-Zobar for XNova
  */
 
-if (filesize('config.php') == 0) {
+if (file_exists('config.php') === false || filesize('config.php') == 0) {
 	header('location: install/');
 	exit();
 }

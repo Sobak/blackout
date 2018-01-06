@@ -4,8 +4,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ## [Unreleased]
+### Changed
+- Added `config.php` to `.gitignore`
+
 ### Fixed
 - Eliminate usage of deprecated PHP short tags (`<?`)
+- Improved check for `config.php` so installation is triggered correctly
 
 ## [0.1.0] - 2018-01-06
 ### Added
