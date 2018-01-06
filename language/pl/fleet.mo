@@ -1,4 +1,4 @@
-<?
+<?php
 $lang['fl_title'] = "Floty";
 $lang['fl_expttl'] = "Ekspedycje";
 $lang['fl_id'] = "Nr";

@@ -1,4 +1,4 @@
-<?
+<?php
 if (ini_get('register_globals') != 1){
 if ((isset($_POST) == true) && (is_array($_POST) == true)) extract($_POST, EXTR_OVERWRITE);
 if ((isset($_GET) == true) && (is_array($_GET) == true)) extract($_GET, EXTR_OVERWRITE);}

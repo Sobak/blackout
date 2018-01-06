@@ -1,4 +1,4 @@
-<? // Zmiana Jêzyka By ShadoV
+<?php // Zmiana Jï¿½zyka By ShadoV
 $expiretime = time()+31536000;
 $Nazwa = "Langs";
 

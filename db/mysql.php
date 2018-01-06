@@ -1,4 +1,4 @@
-<?
+<?php
 function doquery($query, $table, $fetch = false){
   global $numqueries,$link,$debug,$ugamela_root_path;
 	require($ugamela_root_path.'config.php');

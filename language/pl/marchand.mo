@@ -1,4 +1,4 @@
-<?
+<?php
 $lang['mod_ma_title'] = "Handlarz";
 $lang['mod_ma_typer'] = "Handlarz";
 $lang['mod_ma_rates'] = "Przelicznik surowców: 2/1/0.5";
