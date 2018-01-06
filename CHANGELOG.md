@@ -5,19 +5,23 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ## [Unreleased]
 ### Added
-- Full translation of Admin -> Add resources
-- Full translation of Admin -> Build statistics
-- Full translation of Admin -> Chat administration
-- Full translation of Admin -> Configuration page
-- Full translation of Admin -> Errors
-- Full translation of Admin -> md5 encoder
-- Full translation of Admin -> Players list
-- Full translation of Admin -> Subtract resources
-- Full translation of Admin -> Universum Reset
+- Complete Translation of following screens:
+    - Admin -> Add resources
+    - Admin -> Build statistics
+    - Admin -> Chat administration
+    - Admin -> Configuration
+    - Admin -> Errors
+    - Admin -> md5 encoder
+    - Admin -> Players list
+    - Admin -> Subtract resources
+    - Admin -> Universum Reset
+    - Contact
 
 ### Changed
 - Changed extension of language files from `*.mo` to `*.php`
-- Improved translation of left menu
+- Improved translations of
+    - Overview
+    - left menu
 
 ### Removed
 - Eliminated usage of `$phpEx`
