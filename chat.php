@@ -13,11 +13,11 @@ define('INSTALL' , false);
 $ugamela_root_path = './';
 include($ugamela_root_path . 'common.php');
 
-	includeLang('chat');
+includeLang('chat');
 
-	$nick = $user['username'];
-	$parse = $lang;
+$nick = $user['username'];
+$parse = $lang;
 
-	display(parsetemplate(gettemplate('chat_body'), $parse), $lang['Chat']);
+display(parsetemplate(gettemplate('chat_body'), $parse), $lang['Chat']);
 // Shoutbox by e-Zobar - Copyright XNova Team 2008
 ?>

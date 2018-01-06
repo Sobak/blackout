@@ -13,9 +13,9 @@ define('INSTALL' , false);
 $ugamela_root_path = './';
 include($ugamela_root_path . 'common.php');
 
-	includeLang('credit');
+includeLang('credit');
 
-	$parse   = $lang;
+$parse   = $lang;
 
-	display(parsetemplate(gettemplate('credit_body'), $parse), $lang['cred_credit'], false);
+display(parsetemplate(gettemplate('credit_body'), $parse), $lang['cred_credit'], false);
 ?>

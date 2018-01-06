@@ -21,17 +21,17 @@ $template = gettemplate('changelog_table');
 foreach($lang['changelog'] as $a => $b)
 {
 
-	$parse['version_number'] = $a;
-	$parse['description'] = nl2br($b);
+    $parse['version_number'] = $a;
+    $parse['description'] = nl2br($b);
 
-	$body .= parsetemplate($template, $parse);
+    $body .= parsetemplate($template, $parse);
 
 }
 
 $parse = $lang;
 $parse['body'] = $body;
 
-	display(parsetemplate(gettemplate('changelog_body'), $parse), "Change Log");
+display(parsetemplate(gettemplate('changelog_body'), $parse), "Change Log");
 
 // Created by Perberos. All rights reversed (C) 2006
 ?>
