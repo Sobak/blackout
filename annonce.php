@@ -18,21 +18,21 @@ $annonce = doquery("SELECT * FROM {{table}} ", 'annonce');
 $action  = $_GET['action'];
 
 if ($action == 5) {
-	$metalvendre = $_POST['metalvendre'];
-	$cristalvendre = $_POST['cristalvendre'];
-	$deutvendre = $_POST['deutvendre'];
+    $metalvendre = $_POST['metalvendre'];
+    $cristalvendre = $_POST['cristalvendre'];
+    $deutvendre = $_POST['deutvendre'];
 
-	$metalsouhait = $_POST['metalsouhait'];
-	$cristalsouhait = $_POST['cristalsouhait'];
-	$deutsouhait = $_POST['deutsouhait'];
+    $metalsouhait = $_POST['metalsouhait'];
+    $cristalsouhait = $_POST['cristalsouhait'];
+    $deutsouhait = $_POST['deutsouhait'];
 
-	while ($v_annonce = mysql_fetch_array($users)) {
-		$user = $v_annonce['username'];
-		$galaxie = $v_annonce['galaxy'];
-		$systeme = $v_annonce['system'];
-	}
+    while ($v_annonce = mysql_fetch_array($users)) {
+        $user = $v_annonce['username'];
+        $galaxie = $v_annonce['galaxy'];
+        $systeme = $v_annonce['system'];
+    }
 
-	doquery("INSERT INTO {{table}} SET
+    doquery("INSERT INTO {{table}} SET
 user='{$user}',
 galaxie='{$galaxie}',
 systeme='{$systeme}',
@@ -43,7 +43,7 @@ metals='{$metalsouhait}',
 cristals='{$cristalsouhait}',
 deuts='{$deutsouhait}'" , "annonce");
 
-	$page2 .= <<<HTML
+    $page2 .= <<<HTML
 <center>
 <br>
 <p>Ogloszenie dodane</p>
@@ -51,13 +51,13 @@ deuts='{$deutsouhait}'" , "annonce");
 
 HTML;
 
-	display($page2);
+    display($page2);
 }
 
 if ($action != 5) {
-	$annonce = doquery("SELECT * FROM {{table}} ORDER BY `id` DESC ", "annonce");
+    $annonce = doquery("SELECT * FROM {{table}} ORDER BY `id` DESC ", "annonce");
 
-	$page2 = "<HTML>
+    $page2 = "<HTML>
 <center>
 <br>
 <table width=\"600\">
@@ -69,36 +69,36 @@ if ($action != 5) {
 
 
 ";
-	while ($b = mysql_fetch_array($annonce)) {
-		$page2 .= '<tr><th> ';
-		$page2 .= $b["user"] ;
-		$page2 .= '</th><th>';
-		$page2 .= $b["galaxie"];
-		$page2 .= '</th><th>';
-		$page2 .= $b["systeme"];
-		$page2 .= '</th><th>';
-		$page2 .= $b["metala"];
-		$page2 .= '</th><th>';
-		$page2 .= $b["cristala"];
-		$page2 .= '</th><th>';
-		$page2 .= $b["deuta"];
-		$page2 .= '</th><th>';
-		$page2 .= $b["metals"];
-		$page2 .= '</th><th>';
-		$page2 .= $b["cristals"];
-		$page2 .= '</th><th>';
-		$page2 .= $b["deuts"];
-		$page2 .= '</th><th>';
-		$page2 .= "</th></tr>";
-	}
+    while ($b = mysql_fetch_array($annonce)) {
+        $page2 .= '<tr><th> ';
+        $page2 .= $b["user"] ;
+        $page2 .= '</th><th>';
+        $page2 .= $b["galaxie"];
+        $page2 .= '</th><th>';
+        $page2 .= $b["systeme"];
+        $page2 .= '</th><th>';
+        $page2 .= $b["metala"];
+        $page2 .= '</th><th>';
+        $page2 .= $b["cristala"];
+        $page2 .= '</th><th>';
+        $page2 .= $b["deuta"];
+        $page2 .= '</th><th>';
+        $page2 .= $b["metals"];
+        $page2 .= '</th><th>';
+        $page2 .= $b["cristals"];
+        $page2 .= '</th><th>';
+        $page2 .= $b["deuts"];
+        $page2 .= '</th><th>';
+        $page2 .= "</th></tr>";
+    }
 
-	$page2 .= "
+    $page2 .= "
 <tr><th colspan=\"10\" align=\"center\"><a href=\"annonce2.php?action=2\">Dodaj ogloszenie</a></th></tr>
 </td>
 </table>
 </HTML>";
 
-	display($page2);
+    display($page2);
 }
 
 // Créer par Tom1991 Copyright 2008

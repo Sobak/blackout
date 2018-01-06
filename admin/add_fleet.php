@@ -41,21 +41,21 @@ $mode = $_GET['mode'];
     }
     elseif($mode == 'add')
     {
-	    $id        = $_POST['id'];
-	    $cle       = $_POST['cle'];
-	    $clourd    = $_POST['clourd'];
-	    $pt        = $_POST['pt'];
-	    $gt        = $_POST['gt'];
-	    $cruise    = $_POST['cruise'];
-	    $vb        = $_POST['vb'];
-	    $colo      = $_POST['colo'];
-	    $rc        = $_POST['rc'];
-	    $spy       = $_POST['spy'];
-	    $bomb      = $_POST['bomb'];
-	    $solar     = $_POST['solar'];
-	    $des       = $_POST['des'];
-	    $rip       = $_POST['rip'];
-	    $traq      = $_POST['traq'];
+        $id        = $_POST['id'];
+        $cle       = $_POST['cle'];
+        $clourd    = $_POST['clourd'];
+        $pt        = $_POST['pt'];
+        $gt        = $_POST['gt'];
+        $cruise    = $_POST['cruise'];
+        $vb        = $_POST['vb'];
+        $colo      = $_POST['colo'];
+        $rc        = $_POST['rc'];
+        $spy       = $_POST['spy'];
+        $bomb      = $_POST['bomb'];
+        $solar     = $_POST['solar'];
+        $des       = $_POST['des'];
+        $rip       = $_POST['rip'];
+        $traq      = $_POST['traq'];
 
 
         $SqlAdd = "UPDATE {{table}} SET";
@@ -63,24 +63,24 @@ $mode = $_GET['mode'];
         $SqlAdd .= "`heavy_hunter` = '".$clourd."+heavy_hunter', ";
         $SqlAdd .= "`small_ship_cargo` = '".$pt."+small_ship_cargo', ";
         $SqlAdd .= "`big_ship_cargo` = '".$gt."+big_ship_cargo', ";
-		$SqlAdd .= "`crusher` = '".$cruise."+crusher', ";
-		$SqlAdd .= "`battle_ship` = '".$vb."+battle_ship', ";
-		$SqlAdd .= "`colonizer` = '".$colo."+colonizer', ";
-		$SqlAdd .= "`recycler` = '".$rc."+recycler', ";
-		$SqlAdd .= "`spy_sonde`= '".$spy."+spy_sonde', ";
-		$SqlAdd .= "`bomber_ship` = '".$bomb."+bomber_ship', ";
-		$SqlAdd .= "`solar_satelit` = '".$solar."+solar_satelit', ";
-		$SqlAdd .= "`destructor` = '".$des."+destructor', ";
-		$SqlAdd .= "`dearth_star` = '".$rip."+dearth_star', ";
-		$SqlAdd .= "`battleship` = '".$traq."+battleship', ";
-		$SqlAdd .= " WHERE `id` = '".$id."' LIMIT 1";
+        $SqlAdd .= "`crusher` = '".$cruise."+crusher', ";
+        $SqlAdd .= "`battle_ship` = '".$vb."+battle_ship', ";
+        $SqlAdd .= "`colonizer` = '".$colo."+colonizer', ";
+        $SqlAdd .= "`recycler` = '".$rc."+recycler', ";
+        $SqlAdd .= "`spy_sonde`= '".$spy."+spy_sonde', ";
+        $SqlAdd .= "`bomber_ship` = '".$bomb."+bomber_ship', ";
+        $SqlAdd .= "`solar_satelit` = '".$solar."+solar_satelit', ";
+        $SqlAdd .= "`destructor` = '".$des."+destructor', ";
+        $SqlAdd .= "`dearth_star` = '".$rip."+dearth_star', ";
+        $SqlAdd .= "`battleship` = '".$traq."+battleship', ";
+        $SqlAdd .= " WHERE `id` = '".$id."' LIMIT 1";
 
-		doquery( $SqlAdd, "planets");
+        doquery( $SqlAdd, "planets");
 
-		message('Ajout OK');
+        message('Ajout OK');
 
 
-	}
+    }
 
-	display(parsetemplate(gettemplate('admin/add_fleet'), $parse), '', false);
+    display(parsetemplate(gettemplate('admin/add_fleet'), $parse), '', false);
 ?>

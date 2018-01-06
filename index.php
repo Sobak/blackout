@@ -8,8 +8,8 @@
  */
 
 if (file_exists('config.php') === false || filesize('config.php') == 0) {
-	header('location: install/');
-	exit();
+    header('location: install/');
+    exit();
 }
 
 header('location: login.php');

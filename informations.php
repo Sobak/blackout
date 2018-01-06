@@ -30,8 +30,8 @@ include($ugamela_root_path . 'common.php');
     $parse['default_lang'] = $game_config['default_lang'];
 
     //Utilisation du parse adequat
-		
-	display(parsetemplate(gettemplate('informations_corps'), $parse), '', false);
+        
+    display(parsetemplate(gettemplate('informations_corps'), $parse), '', false);
     
 // Created by Perberos. All rights reversed (C) 2006 (he's juste written this copyrights, and the includes...)
 //CREATED AND DESIGNED BY BONO, NO RIGHTS RESERVED

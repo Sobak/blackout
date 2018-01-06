@@ -22,7 +22,7 @@ while ($ban = mysql_fetch_row($bans)) {
     $ban['to'] = gmdate('d/m/Y G:i:s', $ban[5]);
     $ban['by'] = $ban[6];
 
-	$parse['banned_rows'] .= parsetemplate($row_template, $ban);
+    $parse['banned_rows'] .= parsetemplate($row_template, $ban);
 }
 
 if ($bans_count) {

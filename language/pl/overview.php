@@ -60,7 +60,7 @@ $lang['ov_planet_to_target'] = "planeta ";
 $lang['ov_moon_to_target']   = "księżyc ";
 $lang['ov_debris_to_target'] = "pole zniszczeń ";
 $lang['ov_explo_to_target']  = "pozycja ";
-$lang['ov_mission'] 		 = ". Misja floty : ";
+$lang['ov_mission']          = ". Misja floty : ";
 
 $lang['ov_explo_stay']       = " bada ";
 $lang['ov_explo_mission']    = ". Flota z misją : ";

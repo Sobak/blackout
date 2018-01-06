@@ -10,9 +10,9 @@
 
 // Tech : A : 11  B : 11  C : 13
 
-// Points de structure  	4.000
-// Puissance du bouclier 	10
-// Valeur d'attaque	 	50
+// Points de structure      4.000
+// Puissance du bouclier     10
+// Valeur d'attaque         50
 
 // A : 105
 // B :  21
@@ -103,43 +103,43 @@ function FleetCombat ( $AttackFleet, $AttackTech, $AttackCount, $TargetFleet, $T
 }
 
 function GetWeaponsPerType ( $TypeArray, $Tech ) {
-	global $capacity;
-	// Calcul de la force d'Attaque
-	if (!is_null($TypeArray)) {
-		foreach($TypeArray as $Type => $Count) {
-			$Attack[$Type]      = round ($capacity[$Type]['attack'] + (($capacity[$Type]['attack'] * $Tech['109']) / 10));
-			$Units['attack']   += $Count * $Attack[$Type];
-		}
-	}
+    global $capacity;
+    // Calcul de la force d'Attaque
+    if (!is_null($TypeArray)) {
+        foreach($TypeArray as $Type => $Count) {
+            $Attack[$Type]      = round ($capacity[$Type]['attack'] + (($capacity[$Type]['attack'] * $Tech['109']) / 10));
+            $Units['attack']   += $Count * $Attack[$Type];
+        }
+    }
 
 }
 
 function GetShiedsPerType ( $TypeArray, $Tech ) {
-	global $capacity;
-	// Calcul des points de Bouclier
-	if (!is_null($TypeArray)) {
-		foreach($TypeArray as $Type => $Count) {
-			$Shield[$Type]      = round ($capacity[$Type]['shield'] + (($capacity[$Type]['shield'] * $Tech['110']) / 10));
-			$Units['shield']   += $Count * $Shield[$Type];
-		}
-	}
+    global $capacity;
+    // Calcul des points de Bouclier
+    if (!is_null($TypeArray)) {
+        foreach($TypeArray as $Type => $Count) {
+            $Shield[$Type]      = round ($capacity[$Type]['shield'] + (($capacity[$Type]['shield'] * $Tech['110']) / 10));
+            $Units['shield']   += $Count * $Shield[$Type];
+        }
+    }
 
 }
 
 function GetHullPerType ( $TypeArray, $Tech ) {
-	global $pricelist;
-	// Calcul des points de Coque
-	if (!is_null($TypeArray)) {
-		$Units['metal']     = 0;
-		$Units['crystal']   = 0;
-		$Units['deuterium'] = 0;
-		foreach($TypeArray as $Type => $Count) {
-			$Hull[$Type]         = ($pricelist[$Type]['metal'] + $pricelist[$Type]['crystal']) + ((($pricelist[$Type]['metal'] + $pricelist[$Type]['crystal']) * $Tech['111']) / 10);
-			$Units['metal']     += $Count * $pricelist[$Type]['metal'];
-			$Units['crystal']   += $Count * $pricelist[$Type]['crystal'];
-			$Units['deuterium'] += $Count * $pricelist[$Type]['deuterium'];
-		}
-	}
+    global $pricelist;
+    // Calcul des points de Coque
+    if (!is_null($TypeArray)) {
+        $Units['metal']     = 0;
+        $Units['crystal']   = 0;
+        $Units['deuterium'] = 0;
+        foreach($TypeArray as $Type => $Count) {
+            $Hull[$Type]         = ($pricelist[$Type]['metal'] + $pricelist[$Type]['crystal']) + ((($pricelist[$Type]['metal'] + $pricelist[$Type]['crystal']) * $Tech['111']) / 10);
+            $Units['metal']     += $Count * $pricelist[$Type]['metal'];
+            $Units['crystal']   += $Count * $pricelist[$Type]['crystal'];
+            $Units['deuterium'] += $Count * $pricelist[$Type]['deuterium'];
+        }
+    }
 
 }
 ?>

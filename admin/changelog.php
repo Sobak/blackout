@@ -22,10 +22,10 @@ $parse = $lang;
 foreach($lang['changelog'] as $a => $b)
 {
 
-	$parse['version_number'] = $a;
-	$parse['description']    = nl2br($b);
+    $parse['version_number'] = $a;
+    $parse['description']    = nl2br($b);
 
-	$body .= parsetemplate($template, $parse);
+    $body .= parsetemplate($template, $parse);
 
 }
 

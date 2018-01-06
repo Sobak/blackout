@@ -24,26 +24,26 @@ $XNovaRootURL  = "http://". $XNova_Host ."/". $XNova_URI ."/";
 $ugamela_root_path = './';
 include($ugamela_root_path . 'common.php');
 
-	$page  = "<html>";
-	$page .= "<head>";
-	$page .= "<meta http-equiv=\"Content-Type\" content=\"text/html;charset=". $langInfos['ENCODING']."\">";
-	$page .= "<link rel=\"shortcut icon\" href=\"favicon.ico\">";
-	$page .= "<title>". $game_config['game_name'] ."</title>";
-	$page .= "</head>";
+    $page  = "<html>";
+    $page .= "<head>";
+    $page .= "<meta http-equiv=\"Content-Type\" content=\"text/html;charset=". $langInfos['ENCODING']."\">";
+    $page .= "<link rel=\"shortcut icon\" href=\"favicon.ico\">";
+    $page .= "<title>". $game_config['game_name'] ."</title>";
+    $page .= "</head>";
 
-	$page .= "<frameset framespacing=\"0\" border=\"0\" cols=\"190,*\" frameborder=\"0\">";
-	$page .= "<body>";
-	$page .= "<frame name=\"LeftMenu\" target=\"Mainframe\" src=\"leftmenu.php\" noresize scrolling=\"no\" marginwidth=\"0\" marginheight=\"0\">";
-	$page .= "<frame name=\"Hauptframe\" src=\"overview.php\">";
-	$page .= "<noframes>";
-	$page .= "<p>". $lang['NoFrames']."</p>";
-	$page .= "</noframes>";
-	$page .= "</frameset>";
+    $page .= "<frameset framespacing=\"0\" border=\"0\" cols=\"190,*\" frameborder=\"0\">";
+    $page .= "<body>";
+    $page .= "<frame name=\"LeftMenu\" target=\"Mainframe\" src=\"leftmenu.php\" noresize scrolling=\"no\" marginwidth=\"0\" marginheight=\"0\">";
+    $page .= "<frame name=\"Hauptframe\" src=\"overview.php\">";
+    $page .= "<noframes>";
+    $page .= "<p>". $lang['NoFrames']."</p>";
+    $page .= "</noframes>";
+    $page .= "</frameset>";
 
-	$page .= "</body>";
-	$page .= "</html>";
+    $page .= "</body>";
+    $page .= "</html>";
 
-	echo $page;
+    echo $page;
 
 // -----------------------------------------------------------------------------------------------------------
 // History version

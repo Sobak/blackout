@@ -11,14 +11,14 @@
 
   function sendnewpassword($mail){
 
-  	$ExistMail = doquery("SELECT `email` FROM {{table}} WHERE `email` = '". $mail ."' LIMIT 1;", 'users', true);
+      $ExistMail = doquery("SELECT `email` FROM {{table}} WHERE `email` = '". $mail ."' LIMIT 1;", 'users', true);
 
-    if (empty($ExistMail['email']))	{
-	   message('L\'adresse n\'existe pas !','Erreur');
-	}
+    if (empty($ExistMail['email']))    {
+       message('L\'adresse n\'existe pas !','Erreur');
+    }
 
-	else{
-	//Caractere qui seront contenus dans le nouveau mot de passe
+    else{
+    //Caractere qui seront contenus dans le nouveau mot de passe
     $Caracters="aazertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN1234567890";
 
     $Count=strlen($Caracters);

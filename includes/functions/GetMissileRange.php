@@ -8,14 +8,14 @@
  */
 
 function GetMissileRange () {
-	global $resource, $user;
+    global $resource, $user;
 
-	if ($user[$resource[117]] > 0) {
-		$MissileRange = ($user[$resource[117]] * 5) - 1;
-	} elseif ($user[$resource[117]] == 0) {
-		$MissileRange = 0;
-	}
+    if ($user[$resource[117]] > 0) {
+        $MissileRange = ($user[$resource[117]] * 5) - 1;
+    } elseif ($user[$resource[117]] == 0) {
+        $MissileRange = 0;
+    }
 
-	return $MissileRange;
+    return $MissileRange;
 }
 ?>

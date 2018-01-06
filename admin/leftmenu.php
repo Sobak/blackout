@@ -16,7 +16,7 @@ include($ugamela_root_path . 'common.php');
 
 includeLang('leftmenu');
 
-	if ($user['authlevel'] == "1") {
+    if ($user['authlevel'] == "1") {
       $parse                 = $lang;
       $parse['mf']           = "Hauptframe";
       $parse['dpath']        = $dpath;
@@ -25,7 +25,7 @@ includeLang('leftmenu');
       $Page                  = parsetemplate(gettemplate('admin/left_menu_modo'), $parse);
       display( $Page, "", false, '', true);
    }
-	elseif ($user['authlevel'] == "2") {
+    elseif ($user['authlevel'] == "2") {
       $parse                 = $lang;
       $parse['mf']           = "Hauptframe";
       $parse['dpath']        = $dpath;
@@ -34,7 +34,7 @@ includeLang('leftmenu');
       $Page                  = parsetemplate(gettemplate('admin/left_menu_op'), $parse);
       display( $Page, "", false, '', true);
    }
-	elseif ($user['authlevel'] >= "3") {
+    elseif ($user['authlevel'] >= "3") {
       $parse                 = $lang;
       $parse['mf']           = "Hauptframe";
       $parse['dpath']        = $dpath;
@@ -42,7 +42,7 @@ includeLang('leftmenu');
       $parse['servername']   = XNova;
       $Page                  = parsetemplate(gettemplate('admin/left_menu'), $parse);
       display( $Page, "", false, '', true);
-	} else {
-		message( $lang['sys_noalloaw'], $lang['sys_noaccess'] );
-	}
+    } else {
+        message( $lang['sys_noalloaw'], $lang['sys_noaccess'] );
+    }
 ?>

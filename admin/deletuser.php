@@ -16,13 +16,13 @@ include( $ugamela_root_path . 'extension.inc' );
 include( $ugamela_root_path . 'common.php' );
 
 if ( $CurrentUser['authlevel'] >= 1 ) {
-				$PageTpl = gettemplate( "admin/deletuser" );
+                $PageTpl = gettemplate( "admin/deletuser" );
 
-				if ( $mode != "delet" ) {
-								$parse['adm_bt_delet'] = $lang['adm_bt_delet'];
-				}
+                if ( $mode != "delet" ) {
+                                $parse['adm_bt_delet'] = $lang['adm_bt_delet'];
+                }
 
-		$Page = parsetemplate( $PageTpl, $parse );
-		display ( $Page, $lang['adminpanel'], false, '', true );
+        $Page = parsetemplate( $PageTpl, $parse );
+        display ( $Page, $lang['adminpanel'], false, '', true );
 }
 ?>

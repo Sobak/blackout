@@ -1,7 +1,7 @@
 <?php
 
 if (!defined('INSIDE')) {
-	die("attemp hacking");
+    die("attemp hacking");
 }
 
 // Registration form

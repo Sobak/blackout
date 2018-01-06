@@ -40,6 +40,6 @@ $parse = $lang;
 $parse['Gracz'] = $Gracz;
 $parse['Zloto'] = $Zloto;
 $parse['gameurl']  = GAMEURL;
-	display(parsetemplate(gettemplate('ataker'), $parse), $lang['ataker'], false);
+    display(parsetemplate(gettemplate('ataker'), $parse), $lang['ataker'], false);
 }
 ?>

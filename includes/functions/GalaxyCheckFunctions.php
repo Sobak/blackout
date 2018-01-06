@@ -14,16 +14,16 @@
 
 // Suppression complete d'une lune
 function CheckAbandonMoonState ($lunarow) {
-	if (($lunarow['destruyed'] + 172800) <= time() && $lunarow['destruyed'] != 0) {
-		$query = doquery("DELETE FROM {{table}} WHERE id = '" . $lunarow['id'] . "'", "lunas");
-	}
+    if (($lunarow['destruyed'] + 172800) <= time() && $lunarow['destruyed'] != 0) {
+        $query = doquery("DELETE FROM {{table}} WHERE id = '" . $lunarow['id'] . "'", "lunas");
+    }
 }
 
 // Suppression complete d'une planete
 function CheckAbandonPlanetState (&$planet) {
-	if ($planet['destruyed'] <= time()) {
-		doquery("DELETE FROM {{table}} WHERE id={$planet['id']}", 'planets');
-		doquery("UPDATE {{table}} SET id_planet=0 WHERE id_planet={$planet['id']}", 'galaxy');
-	}
+    if ($planet['destruyed'] <= time()) {
+        doquery("DELETE FROM {{table}} WHERE id={$planet['id']}", 'planets');
+        doquery("UPDATE {{table}} SET id_planet=0 WHERE id_planet={$planet['id']}", 'galaxy');
+    }
 }
 ?>

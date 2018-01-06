@@ -1,10 +1,10 @@
 <?php
 //nie caly
 $lang['user_level'] = array (
-	'0' => 'Gracz',
-	'1' => 'Moderator',
-	'2' => 'Operator',
-	'3' => 'Administrator',
+    '0' => 'Gracz',
+    '1' => 'Moderator',
+    '2' => 'Operator',
+    '3' => 'Administrator',
 );
 
 $lang['sys_overview'] = "Podgląd";

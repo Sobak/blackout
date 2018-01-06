@@ -1,10 +1,10 @@
 <?php
 
 $lang['user_level'] = array (
-	'0' => 'Player',
-	'1' => 'Game Operator',
-	'2' => 'Super Game Operator',
-	'3' => 'Administrator',
+    '0' => 'Player',
+    '1' => 'Game Operator',
+    '2' => 'Super Game Operator',
+    '3' => 'Administrator',
 );
 
 $lang['sys_overview'] = "Vue G&eacute;n&eacute;rale";

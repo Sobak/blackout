@@ -11,12 +11,12 @@
 // $Element   -> L'element visé
 // $Count     -> Nombre d'elements a construire
 function GetElementRessources ( $Element, $Count ) {
-	global $pricelist;
+    global $pricelist;
 
-	$ResType['metal']     = ($pricelist[$Element]['metal']     * $Count);
-	$ResType['crystal']   = ($pricelist[$Element]['crystal']   * $Count);
-	$ResType['deuterium'] = ($pricelist[$Element]['deuterium'] * $Count);
+    $ResType['metal']     = ($pricelist[$Element]['metal']     * $Count);
+    $ResType['crystal']   = ($pricelist[$Element]['crystal']   * $Count);
+    $ResType['deuterium'] = ($pricelist[$Element]['deuterium'] * $Count);
 
-	return $ResType;
+    return $ResType;
 }
 ?>

@@ -1,16 +1,16 @@
 <?php
 // kallosz /nie szystko
-$lang['Tech'] 			= 'Tech';
-$lang['Requirements']	= 'Wymagania';
-$lang['Metal'] 			= 'Metal';
-$lang['Crystal'] 		= 'Kryształ';
-$lang['Deuterium'] 		= 'Deuter';
-$lang['Message']     	= "Wiadomości";
-$lang['Energy'] 		= 'Energia';
-$lang['level'] 			= 'poziom';
-$lang['treeinfo']     	= "[i]";
-$lang['comingsoon']   	= "Wkrótce";
-$lang['te_dt_tx_pre'] 	= "Pr&eacute;requis pour";
+$lang['Tech']             = 'Tech';
+$lang['Requirements']    = 'Wymagania';
+$lang['Metal']             = 'Metal';
+$lang['Crystal']         = 'Kryształ';
+$lang['Deuterium']         = 'Deuter';
+$lang['Message']         = "Wiadomości";
+$lang['Energy']         = 'Energia';
+$lang['level']             = 'poziom';
+$lang['treeinfo']         = "[i]";
+$lang['comingsoon']       = "Wkrótce";
+$lang['te_dt_tx_pre']     = "Pr&eacute;requis pour";
 
 $lang['type_mission'][1] = 'Atakuj'; 
 $lang['type_mission'][2] = 'Atak zwi&#261;zku'; 

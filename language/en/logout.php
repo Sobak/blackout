@@ -2,10 +2,10 @@
 
 /*******************************************************************************************************
 *
-*		german UGamela
-*		http://ugamela-forum.pheelgood.net
-*		UGamela basescripts from Perberos @2006 (all rights reversed)
-*		
+*        german UGamela
+*        http://ugamela-forum.pheelgood.net
+*        UGamela basescripts from Perberos @2006 (all rights reversed)
+*        
 *
 *******************************************************************************************************/
 

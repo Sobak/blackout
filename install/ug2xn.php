@@ -258,13 +258,13 @@ if (!$dz) {
 fwrite($dz, "<"."?"."p"."h"."p  //config.php :: XNova server
 
 if(!defined(\"INSIDE\")){ die(\"attemp hacking\");}
-	\$dbsettings = Array(
-		\"server\"        => \"".$host."\", /"."/ MySQL server name. (Default: localhost)
-		\"user\"          => \"".$user."\", /"."/ MySQL username.
-		\"pass\"          => \"".$pass."\", /"."/ MySQL password.
-		\"name\"          => \"".$db."\", /"."/ MySQL database name.
-		\"prefix\"        => \"".$prefix."\", /"."/ Prefix for table names.
-		\"secretword\"    => \"XNova".$zufall."\"); /"."/ Secret word used when hashing information for cookies.
+    \$dbsettings = Array(
+        \"server\"        => \"".$host."\", /"."/ MySQL server name. (Default: localhost)
+        \"user\"          => \"".$user."\", /"."/ MySQL username.
+        \"pass\"          => \"".$pass."\", /"."/ MySQL password.
+        \"name\"          => \"".$db."\", /"."/ MySQL database name.
+        \"prefix\"        => \"".$prefix."\", /"."/ Prefix for table names.
+        \"secretword\"    => \"XNova".$zufall."\"); /"."/ Secret word used when hashing information for cookies.
 
 
 ?".">");

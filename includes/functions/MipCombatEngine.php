@@ -28,7 +28,7 @@ function MipAttack ($NbreMip, $IDAversaire) {
 */
 
     $TableauDeDefense = array(
-		401 => array ('shield' => 20),
+        401 => array ('shield' => 20),
         402 => array ('shield' => 25),
         403 => array ('shield' => 100),
         404 => array ('shield' => 200),
@@ -39,7 +39,7 @@ function MipAttack ($NbreMip, $IDAversaire) {
     );
 
     $DefenseAdversaire = array(
-		401 => ($InfoAdversaire['misil_launcher']),
+        401 => ($InfoAdversaire['misil_launcher']),
         402 => ($InfoAdversaire['small_laser']),
         403 => ($InfoAdversaire['big_laser']),
         404 => ($InfoAdversaire['gauss_canyon']),
@@ -47,7 +47,7 @@ function MipAttack ($NbreMip, $IDAversaire) {
         406 => ($InfoAdversaire['buster_canyon']),
         407 => ($InfoAdversaire['small_protection_shield']),
         408 => ($InfoAdversaire['big_protection_shield'])
-	);
+    );
 
     while ($PuissanceAttaque > 20) {
         $RandomDefense = rand(401, 408);
