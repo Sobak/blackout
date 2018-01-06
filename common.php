@@ -1,16 +1,6 @@
 <?php
 
-/**
- * common.php
- *
- * @version 1.0
- * @copyright 2008 by ??????? for XNova
- */
-
-define('VERSION','0.8');                // Passera en version 1.0 quand toutes les fonctions ET l'install seront correct
-                                                                // Et c'est pas encore demain la veille !!!
-
-set_magic_quotes_runtime(0);
+define('VERSION','0.8');
 
 $game_config   = array();
 $user          = array();
@@ -33,26 +23,26 @@ include($ugamela_root_path . 'includes/unlocalised.php');
 include($ugamela_root_path . 'includes/todofleetcontrol.php');
 include($ugamela_root_path . 'language/'. DEFAULT_LANG .'/lang_info.cfg');
 
-if (INSTALL != true) {
+if (!defined('INSTALL') || INSTALL !== true) {
     include($ugamela_root_path . 'includes/vars.php');
     include($ugamela_root_path . 'includes/db.php');
     include($ugamela_root_path . 'includes/strings.php');
 
-    // Lecture de la table de configuration
+    // Read the config table
     $query = doquery("SELECT * FROM {{table}}",'config');
     while ( $row = mysql_fetch_assoc($query) ) {
         $game_config[$row['config_name']] = $row['config_value'];
     }
 
     if ($InLogin != true) {
-        $Result        = CheckTheUser ( $IsUserChecked );
+        $Result        = CheckTheUser($IsUserChecked);
         $IsUserChecked = $Result['state'];
         $user          = $Result['record'];
     } elseif ($InLogin == false) {
-        // Jeux en mode 'clos' ???
+        // Are we in maintenance mode?
         if( $game_config['game_disable']) {
             if ($user['authlevel'] < 1) {
-                message ( stripslashes ( $game_config['close_reason'] ), $game_config['game_name'] );
+                message(stripslashes($game_config['close_reason']), $game_config['game_name']);
             }
         }
     }
@@ -69,7 +59,7 @@ if (INSTALL != true) {
             $array['planet']      = $row['fleet_start_planet'];
             $array['planet_type'] = $row['fleet_start_type'];
 
-            $temp = FlyingFleetHandler ($array);
+            FlyingFleetHandler ($array);
         }
 
         $_fleets = doquery("SELECT * FROM {{table}} WHERE `fleet_end_time` <= '".time()."';", 'fleets'); //  OR fleet_end_time <= ".time()
@@ -80,7 +70,7 @@ if (INSTALL != true) {
             $array['planet']      = $row['fleet_end_planet'];
             $array['planet_type'] = $row['fleet_end_type'];
 
-            $temp = FlyingFleetHandler ($array);
+            FlyingFleetHandler ($array);
         }
 
         unset($_fleets);
@@ -108,12 +98,7 @@ if (INSTALL != true) {
         $galaxyrow = doquery("SELECT * FROM {{table}} WHERE `id_planet` = '".$planetrow['id']."';", 'galaxy', true);
 
         CheckPlanetUsedFields($planetrow);
-    } else {
-        // Bah si d�ja y a quelqu'un qui passe par l� et qu'a rien a faire de press� ...
-        // On se sert de lui pour mettre a jour tout les retardataires !!
     }
 } else {
     $dpath     = "../" . DEFAULT_SKINPATH;
 }
-
-?>
