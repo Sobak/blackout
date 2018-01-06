@@ -7,6 +7,8 @@ $ugamela_root_path = './../';
 include( $ugamela_root_path . 'extension.inc' );
 include( $ugamela_root_path . 'common.php' );
 
+restrictAccess($user, LEVEL_OPERATOR);
+
 if ( $CurrentUser['authlevel'] >= 1 ) {
                 $PageTpl = gettemplate( "admin/deletuser" );
 

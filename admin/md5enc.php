@@ -6,23 +6,21 @@ define('IN_ADMIN', true);
 $ugamela_root_path = './../';
 include($ugamela_root_path . 'common.php');
 
-    if ($user['authlevel'] >= "1") {
-        includeLang('admin/md5enc');
+restrictAccess($user, LEVEL_OPERATOR);
 
-        $parse   = $lang;
+includeLang('admin/md5enc');
 
-        if ($_POST['md5q'] != "") {
-            $parse['md5_md5'] = $_POST['md5q'];
-            $parse['md5_enc'] = md5 ($_POST['md5q']);
-        } else {
-            $parse['md5_md5'] = "";
-            $parse['md5_enc'] = md5 ("");
-        }
+$parse   = $lang;
 
-        $PageTpl = gettemplate("admin/md5enc");
-        $Page    = parsetemplate( $PageTpl, $parse);
+if ($_POST['md5q'] != "") {
+    $parse['md5_md5'] = $_POST['md5q'];
+    $parse['md5_enc'] = md5 ($_POST['md5q']);
+} else {
+    $parse['md5_md5'] = "";
+    $parse['md5_enc'] = md5 ("");
+}
 
-        display( $Page, $lang['md5_title'], false, '', true );
-    } else {
-        message( $lang['sys_noalloaw'], $lang['sys_noaccess'] );
-    }
+$PageTpl = gettemplate("admin/md5enc");
+$Page    = parsetemplate( $PageTpl, $parse);
+
+display( $Page, $lang['md5_title'], false, '', true );

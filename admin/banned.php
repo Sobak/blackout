@@ -6,55 +6,53 @@ define('IN_ADMIN', true);
 $ugamela_root_path = './../';
 include($ugamela_root_path . 'common.php');
 
-    if ($user['authlevel'] >= 1) {
-        includeLang('admin');
+restrictAccess($user, LEVEL_OPERATOR);
 
-        $mode      = $_POST['mode'];
+includeLang('admin');
 
-        $PageTpl   = gettemplate("admin/banned");
+$mode      = $_POST['mode'];
 
-        $parse     = $lang;
-        if ($mode == 'banit') {
-            $name              = $_POST['name'];
-            $reas              = $_POST['why'];
-            $days              = $_POST['days'];
-            $hour              = $_POST['hour'];
-            $mins              = $_POST['mins'];
-            $secs              = $_POST['secs'];
+$PageTpl   = gettemplate("admin/banned");
 
-            $admin             = $user['username'];
-            $mail              = $user['email'];
+$parse     = $lang;
+if ($mode == 'banit') {
+    $name              = $_POST['name'];
+    $reas              = $_POST['why'];
+    $days              = $_POST['days'];
+    $hour              = $_POST['hour'];
+    $mins              = $_POST['mins'];
+    $secs              = $_POST['secs'];
 
-            $Now               = time();
-            $BanTime           = $days * 86400;
-            $BanTime          += $hour * 3600;
-            $BanTime          += $mins * 60;
-            $BanTime          += $secs;
-            $BannedUntil       = $Now + $BanTime;
+    $admin             = $user['username'];
+    $mail              = $user['email'];
 
-            $QryInsertBan      = "INSERT INTO {{table}} SET ";
-            $QryInsertBan     .= "`who` = \"". $name ."\", ";
-            $QryInsertBan     .= "`theme` = '". $reas ."', ";
-            $QryInsertBan     .= "`who2` = '". $name ."', ";
-            $QryInsertBan     .= "`time` = '". $Now ."', ";
-            $QryInsertBan     .= "`longer` = '". $BannedUntil ."', ";
-            $QryInsertBan     .= "`author` = '". $admin ."', ";
-            $QryInsertBan     .= "`email` = '". $mail ."';";
-            doquery( $QryInsertBan, 'banned');
+    $Now               = time();
+    $BanTime           = $days * 86400;
+    $BanTime          += $hour * 3600;
+    $BanTime          += $mins * 60;
+    $BanTime          += $secs;
+    $BannedUntil       = $Now + $BanTime;
 
-            $QryUpdateUser     = "UPDATE {{table}} SET ";
-            $QryUpdateUser    .= "`bana` = '1', ";
-            $QryUpdateUser    .= "`banaday` = '". $BannedUntil ."' ";
-            $QryUpdateUser    .= "WHERE ";
-            $QryUpdateUser    .= "`username` = \"". $name ."\";";
-            doquery( $QryUpdateUser, 'users');
+    $QryInsertBan      = "INSERT INTO {{table}} SET ";
+    $QryInsertBan     .= "`who` = \"". $name ."\", ";
+    $QryInsertBan     .= "`theme` = '". $reas ."', ";
+    $QryInsertBan     .= "`who2` = '". $name ."', ";
+    $QryInsertBan     .= "`time` = '". $Now ."', ";
+    $QryInsertBan     .= "`longer` = '". $BannedUntil ."', ";
+    $QryInsertBan     .= "`author` = '". $admin ."', ";
+    $QryInsertBan     .= "`email` = '". $mail ."';";
+    doquery( $QryInsertBan, 'banned');
 
-            $DoneMessage       = $lang['adm_bn_thpl'] ." ". $name ." ". $lang['adm_bn_isbn'];
-            AdminMessage ($DoneMessage, $lang['adm_bn_ttle']);
-        }
+    $QryUpdateUser     = "UPDATE {{table}} SET ";
+    $QryUpdateUser    .= "`bana` = '1', ";
+    $QryUpdateUser    .= "`banaday` = '". $BannedUntil ."' ";
+    $QryUpdateUser    .= "WHERE ";
+    $QryUpdateUser    .= "`username` = \"". $name ."\";";
+    doquery( $QryUpdateUser, 'users');
 
-        $Page = parsetemplate($PageTpl, $parse);
-        display( $Page, $lang['adm_bn_ttle'], false, '', true);
-    } else {
-        AdminMessage ($lang['sys_noalloaw'], $lang['sys_noaccess']);
-    }
+    $DoneMessage       = $lang['adm_bn_thpl'] ." ". $name ." ". $lang['adm_bn_isbn'];
+    AdminMessage ($DoneMessage, $lang['adm_bn_ttle']);
+}
+
+$Page = parsetemplate($PageTpl, $parse);
+display( $Page, $lang['adm_bn_ttle'], false, '', true);

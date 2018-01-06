@@ -6,36 +6,34 @@ define('IN_ADMIN', true);
 $ugamela_root_path = './../';
 include($ugamela_root_path . 'common.php');
 
-    if ($user['authlevel'] >= 2) {
-        includeLang('admin/addmoon');
+restrictAccess($user, LEVEL_SUPER_OPERATOR);
 
-        $mode      = $_POST['mode'];
+includeLang('admin/addmoon');
 
-        $PageTpl   = gettemplate("admin/add_moon");
-        $parse     = $lang;
+$mode      = $_POST['mode'];
 
-        if ($mode == 'addit') {
-            $PlanetID  = $_POST['user'];
-            $MoonName  = $_POST['name'];
+$PageTpl   = gettemplate("admin/add_moon");
+$parse     = $lang;
 
-            $QrySelectPlanet  = "SELECT * FROM {{table}} ";
-            $QrySelectPlanet .= "WHERE ";
-            $QrySelectPlanet .= "`id` = '". $PlanetID ."';";
-            $PlanetSelected = doquery ( $QrySelectPlanet, 'planets', true);
+if ($mode == 'addit') {
+    $PlanetID  = $_POST['user'];
+    $MoonName  = $_POST['name'];
 
-            $Galaxy    = $PlanetSelected['galaxy'];
-            $System    = $PlanetSelected['system'];
-            $Planet    = $PlanetSelected['planet'];
-            $Owner     = $PlanetSelected['id_owner'];
-            $MoonID    = time();
+    $QrySelectPlanet  = "SELECT * FROM {{table}} ";
+    $QrySelectPlanet .= "WHERE ";
+    $QrySelectPlanet .= "`id` = '". $PlanetID ."';";
+    $PlanetSelected = doquery ( $QrySelectPlanet, 'planets', true);
 
-            CreateOneMoonRecord ( $Galaxy, $System, $Planet, $Owner, $MoonID, $MoonName, 20 );
+    $Galaxy    = $PlanetSelected['galaxy'];
+    $System    = $PlanetSelected['system'];
+    $Planet    = $PlanetSelected['planet'];
+    $Owner     = $PlanetSelected['id_owner'];
+    $MoonID    = time();
 
-            AdminMessage ( $lang['addm_done'], $lang['addm_title'] );
-        }
-        $Page = parsetemplate($PageTpl, $parse);
+    CreateOneMoonRecord ( $Galaxy, $System, $Planet, $Owner, $MoonID, $MoonName, 20 );
 
-        display ($Page, $lang['addm_title'], false, '', true);
-    } else {
-        AdminMessage ( $lang['sys_noalloaw'], $lang['sys_noaccess'] );
-    }
+    AdminMessage ( $lang['addm_done'], $lang['addm_title'] );
+}
+$Page = parsetemplate($PageTpl, $parse);
+
+display ($Page, $lang['addm_title'], false, '', true);
