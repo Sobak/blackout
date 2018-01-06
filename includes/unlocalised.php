@@ -178,42 +178,36 @@ function get_userdata () {
 
 // ----------------------------------------------------------------------------------------------------------------
 //
-// Fonction de lecture / ecriture / exploitation de templates
+// Template-related functions
 //
-function ReadFromFile($filename) {
-    $content = @file_get_contents ($filename);
-    return $content;
+function parsetemplate($template, $array) {
+    return preg_replace_callback('#\{([a-z0-9\-_]*?)\}#Ssi', function ($match) use ($array) {
+        return isset($array[$match[1]]) ? $array[$match[1]] : '';
+    }, $template);
 }
 
-function SaveToFile ($filename, $content) {
-    $content = @file_put_contents ($filename, $content);
-}
-
-function parsetemplate ($template, $array) {
-    return preg_replace('#\{([a-z0-9\-_]*?)\}#Ssie', '( ( isset($array[\'\1\']) ) ? $array[\'\1\'] : \'\' );', $template);
-}
-
-function gettemplate ($templatename) {
+function gettemplate($templatename) {
     global $ugamela_root_path;
 
     $filename = $ugamela_root_path . TEMPLATE_DIR . TEMPLATE_NAME . '/' . $templatename . ".tpl";
 
-    return ReadFromFile($filename);
+    return file_get_contents($filename);
 }
 
 // ----------------------------------------------------------------------------------------------------------------
 //
-// Gestion de la localisation des chaines
+// Load language strings
 //
-function includeLang ($filename) {
+function includeLang($filename) {
     global $ugamela_root_path, $lang, $user;
 
     if ($user['lang'] != '') {
-        $SelLanguage = $user['lang'];
+        $language = $user['lang'];
     } else {
-        $SelLanguage = DEFAULT_LANG;
+        $language = DEFAULT_LANG;
     }
-    include ($ugamela_root_path . "language/". $SelLanguage ."/". $filename.".php");
+
+    require "$ugamela_root_path/language/$language/$filename.php";
 }
 
 
@@ -323,6 +317,3 @@ function CreateFleetPopupedMissionLink ( $FleetRow, $Texte, $FleetType ) {
 
     return $MissionPopup;
 }
-
-// ----------------------------------------------------------------------------------------------------------------
-?>
