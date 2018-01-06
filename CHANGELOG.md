@@ -5,7 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ## [Unreleased]
 ### Added
-- Complete Translation of following screens:
+- Complete translation of following screens:
     - Admin -> Add resources
     - Admin -> Build statistics
     - Admin -> Chat administration
@@ -20,6 +20,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 ### Changed
 - Changed extension of language files from `*.mo` to `*.php`
 - Improved translations of
+    - Banned
     - Buildings
     - Overview
     - Notes
