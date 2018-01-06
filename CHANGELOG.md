@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 ## [Unreleased]
 ### Changed
 - Added `config.php` to `.gitignore`
+- Switched default language to English
 
 ### Fixed
 - Eliminate usage of deprecated PHP short tags (`<?`)

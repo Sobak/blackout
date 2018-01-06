@@ -21,7 +21,7 @@ $IsUserChecked = false;
 define('DEFAULT_SKINPATH' , 'skins/xnova/');
 define('TEMPLATE_DIR'     , 'templates/');
 define('TEMPLATE_NAME'    , 'OpenGame');
-define('DEFAULT_LANG'     , 'pl');
+define('DEFAULT_LANG'     , 'en');
 
 $HTTP_ACCEPT_LANGUAGE = DEFAULT_LANG;
 
@@ -110,7 +110,7 @@ if (INSTALL != true) {
 
                 CheckPlanetUsedFields($planetrow);
         } else {
-                // Bah si déja y a quelqu'un qui passe par là et qu'a rien a faire de pressé ...
+                // Bah si dï¿½ja y a quelqu'un qui passe par lï¿½ et qu'a rien a faire de pressï¿½ ...
                 // On se sert de lui pour mettre a jour tout les retardataires !!
 
         }
