@@ -1,21 +1,19 @@
 <?php
 
-$lang['user_level'] = array (
-    '0' => 'Player',
-    '1' => 'Game Operator',
-    '2' => 'Super Game Operator',
-    '3' => 'Administrator',
-);
+$lang['user_level'] = [
+    'Player',
+    'Game Operator',
+    'Super Game Operator',
+    'Administrator',
+];
 
-$lang['sys_overview'] = "Vue G&eacute;n&eacute;rale";
-$lang['mod_marchand'] = "MeRchAd";
 $lang['sys_moon'] = "Moon";
 $lang['sys_error'] = "Error";
 $lang['sys_no_vars'] = "vars.php The file is not present, please contact an administrator!";
 $lang['sys_attacker_lostunits'] = "The attacker has lost a total of% s units.";
 $lang['sys_defender_lostunits'] = "The defender has lost a total of% s units.";
 $lang['sys_gcdrunits'] = "A field of debris containing units of% s% s% s and units of% s is formed within the orbit of the planet.";
-$lang['sys_moonproba'] = "probabilitée of establishing a moon is:% d%%";
+$lang['sys_moonproba'] = "probabilitï¿½e of establishing a moon is:% d%%";
 $lang['sys_moonbuilt'] = "A moon makes its appearance around the planet% s [% d:% d:% d]";
 $lang['sys_attack_title'] = "The following fleets fought the% s:";
 $lang['sys_attack_attacker_pos'] = "Striker% s [% s:% s:% s]";
@@ -59,7 +57,7 @@ $lang['sys_colo_defaultname'] = "colony";
 $lang['sys_colo_arrival'] = "The fleet reached the coordinates";
 $lang['sys_colo_maxcolo'] = ", but unfortunately colonization is impossible, you can not have more";
 $lang['sys_colo_allisok'] = ", and the settlers are beginning to develop this new part of the empire." ;
-$lang['sys_colo_badpos'] = ", and the settlers have found an environment not conducive to l extention of your empire. They decided to turn back completely dégoutés";
+$lang['sys_colo_badpos'] = ", and the settlers have found an environment not conducive to l extention of your empire. They decided to turn back completely dï¿½goutï¿½s";
 $lang['sys_colo_notfree'] = ", and the settlers n have not found a planet these listings. They are forced to turn back completely demoralized";
 $lang['sys_colo_planet'] = "planets";
 $lang['sys_expe_report'] = "Report from expedition";
@@ -86,7 +84,3 @@ $lang['sys_perte_defenseur'] = "Defender Loss";
 $lang['sys_debris'] = "debris";
 $lang['sys_noaccess'] = "Access Denied";
 $lang['sys_noalloaw'] = "You do not have access to this page";
-
-// Created by Perberos. All rights reversed (C) 2006
-// Complet by XNova Team. All rights reversed (C) 2008
-?>

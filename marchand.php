@@ -113,7 +113,7 @@ function ModuleMarchand ( $CurrentUser, &$CurrentPlanet ) {
 }
 
     $Page = ModuleMarchand ( $user, $planetrow );
-    display ( $Page, $lang['mod_marchand'], true, '', false );
+    display ( $Page, $lang['marchand_title'], true, '', false );
 
 // -----------------------------------------------------------------------------------------------------------
 // History version

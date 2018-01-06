@@ -63,9 +63,9 @@ include($ugamela_root_path . 'common.php');
         }
 
         $parse['adm_ov_data_count']  = $Count;
-        $Page = parsetemplate($PageTPL, $parse);
+        $page = parsetemplate($PageTPL, $parse);
 
-        display ( $Page, $lang['sys_overview'], false, '', true);
+        display($page, $lang['adm_ov_title'], false, '', true);
     } else {
         AdminMessage ( $lang['sys_noalloaw'], $lang['sys_noaccess'] );
     }

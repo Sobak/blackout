@@ -7,6 +7,7 @@
  * @copyright 2008 By Chlorel for XNova
  */
 
+$lang['marchand_title'] = 'Merchant';
 $lang['mod_ma_title'] = "Appeler un marchand";
 $lang['mod_ma_typer'] = "Appeler un marchand qui ach&egrave;te du";
 $lang['mod_ma_rates'] = "Le taux d'&eacute;change est de 2/1/0.5";
