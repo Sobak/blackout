@@ -151,7 +151,7 @@ function StdUserHeader ($title = '', $metatags = '') {
 function AdminUserHeader ($title = '', $metatags = '') {
 	global $user, $dpath, $langInfos;
 
-	$dpath = isset($user['dpath']) ? $user['dpath'] : DEFAULT_SKINPATH;
+	$dpath = isset($user['dpath']) && !empty($user['dpath']) ? $user['dpath'] : DEFAULT_SKINPATH;
 
 	$parse           = $langInfos;
 	$parse['dpath']  = $dpath;
