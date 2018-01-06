@@ -51,8 +51,8 @@ $lang['adm_over']     = 'Overview';
 $lang['adm_conf']     = 'Configuration';
 $lang['adm_reset']    = 'Universum Reset';
 
-$lang['adm_plrlst']   = 'List Users';
-$lang['adm_plrsch']   = 'Search Users';
+$lang['adm_plrlst']   = 'Players list';
+$lang['adm_plrsch']   = 'Search Players';
 $lang['adm_addres']   = 'Add resources';
 $lang['adm_delres']   = 'Subtract resources';
 
@@ -67,8 +67,8 @@ $lang['adm_fleet']    = 'Flying fleets';
 $lang['adm_ban']      = 'Ban player';
 $lang['adm_unban']    = 'Unban player';
 
-$lang['adm_chat']     = 'Administration chat';
-$lang['adm_updpt']    = 'Refresh Points';
+$lang['adm_chat']     = 'Chat administration';
+$lang['adm_updpt']    = 'Build statistics';
 $lang['adm_msg']      = 'List of messages';
 $lang['adm_md5']      = 'md5 encoder';
 $lang['adm_build']    = '@TODO';

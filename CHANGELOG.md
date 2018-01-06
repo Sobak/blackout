@@ -5,7 +5,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ## [Unreleased]
 ### Added
-- Full translation of Admin > Configuration page
+- Full translation of Admin -> Add resources
+- Full translation of Admin -> Build statistics
+- Full translation of Admin -> Chat administration
+- Full translation of Admin -> Configuration page
+- Full translation of Admin -> Errors
+- Full translation of Admin -> md5 encoder
+- Full translation of Admin -> Players list
+- Full translation of Admin -> Subtract resources
+- Full translation of Admin -> Universum Reset
 
 ### Changed
 - Changed extension of language files from `*.mo` to `*.php`
