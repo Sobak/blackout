@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ## [Unreleased]
+### Added
+- Full translation of Admin > Configuration page
+
 ### Changed
 - Changed extension of language files from `*.mo` to `*.php`
 - Improved translation of left menu

@@ -19,7 +19,7 @@
 	<th>{adm_opt_game_pspeed}</th>
 	<th><input name="resource_multiplier" maxlength="80" size="10" value="{resource_multiplier}" type="text"></th>
 </tr><tr> 
-	<th>Desactiver les 24h du mode vacance</th> 
+	<th>{adm_opt_urlaubus_mode}</th>
 	<th><input name="urlaubs_modus_erz"{umodus} type="checkbox" /></th> 
 </tr><tr>
 	<th>{adm_opt_game_forum}<br></th>
@@ -34,19 +34,19 @@
 	<td class="c" colspan="2">{adm_opt_plan_settings}</td>
 </tr><tr>
 	<th>{adm_opt_plan_initial}</th>
-	<th><input name="initial_fields" maxlength="80" size="10" value="{initial_fields}" type="text"> cases</th>
+	<th><input name="initial_fields" maxlength="80" size="10" value="{initial_fields}" type="text"> {adm_opt_plan_fields}</th>
 </tr><tr>
 	<th>{adm_opt_plan_base_inc}{Metal}</th>
-	<th><input name="metal_basic_income" maxlength="80" size="10" value="{metal_basic_income}" type="text"> par heure</th>
+	<th><input name="metal_basic_income" maxlength="80" size="10" value="{metal_basic_income}" type="text"> {adm_opt_plan_per_hour}</th>
 </tr><tr>
 	<th>{adm_opt_plan_base_inc}{Crystal}</th>
-	<th><input name="crystal_basic_income" maxlength="80" size="10" value="{crystal_basic_income}" type="text"> par heure   </th>
+	<th><input name="crystal_basic_income" maxlength="80" size="10" value="{crystal_basic_income}" type="text"> {adm_opt_plan_per_hour}</th>
 </tr><tr>
 	<th>{adm_opt_plan_base_inc}{Deuterium}</th>
-	<th><input name="deuterium_basic_income" maxlength="80" size="10" value="{deuterium_basic_income}" type="text"> par heure   </th>
+	<th><input name="deuterium_basic_income" maxlength="80" size="10" value="{deuterium_basic_income}" type="text"> {adm_opt_plan_per_hour}</th>
 </tr><tr>
 	<th>{adm_opt_plan_base_inc}{Energy}</th>
-	<th><input name="energy_basic_income" maxlength="80" size="10" value="{energy_basic_income}" type="text"> par heure</th>
+	<th><input name="energy_basic_income" maxlength="80" size="10" value="{energy_basic_income}" type="text"> {adm_opt_plan_per_hour}</th>
 </tr><tr>
 	<td class="c" colspan="2">{adm_opt_game_oth_info}</td>
 </tr><tr>
