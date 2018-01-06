@@ -18,11 +18,11 @@ $parse['dpath']        = $dpath;
 $parse['XNovaRelease'] = VERSION;
 $parse['servername']   = 'XNova';
 
-if ($user['authlevel'] == 1) {
+if ($user['authlevel'] == LEVEL_OPERATOR) {
     $template = 'admin/left_menu_modo';
-} elseif ($user['authlevel'] == 2) {
+} elseif ($user['authlevel'] == LEVEL_SUPER_OPERATOR) {
     $template = 'admin/left_menu_op';
-} elseif ($user['authlevel'] >= 3) {
+} elseif ($user['authlevel'] >= LEVEL_ADMIN) {
     $template = 'admin/left_menu';
 }
 

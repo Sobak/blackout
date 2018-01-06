@@ -1,10 +1,10 @@
 <?php
 
 $lang['user_level'] = [
-    'Player',
-    'Game Operator',
-    'Super Game Operator',
-    'Administrator',
+    LEVEL_PLAYER => 'Player',
+    LEVEL_OPERATOR => 'Game Operator',
+    LEVEL_SUPER_OPERATOR =>'Super Game Operator',
+    LEVEL_ADMIN => 'Administrator',
 ];
 
 $lang['sys_moon'] = "Moon";
