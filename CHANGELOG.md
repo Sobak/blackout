@@ -22,6 +22,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 - Improved translations of
     - Buildings
     - Overview
+    - Notes
     - left menu
 
 ### Removed

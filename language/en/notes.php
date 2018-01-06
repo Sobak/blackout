@@ -3,13 +3,13 @@
 $lang['Notes'] = 'Notes';
 
 $lang['Createnote'] = 'Create Note';
-$lang['MakeNewNote'] = 'Create a new notw';
+$lang['MakeNewNote'] = 'Create new note';
 $lang['Editnote'] = 'Edit note';
 
 $lang['Priority'] = 'Priority;';
 
 $lang['Important'] = 'important';
-$lang['Normal'] = 'normale';
+$lang['Normal'] = 'normal';
 $lang['Unimportant'] = 'unimportant';
 
 $lang['Subject'] = 'Subject';
@@ -29,8 +29,8 @@ $lang['Save'] = 'Save';
 $lang['Delete'] = 'Delete';
 $lang['Reset'] = 'Reset';
 
-//mensajes
-$lang['ThereIsNoNote'] = 'There is no note';
+// Messages
+$lang['ThereIsNoNote'] = 'You have no notes';
 
 $lang['NoteUpdated'] = 'Note updated, <a href="notes.php"><blink>redirecting...</blink></a>';
 
@@ -38,6 +38,3 @@ $lang['NoteAdded'] = 'Note added, <a href="notes.php"><blink>redirecting...</bli
 
 $lang['NoteDeleted'] = 'Note deleted, <a href="notes.php"><blink>redirecting...</blink></a>';
 $lang['NoteDeleteds'] = 'Notes deleted;, <a href="notes.php"><blink>redirecting...</blink></a>';
-
-// Created by Perberos. All rights reversed (C) 2006 
-?>
