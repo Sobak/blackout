@@ -181,3 +181,19 @@ function CalculateMaxPlanetFields($planet) {
 
     return $planet["field_max"] + ($planet[ $resource[33] ] * 5);
 }
+
+/**
+ * Restrict access to users with level given or higher.
+ *
+ * @param array $user
+ * @param int $minLevel
+ * @return void
+ */
+function restrictAccess($user, $minLevel)
+{
+    global $lang;
+
+    if ($user['authlevel'] < $minLevel) {
+        AdminMessage($lang['sys_noalloaw'], $lang['sys_noaccess']);
+    }
+}

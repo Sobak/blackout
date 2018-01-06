@@ -29,6 +29,12 @@ define('BUILD_METAL'              , 500);
 define('BUILD_CRISTAL'            , 500);
 define('BUILD_DEUTERIUM'          , 500);
 
+// Player levels
+define('LEVEL_PLAYER', 0);
+define('LEVEL_OPERATOR', 1);
+define('LEVEL_SUPER_OPERATOR', 2);
+define('LEVEL_ADMIN', 3);
+
 // Debug Level
 define('DEBUG', 1); // Debugging off
 
