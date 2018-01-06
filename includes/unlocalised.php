@@ -205,7 +205,7 @@ function gettemplate ($templatename) {
 //
 // Gestion de la localisation des chaines
 //
-function includeLang ($filename, $ext = '.mo') {
+function includeLang ($filename) {
 	global $ugamela_root_path, $lang, $user;
 
 	if ($user['lang'] != '') {
@@ -213,7 +213,7 @@ function includeLang ($filename, $ext = '.mo') {
 	} else {
 		$SelLanguage = DEFAULT_LANG;
 	}
-	include ($ugamela_root_path . "language/". $SelLanguage ."/". $filename.$ext);
+	include ($ugamela_root_path . "language/". $SelLanguage ."/". $filename.".php");
 }
 
 
