@@ -15,11 +15,11 @@ $lang['Diameter'] = 'Diametar';
 $lang['fields'] = 'Polja';
 $lang['Developed_fields'] = 'Zauzeto';
 $lang['max_eveloped_fields'] = 'Number of max casses';
-$lang['Temperature'] = 'Temperatura';
+$lang['Temperature'] = 'Temperature';
 $lang['approx'] = 'env.';
 $lang['to'] = 'to';
 $lang['Centigrade'] = 'C';
-$lang['Position'] = 'Pozicija';
+$lang['Position'] = 'Position';
 $lang['Points'] = 'Bodovi';
 $lang['Rank'] = 'Rang';
 $lang['of'] = 'od';
@@ -48,7 +48,7 @@ $lang['deletemessage_fail']  = "Password is not good!";
 
 // Divers
 $lang['MembersOnline']       = "Numbers Of Online Players";
-$lang['ov_news_title']       = "Novosti";
+$lang['ov_news_title']       = "News";
 
 // Gestion des flottes
 $lang['ov_fleet']            = "fleet";
@@ -90,7 +90,7 @@ $lang['ov_debris_to'] = "un Campo di detriti";
 $lang['ov_expe_to'] = "inesplorato";
 $lang['ov_expe_from'] = "dalla regione";
 
-$lang['MembersOnline'] = "Membri online";
+$lang['MembersOnline'] = "Players online";
 
 $lang['level'] = "Livello";
 $lang['metal'] = "Metallo";
@@ -101,7 +101,3 @@ $lang['batiments'] = "Strutture";
 $lang['flotte'] = "Flotte";
 $lang['recherche'] = "Ricerche";
 $lang['total'] = "Totale";
-
-// Created by Perberos. All rights reversed (C) 2006
-// Complet by XNova Team. All rights reversed (C) 2008
-?>
