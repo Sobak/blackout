@@ -5,16 +5,16 @@
 <form action="{PHP_SELF}?mode=change" method="post">
 <table width="600">
 
-	<td class="c" colspan="5">
-	  <b>Usuwanie Konta</b>
-	</td>
+    <td class="c" colspan="5">
+      <b>Usuwanie Konta</b>
+    </td>
   </tr>
 <tr><th colspan=5>
 <font color=black><b><center>
 Je¶li Chcesz Usun±æ Konto Kliknij W Ten Przycisk A Pu¼niej Naci¶nij <font color=red>Usuñ Konto!</font><br>
 Po Wykonaniu Tych Czynno¶ci Zostaniesz Przeniesiony Do Ustawieñ.<br>Musisz Jeszcze Raz Nacisn±æ <font color=red>Usuñ! By Potwierdziæ Kasowanie!</font>
 </font></b></center>
-	</th>
+    </th>
 </tr>
 <tr>
    <th><font color=black><b><center><input name="db_deaktjava"{user_db_deaktjava} type="checkbox" /></font></b></center></th>

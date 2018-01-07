@@ -36,7 +36,7 @@
    <th><input name="tekst" maxlength="1000" size="100" value="" type="data">
    </th>
   </tr>
-  	  <tr>
+        <tr>
    <th colspan="2"><input value="Zglos" type="submit"></th>
   </tr>
 <tr>

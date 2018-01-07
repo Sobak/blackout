@@ -5,10 +5,10 @@
 <form action="" method="post">
 <table width="438">
 <tbody>
-	  <tr>
-	    <td colspan="2" class="c"><b>{form}</b></td>
+      <tr>
+        <td colspan="2" class="c"><b>{form}</b></td>
 </tr><tr>
-	<th width="293">{GameName}</th>
+    <th width="293">{GameName}</th>
     <th width="293"><input name="character" size="20" maxlength="20" type="text" onKeypress="
      if (event.keyCode==60 || event.keyCode==62) event.returnValue = false;
      if (event.which==60 || event.which==62) return false;"> <input type="button" value="Generete!" onClick="character.value=profundity()" style="font-size: 10px; font-family: Verdana;"/></th>
@@ -34,22 +34,22 @@
 <tr>
   <th>{Sex}</th>
   <th><select name="sex">
-		<option value="">{Undefined}</option>
-		<option value="M">{Male}</option>
-		<option value="F">{Female}</option>
-		</select></th>
+        <option value="">{Undefined}</option>
+        <option value="M">{Male}</option>
+        <option value="F">{Female}</option>
+        </select></th>
 </tr>
 <tr> 
   <th>{Languese}</th>
   <th><select name="langer">
-		<option value="">{Undefined}</option>
-		<option value="pl">{pl}</option>
-		<option value="fr">{fr}</option>
-		<option value="es">{es}</option>
-		<option value="de">{de}</option>
-		<option value="en">{en}</option>
-		<option value="it">{it}</option>
-		</select></th>
+        <option value="">{Undefined}</option>
+        <option value="pl">{pl}</option>
+        <option value="fr">{fr}</option>
+        <option value="es">{es}</option>
+        <option value="de">{de}</option>
+        <option value="en">{en}</option>
+        <option value="it">{it}</option>
+        </select></th>
 </tr>
 <tr>
 <th><img src="captcha.php"></th>

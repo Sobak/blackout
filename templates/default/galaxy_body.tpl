@@ -103,16 +103,16 @@ function whenResponse(){
     addToTable("Multialarm!", "error");
     break;
   case "617":
-	addToTable("Nie masz recyklerow", "error");
+    addToTable("Nie masz recyklerow", "error");
   break;
   }
 }
 
 function doit(order, galaxy, system, planet, planettype, shipcount){
-  	if(order==2)	
-	strInfo = "Wysylanie "+shipcount+" "+(shipcount>1?"sond":"sondy")+" na "+galaxy+":"+system+":"+planet+"...";
-   if(order==8)	
-	strInfo = "Wysylanie "+shipcount+" "+(shipcount>1?"recykler":"recyklerow")+" na "+galaxy+":"+system+":"+planet+"...";
+      if(order==2)    
+    strInfo = "Wysylanie "+shipcount+" "+(shipcount>1?"sond":"sondy")+" na "+galaxy+":"+system+":"+planet+"...";
+   if(order==8)    
+    strInfo = "Wysylanie "+shipcount+" "+(shipcount>1?"recykler":"recyklerow")+" na "+galaxy+":"+system+":"+planet+"...";
     
     ajax.requestFile = "floten3.php?action=send";
 

@@ -2,15 +2,15 @@
 
 
  <table width=519>
-	<tr>
-	  <td class=c colspan=7>Dernière manœuvres sur la lune
+    <tr>
+      <td class=c colspan=7>Dernière manœuvres sur la lune
 </td>
-	</tr>
+    </tr>
 
 
-		  {manobras}
+          {manobras}
 </td>
-	</tr>
+    </tr>
 </form>
 </body>
 </html>

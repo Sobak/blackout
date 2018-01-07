@@ -12,43 +12,43 @@ parent.frames['Hauptframe'].location.replace("overview.php");
 <br>
 <table width="130" cellspacing="0" cellpadding="0">
 <tr>
-	<td style="border-top: 1px #545454 solid"><div><center>{servername}<br>(<a href="changelog.php" target={mf}><font color=red>{XNovaRelease}</font></a>)<center></div></td>
+    <td style="border-top: 1px #545454 solid"><div><center>{servername}<br>(<a href="changelog.php" target={mf}><font color=red>{XNovaRelease}</font></a>)<center></div></td>
 </tr><tr>
-	<td background="{dpath}img/bg1.gif"><center>{admin}</center></td>
+    <td background="{dpath}img/bg1.gif"><center>{admin}</center></td>
 </tr><tr>
-	<td><div><a href="overview.php" accesskey="v" target="{mf}">{adm_over}</a></div></td>
+    <td><div><a href="overview.php" accesskey="v" target="{mf}">{adm_over}</a></div></td>
 </tr><tr>
-	<td background="{dpath}img/bg1.gif"><center>{player}</center></td>
+    <td background="{dpath}img/bg1.gif"><center>{player}</center></td>
 </tr><tr>
-	<td><div><a href="paneladmina.php" accesskey="k" target="{mf}">{adm_plrsch}</a></div></td>
+    <td><div><a href="paneladmina.php" accesskey="k" target="{mf}">{adm_plrsch}</a></div></td>
 </tr><tr>
-	<td style="background-color:#FFFFFF" height="1px"></td>
+    <td style="background-color:#FFFFFF" height="1px"></td>
 </tr><tr>
-	<td><div><a href="activeplanet.php" accesskey="k" target="{mf}">{adm_actplt}</a></div></td>
+    <td><div><a href="activeplanet.php" accesskey="k" target="{mf}">{adm_actplt}</a></div></td>
 </tr><tr>
-	<td style="background-color:#FFFFFF" height="1px"></td>
+    <td style="background-color:#FFFFFF" height="1px"></td>
 </tr><tr>
-	<td><div><a href="ShowFlyingFleets.php" accesskey="k" target="{mf}">{adm_fleet}</a></div></td>
+    <td><div><a href="ShowFlyingFleets.php" accesskey="k" target="{mf}">{adm_fleet}</a></div></td>
 </tr><tr>
-	<td style="background-color:#FFFFFF" height="1px"></td>
+    <td style="background-color:#FFFFFF" height="1px"></td>
 </tr><tr>
-	<td><div><a href="banned.php" accesskey="k" target="{mf}">{adm_ban}</a></div></td>
+    <td><div><a href="banned.php" accesskey="k" target="{mf}">{adm_ban}</a></div></td>
 </tr><tr>
-	<td background="{dpath}img/bg1.gif"><center>{tool}</center></td>
+    <td background="{dpath}img/bg1.gif"><center>{tool}</center></td>
 </tr><tr>
-	<td><div><a href="statbuilder.php" accesskey="p" target="{mf}">{adm_updpt}</a></div></td>
+    <td><div><a href="statbuilder.php" accesskey="p" target="{mf}">{adm_updpt}</a></div></td>
 </tr><tr>
-	<td><div><a href="ElementQueueFixer.php" accesskey="p" target="{mf}">{adm_build}</a></div></td>
+    <td><div><a href="ElementQueueFixer.php" accesskey="p" target="{mf}">{adm_build}</a></div></td>
 </tr><tr>
-	<td style="background-color:#FFFFFF" height="1px"></td>
+    <td style="background-color:#FFFFFF" height="1px"></td>
 </tr><tr>
-	<td><div><a href="http://www.xnova.fr/forum/index.php" accesskey="3" target="{mf}">{adm_help}</a></div></td>
+    <td><div><a href="http://www.xnova.fr/forum/index.php" accesskey="3" target="{mf}">{adm_help}</a></div></td>
 </tr><tr>
-	<td><div><a href="../frames.php" accesskey="i" target="_top" style="color:red">{adm_back}</a></div></td>
+    <td><div><a href="../frames.php" accesskey="i" target="_top" style="color:red">{adm_back}</a></div></td>
 </tr><tr>
-	<td background="{dpath}img/bg1.gif"><center>{infog}</center></td>
+    <td background="{dpath}img/bg1.gif"><center>{infog}</center></td>
 </tr><tr>
-	<td><div><center><a href="../credit.php" accesskey="T" target="{mf}">XNova Team</a><br>&copy; Copyright 2008</center></div></td>
+    <td><div><center><a href="../credit.php" accesskey="T" target="{mf}">XNova Team</a><br>&copy; Copyright 2008</center></div></td>
 </tr>
 </table>
 </div>

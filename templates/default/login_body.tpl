@@ -10,15 +10,15 @@
 <body>
   <div id="main">
      <script type="text/javascript">
-	var lastType = "";
-	function changeAction(type) {
-	if (document.formular.Uni.value == '') {
-	    alert('{log_univ}'); }
-	else {
-	    if(type == "login" && lastType == "") {
-	    var url = "http://" + document.formular.Uni.value + "";
-	    document.formular.action = url; }
-	else {
+    var lastType = "";
+    function changeAction(type) {
+    if (document.formular.Uni.value == '') {
+        alert('{log_univ}'); }
+    else {
+        if(type == "login" && lastType == "") {
+        var url = "http://" + document.formular.Uni.value + "";
+        document.formular.action = url; }
+    else {
             var url = "http://" + document.formular.Uni.value + "/reg.php";
             document.formular.action = url;
             document.formular.submit(); } } }
