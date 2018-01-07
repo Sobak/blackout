@@ -15,9 +15,7 @@
                 <tbody>
                     <tr style="vertical-align: top;">
                         <td style="padding-right: 4px;">
-                            <form name="formular" action="" method="post" style="margin-top: -9px; margin-left: 70px;">
-                                <input name="timestamp" value="1173621187" type="hidden">
-                                <input name="v" value="2" type="hidden">
+                            <form action="" method="post" style="margin-top: -9px; margin-left: 70px;">
                                 {User_name} <input name="username" value="" type="text">
                                 {Password} <input name="password" value="" type="password"><br>
                                 {Remember_me} <input name="rememberme" type="checkbox">
@@ -30,7 +28,7 @@
             </table>
         </div>
     </div>
-    <div id="mainmenu" style="margin-top: 20px;">
+    <div id="mainmenu">
         <a href="reg.php">{log_reg}</a>
         <a href="{forum_url}">Forum</a>
         <a href="contact.php">Contact</a>
@@ -39,28 +37,24 @@
     <div id="rightmenu" class="rightmenu">
         <div id="content">
             <center>
-                <div id="text1">
-                    <div style="text-align: left;"><strong>{servername}</strong> {log_desc} {servername}.</div>
+                <div style="text-align: left;">
+                    <strong>{servername}</strong> {log_desc} {servername}.
                 </div>
                 <div id="register" class="bigbutton" onclick="document.location.href='reg.php';"><font color="#cc0000">{log_toreg}</font></div>
                 <div id="text2">
-                    <div id="text3">
-                        <center>
-                            <b><font color="#00cc00">{log_online}: </font>
-                            <font color="#c6c7c6">{online_users}</font> - <font color="#00cc00">{log_lastreg}: </font>
-                            <font color="#c6c7c6">{last_user}</font> - <font color="#00cc00">{log_numbreg}:</font> <font color="#c6c7c6">{users_amount}</font>
-                            </b>
-                        </center><br>
-                        <a href="lang.php?Langs=pl"><img src="images/lang/pl.png" alt="PL" title="PL"></a> <a href="lang.php?Langs=fr"><img src="images/lang/fr.png" alt="FR" title="FR"></a> <a href="lang.php?Langs=es"><img src="images/lang/es.png" alt="ES" title="ES"></a> <a href="lang.php?Langs=de"><img src="images/lang/de.png" alt="DE" title="DE"></a> <a href="lang.php?Langs=en"><img src="images/lang/en.png" alt="EN" title="EN"></a> <a href="lang.php?Langs=it"><img src="images/lang/it.png" alt="IT" title="IT"></a>
-                    </div>
+                    <center>
+                        <b><font color="#00cc00">{log_online}: </font>
+                        <font color="#c6c7c6">{online_users}</font> - <font color="#00cc00">{log_lastreg}: </font>
+                        <font color="#c6c7c6">{last_user}</font> - <font color="#00cc00">{log_numbreg}:</font> <font color="#c6c7c6">{users_amount}</font>
+                        </b>
+                    </center><br>
+                    <a href="lang.php?Langs=pl"><img src="images/lang/pl.png" alt="PL" title="PL"></a> <a href="lang.php?Langs=fr"><img src="images/lang/fr.png" alt="FR" title="FR"></a> <a href="lang.php?Langs=es"><img src="images/lang/es.png" alt="ES" title="ES"></a> <a href="lang.php?Langs=de"><img src="images/lang/de.png" alt="DE" title="DE"></a> <a href="lang.php?Langs=en"><img src="images/lang/en.png" alt="EN" title="EN"></a> <a href="lang.php?Langs=it"><img src="images/lang/it.png" alt="IT" title="IT"></a>
                 </div>
             </center>
         </div>
-        <div id="text3">
-            <center><br>
-                <div style="text-align: left; color: white;"><big style="font-weight: bold; margin-left: 25px;"><big>{log_welcome} {servername}</big></big></div>
-            </center>
-        </div>
+        <center><br>
+            <div style="text-align: left; color: white;"><big style="font-weight: bold; margin-left: 25px;"><big>{log_welcome} {servername}</big></big></div>
+        </center>
     </div>
   </div>
 </body>
