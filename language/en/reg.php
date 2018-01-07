@@ -1,59 +1,51 @@
 <?php
 
-if (!defined('INSIDE')) {
-    die("attemp hacking");
-}
-
 // Registration form
-$lang['registry']          = 'Univerzum 1';
-$lang['form']              = 'Formulaire';
-$lang['Register']          = 'XNova Inscription';
-$lang['Undefined']         = '- Nepoznato -';
+$lang['registry']          = 'Register account';
+$lang['form']              = 'Signup form';
+$lang['Register']          = 'Registration';
+$lang['Undefined']         = '-undefined-';
 $lang['Male']              = 'Male';
 $lang['Female']            = 'Female';
 $lang['Multiverse']        = 'XNova';
-$lang['E-Mail']            = 'Email Adress';
-$lang['MainPlanet']        = 'Name of Planet';
-$lang['GameName']          = 'Nick';
+$lang['E-Mail']            = 'Email address';
+$lang['MainPlanet']        = 'Mother planet name';
+$lang['GameName']          = 'Username';
 $lang['Sex']               = 'Sex';
-$lang['accept']            = 'Accept all rules and All Uslovs GG-A';
-$lang['signup']            = ' Registration me ';
+$lang['accept']            = 'I agree to the terms of service';
+$lang['signup']            = 'Signup';
 $lang['neededpass']        = 'Password';
-$lang['Languese']          = 'Jêzyk';
+$lang['Languese']          = 'Language';
 $lang['pl']                = 'Polski';
 $lang['fr']                = 'Francuski';
-$lang['es']                = 'Hiszpañski';
+$lang['es']                = 'Hiszpaï¿½ski';
 $lang['de']                = 'Niemiecki';
 $lang['en']                = 'Angielski';
-$lang['it']                = 'W³oski';
+$lang['it']                = 'Wï¿½oski';
 
 // Send
-$lang['mail_welcome']      = 'Dziekujemy za rejestracje w naszej grze!!!
-Aby siê zalogowaæ wejd¼ tu: ({gameurl})
-Twoje has³o : {password}
-Kod Aktywacyjny : {gameurl}active.php?user={kod}
-Zapraszamy!! {gameurl}';
+$lang['mail_welcome']      = 'Thank you for signing up!
+In order to login visit this URL: ({gameurl})
+Your password is : {password}
+Activation URL: {gameurl}active.php?user={kod}
+See you! {gameurl}';
 
-$lang['mail_title']        = 'Registracija';
-$lang['thanksforregistry'] = 'Thanks for registration you now can play the game...your GG Team....';
+$lang['mail_title']        = 'Signup confirmation';
+$lang['thanksforregistry'] = 'Thank you for signing up, you can now play the game!';
 
 // Errors
-$lang['error_mail']        = 'E-mail invalide !<br />';
-$lang['error_planet']      = 'Erreur dans votre nom de plan&egrave;te !.<br />';
-$lang['error_hplanetnum']  = 'Vous devez utiliser des caract&egrave;res alphanum&eacute;rique pour votre nom de plan&egrave;te !<br />';
-$lang['error_character']   = 'Erreur dans le nom du joueur !<br />';
-$lang['error_charalpha']   = 'Le pseudo doit etre conpose de caractere alphanumerique !<br />';
-$lang['error_password']    = 'Le mot de passe doit faire 4 caracteres au minimum !<br />';
-$lang['error_rgt']         = 'Vous devez accepter les conditions d\'utilisation.<<br />';
-$lang['error_userexist']   = 'Ce nom de joueur existe d&eacute;j&agrave; !<br />';
-$lang['error_emailexist']  = 'Cet e-mail est d&eacute;j&agrave; utilis&eacute; !<br />';
-$lang['error_sex']         = 'Erreur dans le sexe !<br />';
-$lang['error_lang']        = 'Nie wybra³eœ jêzyka!<br />';
-$lang['error_mailsend']    = 'Une erreur s\'est produite lors de l\'envoi du courriel! Votre mot de passe est : ';
-$lang['reg_welldone']      = 'Inscription termin&eacute;e !';
-$lang['error_captcha']     = 'Invalide<br/>';
-$lang['error_v'] = 'Interdetto !<br />';
-
-// Created by Perberos. All rights reversed (C) 2006
-// Complet by XNova Team. All rights reversed (C) 2008
-?>
+$lang['error_mail']        = 'Invalid email<br />';
+$lang['error_planet']      = 'Invalid planet name<br />';
+$lang['error_hplanetnum']  = 'You must use alphanumeric characters for your planet name<br />';
+$lang['error_character']   = 'Invalid username<br />';
+$lang['error_charalpha']   = 'The username must consist of alphanumeric characters!<br />';
+$lang['error_password']    = 'Password must have at least 4 characters<br />';
+$lang['error_rgt']         = 'You need to accept the rules<br />';
+$lang['error_userexist']   = 'This username is already taken<br />';
+$lang['error_emailexist']  = 'This email is already taken<br />';
+$lang['error_sex']         = 'Invalid sex<br />';
+$lang['error_lang']        = 'You need to choose the language<br />';
+$lang['error_mailsend']    = 'Error sending an email. Your password is:';
+$lang['reg_welldone']      = 'Signup finished';
+$lang['error_captcha']     = 'Invalid<br/>';
+$lang['error_returnback']  = 'Return back';

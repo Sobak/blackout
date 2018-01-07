@@ -86,5 +86,6 @@ include($ugamela_root_path . 'includes/functions/DeleteSelectedUser.php');
 include($ugamela_root_path . 'includes/functions/SortUserPlanets.php');
 include($ugamela_root_path . 'includes/functions/BuildFleetEventTable.php');
 include($ugamela_root_path . 'includes/functions/BuildRessourcePage.php');
+include($ugamela_root_path . 'includes/functions/SendEmail.php');
 
 ?>
