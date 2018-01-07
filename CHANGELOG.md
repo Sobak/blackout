@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 - Installer improvements
     - Default database texts (like overview news) are now localized
     - Improved translation
+    - Installer is blocked if config file already exists
 - Signin no longer gives a hint whether username or password was incorrect
 
 ### Removed

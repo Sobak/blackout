@@ -28,7 +28,7 @@ $lang['ins_tx_acc1']      = "You are about to create an administrator account";
 $lang['ins_tx_acc2']      = "Fill out the following form with the account information:";
 $lang['ins_tx_done1']     = "The database has been created!";
 $lang['ins_tx_done2']     = "The administrator account has been successfully created!";
-$lang['ins_tx_done3']     = "It is advisable to delete the <i>install</i> folder if you no longer need the installer!";
+$lang['ins_tx_done3']     = "You can now log in with credentials from previous setp";
 
 $lang['ins_form_server']  = "MySQL host";
 $lang['ins_form_db']      = "Database";

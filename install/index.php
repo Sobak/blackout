@@ -24,6 +24,11 @@ $nextpage = $Page + 1;
 if (empty($Mode)) { $Mode = 'intro'; }
 if (empty($Page)) { $Page = 1;       }
 
+
+if (file_exists('../config.php') && filesize('../config.php') > 0 && $Page < 3) {
+    exit;
+}
+
 $MainTPL = gettemplate('install/ins_body');
 
 includeLang('install/install');
