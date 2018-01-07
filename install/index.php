@@ -14,7 +14,6 @@ define('INSTALL' , true);
 $ugamela_root_path = './../';
 include($ugamela_root_path . 'common.php');
 include($ugamela_root_path . 'includes/databaseinfos.php');
-include($ugamela_root_path . 'includes/migrateinfo.php');
 
 
 $Mode     = $_GET['mode'];
@@ -236,76 +235,6 @@ $nextpage = $Page + 1;
                 $frame  = parsetemplate ( $SubTPL, $bloc );
             }
             break;
-        case 'goto':
-            if ($Page == 1) {
-                $SubTPL = gettemplate ('install/ins_goto_intro');
-                $bloc   = $lang;
-                $frame  = parsetemplate ( $SubTPL, $bloc );
-            }
-            elseif ($Page == 2) {
-                if ($_GET['error'] == 1) {
-                adminMessage ($lang['ins_error1'], $lang['ins_error']);
-                }
-                elseif ($_GET['error'] == 2) {
-                adminMessage ($lang['ins_error2'], $lang['ins_error']);
-                }
-
-                $SubTPL = gettemplate ('install/ins_goto_form');
-                $bloc   = $lang;
-                $frame  = parsetemplate ( $SubTPL, $bloc );
-            }
-            elseif ($Page == 3) {
-                $host   = $_POST['host'];
-                $user   = $_POST['user'];
-                $pass   = $_POST['passwort'];
-                $prefix = $_POST['prefix'];
-                $db     = $_POST['db'];
-
-                $connection = @mysql_connect($host, $user, $pass);
-                    if (!$connection) {
-                    header("Location: ?mode=goto&page=2&error=1");
-                    exit();
-                    }
-
-                $dbselect = @mysql_select_db($db);
-                    if (!$dbselect) {
-                    header("Location: ?mode=goto&page=2&error=1");
-                    exit();
-                    }
-
-                $numcookie = mt_rand(1000, 1234567890);
-                $dz = fopen("../config.php", "w");
-                    if (!$dz) {
-                    header("Location: ?mode=ins&page=1&error=2");
-                    exit();
-                    }
-
-                fwrite($dz, "<?php\n");
-                fwrite($dz, "if(!defined(\"INSIDE\")){ die(\"attemp hacking\"); }\n");
-                fwrite($dz, "\$dbsettings = Array(\n");
-                fwrite($dz, "\"server\"     => \"".$host."\", // MySQL server name.\n");
-                fwrite($dz, "\"user\"       => \"".$user."\", // MySQL username.\n");
-                fwrite($dz, "\"pass\"       => \"".$pass."\", // MySQL password.\n");
-                fwrite($dz, "\"name\"       => \"".$db."\", // MySQL database name.\n");
-                fwrite($dz, "\"prefix\"     => \"".$prefix."\", // Tables prefix.\n");
-                fwrite($dz, "\"secretword\" => \"XNova".$numcookie."\"); // Cookies.\n");
-                fwrite($dz, "?>");
-                fclose($dz);
-
-                function doquery($query, $p) {
-                    $query = str_replace("{{prefix}}", $p, $query);
-                    $return = mysql_query($query) or die("MySQL Error: <b>".mysql_error()."</b>");
-                return $return;
-                }
-                foreach ($QryMigrate as $query) {
-                    doquery($query, $prefix);
-                }
-
-                $SubTPL = gettemplate ('install/ins_goto_done');
-                $bloc   = $lang;
-                $frame  = parsetemplate ( $SubTPL, $bloc );
-            }
-             break;
         case 'upg':
              break;
         case 'bye':

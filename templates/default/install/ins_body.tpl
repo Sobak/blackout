@@ -12,9 +12,6 @@
         <td align="center"><a href="index.php?mode=ins&page=1" accesskey="i">{ins_mnu_inst}</a></td>
       </tr>
       <tr>
-        <td align="center"><a href="index.php?mode=goto&page=1" accesskey="b">{ins_mnu_goto}</a></td>
-      </tr>
-      <tr>
         <td align="center"><a href="index.php?mode=upg" accesskey="u">{ins_mnu_upgr}</a></td>
       </tr>
       <tr>

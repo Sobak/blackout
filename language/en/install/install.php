@@ -12,7 +12,6 @@ $lang['ins_btn_prev']     = "Previous";
 
 $lang['ins_mnu_intro']    = "Introduction";
 $lang['ins_mnu_inst']     = "Install";
-$lang['ins_mnu_goto']     = "Transfer";
 $lang['ins_mnu_upgr']     = "Update";
 $lang['ins_mnu_quit']     = "Finish";
 
@@ -29,15 +28,9 @@ $lang['ins_tx_inst2']     = "The MySQL database needs to exist";
 $lang['ins_tx_inst3']     = "You must complete the following form correctly to continue the installation:";
 $lang['ins_tx_acc1']      = "You are about to create an administrator account";
 $lang['ins_tx_acc2']      = "Fill out the following form with the account information:";
-$lang['ins_tx_goto1']     = "En choisissant cette m&eacute;tode d'installation, vous allez transformer une base de donn&eacute;e UGamela en base de donn&eacute;e XNova.";
-$lang['ins_tx_goto2']     = "Cette option fonctionne, mais il reste pr&eacute;f&eacute;rable de faire une installation compl&egrave;te d'XNova.";
-$lang['ins_tx_goto3']     = "Vous prenez un risque en transformant votre base de donn&eacute;e, faites une sauvegarde avant!";
-$lang['ins_tx_goto4']     = "Vous devez d&eacute;j&agrave; avoir install&eacute; UGamela";
-$lang['ins_tx_goto5']     = "Remplissez le formulaire suivant avec les informations exactes de la base de donn&eacute;e o&ugrave; a &eacute;t&eacute; install&eacute; UGamela. Si vous vous trompez, le transfert &eacute;choura:";
 $lang['ins_tx_done1']     = "The database has been installed!";
 $lang['ins_tx_done2']     = "The administrator account has been successfully created!";
 $lang['ins_tx_done3']     = "It is advisable to delete the <i>install</i> folder if you no longer need the installer!";
-$lang['ins_tx_done4']     = "Le transf&egrave;re a &eacute;t&eacute; correctement effectu&eacute;!";
 
 $lang['ins_form_server']  = "SQL server";
 $lang['ins_form_db']      = "Database";

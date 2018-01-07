@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ### Removed
 - Removed Changelog screen
+- Removed UGamela->XNova converter
 
 ## [0.2.0] - 2018-01-07
 ### Added
