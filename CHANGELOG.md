@@ -24,6 +24,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
     - Improved translation
     - Installer generates cleaner config
     - Installer is blocked if config file already exists
+- Multiple improvements to the debug mode
 - Refactored menu templates
 - Signin no longer gives a hint whether username or password was incorrect
 - Slightly refactored Overview

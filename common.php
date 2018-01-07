@@ -15,7 +15,7 @@ define('DEFAULT_LANG'     , 'en');
 $HTTP_ACCEPT_LANGUAGE = DEFAULT_LANG;
 
 include($ugamela_root_path . 'includes/debug.class.php');
-$debug = new debug();
+$debug = new Debug();
 
 include($ugamela_root_path . 'includes/constants.php');
 include($ugamela_root_path . 'includes/functions.php');

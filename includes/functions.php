@@ -121,8 +121,8 @@ function display($content, $title = '', $hasNavigation = true, $metatags = '') {
     $DisplayPage .= "<center>\n". $content ."\n</center>\n";
 
     // Append debug if necessary
-    if (isset($user['authlevel']) && ($user['authlevel'] == 1 || $user['authlevel'] == 3)) {
-        if ($game_config['debug'] == 1) $debug->echo_log();
+    if (isset($user['authlevel']) && $user['authlevel'] > LEVEL_PLAYER && $game_config['debug']) {
+        $DisplayPage .= $debug->getLog();
     }
 
     $DisplayPage .= gettemplate('simple_footer');

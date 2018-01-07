@@ -84,3 +84,4 @@ $lang['sys_perte_defenseur'] = "Defender Loss";
 $lang['sys_debris'] = "debris";
 $lang['sys_noaccess'] = "Access Denied";
 $lang['sys_noalloaw'] = "You do not have access to this page";
+$lang['sys_database_fail'] = 'We have some database problems, sorry for the inconvenience.';
