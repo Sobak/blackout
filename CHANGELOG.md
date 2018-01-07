@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 ## [Unreleased]
 ### Fixed
 - Language selectors for logged out users
+- Redirects after displaying a message
 
 ### Changed
 - **Frames are no longer used**

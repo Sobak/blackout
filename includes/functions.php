@@ -63,10 +63,9 @@ function message($message, $title = 'Error', $destination = null, $time = 3, $ha
 
     $page = parsetemplate(gettemplate('message_body'), $parse);
 
+    $headers = '';
     if ($destination) {
-        $headers = "<meta http-equiv=\"refresh\" content=\"$time;URL=javascript:self.location='$destination';\">";
-    } else {
-        $headers = '';
+        $headers = "<meta http-equiv='refresh' content='$time;URL=$destination'>";
     }
 
     display($page, $title, $hasNavigation, $headers);
