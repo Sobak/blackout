@@ -35,7 +35,7 @@
         <a href="credit.php">{log_cred}</a>
     </div>
     <div id="rightmenu" class="rightmenu">
-        <div id="content">
+        <div id="login_content">
             <center>
                 <div style="text-align: left;">
                     <strong>{servername}</strong> {log_desc} {servername}.

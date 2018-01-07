@@ -97,7 +97,7 @@ if ($action != 5) {
 </table>
 </HTML>";
 
-    display($page2);
+    display($page2, $lang['Annonces']);
 }
 
 // Créer par Tom1991 Copyright 2008

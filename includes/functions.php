@@ -54,8 +54,9 @@ function is_email($email) {
  * @param string $title Message title
  * @param null $destination Optional destination to redirect the user to
  * @param int $time Time after which redirect will happen
+ * @param bool $hasNavigation Whether to show navigation
  */
-function message($message, $title = 'Error', $destination = null, $time = 3)
+function message($message, $title = 'Error', $destination = null, $time = 3, $hasNavigation = true)
 {
     $parse['title'] = $title;
     $parse['message']   = $message;
@@ -68,7 +69,7 @@ function message($message, $title = 'Error', $destination = null, $time = 3)
         $headers = '';
     }
 
-    display($page, $title, false, $headers);
+    display($page, $title, $hasNavigation, $headers);
 }
 
 /**
@@ -83,6 +84,22 @@ function display($content, $title = '', $hasNavigation = true, $metatags = '') {
     global $game_config, $debug, $user, $planetrow;
 
     $DisplayPage = ShowHeader($title, $metatags);
+
+    if ($hasNavigation || (defined('IN_ADMIN') && IN_ADMIN == true)) {
+        $template = 'left_menu';
+
+        if (defined('IN_ADMIN') && IN_ADMIN == true) {
+            if ($user['authlevel'] == LEVEL_OPERATOR) {
+                $template = 'admin/left_menu_modo';
+            } elseif ($user['authlevel'] == LEVEL_SUPER_OPERATOR) {
+                $template = 'admin/left_menu_op';
+            } elseif ($user['authlevel'] >= LEVEL_ADMIN) {
+                $template = 'admin/left_menu';
+            }
+        }
+
+        $DisplayPage .= ShowLeftMenu($template, $user);
+    }
 
     if ($hasNavigation) {
         if ($user['aktywnosc'] == 1) {
@@ -135,6 +152,41 @@ function ShowHeader($title, $metatags) {
     $parse['-meta-'] = $metatags;
 
     return parsetemplate(gettemplate('simple_header'), $parse);
+}
+
+/**
+ * Renders left menu.
+ *
+ * @param string $template Template of the menu
+ * @param array $user User database record
+ * @return string
+ */
+function ShowLeftMenu($template, array $user)
+{
+    global $dpath, $game_config, $lang;
+
+    includeLang('leftmenu');
+
+    $parse                    = $lang;
+    $parse['lm_tx_serv']      = $game_config['resource_multiplier'];
+    $parse['lm_tx_game']      = $game_config['game_speed'] / 2500;
+    $parse['lm_tx_fleet']     = $game_config['fleet_speed'] / 2500;
+    $parse['lm_tx_queue']     = MAX_FLEET_OR_DEFS_PER_ROW;
+    $parse['server_info']     = parsetemplate(gettemplate('serv_infos'), $parse);
+    $parse['XNovaRelease']    = VERSION;
+    $parse['dpath']           = $dpath;
+    $parse['forum_url']       = $game_config['forum_url'];
+    $parse['servername']      = $game_config['game_name'];
+    $rank                     = doquery("SELECT `total_rank` FROM {{table}} WHERE `stat_code` = '1' AND `stat_type` = '1' AND `id_owner` = '". $user['id'] ."';",'statpoints',true);
+    $parse['user_rank']       = $rank['total_rank'];
+    if ($user['authlevel'] > 0) {
+        $parse['ADMIN_LINK']  = '
+    <tr>
+        <td colspan="2"><div><a href="admin/overview.php" style="color:lime">'.$lang['user_level'][$user['authlevel']].'</a></div></td>
+    </tr>';
+    }
+
+    return parsetemplate(gettemplate($template), $parse);
 }
 
 // ----------------------------------------------------------------------------------------------------------------

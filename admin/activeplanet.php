@@ -12,7 +12,6 @@ includeLang('admin');
 
 $parse          = $lang;
 $parse['dpath'] = $dpath;
-$parse['mf']    = $mf;
 
 $PageTPL        = gettemplate('admin/activeplanet_body');
 $AllActivPlanet = doquery("SELECT * FROM {{table}} WHERE `last_update` >= '". (time()-15 * 60) ."' ORDER BY `id` ASC", 'planets');

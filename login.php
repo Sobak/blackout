@@ -27,7 +27,7 @@ if ($_POST) {
         $cookie = $login["id"] . "/%/" . $login["username"] . "/%/" . md5($login["password"] . "--" . $dbsettings["secretword"]) . "/%/" . $rememberme;
         setcookie($game_config['COOKIE_NAME'], $cookie, $expiretime, "/", "", 0);
 
-        header("Location: ./frames.php");
+        header("Location: ./overview.php");
         exit;
     } else {
         message($lang['Login_FailCredentials'], $lang['Login_Error']);
@@ -48,5 +48,5 @@ if ($_POST) {
     }
 
     $page = parsetemplate(gettemplate('login_body'), $parse);
-    display($page, $lang['Login']);
+    display($page, $lang['Login'], false);
 }

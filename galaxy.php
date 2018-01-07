@@ -152,7 +152,7 @@ include($ugamela_root_path . 'common.php');
 
     $page .= "</tbody></table></div>";
 
-    display ($page, $lang[''], false, '', false);
+    display($page, $lang['Galaxy']);
 
 // -----------------------------------------------------------------------------------------------------------
 // History version

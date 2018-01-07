@@ -16,5 +16,5 @@ includeLang('credit');
 
 $parse   = $lang;
 
-display(parsetemplate(gettemplate('credit_body'), $parse), $lang['cred_credit'], false);
+display(parsetemplate(gettemplate('credit_body'), $parse), $lang['cred_credit'], isset($user['authlevel']));
 ?>

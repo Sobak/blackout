@@ -161,7 +161,7 @@ function BatimentBuildingPage (&$CurrentPlanet, $CurrentUser) {
 
     $page                         .= parsetemplate(gettemplate('buildings_builds'), $parse);
 
-    display($page, $lang['Builds']);
+    display($page, $lang['Buildings']);
 }
 
 // -----------------------------------------------------------------------------------------------------------

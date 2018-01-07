@@ -29,7 +29,7 @@ while( $Ops = mysql_fetch_assoc($GameOps) ) {
     $parse['ctc_admin_list'] .= parsetemplate($RowsTPL, $bloc);
 }
 
-display(parsetemplate(gettemplate('contact_body'), $parse), $lang['ctc_title'], false);
+display(parsetemplate(gettemplate('contact_body'), $parse), $lang['ctc_title'], isset($user['authlevel']));
 
 // -----------------------------------------------------------------------------------------------------------
 // History version

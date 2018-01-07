@@ -89,7 +89,7 @@ function ShowOfficierPage ( &$CurrentUser ) {
 }
 
     $page = ShowOfficierPage ( $user );
-    display($page, $lang['officier']);
+    display($page, $lang['Officiers']);
 
 // -----------------------------------------------------------------------------------------------------------
 // History version

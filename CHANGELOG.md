@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 - Language selectors for logged out users
 
 ### Changed
+- **Frames are no longer used**
 - Available languages are now discovered dynamically instead of being hardcoded
 - Cleaner Options screen
 - Deduplicated header-related functions
