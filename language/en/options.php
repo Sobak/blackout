@@ -2,71 +2,60 @@
 
 // Messages
 $lang['changue_pass'] = "Chanage Password";
-$lang['Download'] = "Download";
-$lang['Search'] = "Search";
-$lang['succeful_changepass'] = "Password now is chanage.<br /><a href=\"login.php\" target=\"_top\">Back</a>";
-$lang['succeful_save'] = "All thinks is succeful chanage......<br /><a href=\"options.php\">Back</a>";
+$lang['succeful_changepass'] = 'Password has been changed.<br><a href="login.php" target="_top">Log in again</a>';
+$lang['succeful_save'] = 'Options have been saved<br><a href="options.php">Return</a>';
 
 // Form
-$lang['userdata'] = "Information of User";
-$lang['username'] = "Nick";
-$lang['lastpassword'] = "Old Password";
-$lang['newpassword'] = "New Password (min. 8 Caracteres)";
-$lang['newpasswordagain'] = "New Password (Again)";
-$lang['emaildir'] = "E-Mail Adress";
-$lang['emaildir_tip'] = "You are chanage email and if you dont write some new email your email will been good in 7 days....";
-$lang['permanentemaildir'] = "Now is Email";
-$lang['Languese'] = 'J�zyk';
+$lang['userdata'] = "User informations";
+$lang['username'] = "Username";
+$lang['lastpassword'] = "Current password";
+$lang['newpassword'] = "New password (min. 8 characters)";
+$lang['newpasswordagain'] = "New password (confirm)";
+$lang['emaildir'] = "E-mail adress";
+$lang['emaildir_tip'] = "For the security reasons change will take effect in 7 days";
+$lang['permanentemaildir'] = "Current e-mail";
+$lang['language'] = 'Language';
 
-$lang['opt_lst_ord']  = "Classer les planetes dans l'ordre suivant :";
-$lang['opt_lst_ord0'] = "Date de colonisation";
-$lang['opt_lst_ord1'] = "Coordonnees";
-$lang['opt_lst_ord2'] = "Ordre alphabetique";
-$lang['opt_lst_cla']  = "Ordre de classement :";
-$lang['opt_lst_cla0'] = "croissant";
-$lang['opt_lst_cla1'] = "d�croissant";
-$lang['opt_chk_skin'] = "Utiliser le skin";
+$lang['opt_lst_ord']  = "Sort planets by:";
+$lang['opt_lst_ord0'] = "Colonisation date";
+$lang['opt_lst_ord1'] = "Coordinates";
+$lang['opt_lst_ord2'] = "Alphabetical order";
+$lang['opt_lst_cla']  = "Sorting direction:";
+$lang['opt_lst_cla0'] = "ascending";
+$lang['opt_lst_cla1'] = "descending";
+$lang['opt_chk_skin'] = "Use the skin";
 
 // Admin Options
-$lang['opt_adm_title'] = "Options Admin";
-$lang['opt_adm_planet_prot'] = "Planet Procect";
+$lang['opt_adm_title'] = "Administrative options";
+$lang['opt_adm_planet_prot'] = "Protect my planets";
 
 // General options
-$lang['thanksforregistry'] = "Thanks for REG.<br />You will give email whit password.";
-$lang['general_settings'] = "General Setings";
-$lang['skins_example'] = "Skins (p.e. /css/)";
-$lang['avatar_example'] = "Avatar (p.e. /img/avatar.jpg)";
-$lang['showskin'] = 'Mostra skin';
-$lang['untoggleip'] = "Deactive IP";
-$lang['untoggleip_tip'] = "None all give!";
+$lang['general_settings'] = "General setings";
+$lang['skins_example'] = "Skin (e.g. /css/)";
+$lang['avatar_example'] = "Avatar (e.g. /img/avatar.jpg)";
+$lang['untoggleip'] = "Deactivate IP checks";
+$lang['untoggleip_tip'] = "Do not use!";
 
-// Option galaxy
+// Galaxy options
 $lang['galaxyvision_options'] = "Galaxy Vision Options";
 $lang['spy_cant'] = "Number of Spy Sonds";
-$lang['spy_cant_tip'] = "Now you chanage numbers of spy sonds....";
-$lang['tooltip_time'] = "Tooltipe Time";
-$lang['mess_ammount_max'] = "Numbers of max Fleets Report";
-$lang['show_ally_logo'] = "Show Allinace Logo";
-$lang['seconds'] = "Seconds";
+$lang['tooltip_time'] = "Tooltips display time";
+$lang['mess_ammount_max'] = "Number of max Fleets Report";
+$lang['show_ally_logo'] = "Show alliance logo";
+$lang['seconds'] = "seconds";
 
-//Rapport acces
-$lang['shortcut'] = "Shortcut";
-$lang['show'] = "Show";
-$lang['write_a_messege'] = "Write Massage";
+// Report acces
+$lang['shortcuts'] = "Shortcuts";
+$lang['write_a_messege'] = "Private Message";
 $lang['spy'] = "Spy";
 $lang['add_to_buddylist'] = "Add to buddylist";
-$lang['attack_with_missile'] = "Attack whit missiles";
+$lang['attack_with_missile'] = "Attack with missiles";
 $lang['show_report'] = "Show Reports";
 
-//Vacations mod
-$lang['delete_vacations'] = "Delete Vacation Mode / Is Completed";
+// Vacations mod
+$lang['delete_vacations'] = "Others";
 $lang['mode_vacations'] = "Vacation Mode";
-$lang['vacations_tip'] = "You account now is in Vacation Mode.";
+$lang['vacations_tip'] = "You account is now in Vacation Mode.";
 $lang['deleteaccount'] = "Delete Account";
-$lang['deleteaccount_tip'] = "You account will been deleted in 7 days.";
-$lang['save_settings'] = "Chanage";
-
-
-// Created by Perberos. All rights reversed (C) 2006
-// Complet by XNova Team. All rights reversed (C) 2008
-?>
+$lang['deleteaccount_tip'] = "You account will be deleted in 7 days.";
+$lang['save_settings'] = "Save";

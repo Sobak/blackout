@@ -9,8 +9,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ### Changed
 - Available languages are now discovered dynamically instead of being hardcoded
+- Cleaner Options screen
 - Improved translation of
     - Log in screen
+    - Options
     - Registration
 - Installer improvements
     - Default database texts (like overview news) are now localized

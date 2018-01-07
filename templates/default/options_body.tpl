@@ -25,10 +25,12 @@
     <th>{permanentemaildir}</th>
     <th>{opt_mail2_data}</th>
 </tr><tr> 
-  <th>{Languese}</th>
-  <th><select name="langer">
+  <th>{language}</th>
+  <th>
+      <select name="langer">
         {opt_lst_lang_data}
-        </select></th>
+      </select>
+  </th>
 </tr><tr>
     <th colspan="2"></th>
 </tr><tr>
@@ -48,7 +50,7 @@
         </select>
     </th>
 </tr><tr>
-    <th>{skins_example}<br> <a href="http://80.237.203.201/download/" target="_blank">{Download}</a></th>
+    <th>{skins_example}</th>
     <th><input name="dpath" maxlength="80" size="40" value="{opt_dpath_data}" type="text"> <br>
         <select name="dpaths" size="1">
             <option selected="selected">  </option>
@@ -59,7 +61,7 @@
     <th>{opt_chk_skin}</th>
     <th><input name="design"{opt_sskin_data} type="checkbox"></th>
 </tr><tr>
-    <th>{avatar_example}<br> <a href="http://www.google.com.ar/imghp" target="_blank">{Search}</a></th>
+    <th>{avatar_example}</th>
     <th><input name="avatar" maxlength="80" size="40" value="{opt_avata_data}" type="text"></th>
 </tr><tr>
     <th><a title="{untoggleip_tip}">{untoggleip}</a></th>
@@ -67,7 +69,7 @@
 </tr><tr>
     <td class="c" colspan="2">{galaxyvision_options}</td>
 </tr><tr>
-    <th><a title="{spy_cant_tip}">{spy_cant}</a></th>
+    <th>{spy_cant}</th>
     <th><input name="spio_anz" maxlength="2" size="2" value="{opt_probe_data}" type="text"></th>
 </tr><tr>
     <th>{tooltip_time}</th>
@@ -79,8 +81,7 @@
     <th>{show_ally_logo}</th>
     <th><input name="settings_allylogo"{opt_allyl_data} type="checkbox" /></th>
 </tr><tr>
-    <th>{shortcut}</th>
-    <th>{show}</th>
+    <td class="c" colspan="2">{shortcuts}</td>
 </tr><tr>
     <th><img src="{dpath}img/e.gif" alt="">   {spy}</th>
     <th><input name="settings_esp"{user_settings_esp} type="checkbox" /></th>
