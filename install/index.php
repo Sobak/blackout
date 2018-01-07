@@ -80,15 +80,14 @@ switch ($Mode) {
                 }
 
             fwrite($dz, "<?php\n");
-            fwrite($dz, "if(!defined(\"INSIDE\")){ die(\"attemp hacking\"); }\n");
-            fwrite($dz, "\$dbsettings = Array(\n");
-            fwrite($dz, "\"server\"     => \"".$host."\", // MySQL server name.\n");
-            fwrite($dz, "\"user\"       => \"".$user."\", // MySQL username.\n");
-            fwrite($dz, "\"pass\"       => \"".$pass."\", // MySQL password.\n");
-            fwrite($dz, "\"name\"       => \"".$db."\", // MySQL database name.\n");
-            fwrite($dz, "\"prefix\"     => \"".$prefix."\", // Tables prefix.\n");
-            fwrite($dz, "\"secretword\" => \"XNova".$numcookie."\"); // Cookies.\n");
-            fwrite($dz, "?>");
+            fwrite($dz, "defined('INSIDE') or die;\n\n");
+            fwrite($dz, "\$dbsettings = [\n");
+            fwrite($dz, "\t'server'     => '".$host."', // MySQL server name.\n");
+            fwrite($dz, "\t'user'       => '".$user."', // MySQL username.\n");
+            fwrite($dz, "\t'pass'       => '".$pass."', // MySQL password.\n");
+            fwrite($dz, "\t'name'       => '".$db."', // MySQL database name.\n");
+            fwrite($dz, "\t'prefix'     => '".$prefix."', // Tables prefix.\n");
+            fwrite($dz, "\t'secretword' => 'XNova".$numcookie."', // Cookies.\n];\n");
             fclose($dz);
 
             function doquery ($InQry, $TblName) {
