@@ -12,7 +12,6 @@ $lang['ins_btn_prev']     = "Previous";
 
 $lang['ins_mnu_intro']    = "Introduction";
 $lang['ins_mnu_inst']     = "Install";
-$lang['ins_mnu_upgr']     = "Update";
 $lang['ins_mnu_quit']     = "Finish";
 
 $lang['ins_error']        = "Error";

@@ -235,8 +235,6 @@ switch ($Mode) {
             $frame  = parsetemplate ( $SubTPL, $bloc );
         }
         break;
-    case 'upg':
-         break;
     case 'bye':
             header("Location: ../");
          break;
