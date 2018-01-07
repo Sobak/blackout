@@ -34,7 +34,7 @@ if ($_POST && $mode == "change") {
         while ($u = mysql_fetch_array($sq)) {
             SendSimpleMessage ( $u['id'], $user['id'], $Time, 97, $From, $Subject, $Message);
         }
-        message("<font color=\"lime\">Wys�a�e� wiadomo�� do wszystkich graczy</font>", "Complete", "../overview.php", 3);
+        message("<font color=\"lime\">Wys�a�e� wiadomo�� do wszystkich graczy</font>", "Complete", "overview.php", 3, false);
     }
 } else {
     $parse = $game_config;

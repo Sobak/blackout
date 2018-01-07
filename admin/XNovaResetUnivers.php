@@ -84,7 +84,7 @@ function XNovaResetUnivers ( $CurrentUser ) {
     doquery("DROP TABLE {{table}}", 'planets_s');
     doquery("DROP TABLE {{table}}", 'users_s');
 
-    message( $TransUser . $lang['adm_rz_done'], $lang['adm_rz_ttle'] );
+    message($TransUser . $lang['adm_rz_done'], $lang['adm_rz_ttle'], null, 0, false);
 
     return $Page;
 }

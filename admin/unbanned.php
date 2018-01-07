@@ -19,7 +19,7 @@ if ($mode != 'change') {
     $nam = $_POST['nam'];
     doquery("DELETE FROM {{table}} WHERE who2='{$nam}'", 'banned');
     doquery("UPDATE {{table}} SET bana=0, banaday=0 WHERE username='{$nam}'", "users");
-    message("Le joueur {$nam} a bien &eacute;t&eacute; d&eacute;banni!", 'Information');
+    message("Le joueur {$nam} a bien &eacute;t&eacute; d&eacute;banni!", 'Information', null, 0, false);
 }
 
 display(parsetemplate(gettemplate('admin/unbanned'), $parse), "Overview", false);

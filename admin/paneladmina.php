@@ -87,7 +87,7 @@ if (isset($_GET['result'])) {
             $Message    = $lang['adm_mess_lvl1']. " ". $Player ." ".$lang['adm_mess_lvl2'];
             $Message   .= "<font color=\"red\">".$lang['adm_usr_level'][ $NewLvl ]."</font>!";
 
-            message( $Message, $lang['adm_mod_level'] );
+            message($Message, $lang['adm_mod_level'], null, 0, false);
             break;
 
         case 'ip_search':
@@ -128,7 +128,7 @@ if (isset($_GET['action'])) {
             }
              else
             {
-                 message( $lang['sys_noalloaw'], $lang['sys_noaccess'] );
+                 message($lang['sys_noalloaw'], $lang['sys_noaccess'], null, 0, false);
             }
             break;
 

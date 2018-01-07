@@ -112,6 +112,6 @@ $display            = parsetemplate($BodyTpl , $parse);
 
 if (isset($_POST['delit'])) {
     doquery ("DELETE FROM {{table}} WHERE `message_id` = '". $_POST['delit'] ."';", 'messages');
-    message( $lang['mlst_mess_del'] ." ( ". $_POST['delit'] ." )", $lang['mlst_title'], "./messagelist.php", 3);
+    message( $lang['mlst_mess_del'] ." ( ". $_POST['delit'] ." )", $lang['mlst_title'], "./messagelist.php", 3, false);
 }
 display($display, $lang['mlst_title'], false);

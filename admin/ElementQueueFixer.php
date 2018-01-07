@@ -42,4 +42,4 @@ include($ugamela_root_path . 'common.php');
         $QuitMessage = $lang['adm_done'];
     }
 
-    message($QuitMessage, $lang['adm_cleaner_title']);
+    message($QuitMessage, $lang['adm_cleaner_title'], null, 0, false);

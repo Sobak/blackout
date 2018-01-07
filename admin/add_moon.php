@@ -32,7 +32,7 @@ if ($mode == 'addit') {
 
     CreateOneMoonRecord ( $Galaxy, $System, $Planet, $Owner, $MoonID, $MoonName, 20 );
 
-    message( $lang['addm_done'], $lang['addm_title'] );
+    message($lang['addm_done'], $lang['addm_title'], null, 0, false);
 }
 $Page = parsetemplate($PageTpl, $parse);
 

@@ -292,4 +292,4 @@ $TheUser = doquery ( "SELECT * FROM {{table}} WHERE `id` = '" . $UserID . "';", 
 
 }
 
-    message( $lang['adm_done'], $lang['adm_stat_title'] );
+    message($lang['adm_done'], $lang['adm_stat_title'], null, 0, false);

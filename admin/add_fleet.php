@@ -69,7 +69,7 @@ elseif($mode == 'add')
 
     doquery( $SqlAdd, "planets");
 
-    message('Ajout OK');
+    message('Ajout OK', '', null, 0, false);
 
 
 }
