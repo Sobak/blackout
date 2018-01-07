@@ -25,7 +25,10 @@ if (empty($Mode)) { $Mode = 'intro'; }
 if (empty($Page)) { $Page = 1;       }
 
 $MainTPL = gettemplate('install/ins_body');
+
 includeLang('install/install');
+includeLang('install/database');
+
 switch ($Mode) {
     case 'intro':
             $SubTPL = gettemplate ('install/ins_intro');
@@ -110,6 +113,9 @@ switch ($Mode) {
             doquery ( $QryTableRw         , 'rw'         );
             doquery ( $QryTableStatPoints , 'statpoints' );
             doquery ( $QryTableUsers      , 'users'      );
+
+            doquery("UPDATE {{table}} SET `config_value` = '" . $lang['ins_database_close_reason'] . "' WHERE `config_name` = 'close_reason';", 'config');
+            doquery("UPDATE {{table}} SET `config_value` = '" . $lang['ins_database_news'] . "' WHERE `config_name` = 'OverviewNewsText';", 'config');
 
             $SubTPL = gettemplate ('install/ins_form_done');
             $bloc   = $lang;

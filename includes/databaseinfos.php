@@ -109,7 +109,7 @@
     $QryInsertConfig    .= "('COOKIE_NAME'           , 'XNova'), ";
     $QryInsertConfig    .= "('game_name'             , 'XNova'), ";
     $QryInsertConfig    .= "('game_disable'          , '1'), ";
-    $QryInsertConfig    .= "('close_reason'          , 'Le jeu est installe, mais on a pas encore mis les parametre !'), ";
+    $QryInsertConfig    .= "('close_reason'          , ''), ";
     $QryInsertConfig    .= "('metal_basic_income'    , '20'), ";
     $QryInsertConfig    .= "('crystal_basic_income'  , '10'), ";
     $QryInsertConfig    .= "('deuterium_basic_income', '0'), ";
@@ -124,7 +124,7 @@
     $QryInsertConfig    .= "('noobprotectionmulti'   , '5'), ";
     $QryInsertConfig    .= "('forum_url'             , 'http://www.xnova.fr/forum' ), ";
     $QryInsertConfig    .= "('OverviewNewsFrame'     , '1' ), ";
-    $QryInsertConfig    .= "('OverviewNewsText'      , 'Bienvenue sur le nouveau serveur XNova' ), ";
+    $QryInsertConfig    .= "('OverviewNewsText'      , '' ), ";
     $QryInsertConfig    .= "('OverviewExternChat'    , '0' ), ";
     $QryInsertConfig    .= "('OverviewExternChatCmd' , '' ), ";
     $QryInsertConfig    .= "('OverviewBanner'        , '0' ), ";
