@@ -1,5 +1,4 @@
-<center>
-<br/><br/>
+<br><br>
 <table width="475">
 <tbody>
 <tr>
@@ -25,4 +24,3 @@
     <th width="279">{cred_based}<br >{cred_start}</th>
 </tr>
 </table>
-</center>
