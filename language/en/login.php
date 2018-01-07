@@ -1,29 +1,21 @@
 <?php
 
-$lang['Login'] = 'Login';
-$lang['User_name'] = 'Nick:';
+$lang['Login'] = 'Log in';
+$lang['User_name'] = 'Username:';
 $lang['Password'] = 'Password:';
-$lang['Please_Login'] = 'Welcome <a href="login.php" target="_main">Whait...</a>';
-$lang['Please_Wait'] = 'Whait';
-$lang['Remember_me'] = 'Remeber me!!!';
-$lang['Register'] = 'Registration me!!!';
-$lang['Login_Error'] = 'Erreur';
-$lang['PleaseWait'] = 'Whait';
+$lang['Remember_me'] = 'Remeber me!';
 
-$lang['Login_Ok'] = 'Identification r&eacute;ussie, <a href="./"><blink>redirection...</blink></a><br><center><img src="images/progressbar.gif"></center>';
-$lang['Login_FailPassword'] = 'Mot de passe incorrect<br /><a href="login.php" target="_top">Retour</a>';
-$lang['Login_FailUser'] = 'Ce joueur n\'existe pas.<br><a href=login.php>Retour</a>';
+$lang['Login_Error'] = 'Error';
+$lang['Login_FailPassword'] = 'Invalid password<br><a href="login.php" target="_top">Return</a>';
+$lang['Login_FailUser'] = 'Invalid username<br><a href=login.php>Return</a>';
 
-$lang['log_univ'] = 'Merci de selectionner un Univers!';
-$lang['log_reg'] = 'Reg';
+$lang['log_reg'] = 'Signup';
 $lang['log_cred'] = 'Team';
-$lang['log_desc'] = 'est un <strong>jeu de strat&eacute;gie gratuit</strong> dans l\'espace. Pour jouer, il suffit d\'un navigateur internet. Inscrivez-vous et d&eacute;couvrez le monde fantastique de';
+$lang['log_desc'] = 'is a <strong>free strategy game</strong> based in space. To play, all you need is an internet browser. Sign up and discover the fantastic world';
 $lang['log_toreg'] = 'Registration';
-$lang['log_online'] = 'Players Online';
-$lang['log_lastreg'] = 'Last Reg ';
-$lang['log_numbreg'] = 'NBumber of Players';
-$lang['log_welcome'] = 'HI : Galaxy Game';
+$lang['log_online'] = 'Players online';
+$lang['log_lastreg'] = 'Latest player';
+$lang['log_numbreg'] = 'Players total';
+$lang['log_welcome'] = 'Welcome to';
 
-$lang['PasswordLost'] = 'Zaboravljeni Password ?';
-
-?>
+$lang['PasswordLost'] = 'Forgot password?';
