@@ -11,7 +11,7 @@ function f(target_url,win_name) {
 <br>
 <table width="130" cellspacing="0" cellpadding="0">
 <tr>
-    <td colspan="2" style="border-top: 1px #545454 solid"><div><center>{servername}<br>(<a href="changelog.php" target={mf}><font color=red>{XNovaRelease}</font></a>)<center></div></td>
+    <td colspan="2" style="border-top: 1px #545454 solid; font-weight: bold"><center>{servername}<br>(<font color=red>{XNovaRelease}</font>)</td>
 </tr><tr>
     <td colspan="2" background="{dpath}img/bg1.gif"><center>{devlp}</center></td>
 </tr><tr>

@@ -12,7 +12,7 @@ parent.frames['Hauptframe'].location.replace("overview.php");
 <br>
 <table width="130" cellspacing="0" cellpadding="0">
 <tr>
-    <td style="border-top: 1px #545454 solid"><div><center>{servername}<br>(<a href="changelog.php" target={mf}><font color=red>{XNovaRelease}</font></a>)<center></div></td>
+    <td style="border-top: 1px #545454 solid; font-weight: bold"><center>{servername}<br>(<font color=red>{XNovaRelease}</font>)</td>
 </tr><tr>
     <td background="{dpath}img/bg1.gif"><center>{admin}</center></td>
 </tr><tr>

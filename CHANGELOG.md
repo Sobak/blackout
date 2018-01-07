@@ -9,6 +9,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
     - Log in screen
 - Signin no longer gives a hint whether username or password was incorrect
 
+### Removed
+- Removed Changelog screen
+
 ## [0.2.0] - 2018-01-07
 ### Added
 - Complete translation of following screens:
