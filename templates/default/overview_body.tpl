@@ -19,7 +19,7 @@
 </tr>
 {NewsFrame}
 <tr>
-    <td colspan="4" class="c">Wydarzenia</td>
+    <td colspan="4" class="c">{Events}</td>
 </tr>
 {fleet_list}
 <tr>
@@ -34,10 +34,10 @@
     </th>
 </tr>
 <tr>
-    <th>Średnica</th>
-    <th colspan="3">{planet_diameter} km (<a title="{Developed_fields}">{planet_field_current}</a> / <a title="{max_eveloped_fields}">{planet_field_max}</a> pól)</th>
+    <th>{Diameter}</th>
+    <th colspan="3">{planet_diameter} km (<a title="{Developed_fields}">{planet_field_current}</a> / <a title="{max_eveloped_fields}">{planet_field_max}</a> {fields})</th>
 </tr>
-    <th>Procent zabudowania</th>
+    <th>{Developed_fields}</th>
     <th colspan="3" align="center">
         <div  style="border: 1px solid rgb(153, 153, 255); width: 400px;">
         <div  id="CaseBarre" style="background-color: {case_barre_barcolor}; width: {case_barre}px;">
@@ -45,35 +45,35 @@
     </th>
 <tr>
 <tr>
-    <th>Poziom</th>
-    <th>Ekonimista : {lvl_minier}</th>
+    <th>{Level}</th>
+    <th>{Miner}: {lvl_minier}</th>
     <th></th>
-    <th>Agresor : {lvl_raid}</th>
+    <th>{Raider}: {lvl_raid}</th>
 </tr>
 <tr>
-    <th>Doświadczenie</th>
-    <th>Ekonomista : {xpminier} / {lvl_up_minier}</th>
+    <th>{Experience}</th>
+    <th>{Miner}: {xpminier} / {lvl_up_minier}</th>
     <th></th>
-    <th>Agresor : {xpraid} / {lvl_up_raid} </th>
+    <th>{Raider}: {xpraid} / {lvl_up_raid} </th>
 </tr>
-    <th>Temperatura</th>
-    <th colspan="3">od {planet_temp_min}&deg;C do {planet_temp_max}&deg;C</th>
+    <th>{Temperature}</th>
+    <th colspan="3">{planet_temp_min}{Centigrade} {to} {planet_temp_max}{Centigrade}</th>
 </tr>
 <tr>
-    <th>{Position}</th>
+    <th>{coords}</th>
     <th colspan="3"><a href="galaxy.php?mode=0&galaxy={galaxy_galaxy}&system={galaxy_system}">[{galaxy_galaxy}:{galaxy_system}:{galaxy_planet}]</a></th>
 </tr>
 <tr>
-    <th>Złom</th>
-    <th colspan="3">Metal : {metal_debris} / Kryształ : {crystal_debris}{get_link}</th>
+    <th>{Debris}</th>
+    <th colspan="3">{Metal}: {metal_debris} / {Crystal}: {crystal_debris}{get_link}</th>
 </tr>
 <tr>
-    <th>Punkty</th>
-    <th colspan="3">Budynki : {user_points} <br>
-    Flota : {user_fleet} <br>
-    Badania : {player_points_tech} <br>
-    Ogółem : {total_points} <br>
-    (Pozycja <a href="stat.php?start={u_user_rank}">{user_rank}</a> z {users_amount})
+    <th>{Points}</th>
+    <th colspan="3">{points_buildings}: {user_points} <br>
+    {points_fleet}: {user_fleet} <br>
+    {points_tech}: {player_points_tech} <br>
+    {points_total}: {total_points} <br>
+    ({Position} <a href="stat.php?start={u_user_rank}">{user_rank}</a> {of} {users_amount})
     </th>
 </tr>
 {ExternalTchatFrame}

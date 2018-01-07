@@ -16,7 +16,7 @@
 </tr><tr>
     <th>{namer}</th>
     <th><input type="text" name="newname" size=25 maxlength=20></th>
-    <th><input type="submit" name="action" value="{namer}"></th>
+    <th><input type="submit" name="action" value="{rename_planet}"></th>
 </tr>
 </table>
 </form>

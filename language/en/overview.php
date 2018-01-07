@@ -4,64 +4,71 @@
 $lang['cancel'] = 'Cancel';
 $lang['Planet_menu'] = 'Planet Menu';
 $lang['Planet'] = 'Planet';
-$lang['Have_new_message'] = 'You have 1 New Message';
+$lang['Have_new_message'] = 'You have 1 new message';
 $lang['Have_new_messages'] = 'You have new messages';
-$lang['Have_new_level_mineur'] = 'Vous gagnez un niveau en Mineur !';
-$lang['Have_new_level_raid'] = 'Vous gagnez un niveau en Raideur!';
+$lang['Have_new_level_mineur'] = 'You just gained new Miner level!';
+$lang['Have_new_level_raid'] = 'You just gained new Raid level!';
 $lang['Server_time'] = 'Time';
 $lang['Events'] = 'Events';
-$lang['Free'] = 'non active';
-$lang['Diameter'] = 'Diametar';
-$lang['fields'] = 'Polja';
-$lang['Developed_fields'] = 'Zauzeto';
-$lang['max_eveloped_fields'] = 'Number of max casses';
+$lang['Free'] = 'No activities';
+$lang['Diameter'] = 'Diameter';
+$lang['fields'] = 'fields';
+$lang['Developed_fields'] = 'Developed fields';
+$lang['max_eveloped_fields'] = 'Total number of fields';
 $lang['Temperature'] = 'Temperature';
-$lang['approx'] = 'env.';
 $lang['to'] = 'to';
-$lang['Centigrade'] = 'C';
+$lang['Centigrade'] = '&deg;C';
 $lang['Position'] = 'Position';
-$lang['Points'] = 'Bodovi';
+$lang['Points'] = 'Points';
 $lang['Rank'] = 'Rang';
-$lang['of'] = 'od';
-
+$lang['of'] = 'of';
+$lang['Experience'] = 'Experience';
+$lang['Level'] = 'Level';
+$lang['Miner'] = 'Miner';
+$lang['Raider'] = 'Raider';
+$lang['Debris'] = 'Debris';
+$lang['points_buildings'] = 'Buildings';
+$lang['points_fleet'] = 'Fleet';
+$lang['points_tech'] = 'Technology';
+$lang['points_total'] = 'Total';
 
 // Colony
-$lang['colony_abandon'] = 'Delete Colony';
-$lang['rename_and_abandon_planet'] = 'Rename or Delete Planet';
-$lang['functions'] = 'Functions';
+$lang['rename_and_abandon_planet'] = 'Rename or abandon planet';
+$lang['functions'] = 'Actions';
 $lang['coords'] = 'Coordinates';
-$lang['your_planet'] = 'Ta plan&egrave;te';
+$lang['your_planet'] = 'Your planet';
 $lang['colony_abandon'] = 'Adabon Colony';
-$lang['deleteplanet'] = 'Plan&egrave;te supprim&eacute;e!';
-$lang['security_query'] = 'Demande de s&eacute;curit&eacute;';
-$lang['name'] = 'Nick';
-$lang['namer'] = 'Name of Planet';
+$lang['deleteplanet'] = 'Planet deleted!';
+$lang['security_query'] = 'Security request';
+$lang['name'] = 'Name';
+$lang['namer'] = 'Name of planet';
+$lang['rename_planet'] = 'Rename';
 $lang['password'] = 'Password';
-$lang['confirm_planet_delete'] = 'Confirmer la suppression de la plan&egrave;te';
-$lang['confirmed_with_password'] = 'Confirm Whit Password';
+$lang['confirm_planet_delete'] = 'Confirm planet deletion';
+$lang['confirmed_with_password'] = 'Confirm with password';
 
 
 // Rename planet
-$lang['deletemessage_ok']    = "Colony is Deleted";
-$lang['deletemessage_wrong'] = "Colony is note deleted !";
-$lang['deletemessage_fail']  = "Password is not good!";
+$lang['deletemessage_ok']    = "Colony has been deleted";
+$lang['deletemessage_wrong'] = "Colony was not deleted";
+$lang['deletemessage_fail']  = "Incorrect password!";
 
 // Divers
-$lang['MembersOnline']       = "Numbers Of Online Players";
+$lang['MembersOnline']       = "Players online";
 $lang['ov_news_title']       = "News";
 
 // Gestion des flottes
 $lang['ov_fleet']            = "fleet";
 $lang['ov_une']              = "One of ";
-$lang['ov_vennant']          = " venant ";
+$lang['ov_vennant']          = " from ";
 $lang['ov_planet_to']        = "planet to ";
 $lang['ov_moon_to']          = "to moon ";
-$lang['ov_atteint']          = " atteint ";
+$lang['ov_atteint']          = " achieved ";
 $lang['ov_planet_to_target'] = "of planet ";
 $lang['ov_moon_to_target']   = "of moon ";
 $lang['ov_debris_to_target'] = "of debris ";
-$lang['ov_explo_to_target']  = "la position ";
-$lang['ov_mission']          = ". Elle avait pour mission : ";
+$lang['ov_explo_to_target']  = "target ";
+$lang['ov_mission']          = ". The mission was: ";
 
 $lang['ov_explo_stay']       = " explore ";
 $lang['ov_explo_mission']    = ". Elle a pour mission : ";
@@ -89,15 +96,3 @@ $lang['ov_fleet_from_expe'] = "Una %s proveniente dalla regione %s %s ritorna %s
 $lang['ov_debris_to'] = "un Campo di detriti";
 $lang['ov_expe_to'] = "inesplorato";
 $lang['ov_expe_from'] = "dalla regione";
-
-$lang['MembersOnline'] = "Players online";
-
-$lang['level'] = "Livello";
-$lang['metal'] = "Metallo";
-$lang['cristal'] = "Cristallo";
-$lang['experencie'] = "Esperienza";
-$lang['debris'] = "Campo di detriti";
-$lang['batiments'] = "Strutture";
-$lang['flotte'] = "Flotte";
-$lang['recherche'] = "Ricerche";
-$lang['total'] = "Totale";

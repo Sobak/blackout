@@ -13,6 +13,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 - Improved translation of
     - Log in screen
     - Options
+    - Overview
     - Registration
 - Installer improvements
     - Default database texts (like overview news) are now localized
