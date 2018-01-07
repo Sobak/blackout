@@ -44,6 +44,7 @@ $lang['devlp']        = 'Development';
 $lang['navig']        = 'Navigation';
 $lang['observ']       = 'Observatory';
 $lang['commun']       = 'Communication';
+$lang['community']    = 'Community';
 $lang['infog']        = 'Info';
 
 // Administrator menu links

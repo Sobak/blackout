@@ -282,56 +282,6 @@ a:hover
   text-decoration      : underline;
 }
 
-.style td
-{
-  color                : #FFFFFF;
-  border-top           : 0px;
-  font-size            : 60%;
-  font-family          : Tahoma,sans-serif;
-}
-
-.style div a
-{
-  padding-left         : 7px;
-  height               : 100%;
-  width                : 100%;
-  font-size            : 100%;
-  font-family          : Tahoma,sans-serif;
-}
-
-.style div a:link
-{
-  height               : 100%;
-  width                : 100%;
-  font-size            : 100%;
-  font-family          : Tahoma,sans-serif;
-}
-
-.style div a:visited
-{
-  height               : 100%;
-  width                : 100%;
-  font-size            : 100%;
-  font-family          : Tahoma,sans-serif;
-}
-
-.style div a:hover
-{
-  background-image     : url(img/link.gif);
-  background-repeat    : no-repeat;
-  background-position  : left;
-  height               : 100%;
-  width                : 108px;
-  text-decoration      : none;
-  font-size            : 100%;
-  font-family          : Tahoma,sans-serif;
-}
-
-.style
-{
-  margin-top           : 10px;
-}
-
 h1
 {
   font-size            : 60%;
@@ -346,6 +296,49 @@ h1
   float: left;
 }
 
+#left_menu .server-info {
+  border: 0;
+  width: 100%;
+}
+
+#left_menu .server-info td {
+  opacity: 1;
+}
+
+#left_menu > table {
+  margin: 21px auto 0 auto;
+}
+
 #left_menu table {
-  margin: 0 auto;
+  border-spacing: 0;
+  width: 130px;
+}
+
+#left_menu table th {
+  background: url('img/bg1.gif');
+  border-top: 0;
+  color: #fff;
+  font-weight: normal;
+  text-align: center;
+}
+
+#left_menu table td {
+  color: #FFFFFF;
+  border-top-width: 0;
+  padding: 0;
+}
+
+#left_menu table td.separated {
+  border-top-width: 1px;
+}
+
+#left_menu td a {
+  display: block;
+  padding-left: 7px;
+  width: 130px;
+}
+
+#left_menu td a:hover {
+  background: url(img/link.gif) no-repeat left;
+  text-decoration: none;
 }
