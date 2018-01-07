@@ -1,44 +1,35 @@
 <?php
 
-/**
- * overview.php
- *
- * @version 1
- * @copyright 2008 By Chlorel for XNova
- */
-
-define('INSIDE'  , true);
+define('INSIDE', true);
 
 $ugamela_root_path = './';
 include($ugamela_root_path . 'common.php');
 
 $lunarow   = doquery("SELECT * FROM {{table}} WHERE `id_owner` = '".$planetrow['id_owner']."' AND `galaxy` = '".$planetrow['galaxy']."' AND `system` = '".$planetrow['system']."' AND `lunapos` = '".$planetrow['planet']."';", 'lunas', true);
 
-CheckPlanetUsedFields ($lunarow);
+CheckPlanetUsedFields($lunarow);
 
 $mode = $_GET['mode'];
 $pl = mysql_escape_string($_GET['pl']);
 $_POST['deleteid'] = intval($_POST['deleteid']);
 
-includeLang('resources');
 includeLang('overview');
 
 switch ($mode) {
     case 'renameplanet':
         // -----------------------------------------------------------------------------------------------
-        if ($_POST['action'] == $lang['namer']) {
-            // Reponse au changement de nom de la planete
+        if ($_POST['action'] == $lang['rename_planet']) {
+            // Change planet name
             $UserPlanet     = CheckInputStrings ( $_POST['newname'] );
-            $newname        = mysql_escape_string(strip_tags(trim( $UserPlanet )));
+            $newname        = mysql_real_escape_string(strip_tags(trim( $UserPlanet )));
             if ($newname != "") {
-                // Deja on met jour la planete qu'on garde en memoire (pour le nom)
+                // Already save new planet name in memory (till the page is reloaded)
                 $planetrow['name'] = $newname;
-                // Ensuite, on enregistre dans la base de données
-                doquery("UPDATE {{table}} SET `name` = '".$newname."' WHERE `id` = '". $user['current_planet'] ."' LIMIT 1;", "planets");
-                // Est ce qu'il sagit d'une lune ??
+                // Alter the database
+                doquery("UPDATE {{table}} SET `name` = '$newname' WHERE `id` = '". $user['current_planet'] ."'", 'planets');
+                // If this is a moon, change in other table too
                 if ($planetrow['planet_type'] == 3) {
-                    // Oui ... alors y a plus qu'a changer son nom dans la table des lunes aussi !!!
-                    doquery("UPDATE {{table}} SET `name` = '".$newname."' WHERE `galaxy` = '".$planetrow['galaxy']."' AND `system` = '".$planetrow['system']."' AND `lunapos` = '".$planetrow['planet']."' LIMIT 1;", "lunas");
+                    doquery("UPDATE {{table}} SET `name` = '$newname' WHERE `galaxy` = '".$planetrow['galaxy']."' AND `system` = '".$planetrow['system']."' AND `lunapos` = '".$planetrow['planet']."' LIMIT 1;", "lunas");
                 }
             }
 
@@ -109,7 +100,7 @@ switch ($mode) {
         $Have_new_message = "";
         if ($user['new_message'] != 0) {
             $Have_new_message .= "<tr>";
-            if       ($user['new_message'] == 1) {
+            if ($user['new_message'] == 1) {
                 $Have_new_message .= "<th colspan=4><a href=messages.php>". $lang['Have_new_message']."</a></th>";
             } elseif ($user['new_message'] > 1) {
                 $Have_new_message .= "<th colspan=4><a href=messages.php>";
@@ -344,15 +335,6 @@ switch ($mode) {
         $parse['total_points']         = pretty_number( $StatRecord['total_points'] );;
 
         $parse['user_rank']            = $StatRecord['total_rank'];
-        $ile = $StatRecord['total_old_rank'] - $StatRecord['total_rank'];
-        if ($ile >= 1) {
-            $parse['ile']              = "<font color=lime>+" . $ile . "</font>";
-        } elseif ($ile < 0) {
-            $parse['ile']              = "<font color=red>-" . $ile . "</font>";
-        } elseif ($ile == 0) {
-            $parse['ile']              = "<font color=lightblue>" . $ile . "</font>";
-        }
-        $parse['u_user_rank']          = $StatRecord['total_rank'];
         $parse['user_username']        = $user['username'];
 
         if (count($fpage) > 0) {
@@ -368,7 +350,7 @@ switch ($mode) {
         $parse['Have_new_message']      = $Have_new_message;
         $parse['Have_new_level_mineur'] = $HaveNewLevelMineur;
         $parse['Have_new_level_raid']   = $HaveNewLevelRaid;
-        $parse['time']                  = date("D M d H:i:s", time());
+        $parse['time']                  = date("D M d H:i:s");
         $parse['dpath']                 = $dpath;
         $parse['planet_image']          = $planetrow['image'];
         $parse['anothers_planets']      = $AllPlanets;
@@ -377,8 +359,6 @@ switch ($mode) {
         $parse['crystal_debris']        = pretty_number($galaxyrow['crystal']);
         if (($galaxyrow['metal'] != 0 || $galaxyrow['crystal'] != 0) && $planetrow[$resource[209]] != 0) {
             $parse['get_link'] = " (<a href=\"quickfleet.php?mode=8&g=".$galaxyrow['galaxy']."&s=".$galaxyrow['system']."&p=".$galaxyrow['planet']."&t=2\">". $lang['type_mission'][8] ."</a>)";
-        } else {
-            $parse['get_link'] = '';
         }
 
         if ( $planetrow['b_building'] != 0 ) {
@@ -406,20 +386,12 @@ switch ($mode) {
         } else {
             $parse['building'] = $lang['Free'];
         }
-        { // Vista normal
-            $query = doquery('SELECT username FROM {{table}} ORDER BY register_time DESC', 'users', true);
-            $parse['last_user'] = $query['username'];
-            $query = doquery("SELECT COUNT(DISTINCT(id)) FROM {{table}} WHERE onlinetime>" . (time()-900), 'users', true);
-            $parse['online_users'] = $query[0];
-            $count = doquery('SELECT COUNT(*) FROM {{table}}', 'users', true);
-            $parse['users_amount'] = $count[0];
-        }
-        // Rajout d'une barre pourcentage
-        // Calcul du pourcentage de remplissage
+
+        // Calculate percentage of planet development
         $parse['case_pourcentage'] = floor($planetrow["field_current"] / CalculateMaxPlanetFields($planetrow) * 100) . $lang['o/o'];
         // Barre de remplissage
         $parse['case_barre'] = floor($planetrow["field_current"] / CalculateMaxPlanetFields($planetrow) * 100) * 2.5;
-        // Couleur de la barre de remplissage
+        // Color the progressbar
         if ($parse['case_barre'] > (100 * 2.5)) {
             $parse['case_barre'] = 250;
             $parse['case_barre_barcolor'] = '#C00000';
@@ -441,14 +413,13 @@ switch ($mode) {
         $parse['lvl_up_minier'] = $LvlMinier * 50;
         $parse['lvl_up_raid']   = $LvlRaid * 10;
 
-        $parse['gameurl'] = GAMEURL;
-        $parse['kod'] = $user['kiler'];
-
-        //Compteur de Membres en lign
+        // Count online users
         $OnlineUsers = doquery("SELECT COUNT(*) FROM {{table}} WHERE onlinetime>='".(time()-15*60)."'",'users', 'true');
         $parse['NumberMembersOnline'] = $OnlineUsers[0];
+
+        $count = doquery('SELECT COUNT(*) FROM {{table}}', 'users', true);
+        $parse['users_amount'] = $count[0];
 
         display(parsetemplate(gettemplate('overview_body'), $parse), $lang['Overview']);
         break;
 }
-?>

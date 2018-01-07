@@ -73,7 +73,7 @@
     {points_fleet}: {user_fleet} <br>
     {points_tech}: {player_points_tech} <br>
     {points_total}: {total_points} <br>
-    ({Position} <a href="stat.php?start={u_user_rank}">{user_rank}</a> {of} {users_amount})
+    ({Position} <a href="stat.php?start={user_rank}">{user_rank}</a> {of} {users_amount})
     </th>
 </tr>
 {ExternalTchatFrame}
