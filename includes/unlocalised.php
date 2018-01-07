@@ -190,7 +190,11 @@ function includeLang($filename) {
     if ($user['lang'] != '') {
         $language = $user['lang'];
     } else {
-        $language = DEFAULT_LANG;
+        if (isset($_COOKIE['xnova_language'])) {
+            $language = $_COOKIE['xnova_language'];
+        } else {
+            $language = DEFAULT_LANG;
+        }
     }
 
     require "$ugamela_root_path/language/$language/$filename.php";

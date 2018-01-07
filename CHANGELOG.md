@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ## [Unreleased]
+### Fixed
+- Language selectors for logged out users
+
 ### Changed
 - Available languages are now discovered dynamically instead of being hardcoded
 - Improved translation of
