@@ -239,8 +239,6 @@ if ($_POST) {
         $QryUpdateUser .= "LIMIT 1;";
         doquery( $QryUpdateUser, 'users');
 
-        // Mise a jour du nombre de joueurs inscripts
-        doquery("UPDATE {{table}} SET `config_value` = `config_value` + '1' WHERE `config_name` = 'users_amount' LIMIT 1;", 'config');
         doquery("UPDATE {{table}} SET `config_value` = `config_value` + '1' WHERE `config_name` = 'aktywacjen' LIMIT 1;", 'config');
 
         $Message  = $lang['thanksforregistry'];

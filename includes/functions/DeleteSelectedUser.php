@@ -8,8 +8,6 @@
  */
 
 function DeleteSelectedUser ( $UserID ) {
-    global $game_config;
-
     $TheUser = doquery ( "SELECT * FROM {{table}} WHERE `id` = '" . $UserID . "';", 'users', true );
     if ( $TheUser['ally_id'] != 0 ) {
         $TheAlly = doquery ( "SELECT * FROM {{table}} WHERE `id` = '" . $TheUser['ally_id'] . "';", 'alliance', true );
@@ -42,8 +40,6 @@ function DeleteSelectedUser ( $UserID ) {
     doquery ( "DELETE FROM {{table}} WHERE `owner` = '" . $UserID . "';", 'buddy' );
     doquery ( "DELETE FROM {{table}} WHERE `user` = '" . $UserID . "';", 'annonce' );
     doquery ( "DELETE FROM {{table}} WHERE `id` = '" . $UserID . "';", 'users' );
-    $Minusowo_Jeden = $game_config['users_amount']-1;
-doquery( "UPDATE {{table}} SET `config_value`='". $Minusowo_Jeden ."' WHERE `config_name` = 'users_amount';", 'config' );
 
 }
 ?>

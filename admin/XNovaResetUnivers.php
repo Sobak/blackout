@@ -79,8 +79,6 @@ function XNovaResetUnivers ( $CurrentUser ) {
             }
         }
     } // while
-    // Mise a jour du nombre de joueurs inscripts
-    doquery("UPDATE {{table}} SET `config_value` = '". $TransUser ."' WHERE `config_name` = 'users_amount' LIMIT 1;", 'config');
 
     // Menage on vire les tables transitoires
     doquery("DROP TABLE {{table}}", 'planets_s');

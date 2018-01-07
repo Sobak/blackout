@@ -15,6 +15,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 - Signin no longer gives a hint whether username or password was incorrect
 
 ### Removed
+- Eliminated redundant `config.users_amount`
 - Removed Changelog screen
 - Removed bogus Upgrade section of installer
 - Removed `informations.php` as it was unused

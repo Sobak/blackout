@@ -38,7 +38,8 @@ if ($_POST) {
     $parse['last_user'] = $query['username'];
     $online = doquery("SELECT COUNT(DISTINCT(id)) FROM {{table}} WHERE onlinetime>" . (time()-900), 'users', true)[0];
     $parse['online_users'] = $online;
-    $parse['users_amount'] = $game_config['users_amount'];
+    $count = doquery('SELECT COUNT(*) FROM {{table}}', 'users', true)[0];
+    $parse['users_amount'] = $count;
     $parse['servername'] = $game_config['game_name'];
     $parse['forum_url'] = $game_config['forum_url'];
 

@@ -73,7 +73,7 @@
     Flota : {user_fleet} <br>
     Badania : {player_points_tech} <br>
     Ogółem : {total_points} <br>
-    (Pozycja <a href="stat.php?start={u_user_rank}">{user_rank}</a> z {max_users})
+    (Pozycja <a href="stat.php?start={u_user_rank}">{user_rank}</a> z {users_amount})
     </th>
 </tr>
 {ExternalTchatFrame}

@@ -254,8 +254,6 @@ $Spr_Online = doquery("SELECT * FROM {{table}} WHERE `onlinetime`<'{$Time_Online
 
 $Del_Time = time();
 $Spr_Del = doquery("SELECT * FROM {{table}} WHERE `deltime`<'{$Del_Time}' AND `deltime`>'0'","users");
-$User_Spra = mysql_num_rows($Spr_Del);
-$Useru_Poza = $game_config['users_amount']-$User_Spra;
     while ($Del = mysql_fetch_assoc($Spr_Del)){
 $UserID = $Del['id'];
 
@@ -291,7 +289,6 @@ $TheUser = doquery ( "SELECT * FROM {{table}} WHERE `id` = '" . $UserID . "';", 
     doquery ( "DELETE FROM {{table}} WHERE `owner` = '" . $UserID . "';", 'buddy' );
     doquery ( "DELETE FROM {{table}} WHERE `user` = '" . $UserID . "';", 'annonce' );
     doquery ( "DELETE FROM {{table}} WHERE `id` = '" . $UserID . "';", 'users' );
-doquery( "UPDATE {{table}} SET `config_value`='". $Useru_Poza ."' WHERE `config_name` = 'users_amount';", 'config' );
 
 }
 

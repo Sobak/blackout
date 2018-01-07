@@ -99,7 +99,6 @@
     // Valeurs de base de la config
     $QryInsertConfig     = "INSERT INTO `{{table}}` ";
     $QryInsertConfig    .= "(`config_name`           , `config_value`) VALUES ";
-    $QryInsertConfig    .= "('users_amount'          , '0'), ";
     $QryInsertConfig    .= "('game_speed'            , '2500'), ";
     $QryInsertConfig    .= "('fleet_speed'           , '2500'), ";
     $QryInsertConfig    .= "('resource_multiplier'   , '1'), ";

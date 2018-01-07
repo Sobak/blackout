@@ -372,7 +372,6 @@ include($ugamela_root_path . 'common.php');
             $parse['dpath']                 = $dpath;
             $parse['planet_image']          = $planetrow['image'];
             $parse['anothers_planets']      = $AllPlanets;
-            $parse['max_users']             = $game_config['users_amount'];
 
             $parse['metal_debris']          = pretty_number($galaxyrow['metal']);
             $parse['crystal_debris']        = pretty_number($galaxyrow['crystal']);
@@ -412,8 +411,8 @@ include($ugamela_root_path . 'common.php');
                 $parse['last_user'] = $query['username'];
                 $query = doquery("SELECT COUNT(DISTINCT(id)) FROM {{table}} WHERE onlinetime>" . (time()-900), 'users', true);
                 $parse['online_users'] = $query[0];
-                // $count = doquery(","users",true);
-                $parse['users_amount'] = $game_config['users_amount'];
+                $count = doquery('SELECT COUNT(*) FROM {{table}}', 'users', true);
+                $parse['users_amount'] = $count[0];
             }
             // Rajout d'une barre pourcentage
             // Calcul du pourcentage de remplissage
