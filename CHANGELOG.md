@@ -11,7 +11,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
     - Admin -> Chat administration
     - Admin -> Configuration
     - Admin -> Errors
-    - Admin -> md5 encoder
     - Admin -> Players list
     - Admin -> Subtract resources
     - Admin -> Universum Reset
@@ -19,6 +18,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ### Changed
 - Changed extension of language files from `*.mo` to `*.php`
+- Improved indentation for most of the files
 - Improved translations of
     - Banned
     - Buildings
@@ -26,9 +26,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
     - Notes
     - left menu
 - Refactored Banned players screen
+- Refactored Errors admin panel's screen
+- Refactored PHP code for left menus
+- Renamed default template from `OpenGame` to `default`
 
 ### Removed
 - Eliminated usage of `$phpEx`
+- Removed Google Adsense code from the template
+- Removed md5 encoder from the admin panel
 
 ## [0.1.1] - 2018-01-06
 ### Changed
