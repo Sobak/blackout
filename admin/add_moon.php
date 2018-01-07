@@ -32,8 +32,8 @@ if ($mode == 'addit') {
 
     CreateOneMoonRecord ( $Galaxy, $System, $Planet, $Owner, $MoonID, $MoonName, 20 );
 
-    AdminMessage ( $lang['addm_done'], $lang['addm_title'] );
+    message( $lang['addm_done'], $lang['addm_title'] );
 }
 $Page = parsetemplate($PageTpl, $parse);
 
-display ($Page, $lang['addm_title'], false, '', true);
+display($Page, $lang['addm_title'], false);

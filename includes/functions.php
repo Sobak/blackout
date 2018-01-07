@@ -47,11 +47,15 @@ function is_email($email) {
     return (bool) filter_var($email, FILTER_VALIDATE_EMAIL);
 }
 
-// ----------------------------------------------------------------------------------------------------------------
-//
-// Function displaying a message with jump to another page if desired
-//
-function message($message, $title = 'Error', $destination = null, $time = 3, $in_admin = false)
+/**
+ * Display generic message.
+ *
+ * @param string $message Message content
+ * @param string $title Message title
+ * @param null $destination Optional destination to redirect the user to
+ * @param int $time Time after which redirect will happen
+ */
+function message($message, $title = 'Error', $destination = null, $time = 3)
 {
     $parse['title'] = $title;
     $parse['message']   = $message;
@@ -64,108 +68,73 @@ function message($message, $title = 'Error', $destination = null, $time = 3, $in
         $headers = '';
     }
 
-    display($page, $title, false, $headers, $in_admin);
+    display($page, $title, false, $headers);
 }
 
-function AdminMessage($message, $title = 'Error', $destination = null, $time = 3) {
-    message($message, $title, $destination, $time, true);
-}
+/**
+ * Display the page.
+ *
+ * @param string $content Page content
+ * @param string $title Page title
+ * @param bool $hasNavigation Whether to show navigation
+ * @param string $metatags Optional metatags to inject into header
+ */
+function display($content, $title = '', $hasNavigation = true, $metatags = '') {
+    global $game_config, $debug, $user, $planetrow;
 
-// ----------------------------------------------------------------------------------------------------------------
-//
-// Routine d'affichage d'une page dans un cadre donn�
-//
-// $page      -> la page
-// $title     -> le titre de la page
-// $topnav    -> Affichage des ressources ? oui ou non ??
-// $metatags  -> S'il y a quelques actions particulieres a faire ...
-// $AdminPage -> Si on est dans la section admin ... faut le dire ...
-function display ($page, $title = '', $topnav = true, $metatags = '', $AdminPage = false) {
-    global $link, $game_config, $debug, $user, $planetrow;
+    $DisplayPage = ShowHeader($title, $metatags);
 
-    if (!$AdminPage) {
-        $DisplayPage  = StdUserHeader ($title, $metatags);
-    } else {
-        $DisplayPage  = AdminUserHeader ($title, $metatags);
-    }
-
-    if ($topnav) {
-
+    if ($hasNavigation) {
         if ($user['aktywnosc'] == 1) {
             $urlaub_act_time = $user['time_aktyw'];
             $act_datum = date("d.m.Y", $urlaub_act_time);
             $act_uhrzeit = date("H:i:s", $urlaub_act_time);
-        $DisplayPage .= "Le mode del dure jusque $act_datum $act_uhrzeit<br>    Ce n'est qu'apr�s cette p�riode que vous pouvez changer vos options.";
+            $DisplayPage .= "Le mode del dure jusque $act_datum $act_uhrzeit<br>    Ce n'est qu'apr�s cette p�riode que vous pouvez changer vos options.";
         }
 
         if ($user['db_deaktjava'] == 1) {
             $urlaub_del_time = $user['deltime'];
             $del_datum = date("d.m.Y", $urlaub_del_time);
             $del_uhrzeit = date("H:i:s", $urlaub_del_time);
-        $DisplayPage .= "Vous �tes en del user!<br>Le mode del dure jusque $del_datum $del_uhrzeit<br>    Ce n'est qu'apr�s cette p�riode que vous pouvez changer vos options.";
+            $DisplayPage .= "Vous �tes en del user!<br>Le mode del dure jusque $del_datum $del_uhrzeit<br>    Ce n'est qu'apr�s cette p�riode que vous pouvez changer vos options.";
         }
 
-        $DisplayPage .= ShowTopNavigationBar( $user, $planetrow );
+        $DisplayPage .= ShowTopNavigationBar($user, $planetrow);
     }
-    $DisplayPage .= "<center>\n". $page ."\n</center>\n";
-    // Affichage du Debug si necessaire
+
+    $DisplayPage .= "<center>\n". $content ."\n</center>\n";
+
+    // Append debug if necessary
     if (isset($user['authlevel']) && ($user['authlevel'] == 1 || $user['authlevel'] == 3)) {
         if ($game_config['debug'] == 1) $debug->echo_log();
     }
 
-    $DisplayPage .= StdFooter();
-    if (isset($link)) {
-        mysql_close();
-    }
+    $DisplayPage .= gettemplate('simple_footer');
 
     echo $DisplayPage;
 
     die();
 }
 
-// ----------------------------------------------------------------------------------------------------------------
-//
-// Entete de page
-//
-function StdUserHeader ($title = '', $metatags = '') {
+/**
+ * Render generic page header.
+ *
+ * @param string $title
+ * @param string $metatags
+ * @return string
+ */
+function ShowHeader($title, $metatags) {
     global $user, $dpath, $langInfos;
 
     $dpath = (!$user["dpath"]) ? DEFAULT_SKINPATH : $user["dpath"];
 
     $parse           = $langInfos;
+    $parse['base']   = defined('IN_ADMIN') && IN_ADMIN ? '../' : '';
     $parse['dpath']  = $dpath;
     $parse['title']  = $title;
-    $parse['-meta-'] = ($metatags) ? $metatags : "";
-    $parse['-body-'] = "<body>"; //  class=\"style\" topmargin=\"0\" leftmargin=\"0\" marginwidth=\"0\" marginheight=\"0\">";
+    $parse['-meta-'] = $metatags;
+
     return parsetemplate(gettemplate('simple_header'), $parse);
-}
-
-// ----------------------------------------------------------------------------------------------------------------
-//
-// Entete de page administration
-//
-function AdminUserHeader ($title = '', $metatags = '') {
-    global $user, $dpath, $langInfos;
-
-    $dpath = isset($user['dpath']) && !empty($user['dpath']) ? $user['dpath'] : DEFAULT_SKINPATH;
-
-    $parse           = $langInfos;
-    $parse['dpath']  = $dpath;
-    $parse['title']  = $title;
-    $parse['-meta-'] = ($metatags) ? $metatags : "";
-    $parse['-body-'] = "<body>"; //  class=\"style\" topmargin=\"0\" leftmargin=\"0\" marginwidth=\"0\" marginheight=\"0\">";
-    return parsetemplate(gettemplate('admin/simple_header'), $parse);
-}
-
-// ----------------------------------------------------------------------------------------------------------------
-//
-// Pied de page
-//
-function StdFooter() {
-    global $game_config, $lang;
-    $parse['copyright']     = $game_config['copyright'];
-    $parse['TranslationBy'] = $lang['TranslationBy'];
-    return parsetemplate(gettemplate('overall_footer'), $parse);
 }
 
 // ----------------------------------------------------------------------------------------------------------------
@@ -194,7 +163,7 @@ function restrictAccess($user, $minLevel)
     global $lang;
 
     if ($user['authlevel'] < $minLevel) {
-        AdminMessage($lang['sys_noalloaw'], $lang['sys_noaccess']);
+        message($lang['sys_noalloaw'], $lang['sys_noaccess']);
     }
 }
 

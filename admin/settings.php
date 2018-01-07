@@ -144,7 +144,7 @@ function DisplayGameSettingsPage ( $CurrentUser ) {
 
         //24h Urlaubmodus erzwingen
         doquery("UPDATE {{table}} SET config_value='" . $game_config['urlaubs_modus_erz']         ."' WHERE `config_name` ='urlaubs_modus_erz'", 'config');
-        AdminMessage ($lang['adm_opt_save_success'], $lang['adm_opt_saved_title'], '?');
+        message($lang['adm_opt_save_success'], $lang['adm_opt_saved_title'], '?');
     } else {
 
         $parse                           = $lang;
@@ -176,7 +176,7 @@ function DisplayGameSettingsPage ( $CurrentUser ) {
         $PageTPL                         = gettemplate('admin/options_body');
         $Page                           .= parsetemplate( $PageTPL,  $parse );
 
-        display ( $Page, $lang['adm_opt_title'], false, '', true );
+        display($Page, $lang['adm_opt_title'], false);
     }
 
     return $Page;

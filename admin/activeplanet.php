@@ -32,4 +32,4 @@ $parse['online_list'] .= "<th class=\"b\" colspan=\"4\">". $lang['adm_pl_they'] 
 $parse['online_list'] .= "</tr>";
 
 $page = parsetemplate( $PageTPL    , $parse );
-display( $page, $lang['adm_pl_title'], false, '', true );
+display($page, $lang['adm_pl_title'], false);

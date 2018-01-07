@@ -22,4 +22,4 @@ if ($mode != 'change') {
     message("Le joueur {$nam} a bien &eacute;t&eacute; d&eacute;banni!", 'Information');
 }
 
-display(parsetemplate(gettemplate('admin/unbanned'), $parse), "Overview", false, '', true);
+display(parsetemplate(gettemplate('admin/unbanned'), $parse), "Overview", false);

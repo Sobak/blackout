@@ -27,4 +27,4 @@ if ($i == "1")
 else
     $parse['planetes'] .= "<tr><th class=b colspan=5>Il y a {$i} plan&egrave;tes</th></tr>";
 
-display(parsetemplate(gettemplate('admin/planetlist_body'), $parse), 'Planetlist', false, '', true);
+display(parsetemplate(gettemplate('admin/planetlist_body'), $parse), 'Planetlist', false);

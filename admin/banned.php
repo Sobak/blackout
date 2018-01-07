@@ -51,8 +51,8 @@ if ($mode == 'banit') {
     doquery( $QryUpdateUser, 'users');
 
     $DoneMessage       = $lang['adm_bn_thpl'] ." ". $name ." ". $lang['adm_bn_isbn'];
-    AdminMessage ($DoneMessage, $lang['adm_bn_ttle']);
+    message($DoneMessage, $lang['adm_bn_ttle']);
 }
 
 $Page = parsetemplate($PageTpl, $parse);
-display( $Page, $lang['adm_bn_ttle'], false, '', true);
+display( $Page, $lang['adm_bn_ttle'], false);

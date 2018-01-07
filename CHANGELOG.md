@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 ### Changed
 - Available languages are now discovered dynamically instead of being hardcoded
 - Cleaner Options screen
+- Deduplicated header-related functions
 - Improved translation of
     - Log in screen
     - Options
@@ -26,6 +27,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ### Removed
 - Eliminated redundant `config.users_amount`
+- Removed `AdminMessage()`, `message()` should be used instead
+- Removed `StdUserHeader()` and `AdminUserHeader()`, `ShowHeader()` should be used instead
+- Removed `$AdminPanel` attribute of the `display()` function
 - Removed Changelog screen
 - Removed bogus Upgrade section of installer
 - Removed `informations.php` as it was unused

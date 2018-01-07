@@ -30,4 +30,4 @@ if ($i == "1")
 else
     $parse['moon'] .= "<tr><th class=b colspan=6>Il y a {$i} lunes</th></tr>";
 
-display(parsetemplate(gettemplate('admin/moonlist_body'), $parse), 'Lunalist' , false, '', true);
+display(parsetemplate(gettemplate('admin/moonlist_body'), $parse), 'Lunalist' , false);

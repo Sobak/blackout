@@ -51,4 +51,4 @@ while ($u = mysql_fetch_assoc ($query) ) {
 $parse['adm_ul_count'] = $i;
 
 $page = parsetemplate( $PageTPL, $parse );
-display( $page, $lang['adm_ul_title'], false, '', true);
+display( $page, $lang['adm_ul_title'], false);

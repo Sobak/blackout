@@ -58,4 +58,4 @@ while ( $TheUser = mysql_fetch_array($Last15Mins) ) {
 $parse['adm_ov_data_count']  = $Count;
 $page = parsetemplate($PageTPL, $parse);
 
-display($page, $lang['adm_ov_title'], false, '', true);
+display($page, $lang['adm_ov_title'], false);

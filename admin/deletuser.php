@@ -17,5 +17,5 @@ if ( $CurrentUser['authlevel'] >= 1 ) {
                 }
 
         $Page = parsetemplate( $PageTpl, $parse );
-        display ( $Page, $lang['adminpanel'], false, '', true );
+        display($Page, $lang['adminpanel'], false);
 }

@@ -29,8 +29,8 @@ if ($mode == 'addit') {
     $QryUpdatePlanet .= "`id` = '". $id ."' ";
     doquery( $QryUpdatePlanet, "planets");
 
-    AdminMessage ( $lang['adm_dm_done'], $lang['adm_dm_ttle'] );
+    message( $lang['adm_dm_done'], $lang['adm_dm_ttle'] );
 }
 $Page = parsetemplate($PageTpl, $parse);
 
-display ($Page, $lang['adm_dm_ttle'], false, '', true);
+display($Page, $lang['adm_dm_ttle'], false);

@@ -31,4 +31,4 @@ while ($error = mysql_fetch_array($errors)) {
 
 $parse['errors_count'] = $errors_count;
 
-display(parsetemplate(gettemplate('admin/errors_body'), $parse), $lang['adm_er_ttle'], false, '', true);
+display(parsetemplate(gettemplate('admin/errors_body'), $parse), $lang['adm_er_ttle'], false);

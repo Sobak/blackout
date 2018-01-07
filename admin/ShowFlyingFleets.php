@@ -13,4 +13,4 @@ include($ugamela_root_path . 'common.php');
     $parse['flt_table'] = BuildFlyingFleetTable ();
 
     $page               = parsetemplate( $PageTPL, $parse );
-    display ( $page, $lang['flt_title'], false, '', true);
+    display($page, $lang['flt_title'], false);

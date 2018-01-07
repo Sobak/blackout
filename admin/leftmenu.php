@@ -27,4 +27,4 @@ if ($user['authlevel'] == LEVEL_OPERATOR) {
 }
 
 $page = parsetemplate(gettemplate($template), $parse);
-display($page, '', false, '', true);
+display($page, '', false);

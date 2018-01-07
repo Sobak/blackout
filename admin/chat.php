@@ -32,4 +32,4 @@ while ($e = mysql_fetch_array($query)) {
 }
 $parse['msg_list'] .= "<tr><th class=b colspan=4>{$i} ".$lang['adm_ch_nbs']."</th></tr>";
 
-display(parsetemplate(gettemplate('admin/chat_body'), $parse), "Chat", false, '', true);
+display(parsetemplate(gettemplate('admin/chat_body'), $parse), "Chat", false);
