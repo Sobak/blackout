@@ -6,8 +6,7 @@ $lang['Password'] = 'Password:';
 $lang['Remember_me'] = 'Remeber me!';
 
 $lang['Login_Error'] = 'Error';
-$lang['Login_FailPassword'] = 'Invalid password<br><a href="login.php" target="_top">Return</a>';
-$lang['Login_FailUser'] = 'Invalid username<br><a href=login.php>Return</a>';
+$lang['Login_FailCredentials'] = 'Invalid credentials<br><a href=login.php>Return</a>';
 
 $lang['log_reg'] = 'Signup';
 $lang['log_cred'] = 'Team';

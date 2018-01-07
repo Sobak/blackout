@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 ### Changed
 - Improved translation of
     - Log in screen
+- Signin no longer gives a hint whether username or password was incorrect
 
 ## [0.2.0] - 2018-01-07
 ### Added
