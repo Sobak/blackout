@@ -28,7 +28,7 @@
     <tr><td><a href="ElementQueueFixer.php" accesskey="p">{adm_build}</a></td></tr>
     <tr><td class="separated"><a href="errors.php" accesskey="e">{adm_error}</a></td></tr>
     <tr><td><a href="http://www.xnova.fr/forum/index.php" accesskey="3">{adm_help}</a></td></tr>
-    <tr><td><a href="../overview.php" accesskey="i" target="_top" style="color:red">{adm_back}</a></td></tr>
+    <tr><td><a href="../overview.php" accesskey="i" style="color:red">{adm_back}</a></td></tr>
 
     <tr><th>{infog}</th></tr>
     <tr>
