@@ -43,6 +43,10 @@ if ($_POST) {
     $parse['servername'] = $game_config['game_name'];
     $parse['forum_url'] = $game_config['forum_url'];
 
+    foreach (getAvailableLanguages() as $key => $name) {
+        $parse['languages'] .= "<a href='lang.php?lang=$key'><img src='images/lang/$key.png' alt='$key'></a>";
+    }
+
     $page = parsetemplate(gettemplate('login_body'), $parse);
     display($page, $lang['Login']);
 }

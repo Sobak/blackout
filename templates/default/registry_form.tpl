@@ -43,12 +43,7 @@
   <th>{Languese}</th>
   <th><select name="langer">
         <option value="">{Undefined}</option>
-        <option value="pl">{pl}</option>
-        <option value="fr">{fr}</option>
-        <option value="es">{es}</option>
-        <option value="de">{de}</option>
-        <option value="en">{en}</option>
-        <option value="it">{it}</option>
+        {languages}
         </select></th>
 </tr>
 <tr>

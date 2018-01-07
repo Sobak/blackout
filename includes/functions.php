@@ -197,3 +197,24 @@ function restrictAccess($user, $minLevel)
         AdminMessage($lang['sys_noalloaw'], $lang['sys_noaccess']);
     }
 }
+
+/**
+ * Fetches all languages available.
+ */
+function getAvailableLanguages()
+{
+    global $ugamela_root_path;
+
+    $languages = [];
+
+    foreach (glob($ugamela_root_path . 'language/*/lang_info.cfg') as $langInfoFile) {
+        require $langInfoFile;
+
+        $langKey = array_pop(explode('/', dirname($langInfoFile)));
+
+        /** @noinspection PhpUndefinedVariableInspection */
+        $languages[$langKey] = $langInfos['DISPLAY_NAME'];
+    }
+
+    return $languages;
+}

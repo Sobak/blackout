@@ -48,7 +48,7 @@
                         <font color="#c6c7c6">{last_user}</font> - <font color="#00cc00">{log_numbreg}:</font> <font color="#c6c7c6">{users_amount}</font>
                         </b>
                     </center><br>
-                    <a href="lang.php?Langs=pl"><img src="images/lang/pl.png" alt="PL" title="PL"></a> <a href="lang.php?Langs=fr"><img src="images/lang/fr.png" alt="FR" title="FR"></a> <a href="lang.php?Langs=es"><img src="images/lang/es.png" alt="ES" title="ES"></a> <a href="lang.php?Langs=de"><img src="images/lang/de.png" alt="DE" title="DE"></a> <a href="lang.php?Langs=en"><img src="images/lang/en.png" alt="EN" title="EN"></a> <a href="lang.php?Langs=it"><img src="images/lang/it.png" alt="IT" title="IT"></a>
+                    {languages}
                 </div>
             </center>
         </div>

@@ -187,14 +187,12 @@ if ($_POST && $mode == "change") { // Array ( [db_character]
     $parse['opt_lst_cla_data']   = "<option value =\"0\"". (($user['planet_sort_order'] == 0) ? " selected": "") .">". $lang['opt_lst_cla0'] ."</option>";
     $parse['opt_lst_cla_data']  .= "<option value =\"1\"". (($user['planet_sort_order'] == 1) ? " selected": "") .">". $lang['opt_lst_cla1'] ."</option>";
 
-    $parse['opt_lst_lang_data']   = "<option value =\"pl\"". (($user['lang'] == pl) ? " selected": "") .">". $lang['pl'] ."</option>";
-    $parse['opt_lst_lang_data']  .= "<option value =\"fr\"". (($user['lang'] == fr) ? " selected": "") .">". $lang['fr'] ."</option>";
-    $parse['opt_lst_lang_data']  .= "<option value =\"es\"". (($user['lang'] == es) ? " selected": "") .">". $lang['es'] ."</option>";
-    $parse['opt_lst_lang_data']  .= "<option value =\"de\"". (($user['lang'] == de) ? " selected": "") .">". $lang['de'] ."</option>";
-    $parse['opt_lst_lang_data']  .= "<option value =\"en\"". (($user['lang'] == en) ? " selected": "") .">". $lang['en'] ."</option>";
-    $parse['opt_lst_lang_data']  .= "<option value =\"it\"". (($user['lang'] == it) ? " selected": "") .">". $lang['it'] ."</option>";
-    
-    
+    $availableLanguages = getAvailableLanguages();
+
+    foreach ($availableLanguages as $key => $name) {
+        $parse['opt_lst_lang_data'] .= "<option value='$key'" . (($user['lang'] == $key) ? " selected" : "") .">". $name ."</option>";
+    }
+
     if ($user['authlevel'] > 0) {
         $FrameTPL = gettemplate('options_admadd');
         $IsProtOn = doquery ("SELECT `id_level` FROM {{table}} WHERE `id_owner` = '".$user['id']."' LIMIT 1;", 'planets', true);

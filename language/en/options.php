@@ -16,13 +16,7 @@ $lang['newpasswordagain'] = "New Password (Again)";
 $lang['emaildir'] = "E-Mail Adress";
 $lang['emaildir_tip'] = "You are chanage email and if you dont write some new email your email will been good in 7 days....";
 $lang['permanentemaildir'] = "Now is Email";
-$lang['Languese'] = 'Jêzyk';
-$lang['pl'] = 'Polski';
-$lang['fr'] = 'Francuski';
-$lang['es'] = 'Hiszpañski';
-$lang['de'] = 'Niemiecki';
-$lang['en'] = 'Angielski';
-$lang['it'] = 'W³oski';
+$lang['Languese'] = 'Jï¿½zyk';
 
 $lang['opt_lst_ord']  = "Classer les planetes dans l'ordre suivant :";
 $lang['opt_lst_ord0'] = "Date de colonisation";
@@ -30,7 +24,7 @@ $lang['opt_lst_ord1'] = "Coordonnees";
 $lang['opt_lst_ord2'] = "Ordre alphabetique";
 $lang['opt_lst_cla']  = "Ordre de classement :";
 $lang['opt_lst_cla0'] = "croissant";
-$lang['opt_lst_cla1'] = "décroissant";
+$lang['opt_lst_cla1'] = "dï¿½croissant";
 $lang['opt_chk_skin'] = "Utiliser le skin";
 
 // Admin Options

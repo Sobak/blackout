@@ -16,12 +16,6 @@ $lang['accept']            = 'I agree to the terms of service';
 $lang['signup']            = 'Signup';
 $lang['neededpass']        = 'Password';
 $lang['Languese']          = 'Language';
-$lang['pl']                = 'Polski';
-$lang['fr']                = 'Francuski';
-$lang['es']                = 'Hiszpa�ski';
-$lang['de']                = 'Niemiecki';
-$lang['en']                = 'Angielski';
-$lang['it']                = 'W�oski';
 
 // Send
 $lang['mail_welcome']      = 'Thank you for signing up!

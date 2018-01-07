@@ -9,6 +9,8 @@ include($ugamela_root_path . 'common.php');
 
 includeLang('reg');
 
+$availableLanguages = getAvailableLanguages();
+
 $kod = md5(rand(100000,9000000));
 function sendpassemail($emailaddress, $password) {
     global $lang, $kod;
@@ -74,13 +76,7 @@ if ($_POST) {
         $errorlist .= $lang['error_sex'];
     }
 
-    if ($_POST['langer'] != ''  &&
-        $_POST['langer'] != 'pl' &&
-        $_POST['langer'] != 'fr' &&
-        $_POST['langer'] != 'es' &&
-        $_POST['langer'] != 'de' &&
-        $_POST['langer'] != 'en' &&
-        $_POST['langer'] != 'it') {
+    if (!in_array($_POST['langer'], array_keys($availableLanguages))) {
         $errorlist .= $lang['error_lang'];
     }
 
@@ -206,6 +202,10 @@ if ($_POST) {
     // Show the signup form
     $parse               = $lang;
     $parse['servername'] = $game_config['game_name'];
+
+    foreach ($availableLanguages as $key => $name) {
+        $parse['languages'] .= "<option value='$key'>$name</option>\n";
+    }
 
     display(parsetemplate(gettemplate('registry_form'), $parse), $lang['registry'], false);
 }
