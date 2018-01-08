@@ -15,6 +15,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 - Deduplicated header-related functions
 - Deduplicated language strings for buildings/defenses/officers/ships/technologies
 - Improved translation of
+    - Admin -> List of Moons
+    - Admin -> List of Planets
     - Admin -> Queue fixer
     - Credits
     - Info screen for buildings, defenses, ships and technologies
@@ -30,6 +32,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
     - Installer is blocked if config file already exists
 - Multiple improvements to the debug mode
 - Refactored menu templates
+- Refactored planets/moons list in admin panel
 - Signin no longer gives a hint whether username or password was incorrect
 - Slightly refactored Overview
 - Slightly refactored Registration
