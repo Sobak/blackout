@@ -2,8 +2,8 @@
 
 $lang['adm_done']               = "Wykonako";
 $lang['adm_stat_title']         = "Statystyki";
-$lang['adm_cleaner_title']      = "Nettoyage de queue de construction";
-$lang['adm_cleaned']            = "Nombre de queues supprim&eacute;es : ";
+$lang['adm_cleaner_title']      = "Queue cleaner";
+$lang['adm_cleaned']            = "Number of queues cleared:";
 $lang['Fix']                    = "Mise &agrave; jour";
 $lang['Welcome_to_Fix_section'] = "Bienvenue dans la section d'update";
 $lang['There_is_not_need_fix']  = "La mise &agrave; jour a bien &eacute;t&eacute; effectu&eacute;!";

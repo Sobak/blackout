@@ -70,8 +70,8 @@ $lang['adm_unban']    = 'Unban player';
 
 $lang['adm_chat']     = 'Chat administration';
 $lang['adm_updpt']    = 'Build statistics';
+$lang['adm_queues']   = 'Fix queues';
 $lang['adm_msg']      = 'List of messages';
-$lang['adm_build']    = '@TODO';
 
 $lang['adm_error']    = 'Errors';
 $lang['adm_help']     = 'Forum';

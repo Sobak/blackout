@@ -14,7 +14,7 @@
 
         <tr><th>{tool}</th></tr>
         <tr><td><a href="statbuilder.php" accesskey="p">{adm_updpt}</a></td></tr>
-        <tr><td><a href="ElementQueueFixer.php" accesskey="p">{adm_build}</a></td></tr>
+        <tr><td><a href="fix_queues.php" accesskey="p">{adm_queues}</a></td></tr>
         <tr><td><a href="http://www.xnova.fr/forum/index.php" accesskey="3">{adm_help}</a></td></tr>
         <tr><td><a href="../overview.php" accesskey="i" style="color:red">{adm_back}</a></td></tr>
 
