@@ -178,11 +178,9 @@ function ShowLeftMenu($template, array $user)
     $parse['servername']      = $game_config['game_name'];
     $rank                     = doquery("SELECT `total_rank` FROM {{table}} WHERE `stat_code` = '1' AND `stat_type` = '1' AND `id_owner` = '". $user['id'] ."';",'statpoints',true);
     $parse['user_rank']       = $rank['total_rank'];
-    if ($user['authlevel'] > 0) {
-        $parse['ADMIN_LINK']  = '
-    <tr>
-        <td colspan="2"><div><a href="admin/overview.php" style="color:lime">'.$lang['user_level'][$user['authlevel']].'</a></div></td>
-    </tr>';
+    if ($user['authlevel'] > LEVEL_PLAYER) {
+        $text = $lang['user_level'][$user['authlevel']];
+        $parse['ADMIN_LINK']  = '<tr><td><a href="admin/overview.php" style="color:lime">' . $text . '</a></td></tr>';
     }
 
     return parsetemplate(gettemplate($template), $parse);
