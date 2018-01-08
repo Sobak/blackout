@@ -73,7 +73,7 @@ function ShowOfficierPage ( &$CurrentUser ) {
                 $bloc['off_id']       = $Officier;
                 $bloc['off_tx_lvl']   = $lang['off_tx_lvl'];
                 $bloc['off_lvl']      = $CurrentUser[$resource[$Officier]];
-                $bloc['off_desc']     = $lang['Desc'][$Officier];
+                $bloc['off_desc']     = $lang['res']['descriptions'][$Officier];
                 if ($Result == 1) {
                     $bloc['off_link'] = "<a href=\"officier.php?mode=2&offi=".$Officier."\"><font color=\"#00ff00\">". $lang['link'][$Officier]."</font>";
                 } else {

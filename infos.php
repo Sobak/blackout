@@ -179,9 +179,9 @@ function ShowBuildingInfoPage ($CurrentUser, $CurrentPlanet, $BuildID) {
     $parse                = $lang;
     // Données de base
     $parse['dpath']       = $dpath;
-    $parse['name']        = $lang['info'][$BuildID]['name'];
+    $parse['name']        = $lang['tech'][$BuildID];
     $parse['image']       = $BuildID;
-    $parse['description'] = $lang['info'][$BuildID]['description'];
+    $parse['description'] = $lang['res']['descriptions'][$BuildID];
 
 
     if       ($BuildID >=   1 && $BuildID <=   3) {

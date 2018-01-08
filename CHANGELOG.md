@@ -13,9 +13,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 - Available languages are now discovered dynamically instead of being hardcoded
 - Cleaner Options screen
 - Deduplicated header-related functions
+- Deduplicated language strings for buildings/defenses/officers/ships/technologies
 - Improved translation of
     - Admin -> Queue fixer
     - Credits
+    - Info screen for buildings, defenses, ships and technologies
     - Log in screen
     - Options
     - Overview

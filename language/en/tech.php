@@ -9,7 +9,6 @@ $lang['Energy']       = "Energy";
 $lang['Message']      = "Messages";
 $lang['level']        = "Level";
 $lang['treeinfo']     = "[i]";
-$lang['comingsoon']   = "Bientot";
 $lang['te_dt_tx_pre'] = "Pr&eacute;requis pour";
 
 
@@ -51,7 +50,8 @@ $lang['tech_rc'] = array (
 408 => 'G.bouclier',
 );
 
-$lang['tech'] = array(
+$lang['tech'] = [
+// Buildings
 0 => "Buildings",
 1 => "Metal Mine",
 2 => "Crystal Mine",
@@ -67,6 +67,9 @@ $lang['tech'] = array(
 31 => "Research Lab",
 33 => "Terraformer",
 34 => "Alliance Depot",
+41 => 'Lunar Base',
+42 => 'Sensor Phalanx',
+43 => 'Jump Gate',
 44 => "Misille Silo",
 
 // Technologies
@@ -88,6 +91,7 @@ $lang['tech'] = array(
 124 => 'Expedition Technology',
 199 => 'Graviton Technology',
 
+// Ships
 200 => 'Ships',
 202 => 'Small Cargo',
 203 => 'Large Cargo',
@@ -104,6 +108,7 @@ $lang['tech'] = array(
 214 => 'Death Star',
 215 => 'Battlecruiser',
 
+// Defense
 400 => 'Defense',
 401 => 'Rocket Luncher',
 402 => 'Light Laser',
@@ -116,12 +121,7 @@ $lang['tech'] = array(
 502 => 'Anti-Ballistic Missiles ',
 503 => 'Interplanetary Missiles ',
 
-40 => 'Special Buildings',
-41 => 'Lunar Base',
-42 => 'Sensor Phalanx',
-43 => 'Jump Gate',
-
-//Officier
+// Officers
 601 => "G&eacute;ologue",
 602 => "Amiral",
 603 => "Ingenieur",
@@ -135,11 +135,12 @@ $lang['tech'] = array(
 611 => "Commandant",
 612 => "Destructeur",
 613 => "General",
-614 => "Raideur"
-
-);
+614 => "Raideur",
+615 => "Empereur",
+];
 
 $lang['res']['descriptions'] = array(
+// Buildings
 1 => "Used in the extraction of metal ore, metal mines are of primary importance to all emerging and established empires.",
 2 => "Crystals are the main resource used to build electronic circuits and form certain alloy compounds.",
 3 => "Deuterium is used as fuel for spaceships and is harvested in the deep sea. Deuterium is a rare substance and is thus relatively expensive.",
@@ -159,6 +160,7 @@ $lang['res']['descriptions'] = array(
 43 => "Jump gates are huge transceivers capable of sending even the biggest fleet in no time to a distant jump gate.",
 44 => "Missile silos are used to store missiles.",
 
+// Technologies
 106 => "Information about other planets and moons can be gained using this technology.",
 108 => "More fleets can be commanded by increasing computer capacities. Each level of computer technology increases the maximum number of fleets by one.",
 109 => "Weapons technology makes weapons systems more efficient. Each level of weapons technology increases the weapon strength of units by 10 % of the base value.",
@@ -176,6 +178,7 @@ $lang['res']['descriptions'] = array(
 124 => "Ships can be equipped with a research module which allows a data back up of information collected during an expedition of unexplored regions in the universe.",
 199 => "Firing a concentrated charge of graviton particles can create an artificial gravity field, which can destroy ships or even moons.",
 
+// Ships
 202 => "The small cargo is an agile ship which can quickly transport resources to other planets.",
 203 => "This cargo ship has a much larger cargo capacity than the small cargo, and is generally faster thanks to an improved drive.",
 204 => "This is the first fighting ship all emperors will build. The light fighter is an agile ship, but vulnerable by themselves. In mass numbers, they can become a great threat to any empire. They are the first to accompany small and large cargos to hostile planets with minor defenses.",
@@ -191,6 +194,7 @@ $lang['res']['descriptions'] = array(
 214 => "The destructive power of the deathstar is unsurpassed.",
 215 => "The Battlecruiser is highly specialized in the interception of hostile fleets.",
 
+// Defense
 401 => "The rocket launcher is a simple, cost-effective defensive option.",
 402 => "Concentrated firing at a target with photons can produce significantly greater damage than standard ballistic weapons.",
 403 => "The heavy laser is the logical development of the light laser.",
@@ -202,8 +206,20 @@ $lang['res']['descriptions'] = array(
 502 => "Anti-Ballistic Missiles destroy attacking interplanetary missiles",
 503 => "Interplanetary Missiles destroy enemy defenses.",
 
+// Officers
+601 => "Le g&eacute;ologue est un expert reconnu en astromin&eacute;ralogie et en astrocristallographie. Avec son &eacute;quipe d\'experts en m&eacute;tallurgie et d\'ing&eacute;nieurs chimiste, il assiste les gouvernements interplan&eacute;taires dans la recherche de nouvelles sources de mati&egrave;res premi&egrave;res et optimise le raffinage de celles-ci.<br><br><font color='red'>+5% de production. Niveau Max. : 20</font>",
+602 => "L'amiral de la flotte est un v&eacute;t&eacute;ran de guerre et un strat&egrave;ge redout&eacute;. M&ecirc;me lorsque le combat est acharn&eacute;, il garde le sang froid n&eacute;cessaire pour dominer la situation et est en contact permanent avec les amiraux sous ses ordres. Un empereur responsable ne saurait se passer de l'amiral de la flotte pour coordonner ses attaques et peut lui faire une telle confiance qu'il peut envoyer plus de flottes en combat.<br><br><font color='red'>+5% de bouclier, protection des vaisseaux et armes sur les vaisseaux. Niveau Max. : 20</font>",
+603 => "L'ing&eacute;nieur est un sp&eacute;cialiste de la gestion d'&eacute;nergie. En temps de paix, il optimise l'efficacit&eacute; des r&eacute;seaux d'&eacute;nergie des colonies.<br><br><font color='red'>+5% d'energie. Niveau Max. : 10</font>",
+604 => "Les guildes de technocrates sont des scientifiques au g&eacute;nie reconnu. On les trouve aux endroits o&ugrave; la technique atteint ses limites. Personne ne parviendra &agrave; d&eacute;chiffrer le cryptage d'un technocrate, sa seule pr&eacute;sence inspire les chercheurs de tout l'empire.<br><br><font color='red'>-5% de temps de construction des vaisseaux. Niveau Max : 10</font>",
+605 => "Le constructeur est un nouveau type de b&acirc;tisseur. Son ADN a &eacute;t&eacute; modifi&eacute;e pour lui conf&eacute;rer une force surhumaine. Un seul de ces \"homme\" peut construire une ville enti&egrave;re.<br><br><font color='red'>-10% de temps de construction. Niveau Max. : 3</font>",
+606 => "Les scientifiques font partis d'une guilde concurente &agrave; celle des technocrates. Ils sont sp&eacute;cialis&eacute;s dans l'am&eacute;lioration des technologies.<br><br><font color='red'>-10% de temps de recherche. Niveau Max. : 3</font>",
+607 => "Le stockeur fait parti de l'ancienne confr&eacute;rie de le plan&egrave;te Hsac. Sa devise est de gagner un maximum mais pour cel&agrave; il lui faut des espaces de stockage important. C'est pourquoi &agrave; l'aide du constructeur il a d&eacute;velopp&eacute; une nouvelle technique de stockage.<br><br><font color='red'>+50% de stockage. Niveau Max. : 2</font>",
+608 => "Le defenseur est membre de l'arm&eacute;e imperiale. Son ardeur dans son travail lui permet de construire une d&eacute;fense redoutable en peu de temps dans les colonies hostile.<br><br><font color='red'>-50% de temps de construction de la d&eacute;fense.</font>",
+609 => "L'empereur a remarqu&eacute; le travail impressionnant que vous avez fournit &agrave; son empire. Pour vous remerciez il vous offre la chance de devenir Bunker. Le Bunker est la plus haute distinction de la branche Mini&egrave;re de l'arm&eacute;e imp&eacute;riale.<br><br><font color='red'>D&eacute;blocage du Protecteur Plan&egrave;taire</font>",
+610 => "L'espion est une personne &eacute;nigmatique. Personne n'a jamais vu son visage r&eacute;el, a moins d'&ecirc;tre d&eacute;j&ageave; mort.<br><br><font color='red'>+5 Lvl D'espionnage. Niveau Max. : 2</font>",
+611 => "Le commandant de l'arm&eacute;e imp&eacute;riale est pass&eacute; ma&icirc;tre dans l'art du maniement des flottes. Son cerveau peut calculer les trajectoires de nombreuses flotte, beaucoup plus que celle d'un humain normal.<br><br><font color='red'>+3 slots de flottes. Niveau Max. : 3</font>",
+612 => "Le destructeur est un officier sans piti&eacute;. Il a massacr&eacute; des plan&egrave;tes enti&egrave;res juste pour son plaisir. Il d&eacute;veloppe actuellement une nouvelle m&eacute;thode de production des &eacute;toiles de la mort.<br><br><font color='red'>2 RIP construites au lieu d'une. Niveau Max. : 1</font>",
+613 => "Le General est une v&eacute;n&eacute;rable personne qui a servit de nombreuses ann&eacute;es dans l'arm&eacute;e. Les ouvrier constructeur de vaisseaux produisent plus vite en sa pr&eacute;sence.<br><br><font color='red'>+25% de vitesse des vaisseaux. Niveau Max. : 3</font>",
+614 => "L'empereur a rep&eacute;r&eacute; en vous des qualit&eacute;s ind&eacute;niable de conqu&eacute;rent. Il vous propose de devenir Raideur. Le Raideur est le grade le plus &eacute;lev&eacute; de la branche des raideurs de l'arm&eacute;e imp&eacute;riale<br><br><font color='red'>D&eacute;blocage de la SuperNova</font>",
+615 => "Vous avez montr&eacute; que vous &ecirc;tiez le plus grand conqu&eacute;rant de l'univers. Il est tant pour vous de prendre la place qui vous revient.<br><br><font color='red'>D&eacute;blocage du Destructeur Plan&egrave;taire</font>",
 );
-
-// Created by Perberos. All rights reversed (C) 2006
-// Complet by XNova Team. All rights reversed (C) 2008
-?>
