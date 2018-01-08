@@ -31,7 +31,7 @@ function f(target_url) {
 
     <tr><th>{community}</th></tr>
     <tr><td><a href="records.php" accesskey="3">{Records}</a></td></tr>
-    <tr><td><a href="stat.php?start={user_rank}" accesskey="k">{Statistics}</a></td></tr>
+    <tr><td><a href="stat.php" accesskey="k">{Statistics}</a></td></tr>
     <tr><td><a href="search.php" accesskey="b">{Search}</a></td></tr>
     <tr><td><a href="banned.php" accesskey="3">{blocked}</a></td></tr>
     <tr><td><a href="annonce.php" accesskey="3">{Annonces}</a></td></tr>

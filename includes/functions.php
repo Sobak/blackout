@@ -176,8 +176,7 @@ function ShowLeftMenu($template, array $user)
     $parse['dpath']           = $dpath;
     $parse['forum_url']       = $game_config['forum_url'];
     $parse['servername']      = $game_config['game_name'];
-    $rank                     = doquery("SELECT `total_rank` FROM {{table}} WHERE `stat_code` = '1' AND `stat_type` = '1' AND `id_owner` = '". $user['id'] ."';",'statpoints',true);
-    $parse['user_rank']       = $rank['total_rank'];
+
     if ($user['authlevel'] > LEVEL_PLAYER) {
         $text = $lang['user_level'][$user['authlevel']];
         $parse['ADMIN_LINK']  = '<tr><td><a href="admin/overview.php" style="color:lime">' . $text . '</a></td></tr>';
