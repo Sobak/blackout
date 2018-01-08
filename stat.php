@@ -1,18 +1,13 @@
 <?php
 
-/**
- * stat.php
- *
- * @version 1.0
- * @copyright 2008 by Chlorel for XNova
- */
-
 define('INSIDE'  , true);
 
 $ugamela_root_path = './';
 include($ugamela_root_path . 'common.php');
 
 includeLang('stat');
+
+$availableLanguages = getAvailableLanguages();
 
 $parse = $lang;
 $who   = (isset($_POST['who']))   ? $_POST['who']   : $_GET['who'];
@@ -180,28 +175,12 @@ if ($who == 2) {
         } else {
             $parse['player_alliance'] = $UsrRow['ally_name'];
         }
+
         $parse['player_country'] = '';
-        if($UsrRow['lang'] == "pl"){
-            $parse['player_country'] .= '<img src="images/lang/pl.png">';
+        if ($UsrRow['lang'] && in_array($UsrRow['lang'], array_keys($availableLanguages))) {
+            $parse['player_country'] = '<img src="images/lang/' . $UsrRow['lang'] . '.png">';
         }
-        elseif($UsrRow['lang'] == "fr"){
-            $parse['player_country'] .= '<img src="images/lang/fr.png">';
-        }
-        elseif($UsrRow['lang'] == "es"){
-            $parse['player_country'] .= '<img src="images/lang/es.png">';
-        }
-        elseif($UsrRow['lang'] == "de"){
-            $parse['player_country'] .= '<img src="images/lang/de.png">';
-        }
-        elseif($UsrRow['lang'] == "en"){
-            $parse['player_country'] .= '<img src="images/lang/en.png">';
-        }
-        elseif($UsrRow['lang'] == "it"){
-            $parse['player_country'] .= '<img src="images/lang/it.png">';
-        }
-        else{
-            $parse['player_country'] .= '';
-        }
+
         $parse['player_points']   = pretty_number( $StatRow[ $Order ] );
         $parse['stat_values']    .= parsetemplate(gettemplate('stat_playertable'), $parse);
         $start++;
@@ -209,8 +188,3 @@ if ($who == 2) {
 }
 
 display(parsetemplate(gettemplate('stat_body'), $parse), $lang['stat_title']);
-
-// -----------------------------------------------------------------------------------------------------------
-// History version
-// 1.0 - R��criture module
-?>
