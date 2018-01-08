@@ -19,6 +19,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
     - Credits
     - Info screen for buildings, defenses, ships and technologies
     - Log in screen
+    - Officers
     - Options
     - Overview
     - Registration

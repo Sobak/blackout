@@ -2,7 +2,7 @@
 
 // User menu links
 $lang['Overview']     = 'Overview';
-$lang['Officiers']    = 'Officiers';
+$lang['Officiers']    = 'Officers';
 
 $lang['Buildings']    = 'Buildings';
 $lang['Research']     = 'Research';

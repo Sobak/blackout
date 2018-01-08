@@ -1,25 +1,24 @@
 <?php
 
-$lang['NoPoints']     = "Vous n'avez pas assez de points d'officier !";
-$lang['OffiRecrute']  = "L'officier a &eacute;t&eacute; recrut&eacute; !";
-$lang['off_tx_lvl']   = "Niveau Actuel : ";
-$lang['off_points']   = "Points d'officier disponible : ";
+$lang['NoPoints']     = "You do not have enough officer points!";
+$lang['OffiRecrute']  = "The officer has been recruited!";
+$lang['off_tx_lvl']   = "Current level:";
+$lang['off_points']   = "Officer points available:";
 
-$lang['Maxlvl']       = "Niveau Maximum Atteint !";
-$lang['Officier']     = "Officier";
+$lang['Maxlvl']       = "Maximum level reached";
 
-$lang['link'][601] = "Recruter le G&eacute;ologue";
-$lang['link'][602] = "Recruter l'Amiral";
-$lang['link'][603] = "Recruter l'Ing&eacute;nieur";
-$lang['link'][604] = "Recruter le Technocrate";
-$lang['link'][605] = "Recruter le Constructeur";
-$lang['link'][606] = "Recruter le Scientifique";
-$lang['link'][607] = "Recruter le Stockeur";
-$lang['link'][608] = "Recruter le Defenseur";
-$lang['link'][609] = "Devenir Bunker";
-$lang['link'][610] = "Recruter l'Espion";
-$lang['link'][611] = "Recruter le Commandant";
-$lang['link'][612] = "Recruter le Destructeur";
-$lang['link'][613] = "Recruter le General";
-$lang['link'][614] = "Devenir Raideur";
-$lang['link'][615] = "Devenir L'Empereur";
+$lang['link'][601] = "Recruit the Geologist";
+$lang['link'][602] = "Recruit the Admiral";
+$lang['link'][603] = "Recruit the Engineer";
+$lang['link'][604] = "Recruit the Technocrat";
+$lang['link'][605] = "Recruit the Builder";
+$lang['link'][606] = "Recruit the Scientist";
+$lang['link'][607] = "Recruit the Storagekeeper";
+$lang['link'][608] = "Recruit the Defender";
+$lang['link'][609] = "Become the Bunker";
+$lang['link'][610] = "Recruit the Spy";
+$lang['link'][611] = "Recruit the Commander";
+$lang['link'][612] = "Recruit the Destroyer";
+$lang['link'][613] = "Recruit the General";
+$lang['link'][614] = "Become the Raider";
+$lang['link'][615] = "Become the Emperor";

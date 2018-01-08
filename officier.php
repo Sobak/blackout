@@ -56,7 +56,7 @@ function ShowOfficierPage ( &$CurrentUser ) {
             $Message = $lang['NoPoints'];
         }
         $MessTPL        = gettemplate('message_body');
-        $parse['title'] = $lang['Officier'];
+        $parse['title'] = $lang['Officiers'];
         $parse['mes']   = $Message;
 
         $page           = parsetemplate( $MessTPL, $parse);
