@@ -14,6 +14,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 - Cleaner Options screen
 - Deduplicated header-related functions
 - Improved translation of
+    - Admin -> Queue fixer
     - Credits
     - Log in screen
     - Options
@@ -29,6 +30,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 - Signin no longer gives a hint whether username or password was incorrect
 - Slightly refactored Overview
 - Slightly refactored Registration
+- Various optimizations
 
 ### Removed
 - Eliminated redundant `config.users_amount`
