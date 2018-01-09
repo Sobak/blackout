@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 ## [Unreleased]
 ### Removed
 - Dropped unused `neusuw.php` file
+- Dropped unused field `users.sign`
+- Dropped unused field `users.kiler`
+- Dropped unused field `users.raids`
+- Dropped unused field `users.p_infligees`
 
 ## [0.3.0] - 2018-01-09
 ### Fixed

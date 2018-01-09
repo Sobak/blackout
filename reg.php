@@ -92,8 +92,6 @@ if ($_POST) {
     $UserPlanet     = CheckInputStrings($_POST['planet']);
 
     $md5newpass     = md5($newpass);
-    $Killer = $game_config['aktywacjen'];
-    $killers = md5($Killer);
     $aktywacja = time()+2678400;
     // Creation de l'utilisateur
     $QryInsertUser  = "INSERT INTO {{table}} SET ";
@@ -107,7 +105,6 @@ if ($_POST) {
     $QryInsertUser .= "`password`='". $md5newpass ."', ";
     $QryInsertUser .= "`aktywnosc` = '1', ";
     $QryInsertUser .= "`kod_aktywujacy`='". mysql_escape_string( $kod )              ."', ";
-    $QryInsertUser .= "`kiler`='".          mysql_escape_string( $killers )          ."', ";
     $QryInsertUser .= "`time_aktyw`='".     mysql_escape_string( $aktywacja )        ."';";
     doquery( $QryInsertUser, 'users');
 
@@ -187,8 +184,6 @@ if ($_POST) {
     $QryUpdateUser .= "`id` = '$userID'";
     $QryUpdateUser .= "LIMIT 1;";
     doquery( $QryUpdateUser, 'users');
-
-    doquery("UPDATE {{table}} SET `config_value` = `config_value` + '1' WHERE `config_name` = 'aktywacjen' LIMIT 1;", 'config');
 
     $Message  = $lang['thanksforregistry'];
     if (sendpassemail($_POST['email'], "$newpass")) {

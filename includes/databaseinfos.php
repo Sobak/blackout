@@ -1,14 +1,5 @@
 <?php
 
-/**
- * databaseinfos.php
- *
- * @version 1.0
- * @copyright 2008 By Chlorel for XNova
- */
-
-// Definition des tables d'XNova
-//
     // Table aks
     $QryTableAks         = "CREATE TABLE `{{table}}` ( ";
     $QryTableAks        .= "`id` bigint(20) unsigned NOT NULL auto_increment, ";
@@ -393,7 +384,6 @@
     $QryTableUsers      .= "`authlevel` tinyint(4) NOT NULL default '0', ";
     $QryTableUsers      .= "`sex` char(1) character set latin1 default NULL, ";
     $QryTableUsers      .= "`avatar` varchar(255) character set latin1 NOT NULL default '', ";
-    $QryTableUsers      .= "`sign` text character set latin1, ";
     $QryTableUsers      .= "`id_planet` int(11) NOT NULL default '0', ";
     $QryTableUsers      .= "`galaxy` int(11) NOT NULL default '0', ";
     $QryTableUsers      .= "`system` int(11) NOT NULL default '0', ";
@@ -483,11 +473,8 @@
     $QryTableUsers      .= "`deltime` int(11) NOT NULL default '0', ";
     $QryTableUsers      .= "`aktywnosc` varchar(255) character set latin1 NOT NULL default '', ";
     $QryTableUsers      .= "`kod_aktywujacy` varchar(255) character set latin1 NOT NULL default '', ";
-    $QryTableUsers      .= "`kiler` varchar(255) character set latin1 NOT NULL default '', ";
     $QryTableUsers      .= "`time_aktyw` int(11) NOT NULL default '0', ";
     $QryTableUsers      .= "`ataker` int(11) NOT NULL default '0', ";
     $QryTableUsers      .= "`atakin` int(11) NOT NULL default '0', ";
     $QryTableUsers      .= "`banaday` int(11) default NULL ";
     $QryTableUsers      .= ") ENGINE=MyISAM;";
-
-?>
