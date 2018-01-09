@@ -1,12 +1,5 @@
 <?php
 
-/**
- * options.php
- *
- * @version 1.0
- * @copyright 2008 by ??????? for XNova
- */
-
 define('INSIDE'  , true);
 
 $ugamela_root_path = './';
@@ -19,94 +12,92 @@ $lang['PHP_SELF'] = 'options.php';
 $dpath = (!$user["dpath"]) ? DEFAULT_SKINPATH : $user["dpath"];
 $mode = $_GET['mode'];
 
-if ($_POST && $mode == "change") { // Array ( [db_character]
+if ($_POST && $mode == "change") {
     $iduser = $user["id"];
     $avatar = $_POST["avatar"];
     $dpath = $_POST["dpath"];
-    $languese = $_POST["langer"];
+    $language = $_POST["langer"];
 
-    // Gestion des options speciales pour les admins
-    if ($user['authlevel'] > 0) {
-        if ($_POST['adm_pl_prot'] == 'on') {
-            doquery ("UPDATE {{table}} SET `id_level` = '".$user['authlevel']."' WHERE `id_owner` = '".$user['id']."';", 'planets');
-        } else {
-            doquery ("UPDATE {{table}} SET `id_level` = '0' WHERE `id_owner` = '".$user['id']."';", 'planets');
-        }
+    // Handle special admin options
+    if ($user['authlevel'] > LEVEL_PLAYER) {
+        $planetLevel = $_POST['adm_pl_prot'] == 'on' ? $user['authlevel'] : 0;
+
+        doquery("UPDATE {{table}} SET `id_level` = {$planetLevel} WHERE `id_owner` = {$user['id']}", 'planets');
     }
 
-    // Desactivar comprobaci? de IP
+    // Deactivate IP checking?
     if (isset($_POST["noipcheck"]) && $_POST["noipcheck"] == 'on') {
         $noipcheck = "1";
     } else {
         $noipcheck = "0";
     }
-    // Nombre de usuario
+    // Username
     if (isset($_POST["db_character"]) && $_POST["db_character"] != '') {
         $username = CheckInputStrings ( $_POST['db_character'] );
     } else {
         $username = $user['username'];
     }
-    // Adresse e-Mail
+    // Email address
     if (isset($_POST["db_email"]) && $_POST["db_email"] != '') {
         $db_email = CheckInputStrings ( $_POST['db_email'] );
     } else {
         $db_email = $user['email'];
     }
-    // Cantidad de sondas de espionaje
+    // Number of spy probes
     if (isset($_POST["spio_anz"]) && is_numeric($_POST["spio_anz"])) {
         $spio_anz = $_POST["spio_anz"];
     } else {
         $spio_anz = "1";
     }
-    // Mostrar tooltip durante
+    // Tooltip duration
     if (isset($_POST["settings_tooltiptime"]) && is_numeric($_POST["settings_tooltiptime"])) {
         $settings_tooltiptime = $_POST["settings_tooltiptime"];
     } else {
         $settings_tooltiptime = "1";
     }
-    // Maximo mensajes de flotas
+    // Maximum fleet messages
     if (isset($_POST["settings_fleetactions"]) && is_numeric($_POST["settings_fleetactions"])) {
         $settings_fleetactions = $_POST["settings_fleetactions"];
     } else {
         $settings_fleetactions = "1";
-    } //
-    // Mostrar logos de los aliados
+    }
+    // Display alliance logo
     if (isset($_POST["settings_allylogo"]) && $_POST["settings_allylogo"] == 'on') {
         $settings_allylogo = "1";
     } else {
         $settings_allylogo = "0";
     }
-    // Espionaje
+    // "Spy" shortcut
     if (isset($_POST["settings_esp"]) && $_POST["settings_esp"] == 'on') {
         $settings_esp = "1";
     } else {
         $settings_esp = "0";
     }
-    // Escribir mensaje
+    // "Message" shortcut
     if (isset($_POST["settings_wri"]) && $_POST["settings_wri"] == 'on') {
         $settings_wri = "1";
     } else {
         $settings_wri = "0";
     }
-    // A?dir a lista de amigos
+    // "Friends" shortcut
     if (isset($_POST["settings_bud"]) && $_POST["settings_bud"] == 'on') {
         $settings_bud = "1";
     } else {
         $settings_bud = "0";
     }
-    // Ataque con misiles
+    // "Missiles" shortcut
     if (isset($_POST["settings_mis"]) && $_POST["settings_mis"] == 'on') {
         $settings_mis = "1";
     } else {
         $settings_mis = "0";
     }
-    // Ver reporte
+    // "Report" shortcut
     if (isset($_POST["settings_rep"]) && $_POST["settings_rep"] == 'on') {
         $settings_rep = "1";
     } else {
         $settings_rep = "0";
     }
-    // Modo vacaciones
+    // Vacations mode
     if (isset($_POST["urlaubs_modus"]) && $_POST["urlaubs_modus"] == 'on') {
         $urlaubs_modus = "1";
         $urlaubs_modus_time = time();
@@ -114,7 +105,7 @@ if ($_POST && $mode == "change") { // Array ( [db_character]
         $urlaubs_modus = "0";
         $urlaubs_modus_time = "0";
     }
-    // Borrar cuenta
+    // Account deletion
     if (isset($_POST["db_deaktjava"]) && $_POST["db_deaktjava"] == 'on') {
         $db_deaktjava = "1";
         $Del_Time = time()+604800;
@@ -127,7 +118,7 @@ if ($_POST && $mode == "change") { // Array ( [db_character]
 
     doquery("UPDATE {{table}} SET
     `email` = '$db_email',
-    `lang` = '$languese',
+    `lang` = '$language',
     `avatar` = '$avatar',
     `dpath` = '$dpath',
     `noipcheck` = '$noipcheck',
@@ -211,6 +202,4 @@ if ($_POST && $mode == "change") { // Array ( [db_character]
     $parse['user_settings_bud'] = ($user['settings_bud'] == 1) ? " checked='checked'/":'';
 
     display(parsetemplate(gettemplate('options_body'), $parse), 'Options');
-    die();
 }
-?>
