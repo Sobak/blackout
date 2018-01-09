@@ -1,19 +1,11 @@
 <?php
 
-/**
- * messages.php
- *
- * @version 1.2
- * @copyright 2008 by Chlorel for XNova
- */
-
 define('INSIDE'  , true);
 
 $ugamela_root_path = './';
 include($ugamela_root_path . 'common.php');
 
 includeLang('messages');
-
 
 $OwnerID       = $_GET['id'];
 $MessCategory  = $_GET['messcat'];
@@ -83,7 +75,6 @@ switch ($MessPageMode) {
                 $page .= "<center><font color=#00FF00>".$lang['mess_sended']."<br></font></center>";
 
                 $_POST['text'] = str_replace("'", '&#39;', $_POST['text']);
-//                    $_POST['text'] = str_replace('\r\n', '<br />', $_POST['text']);
 
                 $Owner   = $OwnerID;
                 $Sender  = $user['id'];
@@ -145,13 +136,7 @@ switch ($MessPageMode) {
     case 'show':
         // -------------------------------------------------------------------------------------------------------
         // Affichage de la page des messages
-        $page  = "<script language=\"JavaScript\">\n";
-        $page .= "function f(target_url, win_name) {\n";
-        $page .= "var new_win = window.open(target_url,win_name,'resizable=yes,scrollbars=yes,menubar=no,toolbar=no,width=550,height=280,top=0,left=0');\n";
-        $page .= "new_win.focus();\n";
-        $page .= "}\n";
-        $page .= "</script>\n";
-        $page .= "<center>";
+        $page = "<center>";
         $page .= "<table>";
         $page .= "<tr>";
         $page .= "<td></td>";
@@ -261,13 +246,7 @@ switch ($MessPageMode) {
         break;
 
     default:
-        $page  = "<script language=\"JavaScript\">\n";
-        $page .= "function f(target_url, win_name) {\n";
-        $page .= "var new_win = window.open(target_url, win_name, 'resizable=yes, scrollbars=yes, menubar=no, toolbar=no, width=550, height=280, top=0, left=0');\n";
-        $page .= "new_win.focus();\n";
-        $page .= "}\n";
-        $page .= "</script>\n";
-        $page .= "<center>";
+        $page = "<center>";
         $page .= "<br>";
         $page .= "<table width=\"569\">";
         $page .= "<tr>";
@@ -297,10 +276,3 @@ switch ($MessPageMode) {
 }
 
 display($page, $lang['mess_pagetitle']);
-
-// -----------------------------------------------------------------------------------------------------------
-// History version
-// 1.0 - Version originelle (Tom1991)
-// 1.1 - Mise a plat, linearisation, suppression des doublons / triplons / 'n'gnions dans le code (Chlorel)
-// 1.2 - Regroupage des 2 fichiers vers 1 seul plus simple a mettre en oeuvre et a gerer !
-?>
