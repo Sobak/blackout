@@ -395,7 +395,6 @@
     $QryTableUsers      .= "`register_time` int(11) NOT NULL default '0', ";
     $QryTableUsers      .= "`onlinetime` int(11) NOT NULL default '0', ";
     $QryTableUsers      .= "`dpath` varchar(255) character set latin1 NOT NULL default '', ";
-    $QryTableUsers      .= "`design` tinyint(4) NOT NULL default '1', ";
     $QryTableUsers      .= "`noipcheck` tinyint(4) NOT NULL default '1', ";
     $QryTableUsers      .= "`planet_sort` tinyint(1) NOT NULL default '0', ";
     $QryTableUsers      .= "`planet_sort_order` tinyint(1) NOT NULL default '0', ";

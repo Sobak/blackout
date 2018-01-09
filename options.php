@@ -34,12 +34,6 @@ if ($_POST && $mode == "change") { // Array ( [db_character]
         }
     }
 
-    // Mostrar skin
-    if (isset($_POST["design"]) && $_POST["design"] == 'on') {
-        $design = "1";
-    } else {
-        $design = "0";
-    }
     // Desactivar comprobaci? de IP
     if (isset($_POST["noipcheck"]) && $_POST["noipcheck"] == 'on') {
         $noipcheck = "1";
@@ -136,7 +130,6 @@ if ($_POST && $mode == "change") { // Array ( [db_character]
     `lang` = '$languese',
     `avatar` = '$avatar',
     `dpath` = '$dpath',
-    `design` = '$design',
     `noipcheck` = '$noipcheck',
     `planet_sort` = '$SetSort',
     `planet_sort_order` = '$SetOrder',
@@ -210,7 +203,6 @@ if ($_POST && $mode == "change") { // Array ( [db_character]
     $parse['opt_probe_data'] = $user['spio_anz'];
     $parse['opt_toolt_data'] = $user['settings_tooltiptime'];
     $parse['opt_fleet_data'] = $user['settings_fleetactions'];
-    $parse['opt_sskin_data'] = ($user['design'] == 1) ? " checked='checked'":'';
     $parse['opt_noipc_data'] = ($user['noipcheck'] == 1) ? " checked='checked'":'';
     $parse['opt_allyl_data'] = ($user['settings_allylogo'] == 1) ? " checked='checked'/":'';
     $parse['opt_delac_data'] = ($user['db_deaktjava'] == 1) ? " checked='checked'/":'';

@@ -58,9 +58,6 @@
         </select>
     </th>
 </tr><tr>
-    <th>{opt_chk_skin}</th>
-    <th><input name="design"{opt_sskin_data} type="checkbox"></th>
-</tr><tr>
     <th>{avatar_example}</th>
     <th><input name="avatar" maxlength="80" size="40" value="{opt_avata_data}" type="text"></th>
 </tr><tr>

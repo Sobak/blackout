@@ -23,7 +23,6 @@ $lang['opt_lst_ord2'] = "Alphabetical order";
 $lang['opt_lst_cla']  = "Sorting direction:";
 $lang['opt_lst_cla0'] = "ascending";
 $lang['opt_lst_cla1'] = "descending";
-$lang['opt_chk_skin'] = "Use the skin";
 
 // Admin Options
 $lang['opt_adm_title'] = "Administrative options";
