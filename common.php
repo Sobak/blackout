@@ -101,7 +101,7 @@ if (!defined('INSTALL') || INSTALL !== true) {
 
         CheckPlanetUsedFields($planetrow);
 
-        $user['new_message'] = doquery("SELECT COUNT(*) AS `count` FROM {{table}} WHERE `message_unread` = 1 AND `message_owner` = {$user['id']}", 'messages', true)['count'];
+        $user['new_message'] = doquery("SELECT COUNT(*) AS `count` FROM {{table}} WHERE `message_unread` = 1 AND `message_owner` = '{$user['id']}'", 'messages', true)['count'];
     }
 } else {
     $dpath     = "../" . DEFAULT_SKINPATH;
