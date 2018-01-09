@@ -72,7 +72,7 @@ switch ($MessPageMode) {
                 $page .= "<center><br><font color=#FF0000>".$lang['mess_no_text']."<br></font></center>";
             }
             if ($error == 0) {
-                $page .= "<center><font color=#00FF00>".$lang['mess_sended']."<br></font></center>";
+                $page .= message_simple($lang['mess_sended'], $lang['sys_success']);
 
                 $_POST['text'] = str_replace("'", '&#39;', $_POST['text']);
 

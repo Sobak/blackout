@@ -72,6 +72,25 @@ function message($message, $title = 'Error', $destination = null, $time = 3, $ha
 }
 
 /**
+ * Display generic message box.
+ *
+ * Same as above but displays just a message box which can be placed anywhere
+ * on the website, thus doesn't provide features like redirect or controlling
+ * the navigation.
+ *
+ * @param string $message Message content
+ * @param string $title Message title
+ * @return string
+ */
+function message_simple($message, $title = 'Error')
+{
+    $parse['title'] = $title;
+    $parse['message']   = $message;
+
+    return parsetemplate(gettemplate('message_body'), $parse);
+}
+
+/**
  * Display the page.
  *
  * @param string $content Page content

@@ -9,6 +9,7 @@ $lang['user_level'] = [
 
 $lang['sys_moon'] = "Moon";
 $lang['sys_error'] = "Error";
+$lang['sys_success'] = "Success";
 $lang['sys_no_vars'] = "vars.php The file is not present, please contact an administrator!";
 $lang['sys_attacker_lostunits'] = "The attacker has lost a total of% s units.";
 $lang['sys_defender_lostunits'] = "The defender has lost a total of% s units.";
