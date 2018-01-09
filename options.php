@@ -144,9 +144,6 @@ if ($_POST && $mode == "change") { // Array ( [db_character]
     `settings_rep` = '$settings_rep',
     `urlaubs_modus` = '$urlaubs_modus',
     `db_deaktjava` = '$db_deaktjava',
-    `kolorminus` = '$kolorminus',
-    `kolorplus` = '$kolorplus',
-    `kolorpoziom` = '$kolorpoziom',
     `urlaubs_modus_time` = '$urlaubs_modus_time',
     `deltime` = '$Del_Time'
     WHERE `id` = '$iduser' LIMIT 1", "users");
@@ -212,9 +209,6 @@ if ($_POST && $mode == "change") { // Array ( [db_character]
     $parse['user_settings_wri'] = ($user['settings_wri'] == 1) ? " checked='checked'/":'';
     $parse['user_settings_mis'] = ($user['settings_mis'] == 1) ? " checked='checked'/":'';
     $parse['user_settings_bud'] = ($user['settings_bud'] == 1) ? " checked='checked'/":'';
-    $parse['kolorminus']  = $user['kolorminus'];
-    $parse['kolorplus']   = $user['kolorplus'];
-    $parse['kolorpoziom'] = $user['kolorpoziom'];
 
     display(parsetemplate(gettemplate('options_body'), $parse), 'Options');
     die();
