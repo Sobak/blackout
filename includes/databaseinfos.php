@@ -453,7 +453,6 @@
     $QryTableUsers      .= "`lvl_raid` int(11) NOT NULL default '1', ";
     $QryTableUsers      .= "`xpraid` int(11) NOT NULL default '0', ";
     $QryTableUsers      .= "`xpminier` int(11) NOT NULL default '0', ";
-    $QryTableUsers      .= "`raids` bigint(20) NOT NULL default '0', ";
     $QryTableUsers      .= "`p_infligees` bigint(20) NOT NULL default '0', ";
     $QryTableUsers      .= "`bana` int(11) default NULL , ";
     $QryTableUsers      .= "`urlaubs_modus_time` int(11) NOT NULL default '0', ";
