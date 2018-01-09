@@ -433,7 +433,6 @@
     $QryTableUsers      .= "`ally_request_text` text character set latin1, ";
     $QryTableUsers      .= "`ally_register_time` int(11) NOT NULL default '0', ";
     $QryTableUsers      .= "`ally_rank_id` int(11) NOT NULL default '0', ";
-    $QryTableUsers      .= "`current_luna` int(11) NOT NULL default '0', ";
     $QryTableUsers      .= "`rpg_geologue` int(11) NOT NULL default '0', ";
     $QryTableUsers      .= "`rpg_amiral` int(11) NOT NULL default '0', ";
     $QryTableUsers      .= "`rpg_ingenieur` int(11) NOT NULL default '0', ";

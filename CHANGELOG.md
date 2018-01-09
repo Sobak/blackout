@@ -18,6 +18,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 ### Removed
 - Dropped unused _"Use the skin?"_ user option
 - Dropped unused `neusuw.php` file
+- Dropped unused field `users.current_luna`
 - Dropped unused field `users.sign`
 - Dropped unused field `users.kiler`
 - Dropped unused fields `users.kolorplus`, `users.kolorminus`, `users.kolorpoziom`

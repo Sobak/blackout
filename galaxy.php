@@ -15,7 +15,6 @@ include($ugamela_root_path . 'common.php');
     includeLang('galaxy');
 
     $CurrentPlanet = doquery("SELECT * FROM {{table}} WHERE `id` = '". $user['current_planet'] ."';", 'planets', true);
-    $lunarow       = doquery("SELECT * FROM {{table}} WHERE `id` = '". $user['current_luna'] ."';", 'lunas', true);
     $galaxyrow     = doquery("SELECT * FROM {{table}} WHERE `id_planet` = '". $CurrentPlanet['id'] ."';", 'galaxy', true);
 
     $dpath         = (!$user["dpath"]) ? DEFAULT_SKINPATH : $user["dpath"];
@@ -33,7 +32,6 @@ include($ugamela_root_path . 'common.php');
     $maxfleet_count = mysql_num_rows($maxfleet);
 
     CheckPlanetUsedFields($CurrentPlanet);
-    CheckPlanetUsedFields($lunarow);
 
     // Imperatif, dans quel mode suis-je (pour savoir dans quel etat j'ere)
     if (!isset($mode)) {
