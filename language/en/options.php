@@ -9,7 +9,7 @@ $lang['succeful_save'] = 'Options have been saved<br><a href="options.php">Retur
 $lang['userdata'] = "User informations";
 $lang['username'] = "Username";
 $lang['lastpassword'] = "Current password";
-$lang['newpassword'] = "New password (min. 8 characters)";
+$lang['newpassword'] = "New password (min. 4 characters)";
 $lang['newpasswordagain'] = "New password (confirm)";
 $lang['emaildir'] = "E-mail adress";
 $lang['emaildir_tip'] = "For the security reasons change will take effect in 7 days";

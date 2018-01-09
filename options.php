@@ -152,7 +152,7 @@ if ($_POST && $mode == "change") { // Array ( [db_character]
     WHERE `id` = '$iduser' LIMIT 1", "users");
 
     if (isset($_POST["db_password"]) && md5($_POST["db_password"]) == $user["password"]) {
-        if ($_POST["newpass1"] == $_POST["newpass2"]) {
+        if ($_POST["newpass1"] == $_POST["newpass2"] && strlen($_POST["newpass1"]) >= 4) {
             $newpass = md5($_POST["newpass1"]);
             doquery("UPDATE {{table}} SET `password` = '{$newpass}' WHERE `id` = '{$user['id']}' LIMIT 1", "users");
             setcookie(COOKIE_NAME, "", time()-100000, "/", "", 0); //le da el expire

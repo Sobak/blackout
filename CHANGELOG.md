@@ -6,11 +6,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 ## [Unreleased]
 ### Added
 - Introduced `message_simple()` to show inline feedback message anywhere on the site
+- Password length is now actually enforced when saving options
 
 ### Changed
 - Improved translation of
     - Officer names
     - Messages
+- Minimal password length when changing from options screen is now consistent with signup
 - Refactored message-related stuff
 
 ### Removed
