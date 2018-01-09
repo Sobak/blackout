@@ -55,18 +55,18 @@ switch ($MessPageMode) {
         // -------------------------------------------------------------------------------------------------------
         // Envoi d'un messages
         if ( !is_numeric( $OwnerID ) ) {
-            message ($lang['mess_no_ownerid'], $lang['mess_error']);
+            message ($lang['mess_no_ownerid'], $lang['sys_error']);
         }
 
         $OwnerRecord = doquery("SELECT * FROM {{table}} WHERE `id` = '".$OwnerID."';", 'users', true);
 
         if (!$OwnerRecord) {
-            message ($lang['mess_no_owner']  , $lang['mess_error']);
+            message ($lang['mess_no_owner']  , $lang['sys_error']);
         }
 
         $OwnerHome   = doquery("SELECT * FROM {{table}} WHERE `id_planet` = '". $OwnerRecord["id_planet"] ."';", 'galaxy', true);
         if (!$OwnerHome) {
-            message ($lang['mess_no_ownerpl'], $lang['mess_error']);
+            message ($lang['mess_no_ownerpl'], $lang['sys_error']);
         }
 
         if ($_POST) {
