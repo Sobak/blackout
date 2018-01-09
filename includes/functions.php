@@ -99,7 +99,7 @@ function message_simple($message, $title = 'Error')
  * @param string $metatags Optional metatags to inject into header
  */
 function display($content, $title = '', $hasNavigation = true, $metatags = '') {
-    global $game_config, $debug, $user, $planetrow;
+    global $game_config, $debug, $lang, $user, $planetrow;
 
     $DisplayPage = ShowHeader($title, $metatags);
 
@@ -120,21 +120,25 @@ function display($content, $title = '', $hasNavigation = true, $metatags = '') {
     }
 
     if ($hasNavigation) {
+        $DisplayPage .= ShowTopNavigationBar($user, $planetrow);
+
         if ($user['aktywnosc'] == 1) {
-            $urlaub_act_time = $user['time_aktyw'];
-            $act_datum = date("d.m.Y", $urlaub_act_time);
-            $act_uhrzeit = date("H:i:s", $urlaub_act_time);
-            $DisplayPage .= "Le mode del dure jusque $act_datum $act_uhrzeit<br>    Ce n'est qu'apr�s cette p�riode que vous pouvez changer vos options.";
+            $activationDate = date('d.m.Y H:i', $user['time_aktyw']);
+
+            $DisplayPage .= message_simple(
+                sprintf($lang['sys_activate_acc_text'], $activationDate),
+                $lang['sys_activate_acc_title']
+            );
         }
 
         if ($user['db_deaktjava'] == 1) {
-            $urlaub_del_time = $user['deltime'];
-            $del_datum = date("d.m.Y", $urlaub_del_time);
-            $del_uhrzeit = date("H:i:s", $urlaub_del_time);
-            $DisplayPage .= "Vous �tes en del user!<br>Le mode del dure jusque $del_datum $del_uhrzeit<br>    Ce n'est qu'apr�s cette p�riode que vous pouvez changer vos options.";
-        }
+            $deletionDate = date('d.m.Y H:i', $user['deltime']);
 
-        $DisplayPage .= ShowTopNavigationBar($user, $planetrow);
+            $DisplayPage .= message_simple(
+                sprintf($lang['sys_acc_deletion_text'], $deletionDate),
+                $lang['sys_acc_deletion_title']
+            );
+        }
     }
 
     $DisplayPage .= "<center>\n". $content ."\n</center>\n";
