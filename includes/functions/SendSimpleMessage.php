@@ -13,8 +13,6 @@
  */
 function SendSimpleMessage($Owner, $Sender, $Time, $Type, $From, $Subject, $Message)
 {
-    global $messfields;
-
     if ($Time == '') {
         $Time = time();
     }
@@ -28,11 +26,4 @@ function SendSimpleMessage($Owner, $Sender, $Time, $Type, $From, $Subject, $Mess
     $QryInsertMessage .= "`message_subject` = '". addslashes( $Subject ) ."', ";
     $QryInsertMessage .= "`message_text` = '". addslashes( $Message ) ."';";
     doquery($QryInsertMessage, 'messages');
-
-    $QryUpdateUser  = "UPDATE {{table}} SET ";
-    $QryUpdateUser .= "`".$messfields[$Type]."` = `".$messfields[$Type]."` + 1, ";
-    $QryUpdateUser .= "`".$messfields[100]."` = `".$messfields[100]."` + 1 ";
-    $QryUpdateUser .= "WHERE ";
-    $QryUpdateUser .= "`id` = '". $Owner ."';";
-    doquery($QryUpdateUser, 'users');
 }

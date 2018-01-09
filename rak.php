@@ -146,15 +146,7 @@ if (isset($resource) && !empty($resource[401])) {
                 if (empty($message))
                     $message = "L ennemis ne possedait pas de d&eacute;fenses, rien n a &eacute;t&eacute; d&eacute;truit !";
 
-                doquery("INSERT INTO {{table}} SET
-                        `message_owner`='" . $selected_row['zielid'] . "',
-                        `message_sender`='',
-                        `message_time`=UNIX_TIMESTAMP(),
-                        `message_type`='0',
-                        `message_from`='QG',
-                        `message_subject`='Attaque de MIP',
-                        `message_text`='" . $message_vorlage . $message . "'" , 'messages');
-                doquery("UPDATE {{table}} SET new_message=new_message+1 WHERE id='" . $selected_row['zielid'] . "'", 'users');
+                SendSimpleMessage($selected_row['zielid'], '', '', 0, 'QG', 'Attaque de MIP', $message_vorlage . $message);
 
                 doquery("DELETE FROM {{table}} WHERE id = '" . $selected_row['id'] . "'", 'iraks');
             }

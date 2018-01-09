@@ -220,6 +220,7 @@
     $QryTableMessages   .= "`message_from` varchar(48) character set latin1 default NULL, ";
     $QryTableMessages   .= "`message_subject` varchar(48) character set latin1 default NULL, ";
     $QryTableMessages   .= "`message_text` text character set latin1, ";
+    $QryTableMessages   .= "`message_unread` tinyint NOT NULL default '1', ";
     $QryTableMessages   .= "PRIMARY KEY  (`message_id`) ";
     $QryTableMessages   .= ") ENGINE=MyISAM;";
 
@@ -409,7 +410,6 @@
     $QryTableUsers      .= "`settings_rep` tinyint(4) NOT NULL default '0', ";
     $QryTableUsers      .= "`urlaubs_modus` tinyint(4) NOT NULL default '0', ";
     $QryTableUsers      .= "`db_deaktjava` tinyint(4) NOT NULL default '0', ";
-    $QryTableUsers      .= "`new_message` int(11) NOT NULL default '0', ";
     $QryTableUsers      .= "`fleet_shortcut` text character set latin1, ";
     $QryTableUsers      .= "`b_tech_planet` int(11) NOT NULL default '0', ";
     $QryTableUsers      .= "`spy_tech` int(11) NOT NULL default '0', ";
@@ -460,14 +460,6 @@
     $QryTableUsers      .= "`xpminier` int(11) NOT NULL default '0', ";
     $QryTableUsers      .= "`raids` bigint(20) NOT NULL default '0', ";
     $QryTableUsers      .= "`p_infligees` bigint(20) NOT NULL default '0', ";
-    $QryTableUsers      .= "`mnl_alliance` INT( 11 ) NOT NULL , ";
-    $QryTableUsers      .= "`mnl_joueur` INT( 11 ) NOT NULL , ";
-    $QryTableUsers      .= "`mnl_attaque` INT( 11 ) NOT NULL , ";
-    $QryTableUsers      .= "`mnl_spy` INT( 11 ) NOT NULL , ";
-    $QryTableUsers      .= "`mnl_exploit` INT( 11 ) NOT NULL , ";
-    $QryTableUsers      .= "`mnl_transport` INT( 11 ) NOT NULL , ";
-    $QryTableUsers      .= "`mnl_expedition` INT( 11 ) NOT NULL , ";
-    $QryTableUsers      .= "`mnl_buildlist` INT (11) NOT NULL , ";
     $QryTableUsers      .= "`bana` int(11) default NULL , ";
     $QryTableUsers      .= "`urlaubs_modus_time` int(11) NOT NULL default '0', ";
     $QryTableUsers      .= "`deltime` int(11) NOT NULL default '0', ";

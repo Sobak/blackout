@@ -8,20 +8,6 @@
  */
 
 if ( defined('INSIDE')) {
-    // Liste de champs pour l'indication des messages en attante
-    $messfields = array (
-    0 => "mnl_spy",
-    1 => "mnl_joueur",
-    2 => "mnl_alliance",
-    3 => "mnl_attaque",
-    4 => "mnl_exploit",
-    5 => "mnl_transport",
-    15 => "mnl_expedition",
-    97 => "mnl_general",
-    99 => "mnl_buildlist",
-    100 => "new_message"
-    );
-
     // Equivalance base de donnée par type
     $resource = array(
       1 => "metal_mine",

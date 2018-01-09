@@ -24,18 +24,25 @@ if (isset ($DeleteWhat)) {
 }
 
 $UsrMess       = doquery("SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' ORDER BY `message_time` DESC;", 'messages');
-$UnRead        = doquery("SELECT * FROM {{table}} WHERE `id` = '". $user['id'] ."';", 'users', true);
+$UnReadResult  = doquery("SELECT COUNT(*) AS `count`, `message_type` AS `type` FROM {{table}} WHERE `message_owner` = {$user['id']} AND `message_unread` = 1 GROUP BY `message_type`", 'messages');
+
+$UnRead = [];
+$UnReadTotal = 0;
+while ($row = mysql_fetch_array($UnReadResult)) {
+    $UnRead[$row['type']] = $row['count'];
+    $UnReadTotal += $row['count'];
+}
 
 $MessageType   = array ( 0, 1, 2, 3, 4, 5, 15, 99, 100 );
 $TitleColor    = array ( 0 => '#FFFF00', 1 => '#FF6699', 2 => '#FF3300', 3 => '#FF9900', 4 => '#773399', 5 => '#009933', 15 => '#030070', 99 => '#007070', 100 => '#ABABAB'  );
 $BackGndColor  = array ( 0 => '#663366', 1 => '#336666', 2 => '#000099', 3 => '#666666', 4 => '#999999', 5 => '#999999', 15 => '#999999', 99 => '#999999', 100 => '#999999'  );
 
-for ($MessType = 0; $MessType < 101; $MessType++) {
-    if ( in_array($MessType, $MessageType) ) {
-        $WaitingMess[$MessType] = $UnRead[$messfields[$MessType]];
-        $TotalMess[$MessType]   = 0;
-    }
+foreach ($MessageType as $MessType) {
+    $WaitingMess[$MessType] = isset($UnRead[$MessType]) ? $UnRead[$MessType] : 0;
+    $TotalMess[$MessType] = 0;
 }
+
+$WaitingMess[100] = $UnReadTotal;
 
 while ($CurMess = mysql_fetch_array($UsrMess)) {
     $MessType              = $CurMess['message_type'];
@@ -177,18 +184,9 @@ switch ($MessPageMode) {
 
         if ($MessCategory == 100) {
             $UsrMess       = doquery("SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' ORDER BY `message_time` DESC;", 'messages');
-            $SubUpdateQry  = "";
-            for ($MessType = 0; $MessType < 101; $MessType++) {
-                if ( in_array($MessType, $MessageType) ) {
-                    $SubUpdateQry .= "`".$messfields[$MessType]."` = '0', ";
-                }
-            }
-            $QryUpdateUser  = "UPDATE {{table}} SET ";
-            $QryUpdateUser .= $SubUpdateQry;
-            $QryUpdateUser .= "`id` = '".$user['id']."' "; // Vraiment pas envie de me casser le fion a virer la derniere virgule du sub query
-            $QryUpdateUser .= "WHERE ";
-            $QryUpdateUser .= "`id` = '".$user['id']."';";
-            doquery ( $QryUpdateUser, 'users' );
+
+            // Mark all user messages as read
+            doquery("UPDATE {{table}} SET `message_unread` = 0 WHERE `message_owner` = {$user['id']}", 'messages');
 
             while ($CurMess = mysql_fetch_array($UsrMess)) {
                 $page .= "\n<tr>";
@@ -210,12 +208,10 @@ switch ($MessPageMode) {
             }
         } else {
             $UsrMess       = doquery("SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' AND `message_type` = '".$MessCategory."' ORDER BY `message_time` DESC;", 'messages');
-            $QryUpdateUser  = "UPDATE {{table}} SET ";
-            $QryUpdateUser .= "`".$messfields[$MessCategory]."` = '0', ";
-            $QryUpdateUser .= "`".$messfields[100]."` = `".$messfields[100]."` - '".$WaitingMess[$MessCategory]."' ";
-            $QryUpdateUser .= "WHERE ";
-            $QryUpdateUser .= "`id` = '".$user['id']."';";
-            doquery ( $QryUpdateUser, 'users' );
+
+            // Mark messages from given category as read
+            doquery("UPDATE {{table}} SET `message_unread` = 0 WHERE `message_type` = '{$MessCategory}' AND `message_owner` = {$user['id']}", 'messages');
+
             while ($CurMess = mysql_fetch_array($UsrMess)) {
                 if ($CurMess['message_type'] == $MessCategory) {
                     $page .= "\n<tr>";

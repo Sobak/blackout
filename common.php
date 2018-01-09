@@ -100,6 +100,8 @@ if (!defined('INSTALL') || INSTALL !== true) {
         $galaxyrow = doquery("SELECT * FROM {{table}} WHERE `id_planet` = '".$planetrow['id']."';", 'galaxy', true);
 
         CheckPlanetUsedFields($planetrow);
+
+        $user['new_message'] = doquery("SELECT COUNT(*) AS `count` FROM {{table}} WHERE `message_unread` = 1 AND `message_owner` = {$user['id']}", 'messages', true)['count'];
     }
 } else {
     $dpath     = "../" . DEFAULT_SKINPATH;

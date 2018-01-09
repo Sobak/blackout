@@ -496,20 +496,11 @@ array(1 =>
             // looooooop
             $list = '';
             while ($u = mysql_fetch_array($sq)) {
-                doquery("INSERT INTO {{table}} SET
-                `message_owner`='{$u['id']}',
-                `message_sender`='{$user['id']}' ,
-                `message_time`='" . time() . "',
-                `message_type`='2',
-                `message_from`='{$ally['ally_tag']}',
-                `message_subject`='{$user['username']}',
-                `message_text`='{$_POST['text']}'
-                ", "messages");
+                SendSimpleMessage($u['id'], $user['id'], '', 2, $ally['ally_tag'], $user['username'], $_POST['text']);
+
                 $list .= "<br>{$u['username']} ";
             }
-            // doquery("SELECT id,username FROM {{table}} WHERE ally_id='{$user['ally_id']}' ORDER BY `id`","users");
-            doquery("UPDATE {{table}} SET `new_message`=new_message+1 WHERE ally_id='{$user['ally_id']}' AND ally_rank_id='{$_POST['r']}'", "users");
-            doquery("UPDATE {{table}} SET `mnl_alliance`=mnl_alliance+1 WHERE ally_id='{$user['ally_id']}' AND ally_rank_id='{$_POST['r']}'", "users");
+
             /*
           Aca un mensajito diciendo que a quien se mando.
         */
@@ -948,20 +939,14 @@ array(1 =>
             ally_name='{$ally['ally_name']}',
             ally_request_text='',
             ally_request='0',
-            ally_id='{$ally['id']}',
-            new_message=new_message+1,
-            mnl_alliance=mnl_alliance+1
+            ally_id='{$ally['id']}'
             WHERE id='{$show}'", 'users');
-            // Se envia un mensaje avizando...
 
-            doquery("INSERT INTO {{table}} SET
-            `message_owner`='{$show}',
-            `message_sender`='{$user['id']}' ,
-            `message_time`='" . time() . "',
-            `message_type`='2',
-            `message_from`='{$ally['ally_tag']}',
-            `message_subject`='[" . $ally['ally_name'] . "] vous a acceptee!',
-            `message_text`='Hi!<br>L\'Alliance <b>" . $ally['ally_name'] . "</b> a acceptee votre candidature!<br>Charte:<br>" . $_POST['text'] . "'", "messages");
+            // Se envia un mensaje avizando...
+            $acceptanceSubject = "[" . $ally['ally_name'] . "] vous a acceptee!";
+            $acceptanceText = "Hi!<br>L\'Alliance <b>" . $ally['ally_name'] . "</b> a acceptee votre candidature!<br>Charte:<br>" . $_POST['text'];
+
+            SendSimpleMessage($show, $user['id'], '', 2, $ally['ally_tag'], $acceptanceSubject, $acceptanceText);
 
             header('Location:alliance.php?mode=admin&edit=requests');
             die();
@@ -969,16 +954,12 @@ array(1 =>
         } elseif ($_POST['action'] == "Ablehnen" && $_POST['action'] != '') {
             $_POST['text'] = mysql_escape_string(strip_tags($_POST['text']));
 
-            doquery("UPDATE {{table}} SET ally_request_text='',ally_request='0',ally_id='0',new_message=new_message+1, mnl_alliance=mnl_alliance+1 WHERE id='{$show}'", 'users');
+            doquery("UPDATE {{table}} SET ally_request_text='',ally_request='0',ally_id='0' WHERE id='{$show}'", 'users');
             // Se envia un mensaje avizando...
-            doquery("INSERT INTO {{table}} SET
-            `message_owner`='{$show}',
-            `message_sender`='{$user['id']}' ,
-            `message_time`='" . time() . "',
-            `message_type`='2',
-            `message_from`='{$ally['ally_tag']}',
-            `message_subject`='[" . $ally['ally_name'] . "] vous as refuse!',
-            `message_text`='Hi!<br>L\'Alliance <b>" . $ally['ally_name'] . "</b> a refusee votre candidature!<br>Begr&uuml;ndung/Text:<br>" . $_POST['text'] . "'", "messages");
+            $refusalSubject = "[" . $ally['ally_name'] . "] vous as refuse!";
+            $refusalText = "Hi!<br>L\'Alliance <b>" . $ally['ally_name'] . "</b> a refusee votre candidature!<br>Begr&uuml;ndung/Text:<br>" . $_POST['text'];
+
+            SendSimpleMessage($show, $user['id'], '', 2, $ally['ally_tag'], $refusalSubject, $refusalText);
 
             header('Location:alliance.php?mode=admin&edit=requests');
             die();
