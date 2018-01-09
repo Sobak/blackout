@@ -30,7 +30,7 @@ if ($_POST) {
         header("Location: ./overview.php");
         exit;
     } else {
-        message($lang['Login_FailCredentials'], $lang['Login_Error']);
+        message($lang['Login_FailCredentials'], $lang['Login_Error'], null, 0, false);
     }
 } else {
     $parse = $lang;
