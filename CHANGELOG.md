@@ -14,6 +14,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 ### Changed
 - Improved translation of
     - Officer names
+    - Imperium
     - Messages
 - Minimal password length when changing from options screen is now consistent with signup
 - Refactored message-related stuff
