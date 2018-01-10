@@ -70,12 +70,6 @@ if ($_POST) {
         $errorlist .= $lang['error_emailexist'];
     }
 
-    if ($_POST['sex'] != ''  &&
-        $_POST['sex'] != 'F' &&
-        $_POST['sex'] != 'M') {
-        $errorlist .= $lang['error_sex'];
-    }
-
     if (!in_array($_POST['langer'], array_keys($availableLanguages))) {
         $errorlist .= $lang['error_lang'];
     }
@@ -99,7 +93,6 @@ if ($_POST) {
     $QryInsertUser .= "`email` = '".    mysql_escape_string( $UserEmail )            ."', ";
     $QryInsertUser .= "`email_2` = '".  mysql_escape_string( $UserEmail )            ."', ";
     $QryInsertUser .= "`lang` = '".     mysql_escape_string( $_POST['langer'] )      ."', ";
-    $QryInsertUser .= "`sex` = '".      mysql_escape_string( $_POST['sex'] )         ."', ";
     $QryInsertUser .= "`id_planet` = '0', ";
     $QryInsertUser .= "`register_time` = '". time() ."', ";
     $QryInsertUser .= "`password`='". $md5newpass ."', ";

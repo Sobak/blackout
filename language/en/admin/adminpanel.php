@@ -25,7 +25,6 @@ $lang['adm_frm1_name'] = "Nom";
 $lang['adm_frm1_ip']   = "IP";
 $lang['adm_frm1_mail'] = "e-Mail";
 $lang['adm_frm1_acc']  = "Acc&egrave;s";
-$lang['adm_frm1_gen']  = "Genre";
 $lang['adm_frm1_main'] = "ID plan&egrave;te";
 $lang['adm_frm1_gpos'] = "Position";
 $lang['adm_mess_lvl1'] = "Le niveau d'acc&egrave;s de";

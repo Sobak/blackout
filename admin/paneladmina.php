@@ -31,7 +31,6 @@ if (isset($_GET['result'])) {
             $bloc['answer3']        = $SelUser['user_lastip'];
             $bloc['answer4']        = $SelUser['email'];
             $bloc['answer5']        = $lang['adm_usr_level'][ $SelUser['authlevel'] ];
-            $bloc['answer6']        = $lang['adm_usr_genre'][ $SelUser['sex'] ];
             $bloc['answer7']        = "[".$SelUser['id_planet']."] ".$UsrMain['name'];
             $bloc['answer8']        = "[".$SelUser['galaxy'].":".$SelUser['system'].":".$SelUser['planet']."] ";
             $SubPanelTPL            = gettemplate('admin/admin_panel_asw1');
@@ -49,7 +48,6 @@ if (isset($_GET['result'])) {
             $bloc['answer3']         = $SelUser['user_lastip'];
             $bloc['answer4']         = $SelUser['email'];
             $bloc['answer5']         = $lang['adm_usr_level'][ $SelUser['authlevel'] ];
-            $bloc['answer6']         = $lang['adm_usr_genre'][ $SelUser['sex'] ];
             $bloc['answer7']         = "[".$SelUser['id_planet']."] ".$UsrMain['name'];
             $bloc['answer8']         = "[".$SelUser['galaxy'].":".$SelUser['system'].":".$SelUser['planet']."] ";
             $SubPanelTPL             = gettemplate('admin/admin_panel_asw1');

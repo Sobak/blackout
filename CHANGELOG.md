@@ -24,6 +24,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 - Dropped unused fields `users.kolorplus`, `users.kolorminus`, `users.kolorpoziom`
 - Dropped unused field `users.raids`
 - Dropped unused field `users.p_infligees`
+- Dropped user's _Sex_ option
 
 ## [0.3.0] - 2018-01-09
 ### Fixed

@@ -31,14 +31,6 @@
      if (event.keyCode==60 || event.keyCode==62) event.returnValue = false;
      if (event.which==60 || event.which==62) return false;"> <input type="button" value="Generete!" onClick="planet.value=profundity()" style="font-size: 10px; font-family: Verdana;"/></th>
 </tr>
-<tr>
-  <th>{Sex}</th>
-  <th><select name="sex">
-        <option value="">{Undefined}</option>
-        <option value="M">{Male}</option>
-        <option value="F">{Female}</option>
-        </select></th>
-</tr>
 <tr> 
   <th>{Languese}</th>
   <th><select name="langer">

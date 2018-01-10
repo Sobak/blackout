@@ -37,7 +37,6 @@ $lang['error_password']    = 'Password must have at least 4 characters<br />';
 $lang['error_rgt']         = 'You need to accept the rules<br />';
 $lang['error_userexist']   = 'This username is already taken<br />';
 $lang['error_emailexist']  = 'This email is already taken<br />';
-$lang['error_sex']         = 'Invalid sex<br />';
 $lang['error_lang']        = 'You need to choose the language<br />';
 $lang['error_mailsend']    = 'Error sending an email. Your password is:';
 $lang['reg_welldone']      = 'Signup finished';

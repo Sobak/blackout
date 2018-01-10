@@ -139,7 +139,6 @@ switch ($Mode) {
             $adm_pass   = $_POST['adm_pass'];
             $adm_email  = $_POST['adm_email'];
             $adm_planet = $_POST['adm_planet'];
-            $adm_sex    = $_POST['adm_sex'];
             $md5pass    = md5($adm_pass);
 
             if (!$_POST['adm_user']) {
@@ -193,7 +192,6 @@ switch ($Mode) {
             $QryInsertAdm .= "`email_2`           = '". $adm_email ."', ";
             $QryInsertAdm .= "`lang`              = '". DEFAULT_LANG ."', ";
             $QryInsertAdm .= "`authlevel`         = '3', ";
-            $QryInsertAdm .= "`sex`               = '". $adm_sex ."', ";
             $QryInsertAdm .= "`id_planet`         = '1', ";
             $QryInsertAdm .= "`galaxy`            = '1', ";
             $QryInsertAdm .= "`system`            = '1', ";

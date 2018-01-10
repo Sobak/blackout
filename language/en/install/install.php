@@ -41,7 +41,3 @@ $lang['ins_acc_user']     = "Username";
 $lang['ins_acc_pass']     = "Password";
 $lang['ins_acc_email']    = "E-mail address";
 $lang['ins_acc_planet']   = "Mother planet";
-$lang['ins_acc_sex']      = "Sex";
-$lang['ins_acc_sex0']     = "-undefined-";
-$lang['ins_acc_sex1']     = "Male";
-$lang['ins_acc_sex2']     = "Female";
