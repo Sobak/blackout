@@ -1,16 +1,12 @@
 <?php
 
-//Record
-$lang['rec_title']  = "Records de l'univers";
-$lang['rec_build']  = "B&acirc;timents";
-$lang['rec_specb']  = "B&acirc;timents sp&eacute;ciaux";
-$lang['rec_playe']  = "Joueur";
-$lang['rec_defes']  = "D&eacute;fenses";
-$lang['rec_fleet']  = "Flotte";
+$lang['rec_title']  = "Universe records";
+$lang['rec_build']  = "Buildings";
+$lang['rec_specb']  = "Special buildings";
+$lang['rec_playe']  = "Player";
+$lang['rec_defes']  = "Defenses";
+$lang['rec_fleet']  = "Fleet";
 $lang['rec_techn']  = "Technologies";
-$lang['rec_level']  = "Niveau";
-$lang['rec_nbre']   = "Nombre";
+$lang['rec_level']  = "Level";
+$lang['rec_nbre']   = "Number";
 $lang['rec_rien']   = "-";
-
-// Created by Chlorel (XNova Team). All rights reversed (C) 2008
-?>
