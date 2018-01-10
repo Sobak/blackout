@@ -1,18 +1,12 @@
 <?php
 
-/**
- * marchand.php
- *
- * @version 1.2
- * @copyright 2008 by Chlorel for XNova
- */
-
 define('INSIDE'  , true);
 
 $ugamela_root_path = './';
 include($ugamela_root_path . 'common.php');
 
-function ModuleMarchand ( $CurrentUser, &$CurrentPlanet ) {
+function ModuleMarchand(&$CurrentPlanet)
+{
     global $lang;
 
     includeLang('marchand');
@@ -20,7 +14,6 @@ function ModuleMarchand ( $CurrentUser, &$CurrentPlanet ) {
     $parse   = $lang;
 
     if ($_POST['ress'] != '') {
-        $PageTPL = gettemplate('message_body');
         $Error   = false;
         switch ($_POST['ress']) {
             case 'metal':
@@ -31,7 +24,7 @@ function ModuleMarchand ( $CurrentUser, &$CurrentPlanet ) {
                 } elseif ($CurrentPlanet['metal'] > $Necessaire) {
                     $CurrentPlanet['metal'] -= $Necessaire;
                 } else {
-                    $Message = $lang['mod_ma_noten'] ." ". $lang['Metal'] ."! ";
+                    $Message = $lang['mod_ma_noten'] ." ". $lang['Metal'];
                     $Error   = true;
                 }
                 break;
@@ -44,7 +37,7 @@ function ModuleMarchand ( $CurrentUser, &$CurrentPlanet ) {
                 } elseif ($CurrentPlanet['crystal'] > $Necessaire) {
                     $CurrentPlanet['crystal'] -= $Necessaire;
                 } else {
-                    $Message = $lang['mod_ma_noten'] ." ". $lang['Crystal'] ."! ";
+                    $Message = $lang['mod_ma_noten'] ." ". $lang['Crystal'];
                     $Error   = true;
                 }
                 break;
@@ -57,7 +50,7 @@ function ModuleMarchand ( $CurrentUser, &$CurrentPlanet ) {
                 } elseif ($CurrentPlanet['deuterium'] > $Necessaire) {
                     $CurrentPlanet['deuterium'] -= $Necessaire;
                 } else {
-                    $Message = $lang['mod_ma_noten'] ." ". $lang['Deuterium'] ."! ";
+                    $Message = $lang['mod_ma_noten'] ." ". $lang['Deuterium'];
                     $Error   = true;
                 }
                 break;
@@ -76,12 +69,8 @@ function ModuleMarchand ( $CurrentUser, &$CurrentPlanet ) {
             doquery ( $QryUpdatePlanet , 'planets');
             $Message = $lang['mod_ma_done'];
         }
-        if ($Error == true) {
-            $parse['title'] = $lang['mod_ma_error'];
-        } else {
-            $parse['title'] = $lang['mod_ma_donet'];
-        }
-        $parse['mes']   = $Message;
+
+        $MessageTitle = $Error ? $lang['sys_error'] : $lang['sys_success'];
     } else {
         if ($_POST['action'] != 2) {
             $PageTPL = gettemplate('marchand_main');
@@ -107,16 +96,12 @@ function ModuleMarchand ( $CurrentUser, &$CurrentPlanet ) {
         }
     }
 
-    $Page    = parsetemplate ( $PageTPL, $parse );
-    return  $Page;
+    if ($Message && $MessageTitle) {
+        return message_simple($Message, $MessageTitle);
+    }
+
+    return parsetemplate($PageTPL, $parse);
 }
 
-    $Page = ModuleMarchand ( $user, $planetrow );
-    display ( $Page, $lang['marchand_title'], true, '', false );
-
-// -----------------------------------------------------------------------------------------------------------
-// History version
-// 1.0 - Version originelle (Tom1991)
-// 1.1 - Version 2.0 de Tom1991 ajout java
-// 1.2 - R��criture Chlorel passage aux template, optimisation des appels et des requetes SQL
-?>
+$content = ModuleMarchand($planetrow);
+display($content, $lang['marchand_title']);

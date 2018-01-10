@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 - Password length is now actually enforced when saving options
 
 ### Fixed
+- Fixed missing message content in Merchant screen
 - Fixed missing message content in Officers screen
 
 ### Changed
@@ -16,6 +17,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
     - Officer names
     - Imperium
     - Messages
+    - Merchant
     - Records
     - Resources
 - Minimal password length when changing from options screen is now consistent with signup
