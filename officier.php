@@ -55,11 +55,8 @@ function ShowOfficierPage ( &$CurrentUser ) {
         } else {
             $Message = $lang['NoPoints'];
         }
-        $MessTPL        = gettemplate('message_body');
-        $parse['title'] = $lang['Officiers'];
-        $parse['message'] = $Message;
 
-        $page           = parsetemplate( $MessTPL, $parse);
+        $page = message_simple($Message, $lang['Officiers']);
     } else {
         // Pas de recrutement d'officier
         $PageTPL = gettemplate('officier_body');
