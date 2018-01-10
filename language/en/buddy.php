@@ -1,33 +1,30 @@
 <?php
 
-$lang['Request_sent'] = 'Requete envoy&eacute;e.';
-$lang['Buddy_request'] = 'Requete d\'ami';
-$lang['A_request_exists_already_for_this_user'] = 'Un requete d\'ami existe d&eacute;j&agrave; pour cet utilisateur.';
-$lang['You_cannot_ask_yourself_for_a_request'] = 'Vous ne pouvez pas vous envoyez d\'invitation...';
-$lang['Buddy_list'] = 'Liste d\'amis';
-$lang['There_is_no_request'] = 'Pas de requetes';
-$lang['Request_text'] = 'Texte de de requete';
-$lang['characters'] = 'caract&egrave;res';
-$lang['Back'] = 'Revenir en arri&egrave;re';
-$lang['Send'] = 'Envoyer';
-$lang['Delete_request'] = 'Supprimer la requete';
-$lang['Ok'] = 'Accepter';
-$lang['Reject'] = 'Rejeter';
-$lang['Delete'] = 'Supprimer';
-$lang['On'] = 'En ligne';
+$lang['Request_sent'] = 'Request sent';
+$lang['Buddy_request'] = 'Buddy request';
+$lang['A_request_exists_already_for_this_user'] = 'You already sent a request to that user.';
+$lang['You_cannot_ask_yourself_for_a_request'] = 'You cannot send a request to yourself';
+$lang['Buddy_list'] = 'Buddy list';
+$lang['There_is_no_request'] = 'No requests';
+$lang['Request_text'] = 'Request content';
+$lang['characters'] = 'characters';
+$lang['Back'] = 'Return back';
+$lang['Send'] = 'Send';
+$lang['Delete_request'] = 'Delete a request';
+$lang['Ok'] = 'Accept';
+$lang['Reject'] = 'Reject';
+$lang['Delete'] = 'Delete';
+$lang['On'] = 'Online';
 $lang['15_min'] = '15 min';
-$lang['Off'] = 'Hors ligne';
-$lang['Player'] = 'Joueur';
+$lang['Off'] = 'Offline';
+$lang['Player'] = 'Player';
 
-$lang['Name'] = 'Nombre';
-$lang['User'] = 'Utilisateur';
+$lang['Name'] = 'Username';
+$lang['User'] = 'User';
 $lang['Alliance'] = 'Alliance';
-$lang['Coordinates'] = 'Coordonnees';
+$lang['Coordinates'] = 'Coordinates';
 $lang['Position'] = 'Position';
-$lang['Text'] = 'Texte';
-$lang['Requests'] = 'Requetes';
-$lang['My_requests'] = 'Mes requetes';
-$lang['Anothers_requests'] = 'Autres requetes';
-
-// Created by Perberos. All rights reversed (C) 2006
-?>
+$lang['Text'] = 'Content';
+$lang['Requests'] = 'Requests';
+$lang['My_requests'] = 'My requests';
+$lang['Anothers_requests'] = 'Anothers requests';

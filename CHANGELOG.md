@@ -13,8 +13,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 - Fixed missing message content in Officers screen
 
 ### Changed
-- Improved translation of
-    - Officer names
+- Improved translation of following screens
+    - Officers
+    - Friends
     - Imperium
     - Messages
     - Merchant
