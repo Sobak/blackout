@@ -1,28 +1,22 @@
 <?php
 
-/**
- * officier.php
- *
- * @version 1.1
- * @copyright 2008 By Tom1991 for XNova
- */
-
 define('INSIDE'  , true);
 
 $ugamela_root_path = './';
 include($ugamela_root_path . 'common.php');
 
-function ShowOfficierPage ( &$CurrentUser ) {
+function ShowOfficierPage (&$CurrentUser)
+{
     global $lang, $resource, $reslist;
 
     includeLang('officier');
 
-    // Vérification que le joueur n'a pas un nombre de points négatif
+    // Verify that player's officer points are not negative
     if ($CurrentUser['rpg_points'] < 0) {
         doquery("UPDATE {{table}} SET `rpg_points` = '0' WHERE `id` = '". $CurrentUser['id'] ."';", 'users');
     }
 
-    // Si recrutement d'un officier
+    // Recruit the officer
     if ($_GET['mode'] == 2) {
         if ($CurrentUser['rpg_points'] > 0) {
             $Selected    = $_GET['offi'];
@@ -58,38 +52,33 @@ function ShowOfficierPage ( &$CurrentUser ) {
 
         $page = message_simple($Message, $lang['Officiers']);
     } else {
-        // Pas de recrutement d'officier
+        // Show officers list
         $PageTPL = gettemplate('officier_body');
         $RowsTPL = gettemplate('officier_rows');
         $parse['off_points']   = $lang['off_points'];
         $parse['alv_points']   = $CurrentUser['rpg_points'];
         $parse['disp_off_tbl'] = "";
-        for ( $Officier = 601; $Officier <= 615; $Officier++ ) {
-            $Result = IsOfficierAccessible ( $CurrentUser, $Officier );
+        for ($Officier = 601; $Officier <= 615; $Officier++) {
+            $Result = IsOfficierAccessible($CurrentUser, $Officier);
             if ( $Result != 0 ) {
                 $bloc['off_id']       = $Officier;
                 $bloc['off_tx_lvl']   = $lang['off_tx_lvl'];
                 $bloc['off_lvl']      = $CurrentUser[$resource[$Officier]];
                 $bloc['off_desc']     = $lang['res']['descriptions'][$Officier];
                 if ($Result == 1) {
-                    $bloc['off_link'] = "<a href=\"officier.php?mode=2&offi=".$Officier."\"><font color=\"#00ff00\">". $lang['link'][$Officier]."</font>";
+                    $bloc['off_link'] = '<a href="officier.php?mode=2&offi='.$Officier.'"><font color="#00ff00">'. $lang['link'][$Officier].'</font>';
                 } else {
                     $bloc['off_link'] = $lang['Maxlvl'];
                 }
-                $parse['disp_off_tbl'] .= parsetemplate( $RowsTPL, $bloc );
+                $parse['disp_off_tbl'] .= parsetemplate($RowsTPL, $bloc);
             }
         }
-        $page           = parsetemplate( $PageTPL, $parse);
+
+        $page = parsetemplate($PageTPL, $parse);
     }
 
     return $page;
 }
 
-    $page = ShowOfficierPage ( $user );
-    display($page, $lang['Officiers']);
-
-// -----------------------------------------------------------------------------------------------------------
-// History version
-// 1.0 - Version originelle (Tom1991)
-// 1.1 - Réécriture Chlorel pour integration complete dans XNova
-?>
+$page = ShowOfficierPage ( $user );
+display($page, $lang['Officiers']);

@@ -1,18 +1,21 @@
 <?php
 
 /**
- * IsOfficierAccessible.php
+ * Check whether an officer can be recruited.
  *
- * @version 1.0
- * @copyright 2008 By Chlorel for XNova
+ * Returns one of:
+ *  * 0 for unmet requirements
+ *  * 1 when everything is fine
+ *  * -1 when requirements are met but user already has maximum
+ *    level officer of that type
+ *
+ * @param array $CurrentUser User's database record
+ * @param integer $Officier An officer ID
+ *
+ * @return int
  */
-
-// Verification si l'on a le droit ou non a un officier
-// Retour:
-//  0 => pas les Officiers necessaires
-//  1 => Tout va tres bien on peut le faire celui là
-// -1 => On pouvait le faire, mais on est déja au level max
-function IsOfficierAccessible ($CurrentUser, $Officier) {
+function IsOfficierAccessible($CurrentUser, $Officier)
+{
     global $requeriments, $resource, $pricelist;
 
     if (isset($requeriments[$Officier])) {
@@ -28,8 +31,7 @@ function IsOfficierAccessible ($CurrentUser, $Officier) {
     }
     if ($CurrentUser[$resource[$Officier]] < $pricelist[$Officier]['max']  ) {
         return 1;
-    } else {
-        return -1;
     }
+
+    return -1;
 }
-?>
