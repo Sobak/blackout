@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ## [Unreleased]
+### Fixed
+- Fixed incorrect table styling on Defense/Shipyard pages
 
 ## [0.4.1] - 2018-01-11
 This version focused on codestyle changes only so that diffs for future releases
