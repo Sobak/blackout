@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ## [Unreleased]
+
+## [0.4.0] - 2018-01-11
 ### Added
 - Added abbility to choose from installed skins using Options screen
 - Introduced `dd()` to quickly dump list of passed arguments and halt script execution

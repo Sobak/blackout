@@ -1,6 +1,6 @@
 <?php
 
-define('VERSION', '0.4.0-dev');
+define('VERSION', '0.4.0');
 
 $game_config   = array();
 $user          = array();
