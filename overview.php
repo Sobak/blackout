@@ -388,7 +388,7 @@ switch ($mode) {
         }
 
         // Calculate percentage of planet development
-        $parse['case_pourcentage'] = floor($planetrow["field_current"] / CalculateMaxPlanetFields($planetrow) * 100) . $lang['o/o'];
+        $parse['case_pourcentage'] = floor($planetrow["field_current"] / CalculateMaxPlanetFields($planetrow) * 100) . '%';
         // Barre de remplissage
         $parse['case_barre'] = floor($planetrow["field_current"] / CalculateMaxPlanetFields($planetrow) * 100) * 2.5;
         // Color the progressbar

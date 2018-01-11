@@ -12,6 +12,5 @@ $lang['Weekly'] = 'Weekly';
 $lang['Monthly'] = 'Monthly';
 $lang['Storage_state'] = 'Storage State';
 $lang['Calcule'] = 'Calc';
-$lang['o/o'] = '%';
 $lang['k'] = 'k';
 $lang['Total'] = 'Totale';
