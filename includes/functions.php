@@ -1,11 +1,17 @@
 <?php
 
 /**
- * functions.php
+ * Dumps list of passed arguments and terminates script execution.
  *
- * @version 1
- * @copyright 2008 By Chlorel for XNova
+ * @param mixed[] ...$vars
+ * @return void
  */
+function dd(...$vars)
+{
+    var_dump(...$vars);
+
+    die;
+}
 
 // ----------------------------------------------------------------------------------------------------------------
 //
