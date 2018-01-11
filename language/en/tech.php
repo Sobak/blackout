@@ -9,15 +9,15 @@ $lang['Energy']       = "Energy";
 $lang['Message']      = "Messages";
 $lang['level']        = "Level";
 $lang['treeinfo']     = "[i]";
-$lang['te_dt_tx_pre'] = "Pr&eacute;requis pour";
+$lang['te_dt_tx_pre'] = "Prerequisite for";
 
 
 $lang['type_mission'][1]  = "Attack";
 $lang['type_mission'][2]  = "ACS Attack";
 $lang['type_mission'][3]  = "Transport";
 $lang['type_mission'][4]  = "Deployment";
-$lang['type_mission'][5]  = "Deployment by Allinace;";
-$lang['type_mission'][6]  = "Espinoge";
+$lang['type_mission'][5]  = "Deployment by Allinace";
+$lang['type_mission'][6]  = "Spy";
 $lang['type_mission'][7]  = "Colonisation";
 $lang['type_mission'][8]  = "Harvest";
 $lang['type_mission'][9]  = "Destroy";

@@ -3,22 +3,21 @@
 $lang['Galaxy'] = 'Galaxy';
 $lang['Solar_system'] = 'Solar System';
 $lang['Afficher'] = "Show";
-$lang['Show'] = 'Voir';
+$lang['Show'] = 'Show';
 $lang['vacation_shortcut'] = "v";
 $lang['banned_shortcut'] = "b";
 $lang['inactif_7_shortcut'] = "i";
 $lang['inactif_28_shortcut'] = "I";
 $lang['strong_player_shortcut'] = "S";
 $lang['weak_player_shortcut'] = "w";
-$lang['gs_c604k'] = "Error!! You dont have sonds !!" ;
 
 $lang['Legend'] = 'Legend';
 $lang['Strong_player'] = 'Strong (S)';
 $lang['Weak_player'] = 'Weak (w)';
-$lang['Way_vacation'] = 'Mode Vacation (v)';
+$lang['Way_vacation'] = 'Vacation Mode (v)';
 $lang['Pendent_user'] = 'Banned User (b)';
-$lang['Inactive_7_days'] = 'Inactiv +7';
-$lang['Inactive_28_days'] = 'Inactiv +28';
+$lang['Inactive_7_days'] = 'Inactive +7';
+$lang['Inactive_28_days'] = 'Inactive +28';
 
 $lang['Solar_system_at'] = 'Solar System at;';
 
@@ -38,40 +37,40 @@ $lang['Actions'] = 'Actions';
 //info tips (galaxy_row_ally)
 $lang['AllyInfoText'] = 'Alliance %n';//%n = ally_name ; %r = ally_rank ; %m = ally_members ;
 $lang['Planets_count'] = '( Planete Habit&eacute;es: %n (s) )';
-//Sackando la flota
-$lang['Sending_fleet'] = 'Envoie de Flotte';
-$lang['Sent_fleet'] = 'Flotte Envoyee';
-$lang['Obtaining_data'] = 'En attente de Donnee';
-//Errores en sackando
-$lang['an_error_has_happened_while_it_was_sent'] = 'Une erreur est survenue';
-$lang['error_there_is_no_moon'] = 'Aucune Lune dans le coin';
+// Sending a fleet
+$lang['Sending_fleet'] = 'Sending the fleet';
+$lang['Sent_fleet'] = 'Fleet sent';
+$lang['Obtaining_data'] = 'Waiting for data';
+// Fleet-sending errors
+$lang['an_error_has_happened_while_it_was_sent'] = 'An error ocurred';
+$lang['error_there_is_no_moon'] = 'There is no moon';
 $lang['error_the_player_is_under_the_protection_of_beginners'] = 'Protection des noobs';
-$lang['error_the_player_is_too_strong'] = 'Suicidaire es tu ?';
-$lang['error_the_player_is_in_way_vacation'] = 'En vacance avec sa planete';
+$lang['error_the_player_is_too_strong'] = 'Are you suicidal?';
+$lang['error_the_player_is_in_way_vacation'] = 'Player is on vacation';
 $lang['error_only_x_available_probes_sending'] = 'Pas assez de sonde';
-$lang['error_there_are_no_available_probes_of_spying'] = 'Aucune sonde';
-$lang['error_you_cannot_send_any_more_fleets'] = 'Slot de Flotte tous pris';
-$lang['error_you_do_not_have_sufficient_deuterium'] = 'pas assez de Deuterium';
-$lang['There_is_not_planet'] = 'Aucune Planete';
-$lang['error_there_is_no_sufficient_fuel'] = 'Pas assez de carburant';
-$lang['multialarm'] = 'Alarme';
+$lang['error_there_are_no_available_probes_of_spying'] = 'No spying probes';
+$lang['error_you_cannot_send_any_more_fleets'] = 'All fleet slots taken';
+$lang['error_you_do_not_have_sufficient_deuterium'] = 'not enough Deuterium';
+$lang['There_is_not_planet'] = 'There is no planet';
+$lang['error_there_is_no_sufficient_fuel'] = 'Not enough fuel';
+$lang['multialarm'] = 'Alert';
 
-$lang['gm_all'] = "Tout";
-$lang['gm_launch'] = "Lancement de missiles sur";
-$lang['gm_send'] = "Envoyer";
-$lang['gm_target'] = "Cible:";
-$lang['gm_restmi'] = "Nombre de missiles (<b>%d</b> restant):";
-$lang['gl_espionner'] = "Espionner";
-$lang['gl_mipattack'] = "Attaque avec missiles interplanetaires";
-$lang['gl_with'] = "avec";
-$lang['gl_membre'] = "Membre";
-$lang['gl_ally_internal'] = "Site de alliance";
-$lang['gl_ally_web'] = "Site web de alliance";
-$lang['gl_sendmess'] = "Ecrire un message";
-$lang['gl_buddy'] = "Liste d amis";
-$lang['gl_buddyreq'] = "Demander a &ecirc;tre amis";
-$lang['gl_stats'] = "Statistiques";
-$lang['gl_planet'] = "Plan&egrave;te";
+$lang['gm_all'] = "All";
+$lang['gm_launch'] = "Launch of missles on";
+$lang['gm_send'] = "Send";
+$lang['gm_target'] = "Target:";
+$lang['gm_restmi'] = "Number of missiles (<b>%d</b> remaining):";
+$lang['gl_espionner'] = "Spy";
+$lang['gl_mipattack'] = "Attack with interplanetary missiles";
+$lang['gl_with'] = "with";
+$lang['gl_membre'] = "Member";
+$lang['gl_ally_internal'] = "Alliance page";
+$lang['gl_ally_web'] = "Alliance website";
+$lang['gl_sendmess'] = "Send message";
+$lang['gl_buddy'] = "Buddy list";
+$lang['gl_buddyreq'] = "Ask to become friends";
+$lang['gl_stats'] = "Statistics";
+$lang['gl_planet'] = "Planet:";
 $lang['gl_destroyedplanet'] = "Plan&egrave;te d&eacute;truite";
 $lang['gl_phalanx'] = "Phalange";
 $lang['gl_ressource'] = "Ressources";
@@ -102,6 +101,3 @@ $lang['gf_fleetslt'] = "Solts of Fleet avninable;";
 $lang['gf_rc_title'] = "Recyklers Free";
 $lang['gf_sp_title'] = "Sonds Free";
 $lang['gf_unknowsp'] = "Expedition Place";
-
-// Created by Perberos. All rights reversed (C) 2006
-?>
