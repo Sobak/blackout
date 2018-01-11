@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ## [Unreleased]
 ### Fixed
+- Fixed incorrect behavior when logged out user was redirected to login when
+  visiting main game URL
 - Fixed incorrect table styling on Defense/Shipyard pages
 - Fixed unauthenticated user being incorrectly marked as signed in
 

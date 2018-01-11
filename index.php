@@ -1,20 +1,17 @@
 <?php
 
-/**
- * index.php
- *
- * @version 1.0
- * @copyright 2008 by e-Zobar for XNova
- */
+define('INSIDE'  , true);
+
+$ugamela_root_path = './';
+include($ugamela_root_path . 'common.php');
 
 if (file_exists('config.php') === false || filesize('config.php') == 0) {
     header('location: install/');
     exit();
 }
 
-header('location: login.php');
+if (isset($user)) {
+    redirect('overview.php');
+}
 
-// -----------------------------------------------------------------------------------------------------------
-// History version
-// 1.0 - Creation avec redirection vers l'installeur si pas de config.php
-?>
+redirect('login.php');
