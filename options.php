@@ -9,12 +9,11 @@ includeLang('options');
 
 $lang['PHP_SELF'] = 'options.php';
 
-$dpath = (!$user["dpath"]) ? DEFAULT_SKINPATH : $user["dpath"];
 $mode = $_GET['mode'];
 
 if ($_POST && $mode == "change") {
     $iduser = $user["id"];
-    $dpath = $_POST["dpath"];
+    $dpath_new = $_POST["dpath"];
     $language = $_POST["langer"];
 
     // Handle special admin options
@@ -118,7 +117,7 @@ if ($_POST && $mode == "change") {
     doquery("UPDATE {{table}} SET
     `email` = '$db_email',
     `lang` = '$language',
-    `dpath` = '$dpath',
+    `dpath` = '$dpath_new',
     `noipcheck` = '$noipcheck',
     `planet_sort` = '$SetSort',
     `planet_sort_order` = '$SetOrder',
@@ -158,7 +157,10 @@ if ($_POST && $mode == "change") {
     $parse = $lang;
 
     $parse['dpath'] = $dpath;
-    $parse['opt_lst_skin_data']  = "<option value =\"skins/xnova/\">skins/xnova/</option>";
+    foreach (getAvailableSkins() as $skin) {
+        $parse['opt_lst_skin_data'] .= "<option value='$skin'" . (($user['dpath'] == $skin) ? " selected" : "") .">$skin</option>";
+    }
+
     $parse['opt_lst_ord_data']   = "<option value =\"0\"". (($user['planet_sort'] == 0) ? " selected": "") .">". $lang['opt_lst_ord0'] ."</option>";
     $parse['opt_lst_ord_data']  .= "<option value =\"1\"". (($user['planet_sort'] == 1) ? " selected": "") .">". $lang['opt_lst_ord1'] ."</option>";
     $parse['opt_lst_ord_data']  .= "<option value =\"2\"". (($user['planet_sort'] == 2) ? " selected": "") .">". $lang['opt_lst_ord2'] ."</option>";
@@ -166,9 +168,7 @@ if ($_POST && $mode == "change") {
     $parse['opt_lst_cla_data']   = "<option value =\"0\"". (($user['planet_sort_order'] == 0) ? " selected": "") .">". $lang['opt_lst_cla0'] ."</option>";
     $parse['opt_lst_cla_data']  .= "<option value =\"1\"". (($user['planet_sort_order'] == 1) ? " selected": "") .">". $lang['opt_lst_cla1'] ."</option>";
 
-    $availableLanguages = getAvailableLanguages();
-
-    foreach ($availableLanguages as $key => $name) {
+    foreach (getAvailableLanguages() as $key => $name) {
         $parse['opt_lst_lang_data'] .= "<option value='$key'" . (($user['lang'] == $key) ? " selected" : "") .">". $name ."</option>";
     }
 

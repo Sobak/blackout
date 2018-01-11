@@ -93,6 +93,7 @@ if ($_POST) {
     $QryInsertUser .= "`email` = '".    mysql_escape_string( $UserEmail )            ."', ";
     $QryInsertUser .= "`email_2` = '".  mysql_escape_string( $UserEmail )            ."', ";
     $QryInsertUser .= "`lang` = '".     mysql_escape_string( $_POST['langer'] )      ."', ";
+    $QryInsertUser .= "`dpath` = '".    DEFAULT_SKIN                                 ."', ";
     $QryInsertUser .= "`id_planet` = '0', ";
     $QryInsertUser .= "`register_time` = '". time() ."', ";
     $QryInsertUser .= "`password`='". $md5newpass ."', ";

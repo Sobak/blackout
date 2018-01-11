@@ -182,8 +182,6 @@ doquery("INSERT INTO {{table}} SET
 
 doquery("UPDATE {{table}} SET interplanetary_misil = '".($iraks_anzahl - $anz)."' WHERE id = '".$user['current_planet']."'", 'planets');
 
-    $dpath = (!$user["dpath"]) ? DEFAULT_SKINPATH : $user["dpath"];
-
 if ($anz == 1)
     $n = "";
 else

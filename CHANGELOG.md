@@ -5,6 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ## [Unreleased]
 ### Added
+- Added abbility to choose from installed skins using Options screen
 - Introduced `dd()` to quickly dump list of passed arguments and halt script execution
 - Introduced `message_simple()` to show inline feedback message anywhere on the site
 - Password length is now actually enforced when saving options
@@ -15,6 +16,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 - Fixed missing message content in Officers screen
 
 ### Changed
+- Available skins are now discovered dynamically instead of being hardcoded
 - Improved translation of following screens
     - Galaxy
     - Officers
@@ -37,6 +39,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 - Dropped unused fields `users.kolorplus`, `users.kolorminus`, `users.kolorpoziom`
 - Dropped unused field `users.raids`
 - Dropped unused field `users.p_infligees`
+- Dropped abbility to use remote skins
 - Dropped concept of user avatars which was never properly implemented
 
 ## [0.3.0] - 2018-01-09

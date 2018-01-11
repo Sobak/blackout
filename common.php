@@ -7,10 +7,10 @@ $user          = array();
 $lang          = array();
 $IsUserChecked = false;
 
-define('DEFAULT_SKINPATH' , 'skins/xnova/');
-define('TEMPLATE_DIR'     , 'templates/');
-define('TEMPLATE_NAME'    , 'default');
-define('DEFAULT_LANG'     , 'en');
+define('DEFAULT_SKIN' , 'xnova');
+define('TEMPLATE_DIR' , 'templates/');
+define('TEMPLATE_NAME', 'default');
+define('DEFAULT_LANG' , 'en');
 
 $HTTP_ACCEPT_LANGUAGE = DEFAULT_LANG;
 
@@ -78,21 +78,8 @@ if (!defined('INSTALL') || INSTALL !== true) {
         unset($_fleets);
 
         include($ugamela_root_path . 'rak.php');
-        if ( defined('IN_ADMIN') ) {
-            $UserSkin  = $user['dpath'];
-            $local     = stristr ( $UserSkin, "http:");
-            if ($local === false) {
-                if (!$user['dpath']) {
-                    $dpath     = "../". DEFAULT_SKINPATH  ;
-                } else {
-                    $dpath     = "../". $user["dpath"];
-                }
-            } else {
-                $dpath     = $UserSkin;
-            }
-        } else {
-            $dpath     = (!$user["dpath"]) ? DEFAULT_SKINPATH : $user["dpath"];
-        }
+
+        $dpath = (!$user["dpath"]) ? DEFAULT_SKIN : $user["dpath"];
 
         SetSelectedPlanet ( $user );
 
@@ -104,5 +91,7 @@ if (!defined('INSTALL') || INSTALL !== true) {
         $user['new_message'] = doquery("SELECT COUNT(*) AS `count` FROM {{table}} WHERE `message_unread` = 1 AND `message_owner` = '{$user['id']}'", 'messages', true)['count'];
     }
 } else {
-    $dpath     = "../" . DEFAULT_SKINPATH;
+    $dpath = DEFAULT_SKIN;
 }
+
+$dpath = "../skins/$dpath/";

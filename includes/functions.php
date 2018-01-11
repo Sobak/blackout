@@ -169,9 +169,7 @@ function display($content, $title = '', $hasNavigation = true, $metatags = '') {
  * @return string
  */
 function ShowHeader($title, $metatags) {
-    global $user, $dpath, $langInfos;
-
-    $dpath = (!$user["dpath"]) ? DEFAULT_SKINPATH : $user["dpath"];
+    global $dpath, $langInfos;
 
     $parse           = $langInfos;
     $parse['base']   = defined('IN_ADMIN') && IN_ADMIN ? '../' : '';
@@ -263,4 +261,20 @@ function getAvailableLanguages()
     }
 
     return $languages;
+}
+
+/**
+ * Fetches all skins available.
+ */
+function getAvailableSkins()
+{
+    global $ugamela_root_path;
+
+    $skins = [];
+
+    foreach (glob($ugamela_root_path . 'skins/*', GLOB_ONLYDIR) as $skin) {
+        $skins[] = array_pop(explode('/', $skin));
+    }
+
+    return $skins;
 }

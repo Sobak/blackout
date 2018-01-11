@@ -12,8 +12,6 @@ define('INSIDE'  , true);
 $ugamela_root_path = './';
 include($ugamela_root_path . 'common.php');
 
-    $dpath     = (!$user["dpath"]) ? DEFAULT_SKINPATH : $user["dpath"];
-
     includeLang('fleet');
 
     $CurrentPlanet = doquery("SELECT * FROM {{table}} WHERE `id` = '". $user['current_planet'] ."'", 'planets', true);

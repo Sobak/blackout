@@ -51,9 +51,8 @@
     </th>
 </tr><tr>
     <th>{skins_example}</th>
-    <th><input name="dpath" maxlength="80" size="40" value="{opt_dpath_data}" type="text"> <br>
-        <select name="dpaths" size="1">
-            <option selected="selected">  </option>
+    <th>
+        <select name="dpath" size="1">
             {opt_lst_skin_data}
         </select>
     </th>

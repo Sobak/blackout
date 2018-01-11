@@ -8,7 +8,7 @@
  */
 
 function ShowTopNavigationBar ( $CurrentUser, $CurrentPlanet ) {
-    global $lang;
+    global $lang, $dpath;
 
     if ($CurrentUser) {
         if ( !$CurrentPlanet ) {
@@ -20,7 +20,6 @@ function ShowTopNavigationBar ( $CurrentUser, $CurrentPlanet ) {
 
         $NavigationTPL       = gettemplate('topnav');
 
-        $dpath               = (!$CurrentUser["dpath"]) ? DEFAULT_SKINPATH : $CurrentUser["dpath"];
         $parse               = $lang;
         $parse['dpath']      = $dpath;
         $parse['image']      = $CurrentPlanet['image'];

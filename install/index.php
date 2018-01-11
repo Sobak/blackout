@@ -191,6 +191,7 @@ switch ($Mode) {
             $QryInsertAdm .= "`email`             = '". $adm_email ."', ";
             $QryInsertAdm .= "`email_2`           = '". $adm_email ."', ";
             $QryInsertAdm .= "`lang`              = '". DEFAULT_LANG ."', ";
+            $QryInsertAdm .= "`dpath`             = '". DEFAULT_SKIN ."', ";
             $QryInsertAdm .= "`authlevel`         = '3', ";
             $QryInsertAdm .= "`id_planet`         = '1', ";
             $QryInsertAdm .= "`galaxy`            = '1', ";

@@ -13,8 +13,6 @@ define('INSIDE'  , true);
 $ugamela_root_path = './';
 include($ugamela_root_path . 'common.php');
 
-$dpath = (!$userrow["dpath"]) ? DEFAULT_SKINPATH : $userrow["dpath"];
-
 
 if(!is_numeric($_GET["a"]) || !$_GET["a"] ){ message("Ung&uuml;ltige Allianz-ID","Fehler");}
 

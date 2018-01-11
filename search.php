@@ -15,8 +15,6 @@ include($ugamela_root_path . 'common.php');
 $searchtext = mysql_escape_string($_POST['searchtext']);
 $type = $_POST['type'];
 
-$dpath = (!$user["dpath"]) ? DEFAULT_SKINPATH : $user["dpath"];
-
 includeLang('search');
 $i = 0;
 //creamos la query

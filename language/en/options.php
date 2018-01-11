@@ -30,7 +30,7 @@ $lang['opt_adm_planet_prot'] = "Protect my planets";
 
 // General options
 $lang['general_settings'] = "General setings";
-$lang['skins_example'] = "Skin (e.g. /css/)";
+$lang['skins_example'] = "Skin";
 $lang['untoggleip'] = "Deactivate IP checks";
 $lang['untoggleip_tip'] = "Do not use!";
 

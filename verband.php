@@ -38,7 +38,7 @@ include($ugamela_root_path . 'common.php');
 
         $planetrow = doquery("SELECT * FROM {{table}} WHERE `id` = '".$user['current_planet']."';", 'planets', true);
         $galaxyrow = doquery("SELECT * FROM {{table}} WHERE `id_planet` = '".$planetrow['id']."';", 'galaxy', true);
-        $dpath = (!$user["dpath"]) ? DEFAULT_SKINPATH : $user["dpath"];
+
         $maxfleet = doquery("SELECT COUNT(fleet_owner) as ilosc FROM {{table}} WHERE fleet_owner='{$user['id']}'", 'fleets', true);
         $maxfleet_count = $maxfleet["ilosc"];
 

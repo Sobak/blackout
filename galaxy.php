@@ -17,7 +17,6 @@ include($ugamela_root_path . 'common.php');
     $CurrentPlanet = doquery("SELECT * FROM {{table}} WHERE `id` = '". $user['current_planet'] ."';", 'planets', true);
     $galaxyrow     = doquery("SELECT * FROM {{table}} WHERE `id_planet` = '". $CurrentPlanet['id'] ."';", 'galaxy', true);
 
-    $dpath         = (!$user["dpath"]) ? DEFAULT_SKINPATH : $user["dpath"];
     $fleetmax      = $user['computer_tech'] + 1;
     $CurrentPlID   = $CurrentPlanet['id'];
     $CurrentMIP    = $CurrentPlanet['interplanetary_misil'];

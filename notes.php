@@ -13,8 +13,6 @@ define('INSIDE'  , true);
 $ugamela_root_path = './';
 include($ugamela_root_path . 'common.php');
 
-$dpath = (!$user["dpath"]) ? DEFAULT_SKINPATH : $user["dpath"];
-
 $a = $_GET['a'];
 $n = intval($_GET['n']);
 $lang['Please_Wait'] = "Patientez...";
