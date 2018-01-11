@@ -45,7 +45,6 @@ include($ugamela_root_path . 'includes/functions/GalaxyRowPlanetName.php');
 include($ugamela_root_path . 'includes/functions/GalaxyRowMoon.php');
 include($ugamela_root_path . 'includes/functions/GalaxyRowDebris.php');
 include($ugamela_root_path . 'includes/functions/GalaxyRowUser.php');
-include($ugamela_root_path . 'includes/functions/GalaxyRowava.php');
 include($ugamela_root_path . 'includes/functions/GalaxyRowAlly.php');
 include($ugamela_root_path . 'includes/functions/GalaxyRowActions.php');
 include($ugamela_root_path . 'includes/functions/ShowGalaxySelector.php');

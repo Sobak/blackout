@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 - Password length is now actually enforced when saving options
 
 ### Fixed
+- Fixed inconsistent number of rows in Galaxy view
 - Fixed missing message content in Merchant screen
 - Fixed missing message content in Officers screen
 
@@ -35,6 +36,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 - Dropped unused fields `users.kolorplus`, `users.kolorminus`, `users.kolorpoziom`
 - Dropped unused field `users.raids`
 - Dropped unused field `users.p_infligees`
+- Dropped concept of user avatars which was never properly implemented
 
 ## [0.3.0] - 2018-01-09
 ### Fixed

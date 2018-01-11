@@ -256,7 +256,6 @@ function setShips(ship, count) {
       <td class="c">{Name}</td>
       <td class="c">{Moon}</td>
       <td class="c">{Debris}</td>
-      <td class="c">{aava}</td>
       <td class="c">{Player} ({State})</td>
       <td class="c">{Alliance}</td>
       <td class="c">{Actions}</td>

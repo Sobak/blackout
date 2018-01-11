@@ -383,7 +383,6 @@
     $QryTableUsers      .= "`email_2` varchar(64) character set latin1 NOT NULL default '', ";
     $QryTableUsers      .= "`lang` varchar(8) character set latin1 NOT NULL, ";
     $QryTableUsers      .= "`authlevel` tinyint(4) NOT NULL default '0', ";
-    $QryTableUsers      .= "`avatar` varchar(255) character set latin1 NOT NULL default '', ";
     $QryTableUsers      .= "`id_planet` int(11) NOT NULL default '0', ";
     $QryTableUsers      .= "`galaxy` int(11) NOT NULL default '0', ";
     $QryTableUsers      .= "`system` int(11) NOT NULL default '0', ";

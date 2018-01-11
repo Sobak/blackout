@@ -14,7 +14,6 @@ function ShowGalaxyRows ($Galaxy, $System) {
     for ($Planet = 1; $Planet < 16; $Planet++) {
         unset($GalaxyRowPlanet);
         unset($GalaxyRowMoon);
-        unset($GalaxyRowava);
         unset($GalaxyRowPlayer);
         unset($GalaxyRowAlly);
 
@@ -60,8 +59,6 @@ function ShowGalaxyRows ($Galaxy, $System) {
         $Result .= GalaxyRowMoon       ( $GalaxyRow, $GalaxyRowMoon  , $GalaxyRowPlayer, $Galaxy, $System, $Planet, 3 );
         $Result .= "\n";
         $Result .= GalaxyRowDebris     ( $GalaxyRow, $GalaxyRowPlanet, $GalaxyRowPlayer, $Galaxy, $System, $Planet, 2 );
-        $Result .= "\n";
-        $Result .= GalaxyRowava       ( $GalaxyRow, $GalaxyRowPlanet, $GalaxyRowPlayer, $Galaxy, $System, $Planet, 0 );
         $Result .= "\n";
         $Result .= GalaxyRowUser       ( $GalaxyRow, $GalaxyRowPlanet, $GalaxyRowPlayer, $Galaxy, $System, $Planet, 0 );
         $Result .= "\n";

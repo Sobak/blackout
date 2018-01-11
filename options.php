@@ -14,7 +14,6 @@ $mode = $_GET['mode'];
 
 if ($_POST && $mode == "change") {
     $iduser = $user["id"];
-    $avatar = $_POST["avatar"];
     $dpath = $_POST["dpath"];
     $language = $_POST["langer"];
 
@@ -119,7 +118,6 @@ if ($_POST && $mode == "change") {
     doquery("UPDATE {{table}} SET
     `email` = '$db_email',
     `lang` = '$language',
-    `avatar` = '$avatar',
     `dpath` = '$dpath',
     `noipcheck` = '$noipcheck',
     `planet_sort` = '$SetSort',
@@ -187,7 +185,6 @@ if ($_POST && $mode == "change") {
     $parse['opt_mail1_data'] = $user['email'];
     $parse['opt_mail2_data'] = $user['email_2'];
     $parse['opt_dpath_data'] = $user['dpath'];
-    $parse['opt_avata_data'] = $user['avatar'];
     $parse['opt_probe_data'] = $user['spio_anz'];
     $parse['opt_toolt_data'] = $user['settings_tooltiptime'];
     $parse['opt_fleet_data'] = $user['settings_fleetactions'];

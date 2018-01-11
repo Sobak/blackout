@@ -19,7 +19,6 @@ function ShowGalaxyTitles ( $Galaxy, $System ) {
     $Result .= "<td class=c>".$lang['Name']."</td>";
     $Result .= "<td class=c>".$lang['Moon']."</td>";
     $Result .= "<td class=c>".$lang['Debris']."</td>";
-    $Result .= "<td class=c>".$lang['aava']."</td>";
     $Result .= "<td class=c>".$lang['Player']."</td>";
     $Result .= "<td class=c>".$lang['Alliance']."</td>";
     $Result .= "<td class=c>".$lang['Actions']."</td>";

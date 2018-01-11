@@ -95,7 +95,7 @@ $lang['Sending'] = 'Sending';
 
 $lang['gf_cntmone'] = "Planets Closed";
 $lang['gf_cntmnone'] = "Aucune Plan&egrave;te peupl&eacute;e.";
-$lang['gf_cntmsome'] = "Planeta zauzeto.";
+$lang['gf_cntmsome'] = "planets settled";
 $lang['gf_mi_title'] = "Missiles Free";
 $lang['gf_fleetslt'] = "Solts of Fleet avninable;";
 $lang['gf_rc_title'] = "Recyklers Free";

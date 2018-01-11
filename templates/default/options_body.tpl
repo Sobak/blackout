@@ -58,9 +58,6 @@
         </select>
     </th>
 </tr><tr>
-    <th>{avatar_example}</th>
-    <th><input name="avatar" maxlength="80" size="40" value="{opt_avata_data}" type="text"></th>
-</tr><tr>
     <th><a title="{untoggleip_tip}">{untoggleip}</a></th>
     <th><input name="noipcheck"{opt_noipc_data} type="checkbox" /></th>
 </tr><tr>
