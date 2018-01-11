@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 ## [Unreleased]
 ### Fixed
 - Fixed incorrect table styling on Defense/Shipyard pages
+- Fixed unauthenticated user being incorrectly marked as signed in
 
 ## [0.4.1] - 2018-01-11
 This version focused on codestyle changes only so that diffs for future releases

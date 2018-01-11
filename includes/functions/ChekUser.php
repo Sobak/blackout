@@ -23,7 +23,7 @@ function CheckTheUser ( $IsUserChecked ) {
         $RetValue['record'] = $user;
         $RetValue['state']  = $IsUserChecked;
     } else {
-        $RetValue['record'] = array();
+        $RetValue['record'] = null;
         $RetValue['state']  = false;
     }
 

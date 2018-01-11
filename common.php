@@ -52,7 +52,7 @@ if (!defined('INSTALL') || INSTALL !== true) {
     includeLang ('tech');
     includeLang ('leftmenu');
 
-    if ( isset ($user) ) {
+    if ($user) {
         $_fleets = doquery("SELECT * FROM {{table}} WHERE `fleet_start_time` <= '".time()."';", 'fleets'); //  OR fleet_end_time <= ".time()
         while ($row = mysql_fetch_array($_fleets)) {
             $array                = array();
