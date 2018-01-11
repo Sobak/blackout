@@ -21,7 +21,7 @@ include($ugamela_root_path . 'includes/constants.php');
 include($ugamela_root_path . 'includes/functions.php');
 include($ugamela_root_path . 'includes/unlocalised.php');
 include($ugamela_root_path . 'includes/todofleetcontrol.php');
-include($ugamela_root_path . 'language/'. DEFAULT_LANG .'/lang_info.cfg');
+include($ugamela_root_path . 'language/'. DEFAULT_LANG .'/lang_info.php');
 
 if (!defined('INSTALL') || INSTALL !== true) {
     include($ugamela_root_path . 'config.php');

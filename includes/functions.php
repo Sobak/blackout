@@ -247,7 +247,7 @@ function getAvailableLanguages()
 
     $languages = [];
 
-    foreach (glob($ugamela_root_path . 'language/*/lang_info.cfg') as $langInfoFile) {
+    foreach (glob($ugamela_root_path . 'language/*/lang_info.php') as $langInfoFile) {
         require $langInfoFile;
 
         $langKey = array_pop(explode('/', dirname($langInfoFile)));
