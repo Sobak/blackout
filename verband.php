@@ -12,122 +12,122 @@ define('INSIDE'  , true);
 $ugamela_root_path = './';
 include($ugamela_root_path . 'common.php');
 
-    includeLang('fleet');
+includeLang('fleet');
 
-    $fleetid = $_POST['fleetid'];
+$fleetid = $_POST['fleetid'];
 
-    if (!is_numeric($fleetid) || empty($fleetid)) {
-        header("Location: overview.php");
-        exit();
+if (!is_numeric($fleetid) || empty($fleetid)) {
+    header("Location: overview.php");
+    exit();
+}
+
+$query = doquery("SELECT * FROM {{table}} WHERE fleet_id = '" . $fleetid . "'", 'fleets');
+
+if (mysql_num_rows($query) != 1) {
+    message('Cette flotte n\'existe pas (ou plus)!', 'Erreur');
+}
+
+$daten = mysql_fetch_array($query);
+
+if ($daten['fleet_start_time'] <= time() || $daten['fleet_end_time'] < time() || $daten['fleet_mess'] == 1) {
+    message('Votre flotte est d�j� sur le chemin du retour!', 'Erreur');
+}
+
+if (!isset($_POST['send'])) {
+    SetSelectedPlanet ( $user );
+
+    $planetrow = doquery("SELECT * FROM {{table}} WHERE `id` = '".$user['current_planet']."';", 'planets', true);
+    $galaxyrow = doquery("SELECT * FROM {{table}} WHERE `id_planet` = '".$planetrow['id']."';", 'galaxy', true);
+
+    $maxfleet = doquery("SELECT COUNT(fleet_owner) as ilosc FROM {{table}} WHERE fleet_owner='{$user['id']}'", 'fleets', true);
+    $maxfleet_count = $maxfleet["ilosc"];
+
+    CheckPlanetUsedFields($planetrow);
+
+    $fleet = doquery("SELECT * FROM {{table}} WHERE fleet_id = '" . $fleetid . "'", 'fleets', true);
+
+    if (empty($fleet['fleet_group'])) {
+        $rand = mt_rand(100000, 999999999);
+
+    doquery(
+    "INSERT INTO {{table}} SET
+    `name` = 'KV" . $rand . "',
+    `teilnehmer` = '" . $user['id'] . "',
+    `flotten` = '" . $fleetid . "',
+    `ankunft` = '" . $fleet['fleet_start_time'] . "',
+    `galaxy` = '" . $fleet['fleet_start_galaxy'] . "',
+    `system` = '" . $fleet['fleet_start_system'] . "',
+    `planet` = '" . $fleet['fleet_start_planet'] . "',
+    `eingeladen` = '" . $user['id'] . "'
+    ",
+    'aks');
+
+    $aks = doquery(
+    "SELECT * FROM {{table}} WHERE
+    `name` = 'KV" . $rand . "' AND
+    `teilnehmer` = '" . $user['id'] . "' AND
+    `flotten` = '" . $fleetid . "' AND
+    `ankunft` = '" . $fleet['fleet_start_time'] . "' AND
+    `galaxy` = '" . $fleet['fleet_start_galaxy'] . "' AND
+    `system` = '" . $fleet['fleet_start_system'] . "' AND
+    `planet` = '" . $fleet['fleet_start_planet'] . "' AND
+    `eingeladen` = '" . $user['id'] . "'
+    ", 'aks', true);
+
+    doquery(
+    "UPDATE {{table}} SET
+    fleet_group = '" . $aks['id'] . "'
+    WHERE
+    fleet_id = '" . $fleetid . "'", 'fleets');
+} else {
+    $aks = doquery(
+    "SELECT * FROM {{table}} WHERE
+    id = '" . $fleet['fleet_group'] . "'"
+    , 'aks');
+
+    if (mysql_num_rows($aks) != 1) {
+        message('AKS nicht gefunden!', 'Fehler');
     }
+    $aks = mysql_num_rows($aks);
+}
 
-    $query = doquery("SELECT * FROM {{table}} WHERE fleet_id = '" . $fleetid . "'", 'fleets');
+$missiontype = array(1 => 'Attaquer',
+    2 => 'Zerst&ouml;ren',
+    3 => 'Transporter',
+    4 => 'Stationner',
+    5 => 'Halten',
+    6 => 'Espionner',
+    7 => 'Coloniser',
+    8 => 'Recycler',
+    9 => 'Coloniser',
+    );
 
-    if (mysql_num_rows($query) != 1) {
-        message('Cette flotte n\'existe pas (ou plus)!', 'Erreur');
-    }
+$speed = array(10 => 100,
+    9 => 90,
+    8 => 80,
+    7 => 70,
+    6 => 60,
+    5 => 50,
+    4 => 40,
+    3 => 30,
+    2 => 20,
+    1 => 10,
+    );
 
-    $daten = mysql_fetch_array($query);
-
-    if ($daten['fleet_start_time'] <= time() || $daten['fleet_end_time'] < time() || $daten['fleet_mess'] == 1) {
-        message('Votre flotte est d�j� sur le chemin du retour!', 'Erreur');
-    }
-
-    if (!isset($_POST['send'])) {
-        SetSelectedPlanet ( $user );
-
-        $planetrow = doquery("SELECT * FROM {{table}} WHERE `id` = '".$user['current_planet']."';", 'planets', true);
-        $galaxyrow = doquery("SELECT * FROM {{table}} WHERE `id_planet` = '".$planetrow['id']."';", 'galaxy', true);
-
-        $maxfleet = doquery("SELECT COUNT(fleet_owner) as ilosc FROM {{table}} WHERE fleet_owner='{$user['id']}'", 'fleets', true);
-        $maxfleet_count = $maxfleet["ilosc"];
-
-        CheckPlanetUsedFields($planetrow);
-
-        $fleet = doquery("SELECT * FROM {{table}} WHERE fleet_id = '" . $fleetid . "'", 'fleets', true);
-
-        if (empty($fleet['fleet_group'])) {
-            $rand = mt_rand(100000, 999999999);
-
-        doquery(
-        "INSERT INTO {{table}} SET
-        `name` = 'KV" . $rand . "',
-        `teilnehmer` = '" . $user['id'] . "',
-        `flotten` = '" . $fleetid . "',
-        `ankunft` = '" . $fleet['fleet_start_time'] . "',
-        `galaxy` = '" . $fleet['fleet_start_galaxy'] . "',
-        `system` = '" . $fleet['fleet_start_system'] . "',
-        `planet` = '" . $fleet['fleet_start_planet'] . "',
-        `eingeladen` = '" . $user['id'] . "'
-        ",
-        'aks');
-
-        $aks = doquery(
-        "SELECT * FROM {{table}} WHERE
-        `name` = 'KV" . $rand . "' AND
-        `teilnehmer` = '" . $user['id'] . "' AND
-        `flotten` = '" . $fleetid . "' AND
-        `ankunft` = '" . $fleet['fleet_start_time'] . "' AND
-        `galaxy` = '" . $fleet['fleet_start_galaxy'] . "' AND
-        `system` = '" . $fleet['fleet_start_system'] . "' AND
-        `planet` = '" . $fleet['fleet_start_planet'] . "' AND
-        `eingeladen` = '" . $user['id'] . "'
-        ", 'aks', true);
-
-        doquery(
-        "UPDATE {{table}} SET
-        fleet_group = '" . $aks['id'] . "'
-        WHERE
-        fleet_id = '" . $fleetid . "'", 'fleets');
-    } else {
-        $aks = doquery(
-        "SELECT * FROM {{table}} WHERE
-        id = '" . $fleet['fleet_group'] . "'"
-        , 'aks');
-
-        if (mysql_num_rows($aks) != 1) {
-            message('AKS nicht gefunden!', 'Fehler');
-        }
-        $aks = mysql_num_rows($aks);
-    }
-
-    $missiontype = array(1 => 'Attaquer',
-        2 => 'Zerst&ouml;ren',
-        3 => 'Transporter',
-        4 => 'Stationner',
-        5 => 'Halten',
-        6 => 'Espionner',
-        7 => 'Coloniser',
-        8 => 'Recycler',
-        9 => 'Coloniser',
-        );
-
-    $speed = array(10 => 100,
-        9 => 90,
-        8 => 80,
-        7 => 70,
-        6 => 60,
-        5 => 50,
-        4 => 40,
-        3 => 30,
-        2 => 20,
-        1 => 10,
-        );
-
-    if (!$galaxy) {
-        $galaxy = $planetrow['galaxy'];
-    }
-    if (!$system) {
-        $system = $planetrow['system'];
-    }
-    if (!$planet) {
-        $planet = $planetrow['planet'];
-    }
-    if (!$planettype) {
-        $planettype = $planetrow['planet_type'];
-    }
-    $ile = '' . ++$user[$resource[108]] . '';
-    $page = '<script language="JavaScript" src="scripts/flotten.js"></script>
+if (!$galaxy) {
+    $galaxy = $planetrow['galaxy'];
+}
+if (!$system) {
+    $system = $planetrow['system'];
+}
+if (!$planet) {
+    $planet = $planetrow['planet'];
+}
+if (!$planettype) {
+    $planettype = $planetrow['planet_type'];
+}
+$ile = '' . ++$user[$resource[108]] . '';
+$page = '<script language="JavaScript" src="scripts/flotten.js"></script>
 <script language="JavaScript" src="scripts/ocnt.js"></script>
   <center>
     <table width="519" border="0" cellpadding="0" cellspacing="1">
@@ -146,49 +146,49 @@ include($ugamela_root_path . 'common.php');
         <th>Retour �</th>
         <th>Ordre</th>
       </tr>';
+/*
+  Here must show the fleet movings of owner player.
+*/
+
+$fq = doquery("SELECT * FROM {{table}} WHERE fleet_owner={$user[id]}", 'fleets');
+
+$i = 0;
+while ($f = mysql_fetch_array($fq)) {
+    $i++;
+
+    $page .= "<tr height=20><th>$i</th><th>";
+
+    $page .= "<a title=\"\">{$missiontype[$f[fleet_mission]]}</a>";
+    if (($f['fleet_start_time'] + 1) == $f['fleet_end_time'])
+        $page .= " <a title=\"R&uuml;ckweg\">(F)</a>";
+    $page .= "</th><th><a title=\"";
     /*
-      Here must show the fleet movings of owner player.
+      Se debe hacer una lista de las tropas
     */
-
-    $fq = doquery("SELECT * FROM {{table}} WHERE fleet_owner={$user[id]}", 'fleets');
-
-    $i = 0;
-    while ($f = mysql_fetch_array($fq)) {
-        $i++;
-
-        $page .= "<tr height=20><th>$i</th><th>";
-
-        $page .= "<a title=\"\">{$missiontype[$f[fleet_mission]]}</a>";
-        if (($f['fleet_start_time'] + 1) == $f['fleet_end_time'])
-            $page .= " <a title=\"R&uuml;ckweg\">(F)</a>";
-        $page .= "</th><th><a title=\"";
-        /*
-          Se debe hacer una lista de las tropas
-        */
-        $fleet = explode(";", $f['fleet_array']);
-        $e = 0;
-        foreach($fleet as $a => $b) {
-            if ($b != '') {
-                $e++;
-                $a = explode(",", $b);
-                $page .= "{$lang['tech']{$a[0]}}: {$a[1]}\n";
-                if ($e > 1) {
-                    $page .= "\t";
-                }
+    $fleet = explode(";", $f['fleet_array']);
+    $e = 0;
+    foreach($fleet as $a => $b) {
+        if ($b != '') {
+            $e++;
+            $a = explode(",", $b);
+            $page .= "{$lang['tech']{$a[0]}}: {$a[1]}\n";
+            if ($e > 1) {
+                $page .= "\t";
             }
         }
-        $page .= "\">" . pretty_number($f[fleet_amount]) . "</a></th>";
-        // $page .= "<th>".gmdate("d. M Y H:i:s",$f['fleet_start_time'])."</th>";
-        $page .= "<th>[{$f[fleet_start_galaxy]}:{$f[fleet_start_system]}:{$f[fleet_start_planet]}]</th>";
-        $page .= "<th>" . gmdate("d. M Y H:i:s", $f['fleet_start_time']) . "</th>";
-        $page .= "<th>[{$f[fleet_end_galaxy]}:{$f[fleet_end_system]}:{$f[fleet_end_planet]}]</th>";
-        $page .= "<th>" . gmdate("d. M Y H:i:s", $f['fleet_end_time']) . "</th>";
-        $page .= " </form>";
+    }
+    $page .= "\">" . pretty_number($f[fleet_amount]) . "</a></th>";
+    // $page .= "<th>".gmdate("d. M Y H:i:s",$f['fleet_start_time'])."</th>";
+    $page .= "<th>[{$f[fleet_start_galaxy]}:{$f[fleet_start_system]}:{$f[fleet_start_planet]}]</th>";
+    $page .= "<th>" . gmdate("d. M Y H:i:s", $f['fleet_start_time']) . "</th>";
+    $page .= "<th>[{$f[fleet_end_galaxy]}:{$f[fleet_end_system]}:{$f[fleet_end_planet]}]</th>";
+    $page .= "<th>" . gmdate("d. M Y H:i:s", $f['fleet_end_time']) . "</th>";
+    $page .= " </form>";
 
-        $page .= "<th><font color=\"lime\"><div id=\"time_0\"><font>" . pretty_time(floor($f['fleet_end_time'] + 1 - time())) . "</font></th><th>";
+    $page .= "<th><font color=\"lime\"><div id=\"time_0\"><font>" . pretty_time(floor($f['fleet_end_time'] + 1 - time())) . "</font></th><th>";
 
-        if ($f['fleet_mess'] == 0) {
-            $page .= "     <form action=\"fleetback.php\" method=\"post\">
+    if ($f['fleet_mess'] == 0) {
+        $page .= "     <form action=\"fleetback.php\" method=\"post\">
       <input name=\"zawracanie\" value=" . $f['fleet_id'] . " type=hidden>
          <input value=\" Retour \" type=\"submit\">
        </form></th>";

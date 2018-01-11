@@ -328,10 +328,10 @@ function ShowBuildingInfoPage ($CurrentUser, $CurrentPlanet, $BuildID) {
 // Tout le reste ne sert qu'a la calculer :)
 //
 
-    $gid  = $_GET['gid'];
-    $page = ShowBuildingInfoPage ($user, $planetrow, $gid);
+$gid  = $_GET['gid'];
+$page = ShowBuildingInfoPage ($user, $planetrow, $gid);
 
-    display ($page, $lang['nfo_page_title']);
+display ($page, $lang['nfo_page_title']);
 
 // -----------------------------------------------------------------------------------------------------------
 // History version

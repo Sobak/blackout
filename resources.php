@@ -12,9 +12,9 @@ define('INSIDE'  , true);
 $ugamela_root_path = './';
 include($ugamela_root_path . 'common.php');
 
-    includeLang('resources');
+includeLang('resources');
 
-            BuildRessourcePage ( $user, $planetrow );
+BuildRessourcePage ( $user, $planetrow );
 
 // -----------------------------------------------------------------------------------------------------------
 // History version

@@ -17,7 +17,7 @@ function sendpassemail($emailaddress, $password) {
 function mymail($to, $title, $body, $from = '') {
     $from = trim($from);
 
-if (!$from) {
+    if (!$from) {
         $from = ADMINEMAIL;
     }
 
@@ -40,19 +40,25 @@ if (!$from) {
     return mail($to, $title, $body, $head);
 }
 
-if($_POST){
+if ($_POST) {
     $errors = 0;
     $errorlist = "";
     if(!is_email($_POST['email'])){
         $errorlist .= "\"".$_POST['email']."\" ".$lang['error_mail'];
-        $errors++;}
+        $errors++;
+    }
 
-if (isset($_GET['user'])){$parse['aktyw'] = $_GET['user'];}
-else{$parse['aktyw'] = "0";}
-$aktyw = $_POST['aktyw'];
+    if (isset($_GET['user'])) {
+        $parse['aktyw'] = $_GET['user'];
+    } else {
+        $parse['aktyw'] = "0";
+    }
 
-    if($errors != 0){message($errorlist,$lang['Register']);
-    }else{
+    $aktyw = $_POST['aktyw'];
+
+    if ($errors != 0) {
+        message($errorlist,$lang['Register']);
+    } else {
         doquery("UPDATE {{table}} SET aktywnosc='0' WHERE kod_aktywujacy='{$aktyw}'",'users');
         doquery("UPDATE {{table}} SET time_aktyw='0' WHERE kod_aktywujacy='{$aktyw}'",'users');
         doquery("UPDATE {{table}} SET kod_aktywujacy='0' WHERE kod_aktywujacy='{$aktyw}'",'users');

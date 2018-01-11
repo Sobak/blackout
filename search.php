@@ -108,5 +108,5 @@ $lang['searchtext'] = $searchtext;
 $lang['search_results'] = $search_results;
 //esto es algo repetitivo ... w
 
-    display(parsetemplate(gettemplate('search_body'), $lang), $lang['Search']);
+display(parsetemplate(gettemplate('search_body'), $lang), $lang['Search']);
 ?>

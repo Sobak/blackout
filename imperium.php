@@ -14,10 +14,10 @@ include($ugamela_root_path . 'common.php');
 
 includeLang('imperium');
 
-    $planetsrow = doquery("SELECT * FROM {{table}} WHERE `id_owner` = '".$user['id']."';",'planets');
+$planetsrow = doquery("SELECT * FROM {{table}} WHERE `id_owner` = '".$user['id']."';",'planets');
 
-    $planet = array();
-    $parse  = $lang;
+$planet = array();
+$parse  = $lang;
 
 while ($p = mysql_fetch_array($planetsrow)) {
     $planet[] = $p;

@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ## [Unreleased]
 
+## [0.4.1] - 2018-01-11
+This version focused on codestyle changes only so that diffs for future releases
+will be more meaningfull.
+
 ## [0.4.0] - 2018-01-11
 ### Added
 - Added abbility to choose from installed skins using Options screen
