@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 ## [Unreleased]
 ### Fixed
 - Fixed broken installer
+- Fixed debug mode reporting incorrect callers for queries
 - Fixed incorrect behavior when logged out user was redirected to login when
   visiting main game URL
 - Fixed incorrect table styling on Defense/Shipyard pages

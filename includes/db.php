@@ -20,8 +20,8 @@ function doquery($query, $table, $fetch = false)
     $sqlquery = mysql_query($sql) or $debug->error(mysql_error()."<br />$sql<br />", 'SQL Error');
 
     $arr = debug_backtrace();
-    $file = end(explode('/', $arr[1]['file']));
-    $line = $arr[1]['line'];
+    $file = end(explode('/', $arr[0]['file']));
+    $line = $arr[0]['line'];
 
     $debug->logQuery([
         'query' => $query,
