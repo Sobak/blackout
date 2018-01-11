@@ -9,7 +9,17 @@
 function dd(...$vars)
 {
     var_dump(...$vars);
+    die;
+}
 
+/**
+ * Redirects user to specified target URL.
+ *
+ * @param $target
+ */
+function redirect($target)
+{
+    header("Location: $target");
     die;
 }
 
