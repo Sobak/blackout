@@ -43,10 +43,10 @@ switch ($Mode) {
     case 'ins':
         if ($Page == 1) {
             if ($_GET['error'] == 1) {
-            adminMessage ($lang['ins_error1'], $lang['ins_error']);
+                message($lang['ins_error1'], $lang['ins_error'], null, 0, false);
             }
             elseif ($_GET['error'] == 2) {
-            adminMessage ($lang['ins_error2'], $lang['ins_error']);
+                message($lang['ins_error2'], $lang['ins_error'], null, 0, false);
             }
 
             $SubTPL = gettemplate ('install/ins_form');

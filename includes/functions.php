@@ -182,7 +182,7 @@ function ShowHeader($title, $metatags) {
     global $dpath, $langInfos;
 
     $parse           = $langInfos;
-    $parse['base']   = defined('IN_ADMIN') && IN_ADMIN ? '../' : '';
+    $parse['base']   = (defined('IN_ADMIN') && IN_ADMIN) || (defined('INSTALL') && INSTALL) ? '../' : '';
     $parse['dpath']  = $dpath;
     $parse['title']  = $title;
     $parse['-meta-'] = $metatags;
