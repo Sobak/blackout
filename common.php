@@ -24,6 +24,10 @@ include($ugamela_root_path . 'includes/todofleetcontrol.php');
 include($ugamela_root_path . 'language/'. DEFAULT_LANG .'/lang_info.php');
 
 if (!defined('INSTALL') || INSTALL !== true) {
+    if (file_exists('config.php') === false || filesize('config.php') == 0) {
+        redirect('install/');
+    }
+
     include($ugamela_root_path . 'config.php');
     include($ugamela_root_path . 'includes/vars.php');
     include($ugamela_root_path . 'includes/db.php');
