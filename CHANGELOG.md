@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
   visiting main game URL
 - Fixed incorrect error time being reported in Admin -> Errors screen
 - Fixed incorrect table styling on Defense/Shipyard pages
+- Fixed maintenance mode
 - Fixed missing percent sign on "Developed fields" bar in Overview
 - Fixed unauthenticated user being incorrectly marked as signed in
 

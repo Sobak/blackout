@@ -39,17 +39,10 @@ if (!defined('INSTALL') || INSTALL !== true) {
         $game_config[$row['config_name']] = $row['config_value'];
     }
 
-    if ($InLogin != true) {
+    if ($InLogin == false) {
         $Result        = CheckTheUser($IsUserChecked);
         $IsUserChecked = $Result['state'];
         $user          = $Result['record'];
-    } elseif ($InLogin == false) {
-        // Are we in maintenance mode?
-        if( $game_config['game_disable']) {
-            if ($user['authlevel'] < 1) {
-                message(stripslashes($game_config['close_reason']), $game_config['game_name']);
-            }
-        }
     }
 
     includeLang ("system");
@@ -57,6 +50,15 @@ if (!defined('INSTALL') || INSTALL !== true) {
     includeLang ('leftmenu');
 
     if ($user) {
+        $dpath = (!$user["dpath"]) ? DEFAULT_SKIN : $user["dpath"];
+
+        if ($game_config['game_disable'] && $user['authlevel'] < LEVEL_OPERATOR) {
+            // We need to fix $dpath for that case
+            $dpath = "../skins/$dpath/";
+
+            message($game_config['close_reason'], $game_config['game_name']);
+        }
+
         $_fleets = doquery("SELECT * FROM {{table}} WHERE `fleet_start_time` <= '".time()."';", 'fleets'); //  OR fleet_end_time <= ".time()
         while ($row = mysql_fetch_array($_fleets)) {
             $array                = array();
@@ -82,8 +84,6 @@ if (!defined('INSTALL') || INSTALL !== true) {
         unset($_fleets);
 
         include($ugamela_root_path . 'rak.php');
-
-        $dpath = (!$user["dpath"]) ? DEFAULT_SKIN : $user["dpath"];
 
         SetSelectedPlanet ( $user );
 

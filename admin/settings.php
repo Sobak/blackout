@@ -14,10 +14,10 @@ function DisplayGameSettingsPage ( $CurrentUser ) {
     includeLang('admin/settings');
 
     if ($_POST['opt_save'] == "1") {
-        // Jeu Ouvert ou Ferm� !
+        // Maintenance mode
         if (isset($_POST['closed']) && $_POST['closed'] == 'on') {
             $game_config['game_disable']         = "1";
-            $game_config['close_reason']         = addslashes( $_POST['close_reason'] );
+            $game_config['close_reason']         = mysql_real_escape_string($_POST['close_reason']);
         } else {
             $game_config['game_disable']         = "0";
             $game_config['close_reason']         = "";

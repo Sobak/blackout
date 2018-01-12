@@ -25,10 +25,10 @@
     <th>{adm_opt_game_forum}<br></th>
     <th><input name="forum_url" size="40" maxlength="254" value="{forum_url}" type="text"></th>
 </tr><tr>
-    <th>{adm_opt_game_online}<br></th>
+    <th>{adm_opt_maintenance}<br></th>
     <th><input name="closed"{closed} type="checkbox" /></th>
 </tr><tr>
-    <th>{adm_opt_game_offreaso}<br></th>
+    <th>{adm_opt_maint_text}<br></th>
     <th><textarea name="close_reason" cols="80" rows="5" size="80" >{close_reason}</textarea></th>
 </tr><tr>
     <td class="c" colspan="2">{adm_opt_plan_settings}</td>
