@@ -2,7 +2,7 @@
 
 function doquery($query, $table, $fetch = false)
 {
-    global $link, $debug, $dbsettings;
+    global $link, $debug, $dbsettings, $game_config;
 
     if (!$link) {
         $link = mysql_connect($dbsettings["server"], $dbsettings["user"], $dbsettings["pass"]);
@@ -19,17 +19,19 @@ function doquery($query, $table, $fetch = false)
     $sql = str_replace("{{table}}", $dbsettings["prefix"].$table, $query);
     $sqlquery = mysql_query($sql) or $debug->error(mysql_error()."<br />$sql<br />", 'SQL Error');
 
-    $arr = debug_backtrace();
-    $file = end(explode('/', $arr[0]['file']));
-    $line = $arr[0]['line'];
+    if ($game_config['debug']) {
+        $arr = debug_backtrace();
+        $file = end(explode('/', $arr[0]['file']));
+        $line = $arr[0]['line'];
 
-    $debug->logQuery([
-        'query' => $query,
-        'file' => $file,
-        'line' => $line,
-        'table' => $table,
-        'fetch' => $fetch,
-    ]);
+        $debug->logQuery([
+            'query' => $query,
+            'file' => $file,
+            'line' => $line,
+            'table' => $table,
+            'fetch' => $fetch,
+        ]);
+    }
 
     if($fetch) {
         return mysql_fetch_array($sqlquery);

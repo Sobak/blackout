@@ -14,6 +14,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 - Fixed unauthenticated user being incorrectly marked as signed in
 
 ### Changed
+- Queries are only logged when debug mode is enabled
 - Redirect to installer regardless of current location in the script
 
 ## [0.4.1] - 2018-01-11
