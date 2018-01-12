@@ -23,7 +23,7 @@ $errors_count = mysql_num_rows($errors);
 $row_template = gettemplate('admin/errors_row');
 
 while ($error = mysql_fetch_array($errors)) {
-    $error['error_time'] = date('d/m/Y h:i:s', $e['error_time']);
+    $error['error_time'] = date('d/m/Y h:i:s', $error['error_time']);
     $error['error_text'] = nl2br($error['error_text']);
 
     $parse['errors_list'] .= parsetemplate($row_template, $error);

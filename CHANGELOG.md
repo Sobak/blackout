@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 - Fixed debug mode reporting incorrect callers for queries
 - Fixed incorrect behavior when logged out user was redirected to login when
   visiting main game URL
+- Fixed incorrect error time being reported in Admin -> Errors screen
 - Fixed incorrect table styling on Defense/Shipyard pages
 - Fixed missing percent sign on "Developed fields" bar in Overview
 - Fixed unauthenticated user being incorrectly marked as signed in
