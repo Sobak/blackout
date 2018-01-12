@@ -8,7 +8,6 @@ include($ugamela_root_path . 'common.php');
 
 restrictAccess($user, LEVEL_SUPER_OPERATOR);
 
-$parse['dpath'] = $dpath;
 $parse = $lang;
 
 $mode = $_GET['mode'];

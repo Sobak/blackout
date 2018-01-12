@@ -199,7 +199,7 @@ function ShowHeader($title, $metatags) {
  */
 function ShowLeftMenu($template, array $user)
 {
-    global $dpath, $game_config, $lang;
+    global $game_config, $lang;
 
     includeLang('leftmenu');
 
@@ -210,7 +210,6 @@ function ShowLeftMenu($template, array $user)
     $parse['lm_tx_queue']     = MAX_FLEET_OR_DEFS_PER_ROW;
     $parse['server_info']     = parsetemplate(gettemplate('serv_infos'), $parse);
     $parse['XNovaRelease']    = VERSION;
-    $parse['dpath']           = $dpath;
     $parse['forum_url']       = $game_config['forum_url'];
     $parse['servername']      = $game_config['game_name'];
 

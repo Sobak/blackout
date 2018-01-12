@@ -168,7 +168,7 @@ function ShowRapidFireFrom ($BuildID) {
 // Permet de faire la differance entre les divers types et les pages speciales
 //
 function ShowBuildingInfoPage ($CurrentUser, $CurrentPlanet, $BuildID) {
-    global $dpath, $lang, $resource, $pricelist, $CombatCaps;
+    global $lang, $resource, $pricelist, $CombatCaps;
 
     includeLang('infos');
 
@@ -178,7 +178,6 @@ function ShowBuildingInfoPage ($CurrentUser, $CurrentPlanet, $BuildID) {
 
     $parse                = $lang;
     // Données de base
-    $parse['dpath']       = $dpath;
     $parse['name']        = $lang['tech'][$BuildID];
     $parse['image']       = $BuildID;
     $parse['description'] = $lang['res']['descriptions'][$BuildID];

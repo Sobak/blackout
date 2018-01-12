@@ -38,7 +38,6 @@ if ($_POST && $mode == "change") {
     }
 } else {
     $parse = $game_config;
-    $parse['dpath'] = $dpath;
     $parse['debug'] = ($game_config['debug'] == 1) ? " checked='checked'/":'';
     $page .= parsetemplate(gettemplate('admin/messall_body'), $parse);
     display($page, '', false);

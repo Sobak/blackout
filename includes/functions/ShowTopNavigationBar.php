@@ -8,7 +8,7 @@
  */
 
 function ShowTopNavigationBar ( $CurrentUser, $CurrentPlanet ) {
-    global $lang, $dpath;
+    global $lang;
 
     if ($CurrentUser) {
         if ( !$CurrentPlanet ) {
@@ -21,7 +21,6 @@ function ShowTopNavigationBar ( $CurrentUser, $CurrentPlanet ) {
         $NavigationTPL       = gettemplate('topnav');
 
         $parse               = $lang;
-        $parse['dpath']      = $dpath;
         $parse['image']      = $CurrentPlanet['image'];
 
         // Genearation de la combo des planetes du joueur

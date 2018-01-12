@@ -14,5 +14,4 @@ $lang['PHP_SELF'] = 'options.php';
 doquery("UPDATE {{table}} SET `banaday` =` banaday` - '1' WHERE `banaday` != '0';",'users');
 doquery("UPDATE {{table}} SET `bana` = '0' WHERE `banaday` < '1';",'users');
 $parse = $game_config;
-$parse['dpath'] = $dpath;
 $parse['debug'] = ($game_config['debug'] == 1) ? " checked='checked'/":'';

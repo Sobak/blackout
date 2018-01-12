@@ -439,7 +439,6 @@ array(1 =>
                 $u["ally_range"] = $lang['Novate'];
             }
 
-            $u["dpath"] = $dpath;
             $u['points'] = "" . pretty_number($UserPoints['total_points']) . "";
 
             if ($u['ally_register_time'] > 0)
@@ -680,7 +679,6 @@ array(1 =>
         }
 
         $lang['list'] = $list;
-        $lang['dpath'] = $dpath;
         $page .= parsetemplate(gettemplate('alliance_admin_laws'), $lang);
 
         display($page, $lang['Law_settings']);
@@ -740,7 +738,7 @@ array(1 =>
                 WHERE `id`='{$ally['id']}'", "alliance");
             }
         }
-        $lang['dpath'] = $dpath;
+
         /*
       Depende del $t, muestra el formulario para cada tipo de texto.
     */
@@ -864,7 +862,6 @@ array(1 =>
             if ($ally['ally_owner'] == $u['id'] || $rank == $u['id']) {
                 $u["functions"] = '';
             } elseif ($ally_ranks[$user['ally_rank_id']-1][5] == 1 || $ally['ally_owner'] == $user['id']) {
-                $f['dpath'] = $dpath;
                 $f['Expel_user'] = $lang['Expel_user'];
                 $f['Set_range'] = $lang['Set_range'];
                 $f['You_are_sure_want_kick_to'] = str_replace("%s", $u['username'], $lang['You_are_sure_want_kick_to']);
@@ -873,7 +870,6 @@ array(1 =>
             } else {
                 $u["functions"] = '';
             }
-            $u["dpath"] = $dpath;
             // por el formulario...
             if ($rank != $u['id']) {
                 $u['ally_range'] = $ally_range;

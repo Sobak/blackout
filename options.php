@@ -156,7 +156,6 @@ if ($_POST && $mode == "change") {
 } else {
     $parse = $lang;
 
-    $parse['dpath'] = $dpath;
     foreach (getAvailableSkins() as $skin) {
         $parse['opt_lst_skin_data'] .= "<option value='$skin'" . (($user['dpath'] == $skin) ? " selected" : "") .">$skin</option>";
     }

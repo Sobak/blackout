@@ -351,7 +351,6 @@ switch ($mode) {
         $parse['Have_new_level_mineur'] = $HaveNewLevelMineur;
         $parse['Have_new_level_raid']   = $HaveNewLevelRaid;
         $parse['time']                  = date("D M d H:i:s");
-        $parse['dpath']                 = $dpath;
         $parse['planet_image']          = $planetrow['image'];
         $parse['anothers_planets']      = $AllPlanets;
 

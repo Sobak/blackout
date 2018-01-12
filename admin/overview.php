@@ -20,7 +20,6 @@ $PageTPL  = gettemplate('admin/overview_body');
 $RowsTPL  = gettemplate('admin/overview_rows');
 
 $parse                      = $lang;
-$parse['dpath']             = $dpath;
 $parse['adm_ov_data_yourv'] = colorRed(VERSION);
 
 $Last15Mins = doquery("SELECT * FROM {{table}} WHERE `onlinetime` >= '". (time() - 15 * 60) ."' ORDER BY `". $TypeSort ."` ASC;", 'users');
@@ -36,7 +35,7 @@ while ( $TheUser = mysql_fetch_array($Last15Mins) ) {
     }
 
     $UserPoints = doquery("SELECT * FROM {{table}} WHERE `stat_type` = '1' AND `stat_code` = '1' AND `id_owner` = '" . $TheUser['id'] . "';", 'statpoints', true);
-    $Bloc['dpath']               = $dpath;
+
     $Bloc['adm_ov_altpm']        = $lang['adm_ov_altpm'];
     $Bloc['adm_ov_wrtpm']        = $lang['adm_ov_wrtpm'];
     $Bloc['adm_ov_data_id']      = $TheUser['id'];

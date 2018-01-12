@@ -79,7 +79,6 @@ if(isset($searchtext) && isset($type)){
 
 
             $s['position'] = "<a href=\"stat.php?start=".$s['rank']."\">".$s['rank']."</a>";
-            $s['dpath'] = $dpath;
             $s['coordinated'] = "{$s['galaxy']}:{$s['system']}:{$s['planet']}";
             $s['buddy_request'] = $lang['buddy_request'];
             $s['write_a_messege'] = $lang['write_a_messege'];

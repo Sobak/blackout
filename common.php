@@ -98,3 +98,5 @@ if (!defined('INSTALL') || INSTALL !== true) {
 } else {
     $dpath = '../skins/' . DEFAULT_SKIN . '/';
 }
+
+addTemplateGlobal('dpath', $dpath);

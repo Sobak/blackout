@@ -8,7 +8,7 @@
  */
 
 function BatimentBuildingPage (&$CurrentPlanet, $CurrentUser) {
-    global $lang, $resource, $reslist, $dpath, $game_config;
+    global $lang, $resource, $game_config;
 
     CheckPlanetUsedFields ( $CurrentPlanet );
 
@@ -86,7 +86,6 @@ function BatimentBuildingPage (&$CurrentPlanet, $CurrentUser) {
             if (IsTechnologieAccessible($CurrentUser, $CurrentPlanet, $Element)) {
                 $HaveRessources        = IsElementBuyable ($CurrentUser, $CurrentPlanet, $Element, true, false);
                 $parse                 = array();
-                $parse['dpath']        = $dpath;
                 $parse['i']            = $Element;
                 $BuildingLevel         = $CurrentPlanet[$resource[$Element]];
                 $parse['nivel']        = ($BuildingLevel == 0) ? "" : " (". $lang['level'] ." ". $BuildingLevel .")";

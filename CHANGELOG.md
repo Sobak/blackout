@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 ## [Unreleased]
 ### Added
 - Added support for global template variables
+- Added `dpath` as global template variable
 
 ### Fixed
 - Fixed broken installer

@@ -8,7 +8,7 @@
  */
 
 function ShowGalaxyRows ($Galaxy, $System) {
-    global $lang, $planetcount, $CurrentRC, $dpath, $user;
+    global $planetcount;
 
     $Result = "";
     for ($Planet = 1; $Planet < 16; $Planet++) {

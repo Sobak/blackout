@@ -8,7 +8,6 @@ require 'common.php';
 includeLang('banned');
 
 $parse = $lang;
-$parse['dpath'] = $dpath;
 
 $bans = doquery('SELECT * FROM {{table}} ORDER BY `id`', 'banned');
 $bans_count = mysql_num_rows($bans);
