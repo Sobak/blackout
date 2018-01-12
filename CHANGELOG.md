@@ -13,12 +13,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 - Fixed incorrect table styling on Defense/Shipyard pages
 - Fixed maintenance mode
 - Fixed missing percent sign on "Developed fields" bar in Overview
+- Fixed possible SQL Injection via HTTP User Agent
 - Fixed unauthenticated user being incorrectly marked as signed in
 
 ### Changed
 - More readable design for Admin -> Errors screen
 - Queries are only logged when debug mode is enabled
 - Redirect to installer regardless of current location in the script
+- Refactored the code around user authentication
 
 ## [0.4.1] - 2018-01-11
 This version focused on codestyle changes only so that diffs for future releases

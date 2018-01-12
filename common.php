@@ -3,9 +3,8 @@
 define('VERSION', '0.5.0-dev');
 
 $game_config   = array();
-$user          = array();
+$user          = null;
 $lang          = array();
-$IsUserChecked = false;
 
 define('DEFAULT_SKIN' , 'xnova');
 define('TEMPLATE_DIR' , 'templates/');
@@ -39,15 +38,13 @@ if (!defined('INSTALL') || INSTALL !== true) {
         $game_config[$row['config_name']] = $row['config_value'];
     }
 
-    if ($InLogin == false) {
-        $Result        = CheckTheUser($IsUserChecked);
-        $IsUserChecked = $Result['state'];
-        $user          = $Result['record'];
-    }
-
     includeLang ("system");
     includeLang ('tech');
     includeLang ('leftmenu');
+
+    if ($InLogin == false) {
+        $user = CheckCookies();
+    }
 
     if ($user) {
         $dpath = (!$user["dpath"]) ? DEFAULT_SKIN : $user["dpath"];
@@ -57,6 +54,12 @@ if (!defined('INSTALL') || INSTALL !== true) {
             $dpath = "../skins/$dpath/";
 
             message($game_config['close_reason'], $game_config['game_name']);
+        }
+
+        if ($user['bana'] == "1") {
+            die (
+            'Vous avez &eacute;t&eacute; bannis. Plus D\'infos <a href="banned.php">ici</a>.'
+            );
         }
 
         $_fleets = doquery("SELECT * FROM {{table}} WHERE `fleet_start_time` <= '".time()."';", 'fleets'); //  OR fleet_end_time <= ".time()

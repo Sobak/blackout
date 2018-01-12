@@ -33,7 +33,6 @@ include($ugamela_root_path . 'includes/functions/GetElementPrice.php');
 include($ugamela_root_path . 'includes/functions/GetBuildingPrice.php');
 include($ugamela_root_path . 'includes/functions/IsElementBuyable.php');
 include($ugamela_root_path . 'includes/functions/CheckCookies.php');
-include($ugamela_root_path . 'includes/functions/ChekUser.php');
 include($ugamela_root_path . 'includes/functions/InsertGalaxyScripts.php');
 include($ugamela_root_path . 'includes/functions/GalaxyCheckFunctions.php');
 include($ugamela_root_path . 'includes/functions/ShowGalaxyRows.php');

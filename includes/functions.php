@@ -183,7 +183,7 @@ function ShowHeader($title, $metatags) {
 
     $parse           = $langInfos;
     $parse['base']   = (defined('IN_ADMIN') && IN_ADMIN) || (defined('INSTALL') && INSTALL) ? '../' : '';
-    $parse['dpath']  = $dpath;
+    $parse['dpath']  = isset($dpath) ? $dpath : '../skins/' . DEFAULT_SKIN . '/';
     $parse['title']  = $title;
     $parse['-meta-'] = $metatags;
 
