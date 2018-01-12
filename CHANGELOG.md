@@ -15,16 +15,19 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
   visiting main game URL
 - Fixed incorrect error time being reported in Admin -> Errors screen
 - Fixed incorrect table styling on Defense/Shipyard pages
+- Fixed JavaScript errors in chat
 - Fixed maintenance mode
 - Fixed missing percent sign on "Developed fields" bar in Overview
 - Fixed possible SQL Injection via HTTP User Agent
 - Fixed unauthenticated user being incorrectly marked as signed in
 
 ### Changed
+- Dropped chat support for Internet Explorer 6
 - More readable design for Admin -> Errors screen
 - Queries are only logged when debug mode is enabled
 - Redirect to installer regardless of current location in the script
 - Refactored the code around user authentication
+- Refactored the code for chats
 
 ## [0.4.1] - 2018-01-11
 This version focused on codestyle changes only so that diffs for future releases

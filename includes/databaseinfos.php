@@ -74,11 +74,11 @@
 
     // Table chat
     $QryTableChat        = "CREATE TABLE `{{table}}` ( ";
-    $QryTableChat       .= "`messageid` int(5) unsigned NOT NULL auto_increment, ";
-    $QryTableChat       .= "`user` varchar(255) NOT NULL default '', ";
+    $QryTableChat       .= "`id` int(10) unsigned NOT NULL auto_increment, ";
+    $QryTableChat       .= "`user_id` bigint(255) UNSIGNED NOT NULL, ";
     $QryTableChat       .= "`message` text NOT NULL, ";
-    $QryTableChat       .= "`timestamp` int(11) NOT NULL default '0', ";
-    $QryTableChat       .= "PRIMARY KEY  (`messageid`) ";
+    $QryTableChat       .= "`timestamp` int(11) NOT NULL, ";
+    $QryTableChat       .= "PRIMARY KEY  (`id`) ";
     $QryTableChat       .= ") ENGINE=MyISAM;";
 
     // Table config

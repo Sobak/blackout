@@ -11,25 +11,27 @@ restrictAccess($user, LEVEL_ADMIN);
 includeLang('admin');
 $parse = $lang;
 
-// Système de suppression
-extract($_GET);
+// Removing messages
+$delete = $_GET['delete'];
+$deleteAll = $_GET['deleteall'];
+
 if (isset($delete)) {
     doquery("DELETE FROM {{table}} WHERE `messageid`=$delete", 'chat');
-} elseif ($deleteall == 'yes') {
+} elseif ($deleteAll == 'yes') {
     doquery("DELETE FROM {{table}}", 'chat');
 }
 
-// Affichage des messages
-$query = doquery("SELECT * FROM {{table}} ORDER BY messageid DESC LIMIT 25", 'chat');
-$i = 0;
+// Get messages
+$query = doquery("SELECT c.message, c.timestamp, u.username FROM {{table}}chat c JOIN {{table}}users u ON c.user_id = u.id ORDER BY c.id DESC LIMIT 25", '');
 while ($e = mysql_fetch_array($query)) {
-    $i++;
-    $parse['msg_list'] .= stripslashes("<tr><td class=n rowspan=2>{$e['messageid']}</td>" .
-    "<td class=n><center>[<a href=?delete={$e['messageid']}>X</a>]</center></td>" .
-    "<td class=n><center>{$e['user']}</center></td>" .
-    "<td class=n><center>" . date('d/m/Y - h:i:s', $e['timestamp']) . "</center></td></tr><tr>" .
+    $parse['msg_list'] .= stripslashes("<tr><td class=n rowspan=2>{$e['id']}</td>" .
+    "<td class=n><center>[<a href=?delete={$e['id']}>X</a>]</center></td>" .
+    "<td class=n><center>{$e['username']}</center></td>" .
+    "<td class=n><center>" . date('d.m.Y H:i:s', $e['timestamp']) . "</center></td></tr><tr>" .
     "<td class=b colspan=4 width=500>" . nl2br($e['message']) . "</td></tr>");
 }
-$parse['msg_list'] .= "<tr><th class=b colspan=4>{$i} ".$lang['adm_ch_nbs']."</th></tr>";
+
+$count = mysql_num_rows($query);
+$parse['msg_list'] .= "<tr><th class=b colspan=4>{$count} ".$lang['adm_ch_nbs']."</th></tr>";
 
 display(parsetemplate(gettemplate('admin/chat_body'), $parse), "Chat", false);

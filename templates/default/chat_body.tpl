@@ -30,8 +30,8 @@
             <img src="images/smileys/wink.png" align="absmiddle" title=";)" alt=";)" width="12" height="12" onClick="addSmiley(';)')">
             <img src="images/smileys/shit.png" align="absmiddle" title=":s" alt=":s" width="12" height="12" onClick="addSmiley(':s')"></th></tr>
 
-<tr><th width="60"><b>{chat_text}</b><br><i>{chat_text}</i><br><u>{chat_text}</u><br><a href="http://www.site.com" target="_blank">{chat_text}</a><br><font color="red">{chat_text}</font></th>
+<tr><th width="60"><b>{chat_text}</b><br><i>{chat_text}</i><br><u>{chat_text}</u><br><a href="http://example.com" target="_blank">{chat_text}</a><br><font color="red">{chat_text}</font></th>
 
-<th>[b]{chat_text}[/b]<br>[i]{chat_text}[/i]<br>[u]{chat_text}[/u]<br>[a=http://www.site.com]{chat_text}[/a]<br>[c=blue|yellow|green|pink|red|orange]{chat_text}[/c]</th></tr>
+<th>[b]{chat_text}[/b]<br>[i]{chat_text}[/i]<br>[u]{chat_text}[/u]<br>[url=http://example.com]{chat_text}[/url]<br>[c=blue|yellow|green|pink|red|orange]{chat_text}[/c]</th></tr>
 
 </tbody></table>
