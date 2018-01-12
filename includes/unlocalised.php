@@ -166,7 +166,19 @@ function ShowBuildTime ($time) {
 //
 // Template-related functions
 //
-function parsetemplate($template, $array) {
+function addTemplateGlobal($key, $value)
+{
+    global $_templateGlobals;
+
+    $_templateGlobals[$key] = $value;
+}
+
+function parsetemplate($template, $array)
+{
+    global $_templateGlobals;
+
+    $array = array_merge(isset($_templateGlobals) ? $_templateGlobals : [], $array);
+
     return preg_replace_callback('#\{([a-z0-9\-_]*?)\}#Ssi', function ($match) use ($array) {
         return isset($array[$match[1]]) ? $array[$match[1]] : '';
     }, $template);
