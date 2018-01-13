@@ -1,1 +1,6 @@
+/public/storage
+/storage/*.key
+/vendor
+/.idea
 /config.php
+.env
