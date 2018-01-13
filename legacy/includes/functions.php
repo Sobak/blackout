@@ -1,23 +1,11 @@
 <?php
 
 /**
- * Dumps list of passed arguments and terminates script execution.
- *
- * @param mixed[] ...$vars
- * @return void
- */
-function dd(...$vars)
-{
-    var_dump(...$vars);
-    die;
-}
-
-/**
  * Redirects user to specified target URL.
  *
  * @param $target
  */
-function redirect($target)
+function redirect_to($target)
 {
     header("Location: $target");
     die;

@@ -6,7 +6,7 @@ $ugamela_root_path = './';
 include($ugamela_root_path . 'common.php');
 
 if (isset($user)) {
-    redirect('overview.php');
+    redirect_to('overview.php');
 }
 
-redirect('login.php');
+redirect_to('login.php');
