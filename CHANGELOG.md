@@ -29,6 +29,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 - Refactored the code around user authentication
 - Refactored the code for chats
 
+### Removed
+- Dropped mercenary report converter
+
 ## [0.4.1] - 2018-01-11
 This version focused on codestyle changes only so that diffs for future releases
 will be more meaningfull.
