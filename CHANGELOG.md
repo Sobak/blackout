@@ -23,6 +23,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ### Changed
 - Dropped chat support for Internet Explorer 6
+- Dropped unused and broken `calc.php` file
 - More readable design for Admin -> Errors screen
 - Queries are only logged when debug mode is enabled
 - Redirect to installer regardless of current location in the script
