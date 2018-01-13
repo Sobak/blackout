@@ -88,7 +88,8 @@ $fileExtension = pathinfo($path, PATHINFO_EXTENSION);
 
 if (is_file($path) && str_contains($file, '..') === false) {
     if ($fileExtension == 'php') {
-        chdir(base_path('legacy/'));
+        chdir(base_path(str_contains($path, '/admin') ? 'legacy/admin' : 'legacy/'));
+
         require $path;
     } else {
         $fileInfo = new finfo(FILEINFO_MIME);
