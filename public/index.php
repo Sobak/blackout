@@ -77,19 +77,22 @@ if (!$file) {
     $file = 'index.php';
 }
 
-$fileExtension = pathinfo($file, PATHINFO_EXTENSION);
-
 $path = base_path("legacy/$file");
 
-if (file_exists($path) && str_contains($file, '..') === false) {
+// Assume index.php for directories
+if (is_dir($path)) {
+    $path .= '/index.php';
+}
+
+$fileExtension = pathinfo($path, PATHINFO_EXTENSION);
+
+if (is_file($path) && str_contains($file, '..') === false) {
     if ($fileExtension == 'php') {
         chdir(base_path('legacy/'));
         require $path;
     } else {
         $fileInfo = new finfo(FILEINFO_MIME);
         $mime = $fileInfo->file($path);
-
-        $content = file_get_contents($path);
 
         header("Content-Type: $mime");
         readfile($path);
