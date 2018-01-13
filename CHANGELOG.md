@@ -32,6 +32,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 ### Removed
 - Dropped mercenary report converter
 - Dropped unused JS files
+- Dropped unused images
 
 ## [0.4.1] - 2018-01-11
 This version focused on codestyle changes only so that diffs for future releases
