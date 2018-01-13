@@ -53,10 +53,12 @@ if ($fleetmission == 8) {
     $YourPlanet = false;
     $UsedPlanet = false;
     $select     = doquery("SELECT * FROM {{table}} WHERE galaxy = '". $galaxy ."' AND system = '". $system ."' AND planet = '". $planet ."'", "planets");
+    $select_count = doquery("SELECT COUNT(*) FROM {{table}} WHERE galaxy = '". $galaxy ."' AND system = '". $system ."' AND planet = '". $planet ."'", "planets", true);
 } else {
     $YourPlanet = false;
     $UsedPlanet = false;
     $select     = doquery("SELECT * FROM {{table}} WHERE galaxy = '". $galaxy ."' AND system = '". $system ."' AND planet = '". $planet ."' AND planet_type = '". $planettype ."'", "planets");
+    $select_count = doquery("SELECT COUNT(*) FROM {{table}} WHERE galaxy = '". $galaxy ."' AND system = '". $system ."' AND planet = '". $planet ."' AND planet_type = '". $planettype ."'", "planets", true);
 }
 
 if ($CurrentPlanet['galaxy'] == $galaxy &&
@@ -68,9 +70,9 @@ if ($CurrentPlanet['galaxy'] == $galaxy &&
 
 // Test d'existance de l'enregistrement dans la gaalxie !
 if ($_POST['mission'] != 15) {
-    if (mysql_num_rows($select) < 1 && $fleetmission != 7) {
+    if ($select_count[0] < 1 && $fleetmission != 7) {
         message ("<font color=\"red\"><b>". $lang['fl_unknow_target'] ."</b></font>", $lang['fl_error'], "fleet.php", 2);
-    } elseif ($fleetmission == 9 && mysql_num_rows($select)) {
+    } elseif ($fleetmission == 9 && $select_count[0]) {
         message ("<font color=\"red\"><b>". $lang['fl_used_target'] ."</b></font>", $lang['fl_error'], "fleet.php", 2);
     }
 } else {

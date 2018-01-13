@@ -23,7 +23,8 @@ if (isset($delete)) {
 
 // Get messages
 $query = doquery("SELECT c.message, c.timestamp, u.username FROM {{table}}chat c JOIN {{table}}users u ON c.user_id = u.id ORDER BY c.id DESC LIMIT 25", '');
-while ($e = mysql_fetch_array($query)) {
+$query = $query->fetchAll();
+foreach ($query as $e) {
     $parse['msg_list'] .= stripslashes("<tr><td class=n rowspan=2>{$e['id']}</td>" .
     "<td class=n><center>[<a href=?delete={$e['id']}>X</a>]</center></td>" .
     "<td class=n><center>{$e['username']}</center></td>" .
@@ -31,7 +32,7 @@ while ($e = mysql_fetch_array($query)) {
     "<td class=b colspan=4 width=500>" . nl2br($e['message']) . "</td></tr>");
 }
 
-$count = mysql_num_rows($query);
+$count = count($query);
 $parse['msg_list'] .= "<tr><th class=b colspan=4>{$count} ".$lang['adm_ch_nbs']."</th></tr>";
 
 display(parsetemplate(gettemplate('admin/chat_body'), $parse), "Chat", false);

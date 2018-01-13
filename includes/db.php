@@ -1,23 +1,67 @@
 <?php
 
+function mysql_connect($host, $username, $password, $database)
+{
+    global $link;
+
+    $dsn = "mysql:host=$host;dbname=$database;charset=latin2";
+    $opt = [
+        PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+        PDO::ATTR_EMULATE_PREPARES   => true,
+    ];
+
+    $link = new PDO($dsn, $username, $password, $opt);
+}
+
+function mysql_query($query)
+{
+    global $link;
+
+    return $link->query($query);
+}
+
+function mysql_fetch_array(PDOStatement $query)
+{
+    return $query->fetch(PDO::FETCH_BOTH);
+}
+
+function mysql_fetch_assoc(PDOStatement $query)
+{
+    return $query->fetch(PDO::FETCH_ASSOC);
+}
+
+function mysql_escape_string($string)
+{
+    global $link;
+
+    return substr($link->quote($string), 1, -1);
+}
+
+function mysql_real_escape_string($string)
+{
+    return mysql_escape_string($string);
+}
+
 function doquery($query, $table, $fetch = false)
 {
     global $link, $debug, $dbsettings, $game_config;
 
     if (!$link) {
-        $link = mysql_connect($dbsettings["server"], $dbsettings["user"], $dbsettings["pass"]);
-
-        if (!$link) {
-            $debug->error(mysql_error()."<br />$query", 'SQL Error');
+        try {
+            mysql_connect($dbsettings["server"], $dbsettings["user"], $dbsettings["pass"], $dbsettings["name"]);
+        } catch (\Exception $e) {
+            $debug->error($e->getMessage() . "<br />$query", 'SQL Error');
         }
-
-        mysql_select_db($dbsettings["name"]) or $debug->error(mysql_error()."<br />$query", 'SQL Error');
-        mysql_query("SET NAMES latin2");
-        echo mysql_error();
     }
 
     $sql = str_replace("{{table}}", $dbsettings["prefix"].$table, $query);
-    $sqlquery = mysql_query($sql) or $debug->error(mysql_error()."<br />$sql<br />", 'SQL Error');
+
+    try {
+        $sqlquery = mysql_query($sql);
+    } catch (Exception $e) {
+        $debug->error($e->getMessage() . "<br>$sql", 'SQL Error');
+    }
 
     if ($game_config['debug']) {
         $arr = debug_backtrace();

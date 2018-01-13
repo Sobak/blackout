@@ -22,10 +22,11 @@ function CheckCookies()
 
     if (isset($_COOKIE[$game_config['COOKIE_NAME']])) {
         $TheCookie  = explode("/%/", $_COOKIE[$game_config['COOKIE_NAME']]);
+        $UserCount = doquery("SELECT COUNT(*) FROM {{table}} WHERE `username` = '". $TheCookie[1]. "';", 'users', true);
         $UserResult = doquery("SELECT * FROM {{table}} WHERE `username` = '". $TheCookie[1]. "';", 'users');
 
         // Check if there was exactly one record for that name
-        if (mysql_num_rows($UserResult) !== 1) {
+        if ($UserCount[0] != 1) {
             message($lang['sys_cookie_problem'], $lang['sys_error'], null, 0, false);
         }
 

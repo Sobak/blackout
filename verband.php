@@ -22,8 +22,9 @@ if (!is_numeric($fleetid) || empty($fleetid)) {
 }
 
 $query = doquery("SELECT * FROM {{table}} WHERE fleet_id = '" . $fleetid . "'", 'fleets');
+$queryCount = doquery("SELECT COUNT(*) FROM {{table}} WHERE fleet_id = '" . $fleetid . "'", 'fleets', true);
 
-if (mysql_num_rows($query) != 1) {
+if ($queryCount[0] != 1) {
     message('Cette flotte n\'existe pas (ou plus)!', 'Erreur');
 }
 
@@ -85,10 +86,15 @@ if (!isset($_POST['send'])) {
     id = '" . $fleet['fleet_group'] . "'"
     , 'aks');
 
-    if (mysql_num_rows($aks) != 1) {
+    $aksCount = doquery(
+    "SELECT COUNT(*) FROM {{table}} WHERE
+    id = '" . $fleet['fleet_group'] . "'"
+    , 'aks', true);
+
+    if ($aksCount[0] != 1) {
         message('AKS nicht gefunden!', 'Fehler');
     }
-    $aks = mysql_num_rows($aks);
+    $aks = $aksCount[0];
 }
 
 $missiontype = array(1 => 'Attaquer',

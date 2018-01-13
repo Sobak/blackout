@@ -66,7 +66,13 @@ $fq = doquery("SELECT * FROM {{table}} WHERE  (
         ( fleet_end_galaxy=$g AND fleet_end_system=$s AND fleet_end_planet=$i )
         ) ORDER BY `fleet_start_time`", 'fleets');
 
-if (mysql_num_rows($fq) == "0") {
+$fq_count = doquery("SELECT * FROM {{table}} WHERE  (
+        ( fleet_start_galaxy=$g AND fleet_start_system=$s AND fleet_start_planet=$i )
+        OR
+        ( fleet_end_galaxy=$g AND fleet_end_system=$s AND fleet_end_planet=$i )
+        ) ORDER BY `fleet_start_time`", 'fleets', true);
+
+if ($fq_count[0] == "0") {
     $page .= "<table width=519>
     <tr>
       <td class=c colspan=7>Derni&egrave;re man�uvres sur la lune</td>

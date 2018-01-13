@@ -27,8 +27,8 @@ $CurrentSystem = $CurrentPlanet['system'];
 $CurrentGalaxy = $CurrentPlanet['galaxy'];
 $CanDestroy    = $CurrentPlanet[$resource[213]] + $CurrentPlanet[$resource[214]];
 
-$maxfleet       = doquery("SELECT * FROM {{table}} WHERE `fleet_owner` = '". $user['id'] ."';", 'fleets');
-$maxfleet_count = mysql_num_rows($maxfleet);
+$maxfleet       = doquery("SELECT COUNT(*) FROM {{table}} WHERE `fleet_owner` = '". $user['id'] ."';", 'fleets', true);
+$maxfleet_count = $maxfleet[0];
 
 CheckPlanetUsedFields($CurrentPlanet);
 

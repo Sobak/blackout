@@ -9,11 +9,11 @@ includeLang('banned');
 
 $parse = $lang;
 
-$bans = doquery('SELECT * FROM {{table}} ORDER BY `id`', 'banned');
-$bans_count = mysql_num_rows($bans);
+$bans = doquery('SELECT * FROM {{table}} ORDER BY `id`', 'banned')->fetchAll();
+$bans_count = count($bans);
 
 $row_template = gettemplate('banned_row');
-while ($ban = mysql_fetch_row($bans)) {
+foreach ($bans as $ban) {
     $ban['name'] = $ban[1];
     $ban['reason'] = $ban[2];
     $ban['from'] = gmdate('d/m/Y G:i:s', $ban[4]);

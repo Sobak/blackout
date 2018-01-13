@@ -200,9 +200,10 @@ $page .= "</tr>";
 
 // Gestion des raccourcis vers ses propres colonies ou planetes
 $kolonien      = SortUserPlanets ( $user );
+$kolonien_count = count(SortUserPlanets ( $user )->fetchAll());
 $currentplanet = doquery("SELECT * FROM {{table}} WHERE id = '" . $user['current_planet'] . "'", 'planets', true);
 
-if (mysql_num_rows($kolonien) > 1) {
+if ($kolonien_count > 1) {
     $i = 0;
     $w = 0;
     $tr = true;

@@ -34,13 +34,21 @@ if (isset($resource) && !empty($resource[401])) {
                                 system = '" . $selected_row['system'] . "' AND
                                 planet = '" . $selected_row['planet'] . "'", 'planets');
 
+            $planetrow_count = doquery("SELECT COUNT(*) FROM {{table}} WHERE
+                                galaxy = '" . $selected_row['galaxy'] . "' AND
+                                system = '" . $selected_row['system'] . "' AND
+                                planet = '" . $selected_row['planet'] . "'", 'planets', true);
+
             $select_ziel = doquery("SELECT defence_tech FROM {{table}} WHERE
                                 id = '" . $selected_row['zielid'] . "'", 'users');
+
+            $select_ziel_count = doquery("SELECT COUNT(*) FROM {{table}} WHERE
+                                id = '" . $selected_row['zielid'] . "'", 'users', true);
 
             $select_owner = doquery("SELECT military_tech FROM {{table}} WHERE
                                 id = '" . $selected_row['owner'] . "'", 'users');
 
-            if (mysql_num_rows($planetrow) != 1 OR mysql_num_rows($select_ziel) != 1) {
+            if ($planetrow_count[0] != 1 OR $select_ziel_count[0] != 1) {
                 doquery("DELETE FROM {{table}} WHERE id = '" . $selected_row['id'] . "'", 'iraks');
             } else {
                 $verteidiger = mysql_fetch_array($select_ziel);
@@ -123,7 +131,12 @@ if (isset($resource) && !empty($resource[401])) {
                                 system = '" . $selected_row['system_angreifer'] . "' AND
                                 planet = '" . $selected_row['planet_angreifer'] . "'", 'planets');
 
-                if (mysql_num_rows($planet_) == 1) {
+                $planet_count_ = doquery("SELECT COUNT(*) FROM {{table}} WHERE
+                                galaxy = '" . $selected_row['galaxy_angreifer'] . "' AND
+                                system = '" . $selected_row['system_angreifer'] . "' AND
+                                planet = '" . $selected_row['planet_angreifer'] . "'", 'planets', true);
+
+                if ($planet_count_[0] == 1) {
                     $array = mysql_fetch_array($planet_);
 
                     $name = $array['name'];
@@ -134,7 +147,12 @@ if (isset($resource) && !empty($resource[401])) {
                                 system = '" . $selected_row['system'] . "' AND
                                 planet = '" . $selected_row['planet'] . "'", 'planets');
 
-                if (mysql_num_rows($planet_2) == 1) {
+                $planet_2_count = doquery("SELECT * FROM {{table}} WHERE
+                                galaxy = '" . $selected_row['galaxy'] . "' AND
+                                system = '" . $selected_row['system'] . "' AND
+                                planet = '" . $selected_row['planet'] . "'", 'planets', true);
+
+                if ($planet_2_count[0] == 1) {
                     $array = mysql_fetch_array($planet_2);
 
                     $name_deffer = $array['name'];

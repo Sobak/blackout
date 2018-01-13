@@ -28,10 +28,10 @@ $currentplanet = doquery("SELECT * FROM {{table}} WHERE id={$user['current_plane
 
 $tempvar1 = (($s-$currentplanet['system'])*-1);
 $tempvar2 = ($user['impulse_motor_tech'] * 2) - 1;
-$tempvar3 = doquery("SELECT * FROM {{table}} WHERE galaxy = ".$g." AND
+$tempvar3 = doquery("SELECT COUNT(*) FROM {{table}} WHERE galaxy = ".$g." AND
             system = ".$s." AND
             planet = ".$i." AND
-            planet_type = 1", 'planets');
+            planet_type = 1", 'planets', true);
 
 
 
@@ -46,7 +46,7 @@ elseif ($user['impulse_motor_tech'] == 0) {;
 elseif ($tempvar1 >= $tempvar2 || $g != $currentplanet['galaxy']) {
     $error = 1;
 }
-elseif (mysql_num_rows($tempvar3) != 1) {
+elseif ($tempvar3[0] != 1) {
     $error = 1;
 }
 elseif ($anz > $iraks) {

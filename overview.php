@@ -269,13 +269,19 @@ switch ($mode) {
                 planet = '" . $irak['planet'] . "' AND
                 planet_type = '1'", 'planets');
 
+                $planet_start_count = doquery("SELECT * FROM {{table}} WHERE
+                galaxy = '" . $irak['galaxy'] . "' AND
+                system = '" . $irak['system'] . "' AND
+                planet = '" . $irak['planet'] . "' AND
+                planet_type = '1'", 'planets', true);
+
                 $user_planet = doquery("SELECT * FROM {{table}} WHERE
                 galaxy = '" . $irak['galaxy_angreifer'] . "' AND
                 system = '" . $irak['system_angreifer'] . "' AND
                 planet = '" . $irak['planet_angreifer'] . "' AND
                 planet_type = '1'", 'planets', true);
 
-                if (mysql_num_rows($planet_start) == 1) {
+                if ($planet_start_count[0] == 1) {
                     $planet = mysql_fetch_array($planet_start);
                 }
 

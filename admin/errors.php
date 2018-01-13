@@ -17,12 +17,12 @@ if (isset($_GET['delete']) && is_numeric($_GET['delete'])) {
     doquery("TRUNCATE TABLE {{table}}", 'errors');
 }
 
-$errors = doquery('SELECT * FROM {{table}}', 'errors');
-$errors_count = mysql_num_rows($errors);
+$errors = doquery('SELECT * FROM {{table}}', 'errors')->fetchAll();
+$errors_count = count($errors);
 
 $row_template = gettemplate('admin/errors_row');
 
-while ($error = mysql_fetch_array($errors)) {
+foreach ($errors as $error) {
     $error['error_time'] = date('d/m/Y h:i:s', $error['error_time']);
     $error['error_text'] = nl2br($error['error_text']);
 

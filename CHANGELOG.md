@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ## [Unreleased]
+### Added
+- Added `mysql_*` compatibility layer so that code can run on PHP 7+
+
+### Changed
+- Changed minimal version to PHP 7
 
 ## [0.4.2] - 2018-01-13
 ### Added

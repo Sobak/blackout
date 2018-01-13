@@ -25,9 +25,9 @@ if ($type == 'planets') {
     $planetType = 3;
 }
 
-$query = doquery("SELECT * FROM {{table}} WHERE planet_type='$planetType'", "planets");
+$query = doquery("SELECT * FROM {{table}} WHERE planet_type='$planetType'", "planets")->fetchAll();
 
-while ($row = mysql_fetch_array($query)) {
+foreach ($query as $row) {
     if ($type == 'moons') {
         $row['mother_planet'] = '<td class="b"><center><b>' . $row['id_owner'] . '</b></center></td>';
     }
@@ -35,6 +35,6 @@ while ($row = mysql_fetch_array($query)) {
     $parse['rows'] .= parsetemplate($rowTPL, $row);
 }
 
-$parse['count'] = mysql_num_rows($query);
+$parse['count'] = count($query);
 
 display(parsetemplate(gettemplate('admin/colonies_body'), $parse), $parse['title'], false);
