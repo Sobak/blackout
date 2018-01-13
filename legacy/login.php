@@ -24,7 +24,7 @@ if ($_POST) {
             $rememberme = 0;
         }
 
-        $cookie = $login["id"] . "/%/" . $login["username"] . "/%/" . md5($login["password"] . "--" . $dbsettings["secretword"]) . "/%/" . $rememberme;
+        $cookie = $login["id"] . "/%/" . $login["username"] . "/%/" . md5($login["password"] . "--" . config('auth.cookie_key')) . "/%/" . $rememberme;
         setcookie($game_config['COOKIE_NAME'], $cookie, $expiretime, "/", "", 0);
 
         header("Location: ./overview.php");

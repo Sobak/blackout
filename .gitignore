@@ -2,7 +2,6 @@
 /storage/*.key
 /vendor
 /.idea
-/config.php
 .env
 _ide_helper.php
 _ide_helper_models.php

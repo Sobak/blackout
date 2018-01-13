@@ -99,4 +99,6 @@ return [
         ],
     ],
 
+    'cookie_key' => env('COOKIE_KEY'),
+
 ];

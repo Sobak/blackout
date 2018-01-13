@@ -16,7 +16,7 @@
  */
 function CheckCookies()
 {
-    global $dbsettings, $game_config, $lang;
+    global $game_config, $lang;
 
     $UserRow = array();
 
@@ -34,14 +34,14 @@ function CheckCookies()
 
         // Check if coookie's UserID and password are correct
         $checkID = $UserRow["id"] === $TheCookie[0];
-        $checkPassword = md5($UserRow["password"] . "--" . $dbsettings["secretword"]) === $TheCookie[2];
+        $checkPassword = md5($UserRow["password"] . "--" . config('auth.cookie_key')) === $TheCookie[2];
 
         if ($checkID === false || $checkPassword === false) {
             message($lang['sys_cookie_problem'], $lang['sys_error'], null, 0, false);
         }
 
         // Check if the password is correct
-        if (md5($UserRow["password"] . "--" . $dbsettings["secretword"]) !== $TheCookie[2]) {
+        if (md5($UserRow["password"] . "--" . config('auth.cookie_key')) !== $TheCookie[2]) {
             message($lang['cookies']['Error3'], $lang['sys_error'], null, 0, false);
         }
 
