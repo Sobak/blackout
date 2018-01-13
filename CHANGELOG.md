@@ -11,6 +11,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 - Changed minimal version to PHP 7
 
 ## [0.4.2] - 2018-01-13
+### Refactored to Laravel
+Starting with this version all requests are routed through the **Laravel framework**
+with original XNova files serving as a fallback wherever it's needed. Such approach
+allows to refactor parts of the system independently of each other and mix both
+codebases when needed.
+
 ### Added
 - Added support for global template variables
 - Added `dpath` as global template variable
