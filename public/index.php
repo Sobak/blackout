@@ -55,6 +55,47 @@ $response = $kernel->handle(
     $request = Illuminate\Http\Request::capture()
 );
 
-$response->send();
+/*
+|--------------------------------------------------------------------------
+| Fallback to the legacy XNova
+|--------------------------------------------------------------------------
+|
+| Before sending the response back, though, let's check if current
+| request can be handled by the legacy XNova code. Hooking here
+| allows us to use full power of the Laravel framework and if
+| we will find no matching file, then request will continue
+| its usual lifecycle and Laravel will handle it instead.
+|
+*/
 
-$kernel->terminate($request, $response);
+$root = $request->root();
+$url = $request->url();
+
+$file = substr(str_replace($root, '', $url), 1);
+
+if (!$file) {
+    $file = 'index.php';
+}
+
+$fileExtension = pathinfo($file, PATHINFO_EXTENSION);
+
+$path = base_path("legacy/$file");
+
+if (file_exists($path) && str_contains($file, '..') === false) {
+    if ($fileExtension == 'php') {
+        chdir(base_path('legacy/'));
+        require $path;
+    } else {
+        $fileInfo = new finfo(FILEINFO_MIME);
+        $mime = $fileInfo->file($path);
+
+        $content = file_get_contents($path);
+
+        header("Content-Type: $mime");
+        readfile($path);
+    }
+} else {
+    $response->send();
+
+    $kernel->terminate($request, $response);
+}
