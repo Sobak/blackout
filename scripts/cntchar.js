@@ -1,4 +1,4 @@
-var x = "";
+ar x = "";
 var e = null;
 
 function cntchar(m) {
