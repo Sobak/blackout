@@ -95,6 +95,9 @@ if (is_file($path) && str_contains($file, '..') === false) {
         $mime = $fileInfo->file($path);
 
         header("Content-Type: $mime");
+        header('Expires: ' . gmdate('D, d M Y H:i:s', time() + 60 * 60 * 24 * 30) . ' GMT');
+        header('Last-Modified: ' . gmdate('D, d M Y H:i:s', filemtime($path)) . ' GMT');
+        header('Cache-Control: post-check=0, pre-check=0', false);
         readfile($path);
     }
 } else {
