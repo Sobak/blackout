@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ## [Unreleased]
+
+## [0.4.2] - 2018-01-13
 ### Added
 - Added support for global template variables
 - Added `dpath` as global template variable
