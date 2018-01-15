@@ -47,7 +47,7 @@ if (!defined('INSTALL') || INSTALL !== true) {
 
     if ($user) {
         $dpath = (!$user["dpath"]) ? DEFAULT_SKIN : $user["dpath"];
-        $dpath = "../skins/$dpath/";
+        $dpath = "skins/$dpath/";
 
         if ($game_config['game_disable'] && $user['authlevel'] < LEVEL_OPERATOR) {
             message($game_config['close_reason'], $game_config['game_name']);
@@ -95,7 +95,7 @@ if (!defined('INSTALL') || INSTALL !== true) {
         $user['new_message'] = doquery("SELECT COUNT(*) AS `count` FROM {{table}} WHERE `message_unread` = 1 AND `message_owner` = '{$user['id']}'", 'messages', true)['count'];
     }
 } else {
-    $dpath = '../skins/' . DEFAULT_SKIN . '/';
+    $dpath = 'skins/' . DEFAULT_SKIN . '/';
 }
 
 addTemplateGlobal('dpath', $dpath);
