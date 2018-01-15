@@ -215,7 +215,7 @@ foreach ($reslist['fleet'] as $n => $i) {
         $page .= "<th>". pretty_number ($planetrow[$resource[$i]]);
         $ShipData .= "<input type=\"hidden\" name=\"maxship". $i ."\" value=\"". $planetrow[$resource[$i]] ."\" />";
         $ShipData .= "<input type=\"hidden\" name=\"consumption". $i ."\" value=\"". GetShipConsumption ( $i, $user ) ."\" />";
-        $ShipData .= "<input type=\"hidden\" name=\"speed" .$i ."\" value=\"" . GetFleetMaxSpeed ("", $i, $user) . "\" />";
+        $ShipData .= "<input type=\"hidden\" name=\"speed" .$i ."\" value=\"" . GetFleetMaxSpeed ([], $i, $user) . "\" />";
         $ShipData .= "<input type=\"hidden\" name=\"capacity". $i ."\" value=\"". $pricelist[$i]['capacity'] ."\" />";
         $page .= "</th>";
         // Satelitte Solaire (eux ne peuvent pas bouger !)

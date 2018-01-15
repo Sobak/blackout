@@ -50,7 +50,7 @@ foreach ($reslist['fleet'] as $n => $i) {
     if ($i > 200 && $i < 300 && $_POST["ship$i"] > "0") {
         if ($_POST["ship$i"] > $planetrow[$resource[$i]]) {
             $page .= $lang['fl_noenought'];
-            $speedalls[$i]             = GetFleetMaxSpeed ( "", $i, $user );
+            $speedalls[$i]             = GetFleetMaxSpeed ( [], $i, $user );
         } else {
             $fleet['fleetarray'][$i]   = $_POST["ship$i"];
             // Tableau des vaisseaux avec leur nombre
@@ -59,10 +59,10 @@ foreach ($reslist['fleet'] as $n => $i) {
             $fleet['amount']          += $_POST["ship$i"];
             // Tableau des vitesses
             $FleetHiddenBlock         .= "<input type=\"hidden\" name=\"consumption". $i ."\" value=\"". GetShipConsumption ( $i, $user ) ."\" />";
-            $FleetHiddenBlock         .= "<input type=\"hidden\" name=\"speed". $i ."\"       value=\"". GetFleetMaxSpeed ( "", $i, $user ) ."\" />";
+            $FleetHiddenBlock         .= "<input type=\"hidden\" name=\"speed". $i ."\"       value=\"". GetFleetMaxSpeed ( [], $i, $user ) ."\" />";
             $FleetHiddenBlock         .= "<input type=\"hidden\" name=\"capacity". $i ."\"    value=\"". $pricelist[$i]['capacity'] ."\" />";
             $FleetHiddenBlock         .= "<input type=\"hidden\" name=\"ship". $i ."\"        value=\"". $_POST["ship$i"] ."\" />";
-            $speedalls[$i]             = GetFleetMaxSpeed ( "", $i, $user );
+            $speedalls[$i]             = GetFleetMaxSpeed ( [], $i, $user );
         }
     }
 }

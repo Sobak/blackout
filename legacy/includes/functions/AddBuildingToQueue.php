@@ -24,7 +24,7 @@ function AddBuildingToQueue ( &$CurrentPlanet, $CurrentUser, $Element, $AddMode 
         $QueueArray    = explode ( ";", $CurrentQueue );
         $ActualCount   = count ( $QueueArray );
     } else {
-        $QueueArray    = "";
+        $QueueArray    = [];
         $ActualCount   = 0;
     }
 

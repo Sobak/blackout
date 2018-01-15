@@ -13,6 +13,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
     - Caching
     - ...and much more
 
+### Fixed
+- Fixed `E_WARNING` on build attempt
+- Fixed `E_WARNING` ocurrences from incorrect calls to `GetFleetMaxSpeed()`
+
 ## [0.5.0] - 2018-01-13
 ### Introducing Laravel proxy
 Starting with this version all requests are routed through the **Laravel framework**
