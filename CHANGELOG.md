@@ -4,14 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ## [Unreleased]
-### Added
-- Added Twig with custom configuration to handle existing templates which means
-  adding templates support for
-    - Control structures!
-    - Comments
-    - Templates inheritance
-    - Caching
-    - ...and much more
+
 
 ### Fixed
 - Fixed `E_WARNING` on build attempt
