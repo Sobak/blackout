@@ -170,7 +170,7 @@ function ShowHeader($title, $metatags) {
     global $dpath, $langInfos;
 
     $parse           = $langInfos;
-    $parse['base']   = (defined('IN_ADMIN') && IN_ADMIN) || (defined('INSTALL') && INSTALL) ? '../' : '';
+    $parse['base']   = (defined('IN_ADMIN') && IN_ADMIN) ? '../' : '';
     $parse['dpath']  = isset($dpath) ? $dpath : 'skins/' . DEFAULT_SKIN . '/';
     $parse['title']  = $title;
     $parse['-meta-'] = $metatags;

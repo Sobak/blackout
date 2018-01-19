@@ -4,7 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ## [Unreleased]
+## Refactored
+This section contains parts of the system which were rewritten using Laravel.
+Some items on this list may contain most notable changes made during the
+rewrite denoted.
 
+- Installer
+    - Better algorithm for generating xNova cookie secret key
+    - MySQL engine switched from MyISAM to InnoDB for all tables
 
 ### Fixed
 - Fixed `E_WARNING` on build attempt
