@@ -9,6 +9,7 @@ This section contains parts of the system which were rewritten using Laravel.
 Some items on this list may contain most notable changes made during the
 rewrite denoted.
 
+- Login
 - Installer
     - Better algorithm for generating xNova cookie secret key
     - MySQL engine switched from MyISAM to InnoDB for all tables

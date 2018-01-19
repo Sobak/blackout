@@ -5,3 +5,6 @@ Route::get('install/account', 'InstallController@account')->name('install.accoun
 Route::post('install/account', 'InstallController@accountPost');
 Route::get('install/database', 'InstallController@database')->name('install.database');
 Route::post('install/database', 'InstallController@databasePost');
+
+Route::get('login', 'UserController@login')->name('user.login');
+Route::post('login', 'UserController@loginPost');

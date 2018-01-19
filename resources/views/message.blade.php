@@ -1,0 +1,13 @@
+@extends('base')
+@section('content')
+<br><br>
+<center>
+    <table width="519">
+        <tr>
+            <td class="c">{{ $title }}</td>
+        </tr><tr>
+            <th class="errormessage">{!! $message !!}</th>
+        </tr>
+    </table>
+</center>
+@endsection

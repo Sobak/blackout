@@ -240,27 +240,6 @@ function restrictAccess($user, $minLevel)
 }
 
 /**
- * Fetches all languages available.
- */
-function getAvailableLanguages()
-{
-    global $ugamela_root_path;
-
-    $languages = [];
-
-    foreach (glob($ugamela_root_path . 'language/*/lang_info.php') as $langInfoFile) {
-        require $langInfoFile;
-
-        $langKey = array_pop(explode('/', dirname($langInfoFile)));
-
-        /** @noinspection PhpUndefinedVariableInspection */
-        $languages[$langKey] = $langInfos['DISPLAY_NAME'];
-    }
-
-    return $languages;
-}
-
-/**
  * Fetches all skins available.
  */
 function getAvailableSkins()

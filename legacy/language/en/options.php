@@ -2,7 +2,7 @@
 
 // Messages
 $lang['changue_pass'] = "Chanage Password";
-$lang['succeful_changepass'] = 'Password has been changed.<br><a href="login.php" target="_top">Log in again</a>';
+$lang['succeful_changepass'] = 'Password has been changed.<br><a href="login">Log in again</a>';
 $lang['succeful_save'] = 'Options have been saved<br><a href="options.php">Return</a>';
 
 // Form

@@ -9,4 +9,4 @@ if (isset($user)) {
     redirect_to('overview.php');
 }
 
-redirect_to('login.php');
+redirect_to('login');
