@@ -10,7 +10,6 @@ $lang['user_level'] = [
 $lang['sys_moon'] = "Moon";
 $lang['sys_error'] = "Error";
 $lang['sys_success'] = "Success";
-$lang['sys_cookie_problem'] = 'There is a problem with your cookies. Try to <a href="login">log in</a> again and if the problem persists, contact the administrator';
 $lang['sys_activate_acc_title'] = "Activate your account";
 $lang['sys_activate_acc_text'] = "Please activate your account. This can only be done before %s";
 $lang['sys_acc_deletion_title'] = "Account deletion mode";

@@ -50,7 +50,7 @@ switch ($mode) {
 
         } elseif ($_POST['kolonieloeschen'] == 1 && $_POST['deleteid'] == $user['current_planet']) {
             // Controle du mot de passe pour abandon de colonie
-            if (md5($_POST['pw']) == $user["password"] && $user['id_planet'] != $user['current_planet']) {
+            if (Hash::check($_POST['pw'], $user['password']) && $user['id_planet'] != $user['current_planet']) {
                 $destruyed        = time() + 60 * 60 * 24;
 
                 $QryUpdatePlanet  = "UPDATE {{table}} SET ";

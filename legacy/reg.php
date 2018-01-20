@@ -85,7 +85,6 @@ if ($_POST) {
     $UserEmail      = CheckInputStrings($_POST['email']);
     $UserPlanet     = CheckInputStrings($_POST['planet']);
 
-    $md5newpass     = md5($newpass);
     $aktywacja = time()+2678400;
     // Creation de l'utilisateur
     $QryInsertUser  = "INSERT INTO {{table}} SET ";
@@ -96,7 +95,7 @@ if ($_POST) {
     $QryInsertUser .= "`dpath` = '".    DEFAULT_SKIN                                 ."', ";
     $QryInsertUser .= "`id_planet` = '0', ";
     $QryInsertUser .= "`register_time` = '". time() ."', ";
-    $QryInsertUser .= "`password`='". $md5newpass ."', ";
+    $QryInsertUser .= "`password`='". bcrypt($newpass) ."', ";
     $QryInsertUser .= "`aktywnosc` = '1', ";
     $QryInsertUser .= "`kod_aktywujacy`='". mysql_escape_string( $kod )              ."', ";
     $QryInsertUser .= "`time_aktyw`='".     mysql_escape_string( $aktywacja )        ."';";

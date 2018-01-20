@@ -47,7 +47,6 @@ class CreateConfigTable extends Migration
             'Fleet_Cdr' => 30,
             'Defs_Cdr' => 30,
             'initial_fields' => 163,
-            'COOKIE_NAME' => 'XNova',
             'game_name' => 'XNova',
             'game_disable' => 1,
             'close_reason' => '',

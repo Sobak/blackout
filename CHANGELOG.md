@@ -10,8 +10,9 @@ Some items on this list may contain most notable changes made during the
 rewrite denoted.
 
 - Login
+- User's authentication
+    - Password hashing algorithm has been changed from md5 to bcrypt
 - Installer
-    - Better algorithm for generating xNova cookie secret key
     - MySQL engine switched from MyISAM to InnoDB for all tables
 - Forgot password
     - Fixed potential SQL Injection

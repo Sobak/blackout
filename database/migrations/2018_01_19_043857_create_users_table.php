@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('username', 64)->default('');
             $table->string('password', 64)->default('');
+            $table->rememberToken();
             $table->string('email', 64)->default('');
             $table->string('email_2', 64)->default('');
             $table->string('lang', 8);

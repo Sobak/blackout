@@ -55,11 +55,9 @@ class InstallController extends Controller
         $configTemplate = file_get_contents(base_path('.env.example'));
 
         $appKey = 'base64:' . base64_encode(Encrypter::generateKey(config('app.cipher')));
-        $cookieKey = 'XNova' . random_int(1000, 1234567890);
 
         $config = strtr($configTemplate, [
             '{{app_key}}' => $appKey,
-            '{{cookie_key}}' => $cookieKey,
             '{{db_host}}' => $request->get('host'),
             '{{db_database}}' => $request->get('database'),
             '{{db_username}}' => $request->get('username'),

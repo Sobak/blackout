@@ -41,8 +41,15 @@ if (!defined('INSTALL') || INSTALL !== true) {
     includeLang ('tech');
     includeLang ('leftmenu');
 
-    if ($InLogin == false) {
-        $user = CheckCookies();
+    if (Auth::check()) {
+        /** @var \App\Models\User $user */
+        $user = Auth::user();
+        $user->onlinetime = time();
+        $user->user_lastip = $_SERVER['REMOTE_ADDR'];
+        $user->user_agent = $_SERVER['HTTP_USER_AGENT'];
+        $user->save();
+
+        $user = $user->toArray();
     }
 
     if ($user) {

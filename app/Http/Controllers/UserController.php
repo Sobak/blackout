@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\PasswordReset;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
@@ -24,7 +25,7 @@ class UserController extends Controller
         if ($user) {
             $newPassword = str_random(6);
 
-            $user->password = md5($newPassword);
+            $user->password = bcrypt($newPassword);
             $user->save();
 
             Mail::to($user)->send(new PasswordReset($user, $newPassword));
@@ -49,22 +50,14 @@ class UserController extends Controller
 
     public function loginPost(Request $request)
     {
-        $user = User::where('username', $request->get('username'))
-                    ->where('password', md5($request->get('password')))
-                    ->first();
+        $credentials = [
+            'username' => $request->get('username'),
+            'password' => $request->get('password'),
+        ];
 
-        if ($user) {
-            if ($request->get('rememberme') == 1) {
-                $expiretime = time() + 31536000;
-                $rememberme = 1;
-            } else {
-                $expiretime = 0;
-                $rememberme = 0;
-            }
+        $remember = $request->get('rememberme') == 1;
 
-            $cookie = $user["id"] . "/%/" . $user["username"] . "/%/" . md5($user["password"] . "--" . config('auth.cookie_key')) . "/%/" . $rememberme;
-            setcookie(game_config('COOKIE_NAME'), $cookie, $expiretime, "/", "", 0);
-
+        if (Auth::attempt($credentials, $remember)) {
             return redirect()->to('overview.php');
         }
 
