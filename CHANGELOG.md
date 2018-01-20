@@ -20,6 +20,7 @@ rewrite denoted.
 ### Fixed
 - Fixed `E_WARNING` on build attempt
 - Fixed `E_WARNING` ocurrences from incorrect calls to `GetFleetMaxSpeed()`
+- Fixed `CheckInputStrings()` to not use `eregi` and thus make it work on PHP 7
 
 ## [0.5.0] - 2018-01-13
 ### Introducing Laravel proxy
