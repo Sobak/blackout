@@ -6,11 +6,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 ## [Unreleased]
 ## Refactored
 This section contains parts of the system which were rewritten using Laravel.
-Some items on this list may contain most notable changes made during the
-rewrite denoted.
+Some items on this list may denote most notable changes made when rewriting.
 
 - Login
-- User's authentication
+- User authentication
     - Password hashing algorithm has been changed from md5 to bcrypt
 - Installer
     - MySQL engine switched from MyISAM to InnoDB for all tables
@@ -21,7 +20,7 @@ rewrite denoted.
 ### Fixed
 - Fixed `E_WARNING` on build attempt
 - Fixed `E_WARNING` ocurrences from incorrect calls to `GetFleetMaxSpeed()`
-- Fixed `CheckInputStrings()` to not use `eregi` and thus make it work on PHP 7
+- Fixed `CheckInputStrings()` to not use `eregi` which was dropped in PHP 7
 
 ## [0.5.0] - 2018-01-13
 ### Introducing Laravel proxy
