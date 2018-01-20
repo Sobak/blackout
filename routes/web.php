@@ -1,5 +1,8 @@
 <?php
 
+Route::get('forgot-password', 'UserController@forgotPassword')->name('user.forgot-password');
+Route::post('forgot-password', 'UserController@forgotPasswordPost');
+
 Route::get('install', 'InstallController@intro')->name('install');
 Route::get('install/account', 'InstallController@account')->name('install.account');
 Route::post('install/account', 'InstallController@accountPost');

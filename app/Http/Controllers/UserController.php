@@ -2,11 +2,39 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\PasswordReset;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
+    public function forgotPassword()
+    {
+        return view('user.forgot_password', [
+            'servername' => game_config('game_name'),
+            'title' => trans('user.forgot_password.title'),
+        ]);
+    }
+
+    public function forgotPasswordPost(Request $request)
+    {
+        $user = User::where('email', $request->get('email'))->first();
+
+        if ($user) {
+            $newPassword = str_random(6);
+
+            $user->password = md5($newPassword);
+            $user->save();
+
+            Mail::to($user)->send(new PasswordReset($user, $newPassword));
+
+            return show_message(trans('user.forgot_password.success'), trans('app.success'));
+        }
+
+        return show_message(trans('user.forgot_password.failure'), trans('app.error'));
+    }
+
     public function login()
     {
         return view('user.login', [
@@ -40,6 +68,6 @@ class UserController extends Controller
             return redirect()->to('overview.php');
         }
 
-        return show_message(trans('user.login.error_text'), trans('user.login.error'));
+        return show_message(trans('user.login.error_text'), trans('app.error'));
     }
 }

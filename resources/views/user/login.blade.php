@@ -22,7 +22,7 @@
                             {{ csrf_field() }}
                             <input name="submit" value="@lang('user.login.submit')" type="submit">
                         </form>
-                        <a href="lostpassword.php">@lang('user.login.forgot_password')</a>
+                        <a href="{{ route('user.forgot-password') }}">@lang('user.login.forgot_password')</a>
                     </td>
                 </tr>
                 </tbody>

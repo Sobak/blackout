@@ -74,7 +74,6 @@ include($ugamela_root_path . 'includes/functions/SetSelectedPlanet.php');
 include($ugamela_root_path . 'includes/functions/MessageForm.php');
 include($ugamela_root_path . 'includes/functions/PlanetResourceUpdate.php');
 include($ugamela_root_path . 'includes/functions/BuildFlyingFleetTable.php');
-include($ugamela_root_path . 'includes/functions/SendNewPassword.php');
 include($ugamela_root_path . 'includes/functions/HandleElementBuildingQueue.php');
 include($ugamela_root_path . 'includes/functions/UpdatePlanetBatimentQueueList.php');
 include($ugamela_root_path . 'includes/functions/IsOfficierAccessible.php');

@@ -1,9 +1,17 @@
 <?php
 
 return [
+    'forgot_password' => [
+        'email' => 'Your e-mail',
+        'failure' => 'We could not find any user with such email',
+        'form' => 'Password reminding form',
+        'para' => 'You can ask for the new password by completing this form. We will send you an email containing your new password, please change it quickly!',
+        'submit' => 'Reset password',
+        'success' => 'Your password has been reset. Check your email!',
+        'title' => 'Forgot password?',
+    ],
     'login' => [
         'description' => 'is a <strong>free strategy game</strong> based in space. To play, all you need is an internet browser. Sign up and discover the fantastic world',
-        'error' => 'Error',
         'error_text' => 'Invalid credentials<br><a href=login>Return</a>',
         'forgot_password' => 'Forgot password?',
         'menu' => [

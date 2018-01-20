@@ -13,6 +13,9 @@ rewrite denoted.
 - Installer
     - Better algorithm for generating xNova cookie secret key
     - MySQL engine switched from MyISAM to InnoDB for all tables
+- Forgot password
+    - Fixed potential SQL Injection
+    - This screen as well as the email are now localized
 
 ### Fixed
 - Fixed `E_WARNING` on build attempt
