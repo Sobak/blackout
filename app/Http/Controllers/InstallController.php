@@ -102,7 +102,7 @@ class InstallController extends Controller
             'email_2' => $request->get('email'),
             'lang' => config('app.locale'),
             'dpath' => 'xnova', // @todo fixme
-            'authlevel' => 3,
+            'authlevel' => User::LEVEL_ADMIN,
             'id_planet' => 1,
             'galaxy' => 1,
             'system' => 1,
