@@ -86,9 +86,14 @@ if (is_dir($path)) {
 
 if (is_file($path) && str_contains($file, '..') === false) {
     // Keep Laravel's session alive
-    $id = $app['encrypter']->decrypt($_COOKIE[$app['config']['session.cookie']]);
-    $app['session']->driver()->setId($id);
-    $app['session']->driver()->start();
+    $sessionCookie = $_COOKIE[$app['config']['session.cookie']];
+
+    if (isset($sessionCookie)) {
+        $id = $app['encrypter']->decrypt($sessionCookie);
+        $app['session']->driver()->setId($id);
+        $app['session']->driver()->start();
+    }
+
     unset($id);
 
     chdir(base_path(str_contains($path, '/admin') ? 'legacy/admin' : 'legacy/'));
