@@ -1,7 +1,5 @@
 <?php
 
-define('VERSION', '0.5.1-dev');
-
 $game_config   = array();
 $user          = null;
 $lang          = array();

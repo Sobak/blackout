@@ -8,6 +8,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 This section contains parts of the system which were rewritten using Laravel.
 Some items on this list may denote most notable changes made when rewriting.
 
+- Admin: Errors
+    - Date format is now language dependent
 - Login
 - User authentication
     - Password hashing algorithm has been changed from md5 to bcrypt

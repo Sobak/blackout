@@ -9,6 +9,8 @@
     <script type="text/javascript" src="{{ asset('scripts/overlib.js') }}"></script>
 </head>
 <body>
+    {!! $menu or '' !!}
+
     <center>@yield('content')</center>
 </body>
 </html>

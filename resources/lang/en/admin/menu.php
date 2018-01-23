@@ -1,0 +1,31 @@
+<?php
+
+return [
+    'sections' => [
+        'admin' => 'Admin',
+        'players' => 'Players',
+        'tools' => 'Tools',
+        'info' => 'Info',
+    ],
+    'back' => 'Back to game',
+    'ban' => 'Ban player',
+    'chat' => 'Chat administration',
+    'config' => 'Configuration',
+    'errors' => 'Errors',
+    'fleets' => 'Flying fleets',
+    'forum' => 'Forum',
+    'messages' => 'List of messages',
+    'moon-add' => 'Give Moon',
+    'moons' => 'List of moons',
+    'overview' => 'Overview',
+    'queues' => 'Fix queues',
+    'planets' => 'List of Planets',
+    'planets-active' => 'Active Planets',
+    'players' => 'Players list',
+    'players-search' => 'Search Players',
+    'reset' => 'Universum Reset',
+    'resources-add' => 'Add resources',
+    'resources-sub' => 'Subtract resources',
+    'stats' => 'Build statistics',
+    'unban' => 'Unban player',
+];

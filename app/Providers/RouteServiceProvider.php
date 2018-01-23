@@ -24,6 +24,8 @@ class RouteServiceProvider extends ServiceProvider
     public function map()
     {
         $this->mapPublicRoutes();
+
+        $this->mapAdminRoutes();
     }
 
     /**
@@ -39,5 +41,21 @@ class RouteServiceProvider extends ServiceProvider
         Route::middleware('web')
              ->namespace($this->namespace)
              ->group(base_path('routes/public.php'));
+    }
+
+    /**
+     * Define the "admin" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection but will
+     * be protected against regular-level users.
+     *
+     * @return void
+     */
+    protected function mapAdminRoutes()
+    {
+        Route::middleware(['web', 'auth'])
+             ->namespace($this->namespace . '\Admin')
+             ->prefix('admin')
+             ->group(base_path('routes/admin.php'));
     }
 }
