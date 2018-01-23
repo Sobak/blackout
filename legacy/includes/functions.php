@@ -238,19 +238,3 @@ function restrictAccess($user, $minLevel)
         message($lang['sys_noalloaw'], $lang['sys_noaccess']);
     }
 }
-
-/**
- * Fetches all skins available.
- */
-function getAvailableSkins()
-{
-    global $ugamela_root_path;
-
-    $skins = [];
-
-    foreach (glob($ugamela_root_path . 'skins/*', GLOB_ONLYDIR) as $skin) {
-        $skins[] = array_pop(explode('/', $skin));
-    }
-
-    return $skins;
-}

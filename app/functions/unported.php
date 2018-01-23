@@ -18,3 +18,17 @@ function getAvailableLanguages()
 
     return $languages;
 }
+
+/**
+ * Fetches all skins available.
+ */
+function getAvailableSkins()
+{
+    $skins = [];
+
+    foreach (glob(public_path('skins/*'), GLOB_ONLYDIR) as $skin) {
+        $skins[] = array_pop(explode('/', $skin));
+    }
+
+    return $skins;
+}
