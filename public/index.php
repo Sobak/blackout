@@ -73,16 +73,7 @@ $url = $request->url();
 
 $file = substr(str_replace($root, '', $url), 1);
 
-if (!$file) {
-    $file = 'index.php';
-}
-
 $path = base_path("legacy/$file");
-
-// Assume index.php for directories
-if (is_dir($path)) {
-    $path .= '/index.php';
-}
 
 if (is_file($path) && str_contains($file, '..') === false) {
     // Keep Laravel's session alive

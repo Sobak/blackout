@@ -22,6 +22,7 @@ changes made when rewriting.
 - Forgot password
     - Fixed potential SQL Injection
     - This screen as well as the email are now localized
+- `index.php` file
 
 ### Fixed
 - Fixed `E_WARNING` on build attempt

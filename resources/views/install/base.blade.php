@@ -23,8 +23,7 @@
                 </tr>
                 <tr>
                     <td align="center">
-                        {{-- @todo use route once possible --}}
-                        <a href="{{ url('/') }}" accesskey="b">@lang('install.menu.quit')</a>
+                        <a href="{{ route('index') }}" accesskey="b">@lang('install.menu.quit')</a>
                     </td>
                 </tr>
             </table></th>
