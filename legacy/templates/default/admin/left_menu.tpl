@@ -22,7 +22,7 @@
     <tr><td><a href="unbanned.php" accesskey="k">{adm_unban}</a></td></tr>
 
     <tr><th>{tool}</th></tr>
-    <tr><td><a href="chat.php" accesskey="p">{adm_chat}</a></td></tr>
+    <tr><td><a href="chat" accesskey="p">{adm_chat}</a></td></tr>
     <tr><td><a href="statbuilder.php" accesskey="p">{adm_updpt}</a></td></tr>
     <tr><td><a href="fix_queues.php" accesskey="p">{adm_queues}</a></td></tr>
     <tr><td><a href="messagelist.php" accesskey="k">{adm_msg}</a></td></tr>

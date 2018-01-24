@@ -77,12 +77,3 @@ $lang['adm_rz_done']  = " player(s) transferred";
 $lang['adm_rz_conf']  = "Confirmation";
 $lang['adm_rz_text']  = "By clicking Accept, you will reset your Universum. Only the accounts are not being removed. This operation can not be canceled later, so it is advisable to have a backup of your database!";
 $lang['adm_rz_doit']  = "Accept";
-
-$lang['adm_ch_ttle']  = "Chat administration";
-$lang['adm_ch_list']  = "List of messages";
-$lang['adm_ch_clear'] = "clear";
-$lang['adm_ch_idmsg'] = "ID";
-$lang['adm_ch_delet'] = "Remove";
-$lang['adm_ch_play']  = "Player";
-$lang['adm_ch_time']  = "Date";
-$lang['adm_ch_nbs']   = "messages(s) total";

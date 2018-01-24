@@ -22,7 +22,7 @@
     <tr><td><a href="unbanned.php" accesskey="k">@lang('admin/menu.unban')</a></td></tr>
 
     <tr><th>@lang('admin/menu.sections.tools')</th></tr>
-    <tr><td><a href="chat.php" accesskey="p">@lang('admin/menu.chat')</a></td></tr>
+    <tr><td><a href="{{ route('admin.chat') }}" accesskey="p">@lang('admin/menu.chat')</a></td></tr>
     <tr><td><a href="statbuilder.php" accesskey="p">@lang('admin/menu.stats')</a></td></tr>
     <tr><td><a href="fix_queues.php" accesskey="p">@lang('admin/menu.queues')</a></td></tr>
     <tr><td><a href="messagelist.php" accesskey="k">@lang('admin/menu.messages')</a></td></tr>
