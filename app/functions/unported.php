@@ -7,7 +7,7 @@ function getAvailableLanguages()
 {
     $languages = [];
 
-    foreach (glob(base_path('legacy/language/*/lang_info.php')) as $langInfoFile) {
+    foreach (glob(resource_path('lang/*/_info.php')) as $langInfoFile) {
         require $langInfoFile;
 
         $langKey = array_pop(explode('/', dirname($langInfoFile)));

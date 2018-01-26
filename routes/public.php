@@ -13,3 +13,5 @@ Route::post('install/database', 'InstallController@databasePost');
 
 Route::get('login', 'UserController@login')->name('user.login');
 Route::post('login', 'UserController@loginPost');
+
+Route::get('switch-lang/{lang}', 'LanguageController@switch')->name('language.switch');

@@ -50,7 +50,7 @@
                         </b>
                     </center><br>
                     @foreach ($languages as $key => $name)
-                        <a href="lang.php?=lang={{ $key }}">
+                        <a href="{{ route('language.switch', [$key]) }}">
                             <img src="images/lang/{{ $key }}.png" alt="{{ $name }}">
                         </a>
                     @endforeach

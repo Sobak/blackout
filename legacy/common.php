@@ -18,7 +18,7 @@ include($ugamela_root_path . 'includes/constants.php');
 include($ugamela_root_path . 'includes/functions.php');
 include($ugamela_root_path . 'includes/unlocalised.php');
 include($ugamela_root_path . 'includes/todofleetcontrol.php');
-include($ugamela_root_path . 'language/'. DEFAULT_LANG .'/lang_info.php');
+include(resource_path('lang/' . DEFAULT_LANG . '/_info.php'));
 
 if (!defined('INSTALL') || INSTALL !== true) {
     if (file_exists(base_path('.env')) === false || filesize(base_path('.env')) == 0) {

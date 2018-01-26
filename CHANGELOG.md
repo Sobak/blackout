@@ -23,6 +23,7 @@ changes made when rewriting.
     - Fixed potential SQL Injection
     - This screen as well as the email are now localized
 - `index.php` file
+- Language switcher for unauthenticated users
 
 ### Fixed
 - Fixed `E_WARNING` on build attempt

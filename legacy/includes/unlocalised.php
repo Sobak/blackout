@@ -197,17 +197,9 @@ function gettemplate($templatename) {
 // Load language strings
 //
 function includeLang($filename) {
-    global $ugamela_root_path, $lang, $user;
+    global $ugamela_root_path, $lang;
 
-    if ($user['lang'] != '') {
-        $language = $user['lang'];
-    } else {
-        if (isset($_COOKIE['xnova_language'])) {
-            $language = $_COOKIE['xnova_language'];
-        } else {
-            $language = DEFAULT_LANG;
-        }
-    }
+    $language = Auth::user()->lang;
 
     require "$ugamela_root_path/language/$language/$filename.php";
 }
