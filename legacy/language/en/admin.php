@@ -47,18 +47,6 @@ $lang['adm_pl_since'] = "Activit&eacute;";
 $lang['adm_pl_they']  = "Il y a";
 $lang['adm_pl_apla']  = "plan&egrave;te(s) active(s)";
 
-$lang['adm_am_plid']  = "Planet ID";
-$lang['adm_am_done']  = "Done";
-$lang['adm_am_ttle']  = "Add resources";
-$lang['adm_am_add']   = "Add";
-$lang['adm_am_form']  = "Adding form";
-
-$lang['adm_dm_plid'] = "Planet ID";
-$lang['adm_dm_done'] = "Done";
-$lang['adm_dm_ttle'] = "Subtract resources";
-$lang['adm_dm_del']  = "Subtract";
-$lang['adm_dm_form'] = "Subtraction form";
-
 $lang['adm_bn_ttle']  = "Bannir un joueur";
 $lang['adm_bn_plto']  = "Joueur &agrave; bannir";
 $lang['adm_bn_name']  = "Nom du joueur";

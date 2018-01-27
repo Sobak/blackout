@@ -11,8 +11,8 @@
     <tr><th>@lang('admin/menu.sections.players')</th></tr>
     <tr><td><a href="userlist.php" accesskey="a">@lang('admin/menu.players')</a></td></tr>
     <tr><td><a href="paneladmina.php" accesskey="k">@lang('admin/menu.players-search')</a></td></tr>
-    <tr><td><a href="add_money.php" accesskey="k">@lang('admin/menu.resources-add')</a></td></tr>
-    <tr><td><a href="del_money.php" accesskey="k">@lang('admin/menu.resources-sub')</a></td></tr>
+    <tr><td><a href="{{ route('admin.resource.add') }}" accesskey="k">@lang('admin/menu.resources-add')</a></td></tr>
+    <tr><td><a href="{{ route('admin.resource.subtract') }}" accesskey="k">@lang('admin/menu.resources-sub')</a></td></tr>
     <tr><td class="separated"><a href="colonies.php" accesskey="1">@lang('admin/menu.planets')</a></td></tr>
     <tr><td><a href="activeplanet.php" accesskey="k">@lang('admin/menu.planets-active')</a></td></tr>
     <tr><td><a href="colonies.php?type=moons" accesskey="k">@lang('admin/menu.moons')</a></td></tr>

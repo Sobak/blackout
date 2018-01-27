@@ -14,6 +14,9 @@ changes made when rewriting.
     - Date format is now language dependent
 - Admin: Errors
     - Date format is now language dependent
+- Admin Add/Subtract resources
+    - Improved input names
+    - Improved translation
 - Login
 - User authentication
     - Password hashing algorithm has been changed from md5 to bcrypt
