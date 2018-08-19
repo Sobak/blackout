@@ -14,6 +14,10 @@ care of rest, all you need is PHP (with Composer) and MySQL.
 
 > **Warning:** This is not production ready project (neither is XNova, though).
 
+For the final note, this repository does not show the perfect way to refactor old code.
+Doing that properly should start with covering everything with tests so that nothing
+gets actidentially broken (or fixed) along the way.
+
 ## Implementation
 The most cryptic and interesting part of the implementation might be a _proxy_
 between old XNova's code and Laravel application that allows to refactor the

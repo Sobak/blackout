@@ -101,7 +101,7 @@ class InstallController extends Controller
             'email' => $request->get('email'),
             'email_2' => $request->get('email'),
             'lang' => config('app.locale'),
-            'dpath' => 'xnova', // @todo fixme
+            'dpath' => 'blackout', // @todo fixme
             'authlevel' => User::LEVEL_ADMIN,
             'id_planet' => 1,
             'galaxy' => 1,

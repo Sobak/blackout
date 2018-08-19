@@ -4,7 +4,7 @@ $game_config   = array();
 $user          = null;
 $lang          = array();
 
-define('DEFAULT_SKIN' , 'xnova');
+define('DEFAULT_SKIN' , 'blackout');
 define('TEMPLATE_DIR' , 'templates/');
 define('TEMPLATE_NAME', 'default');
 define('DEFAULT_LANG' , 'en');

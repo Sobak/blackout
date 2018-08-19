@@ -26,5 +26,5 @@ function show_message($text, $title = 'Error')
 
 function skin_asset($path, $secure = null)
 {
-    return asset("skins/xnova/$path", $secure); //@fixme
+    return asset("skins/blackout/$path", $secure); //@fixme
 }
