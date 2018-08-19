@@ -3,7 +3,7 @@
 <head>
     <title>{{ $servername }}</title>
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
-    <link rel="stylesheet" href="{{ skin_asset('formate.css') }}">
+    <link rel="stylesheet" href="{{ skin_asset('style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('css/about.css') }}">
 </head>
