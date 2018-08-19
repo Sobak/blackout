@@ -199,7 +199,7 @@ function gettemplate($templatename) {
 function includeLang($filename) {
     global $ugamela_root_path, $lang;
 
-    $language = Auth::user()->lang;
+    $language = App::getLocale();
 
     require "$ugamela_root_path/language/$language/$filename.php";
 }
