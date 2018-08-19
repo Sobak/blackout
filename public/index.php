@@ -73,7 +73,7 @@ $url = $request->url();
 
 $file = substr(str_replace($root, '', $url), 1);
 
-$path = base_path("legacy/$file");
+$path = base_path("xnova/$file");
 
 if (is_file($path) && str_contains($file, '..') === false) {
     // Keep Laravel's session alive
@@ -87,7 +87,7 @@ if (is_file($path) && str_contains($file, '..') === false) {
 
     unset($id);
 
-    chdir(base_path(str_contains($path, '/admin') ? 'legacy/admin' : 'legacy/'));
+    chdir(base_path(str_contains($path, '/admin') ? 'xnova/admin' : 'xnova/'));
 
     require $path;
 } else {
