@@ -4,7 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ## [Unreleased]
-## Ported to Laravel
+
+
+## [0.5.1] - 2018-08-19
+### Ported to Laravel
 This section contains parts of the system which were rewritten using Laravel.
 Generally speaking, with the rewrite should not come any functional changes but
 where it was unavoidable or impractical to avoid the list item denotes most notable
