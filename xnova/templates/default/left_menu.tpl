@@ -49,7 +49,7 @@ function f(target_url) {
     <tr><th>{infog}</th></tr>
     <tr><td>{server_info}</td></tr>
     <tr>
-        <td><center><a href="credit.php" accesskey="T">XNova Team</a>&copy; Copyright 2008</center></td>
+        <td><center><a href="credit.php" accesskey="T">Blackout &amp; XNova Teams</a>&copy; Copyright 2018</center></td>
     </tr>
 </table>
 </div>

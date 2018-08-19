@@ -3,6 +3,6 @@
 return [
     'error' => 'Error',
     'format-datetime' => 'd/m/Y h:i:s',
-    'name' => 'XNova',
+    'name' => 'Blackout',
     'success' => 'Success',
 ];

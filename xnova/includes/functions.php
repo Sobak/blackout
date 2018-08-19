@@ -197,7 +197,7 @@ function ShowLeftMenu($template, array $user)
     $parse['lm_tx_fleet']     = $game_config['fleet_speed'] / 2500;
     $parse['lm_tx_queue']     = MAX_FLEET_OR_DEFS_PER_ROW;
     $parse['server_info']     = parsetemplate(gettemplate('serv_infos'), $parse);
-    $parse['XNovaRelease']    = \App\Services\XNova::VERSION;
+    $parse['XNovaRelease']    = \App\Services\Blackout::VERSION;
     $parse['forum_url']       = $game_config['forum_url'];
     $parse['servername']      = $game_config['game_name'];
 

@@ -14,13 +14,12 @@
 
     <tr><th>@lang('admin/menu.sections.tools')</th></tr>
     <tr><td><a href="statbuilder.php" accesskey="p">@lang('admin/menu.stats')</a></td></tr>
-    <tr><td><a href="fix_queues.php" accesskey="p">@lang('admin/menu.queues')</a></td></tr>
-    <tr><td class="separated"><a href="http://www.xnova.fr/forum/index.php" accesskey="3">@lang('admin/menu.forum')</a></td></tr>
+    <tr><td class="separated"><a href="fix_queues.php" accesskey="p">@lang('admin/menu.queues')</a></td></tr>
     <tr><td><a href="../overview.php" accesskey="i" style="color:red">@lang('admin/menu.back')</a></td></tr>
 
     <tr><th>@lang('admin/menu.sections.info')</th></tr>
     <tr>
-        <td><center><a href="../credit.php" accesskey="T">XNova Team</a>&copy; Copyright 2008</center></td>
+        <td><center><a href="../credit.php" accesskey="T">Blackout &amp; XNova Teams</a>&copy; Copyright 2018</center></td>
     </tr>
 </table>
 </div>

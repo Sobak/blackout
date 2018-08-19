@@ -9,7 +9,7 @@ class LanguageController extends Controller
         if (in_array($lang, array_keys(getAvailableLanguages()))) {
             return redirect()
                 ->route('index')
-                ->cookie('xnova_language', $lang, 60 * 24 * 30);
+                ->cookie('blackout_language', $lang, 60 * 24 * 30);
         }
 
         return redirect()->route('index');

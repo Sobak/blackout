@@ -3,7 +3,7 @@
 namespace App\Http\Composers;
 
 use App\Models\User;
-use App\Services\XNova;
+use App\Services\Blackout;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
@@ -25,7 +25,7 @@ class AdminComposer
             $view->with([
                 'menu' => view($this->menusMap[$user->authlevel], [
                     'servername' => game_config('game_name'),
-                    'version' => XNova::VERSION,
+                    'version' => Blackout::VERSION,
                 ]),
             ]);
         }

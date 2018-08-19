@@ -7,22 +7,22 @@ if (!defined('INSIDE')) {
 // Registration form
 $lang['registry']          = 'Aktywacja';
 $lang['form']              = 'Formularz';
-$lang['Register']          = 'XNova Rejestracja';
-$lang['Multiverse']        = 'XNova';
+$lang['Register']          = 'Blackout Rejestracja';
+$lang['Multiverse']        = 'Blackout';
 $lang['E-Mail']            = 'Adres e-Mail';
 $lang['signup']            = ' Aktywacja ';
 
 // Send
 $lang['mail_welcome']      = 'Dziekujemy za Aktywacja w naszej grze!!!
-Aby siê zalogowaæ wejd¼ tu: ({gameurl})';
+Aby siï¿½ zalogowaï¿½ wejdï¿½ tu: ({gameurl})';
 
 $lang['mail_title']        = 'Aktywacja';
-$lang['thanksforregistry'] = 'Dziêkujemy za Aktywacja!! Na podany mail zosta³y podes³ane informacje :) Pozdro.';
+$lang['thanksforregistry'] = 'Dziï¿½kujemy za Aktywacja!! Na podany mail zostaï¿½y podesï¿½ane informacje :) Pozdro.';
 
 // Errors
 $lang['error_mail']        = 'Niepoprawny E-mail!<br />';
-$lang['error_mailsend']    = 'Mail nie zosta³ wys³any!!';
-$lang['reg_welldone']      = 'Aktywacja zakoñczona poprawnie!!!';
+$lang['error_mailsend']    = 'Mail nie zostaï¿½ wysï¿½any!!';
+$lang['reg_welldone']      = 'Aktywacja zakoï¿½czona poprawnie!!!';
 
 // Created by Perberos. All rights reversed (C) 2006
 // Complet by XNova Team. All rights reversed (C) 2008

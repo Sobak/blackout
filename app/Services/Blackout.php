@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-class XNova
+class Blackout
 {
     const VERSION = '0.6.0-dev';
 }
