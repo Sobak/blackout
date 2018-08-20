@@ -47,9 +47,7 @@ if (Auth::check()) {
     $user->save();
 
     $user = $user->toArray();
-}
 
-if ($user) {
     $dpath = (!$user["dpath"]) ? DEFAULT_SKIN : $user["dpath"];
     $dpath = "skins/$dpath/";
 
@@ -99,4 +97,5 @@ if ($user) {
     $user['new_message'] = doquery("SELECT COUNT(*) AS `count` FROM {{table}} WHERE `message_unread` = 1 AND `message_owner` = '{$user['id']}'", 'messages', true)['count'];
 }
 
+// fixme? this will be null for unauthenticated users
 addTemplateGlobal('dpath', $dpath);
