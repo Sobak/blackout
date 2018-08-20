@@ -32,3 +32,27 @@ function getAvailableSkins()
 
     return $skins;
 }
+
+/**
+ * Make text red.
+ *
+ * @param $n
+ * @return string
+ */
+function colorRed($n) {
+    return '<font color="#ff0000">' . $n . '</font>';
+}
+
+/**
+ * Prettify the number.
+ *
+ * @param $n
+ * @param bool $floor
+ * @return string
+ */
+function pretty_number($n, $floor = true) {
+    if ($floor) {
+        $n = floor($n);
+    }
+    return number_format($n, 0, ",", ".");
+}

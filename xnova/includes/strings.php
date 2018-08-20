@@ -30,19 +30,8 @@ function colorNumber($n, $s = '') {
     return $s;
 }
 
-function colorRed($n) {
-    return '<font color="#ff0000">' . $n . '</font>';
-}
-
 function colorGreen($n) {
     return '<font color="#00ff00">' . $n . '</font>';
-}
-
-function pretty_number($n, $floor = true) {
-    if ($floor) {
-        $n = floor($n);
-    }
-    return number_format($n, 0, ",", ".");
 }
 
 // Created by Perberos. All rights reversed (C) 2006

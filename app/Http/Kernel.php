@@ -58,6 +58,9 @@ class Kernel extends HttpKernel
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
+        'is.game.closed' => \App\Http\Middleware\CheckIfGameClosed::class,
+        'is.user.banned' => \App\Http\Middleware\CheckIfBanned::class,
+        'planet.switch' => \App\Http\Middleware\SwitchPlanet::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
     ];
 }

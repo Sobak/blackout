@@ -25,6 +25,8 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->mapPublicRoutes();
 
+        $this->mapGameRoutes();
+
         $this->mapAdminRoutes();
     }
 
@@ -41,6 +43,21 @@ class RouteServiceProvider extends ServiceProvider
         Route::middleware('web')
              ->namespace($this->namespace)
              ->group(base_path('routes/public.php'));
+    }
+
+    /**
+     * Define the "game" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc
+     * and require authorization.
+     *
+     * @return void
+     */
+    protected function mapGameRoutes()
+    {
+        Route::middleware(['web', 'auth', 'is.game.closed', 'is.user.banned', 'planet.switch'])
+             ->namespace($this->namespace)
+             ->group(base_path('routes/game.php'));
     }
 
     /**

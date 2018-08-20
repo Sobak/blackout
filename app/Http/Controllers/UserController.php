@@ -13,7 +13,7 @@ class UserController extends Controller
     public function forgotPassword()
     {
         return view('user.forgot_password', [
-            'servername' => game_config('game_name'),
+            'servername' => config('blackout.game_name'),
             'title' => trans('user.forgot_password.title'),
         ]);
     }
@@ -39,11 +39,11 @@ class UserController extends Controller
     public function login()
     {
         return view('user.login', [
-            'forum_url' => game_config('forum_url'),
+            'forum_url' => config('blackout.forum_url'),
             'languages' => getAvailableLanguages(),
             'latest_player' => User::orderBy('register_time', 'desc')->first(['username'])['username'],
             'online_count' => User::where('onlinetime', '>', time() - 900)->count(),
-            'servername' => game_config('game_name'),
+            'servername' => config('blackout.game_name'),
             'total_players' => User::count(),
         ]);
     }

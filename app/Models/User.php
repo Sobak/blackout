@@ -8,6 +8,10 @@ class User extends Authenticatable
 {
     public $timestamps = false;
 
+    protected $casts = [
+        'bana' => 'boolean',
+    ];
+
     const LEVEL_PLAYER = 0;
     const LEVEL_OPERATOR = 1;
     const LEVEL_SUPER_OPERATOR = 2;

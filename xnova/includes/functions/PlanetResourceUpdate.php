@@ -20,7 +20,7 @@ function PlanetResourceUpdate ( $CurrentUser, &$CurrentPlanet, $UpdateTime ) {
     $MaxCristalStorage              = $CurrentPlanet['crystal_max']   * MAX_OVERFLOW;
     $MaxDeuteriumStorage            = $CurrentPlanet['deuterium_max'] * MAX_OVERFLOW;
 
-    // Calcul de production linéaire des divers types
+    // Calcul de production linÃ©aire des divers types
     $Caps             = array();
     $BuildTemp        = $CurrentPlanet[ 'temp_max' ];
 

@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ## [Unreleased]
+### Ported game bootstrapping to Laravel
+This version features first in-game controller ported to Laravel. This is
+particullarly important because it also means that the bootstrapping part
+of XNova engine has been ported as well. That includes (re-)calculating
+current resources on the planet, checking if user is banned, handling
+fleets, attacks etc.
+
+This is a fist huge step towards porting actual game content to the
+Laravel framework.
+
+Current version, however, misses things like:
+- handling flying fleets
+- checking if user account is activated
+- handling unread user messages
+
+### Added
+- Added abbility to get game config variables using `config()`
+
 ### Changed
 - Added unique index on `config.config_name`
 - Started to brand script as Blackout

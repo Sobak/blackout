@@ -10,6 +10,8 @@
 <body>
     {!! $menu or '' !!}
 
+    @includeWhen($hasTopbar, 'partials.topbar')
+
     <center>@yield('content')</center>
 </body>
 </html>
