@@ -5,6 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ## [Unreleased]
 ### Changed
+- Added unique index on `config.config_name`
 - Started to brand script as Blackout
 
 ### Fixed
