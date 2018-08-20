@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\GameController;
 use App\Models\Chat;
 use App\Models\User;
 
-class ChatController extends GameController
+class ChatController extends Controller
 {
     public function index()
     {

@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\GameController;
 use App\Models\Planet;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class ResourceController extends GameController
+class ResourceController extends Controller
 {
     public function add()
     {

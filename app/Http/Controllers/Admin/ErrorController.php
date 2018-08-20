@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\GameController;
 use App\Models\Error;
 use App\Models\User;
 
-class ErrorController extends GameController
+class ErrorController extends Controller
 {
     public function index()
     {
