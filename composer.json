@@ -25,8 +25,8 @@
             "database/factories"
         ],
         "files": [
-            "app/functions/helpers.php",
-            "app/functions/unported.php"
+            "app/Support/helpers.php",
+            "app/Support/unported.php"
         ],
         "psr-4": {
             "App\\": "app/"
