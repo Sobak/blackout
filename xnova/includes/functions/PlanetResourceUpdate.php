@@ -7,7 +7,7 @@
  * @copyright 2008 By Chlorel for XNova
  */
 
-function PlanetResourceUpdate ( $CurrentUser, &$CurrentPlanet, $UpdateTime, $Simul = false ) {
+function PlanetResourceUpdate ( $CurrentUser, &$CurrentPlanet, $UpdateTime ) {
     global $ProdGrid, $resource, $reslist, $game_config;
 
     // Mise a jour de l'espace de stockage
