@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ### Fixed
 - Fixed loading language files for unauthenticated users
+- Public controllers (e.g. login) now redirect to installer if `.env` is missing
 
 ## [0.5.1] - 2018-08-19
 ### Ported to Laravel
