@@ -23,7 +23,7 @@ class PasswordReset extends Mailable
 
     public function build()
     {
-        $servername = game_config('game_name');
+        $servername = config('blackout.game_name');
 
         return $this->subject(trans('emails.password_reset.subject', ['servername' => $servername]))
             ->view('emails.password_reset', [

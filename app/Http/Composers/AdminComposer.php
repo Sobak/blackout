@@ -24,7 +24,7 @@ class AdminComposer
         if (in_array($view->getName(), array_values($this->menusMap)) === false) {
             $view->with([
                 'menu' => view($this->menusMap[$user->authlevel], [
-                    'servername' => game_config('game_name'),
+                    'servername' => config('blackout.game_name'),
                     'version' => Blackout::VERSION,
                 ]),
             ]);
