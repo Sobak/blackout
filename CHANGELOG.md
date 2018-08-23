@@ -9,7 +9,7 @@ This version features first in-game controller ported to Laravel. This is
 particullarly important because it also means that the bootstrapping part
 of XNova engine has been ported as well. That includes (re-)calculating
 current resources on the planet, checking if user is banned, handling
-fleets, attacks etc.
+fleets, attacks, logging user visit etc.
 
 This is a fist huge step towards porting actual game content to the
 Laravel framework.

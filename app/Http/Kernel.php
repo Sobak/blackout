@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\LogUserVisit;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -41,6 +42,7 @@ class Kernel extends HttpKernel
 
         'game' => [
             'auth',
+            \App\Http\Middleware\LogUserVisit::class,
             \App\Http\Middleware\CheckIfGameClosed::class,
             \App\Http\Middleware\CheckIfBanned::class,
             \App\Http\Middleware\SwitchPlanet::class,
