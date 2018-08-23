@@ -59,34 +59,37 @@ class Planet
         $planet['crystal_max']   = (floor (Constants::BASE_STORAGE_SIZE * pow (1.5, $planet[ $resource[23] ] ))) * (1 + ($user['rpg_stockeur'] * 0.5));
         $planet['deuterium_max'] = (floor (Constants::BASE_STORAGE_SIZE * pow (1.5, $planet[ $resource[24] ] ))) * (1 + ($user['rpg_stockeur'] * 0.5));
 
-        // Calculate max storage space (with possible overflows)
-        $MaxMetalStorage         = $planet['metal_max']     * Constants::MAX_OVERFLOW;
-        $MaxCristalStorage       = $planet['crystal_max']   * Constants::MAX_OVERFLOW;
-        $MaxDeuteriumStorage     = $planet['deuterium_max'] * Constants::MAX_OVERFLOW;
+        // Calculate max storage space (include possible overflows)
+        $MaxMetalStorage     = $planet['metal_max']     * Constants::MAX_STORAGE_OVERFLOW;
+        $MaxCristalStorage   = $planet['crystal_max']   * Constants::MAX_STORAGE_OVERFLOW;
+        $MaxDeuteriumStorage = $planet['deuterium_max'] * Constants::MAX_STORAGE_OVERFLOW;
 
         // Linear production calculation of various types
-        $Caps = [];
-        $BuildTemp = $planet->temp_max;
-        $ProdGrid = Constants::getProductionGrid();
+        $caps = [];
+        $multiplier = config('blackout.resource_multiplier');
 
-        for ($ProdID = 0; $ProdID < 300; $ProdID++) {
-            if (in_array($ProdID, Constants::$resourcesProd)) {
-                // These variables are used in eval()s below... :(
-                $BuildLevelFactor = $planet[ $resource[$ProdID]."_porcent" ];
-                $BuildLevel       = $planet[ $resource[$ProdID] ];
+        foreach (Constants::getProductionGrid() as $id => $data) {
+            $level = $planet[$resource[$id]];
+            $factor = $planet[$resource[$id] . '_porcent'];
 
-                $Caps['metal_perhour']     +=  floor( eval  ( $ProdGrid[$ProdID]['formule']['metal']     ) * ( config('blackout.resource_multiplier') ) * ( 1 + ( $user['rpg_geologue']  * 0.05 ) ) );
-                $Caps['crystal_perhour']   +=  floor( eval  ( $ProdGrid[$ProdID]['formule']['crystal']   ) * ( config('blackout.resource_multiplier') ) * ( 1 + ( $user['rpg_geologue']  * 0.05 ) ) );
-                $Caps['deuterium_perhour'] +=  floor( eval  ( $ProdGrid[$ProdID]['formule']['deuterium'] ) * ( config('blackout.resource_multiplier') ) * ( 1 + ( $user['rpg_geologue']  * 0.05 ) ) );
-                if ($ProdID < 4) {
-                    $Caps['energy_used']   +=  floor( eval  ( $ProdGrid[$ProdID]['formule']['energy']    ) * ( config('blackout.resource_multiplier') ) * ( 1 + ( $user['rpg_ingenieur'] * 0.05 ) ) );
-                } elseif ($ProdID >= 4 ) {
-                    $Caps['energy_max']    +=  floor( eval  ( $ProdGrid[$ProdID]['formule']['energy']    ) * ( config('blackout.resource_multiplier') ) * ( 1 + ( $user['rpg_ingenieur'] * 0.05 ) ) );
-                }
+            // Execute formula callbacks here to increase readability
+            $formulaMetal = $data['formula']['metal']($level, $factor, $planet->temp_max);
+            $formulaCrystal = $data['formula']['crystal']($level, $factor, $planet->temp_max);
+            $formulaDeuterium = $data['formula']['deuterium']($level, $factor, $planet->temp_max);
+            $formulaEnergy = $data['formula']['energy']($level, $factor, $planet->temp_max);
+
+            $caps['metal_perhour']     += floor($formulaMetal     * $multiplier * (1 + ($user['rpg_geologue']  * 0.05)));
+            $caps['crystal_perhour']   += floor($formulaCrystal   * $multiplier * (1 + ($user['rpg_geologue']  * 0.05)));
+            $caps['deuterium_perhour'] += floor($formulaDeuterium * $multiplier * (1 + ($user['rpg_geologue']  * 0.05)));
+
+            if ($id < 4) {
+                $caps['energy_used'] += floor($formulaEnergy * $multiplier * (1 + ($user['rpg_ingenieur'] * 0.05)));
+            } elseif ($id >= 4 ) {
+                $caps['energy_max']  += floor($formulaEnergy * $multiplier * (1 + ($user['rpg_ingenieur'] * 0.05)));
             }
         }
 
-        // There is no basic production on a moon (nor any production)
+        // There is no basic production on a moon (or any production)
         if ($planet['planet_type'] == 3) {
             ConfigRepository::set('metal_basic_income', 0);
             ConfigRepository::set('crystal_basic_income', 0);
@@ -98,11 +101,11 @@ class Planet
             $planet['energy_used']          = 0;
             $planet['energy_max']           = 0;
         } else {
-            $planet['metal_perhour']        = $Caps['metal_perhour'];
-            $planet['crystal_perhour']      = $Caps['crystal_perhour'];
-            $planet['deuterium_perhour']    = $Caps['deuterium_perhour'];
-            $planet['energy_used']          = $Caps['energy_used'];
-            $planet['energy_max']           = $Caps['energy_max'];
+            $planet['metal_perhour']        = $caps['metal_perhour'];
+            $planet['crystal_perhour']      = $caps['crystal_perhour'];
+            $planet['deuterium_perhour']    = $caps['deuterium_perhour'];
+            $planet['energy_used']          = $caps['energy_used'];
+            $planet['energy_max']           = $caps['energy_max'];
         }
 
         // Calculate last update time

@@ -47,7 +47,7 @@ class BaseComposer
                 'resources' => config('blackout.resource_multiplier'),
                 'queue' => Constants::MAX_FLEET_OR_DEFS_PER_ROW,
             ],
-            'servername' => game_config('game_name'),
+            'servername' => config('blackout.game_name'),
             'user' => $user,
             'version' => Blackout::VERSION,
         ]);
