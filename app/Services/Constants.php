@@ -10,7 +10,7 @@ class Constants
     /** @var float Maximum storage overflow ratio (1 for 100%, 1.1 for 110% etc) */
     const MAX_STORAGE_OVERFLOW = 1.1;
 
-    /** @vars int Maximum storage size */
+    /** @var int Maximum storage size */
     const BASE_STORAGE_SIZE = 1000000;
 
     /** @var array Map resource ID to correspoding database field */
