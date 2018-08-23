@@ -17,7 +17,6 @@ Laravel framework.
 Current version, however, misses things like:
 - handling flying fleets
 - checking if user account is activated
-- handling unread user messages
 
 ### Added
 - Added abbility to get game config variables using `config()`

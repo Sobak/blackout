@@ -59,12 +59,17 @@ class TopbarComposer
             $deuterium = colorRed($deuterium);
         }
 
-        // @todo messages
+        if ($user->unread_messages_count > 0) {
+            $messages = '<a href="messages.php">[ ' . $user->unread_messages_count . ' ]</a>';
+        } else {
+            $messages = 0;
+        }
 
         $view->with([
             'crystal' => $crystal,
             'deuterium' => $deuterium,
             'energy' => $energy,
+            'messages' => $messages,
             'metal' => $metal,
             'planet' => $planet,
             'planetList' => $planetList,

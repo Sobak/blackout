@@ -41,7 +41,7 @@
                             <td class="header" align="center" width="140"><font>{!! $crystal !!}</font></td>
                             <td class="header" align="center" width="140"><font>{!! $deuterium !!}</font></td>
                             <td class="header" align="center" width="140"><font>{!! $energy !!}</font></td>
-                            <td class="header" align="center" width="140"><font>0</font></td>
+                            <td class="header" align="center" width="140"><font>{!! $messages !!}</font></td>
                         </tr>
                         </tbody>
                     </table>
