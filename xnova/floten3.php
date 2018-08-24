@@ -232,7 +232,7 @@ if (($user[$resource[108]] + 1) <= $ActualFleets) {
     message("Pas de slot disponible", "Erreur", "fleet.php", 1);
 }
 
-if ($_POST['resource1'] + $_POST['resource2'] + $_POST['resource3'] < 1 AND $_POST['mission'] == 3) {
+if (intval($_POST['resource1']) + intval($_POST['resource2']) + intval($_POST['resource3']) < 1 AND $_POST['mission'] == 3) {
     message("<font color=\"lime\"><b>".$lang['fl_noenoughtgoods']."</b></font>", $lang['type_mission'][3], "fleet.php", 1);
 }
 if ($_POST['mission'] != 15) {
