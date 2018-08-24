@@ -8,6 +8,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 - Added abbility to get game config variables using `config()`
 
 ### Changed
+- Account activation reminder is only shown in overview now
+- Account deletion reminder is only shown in overview now
 - Added unique index on `config.config_name`
 - Started to brand script as Blackout
 

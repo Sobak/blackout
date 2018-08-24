@@ -125,24 +125,6 @@ function display($content, $title = '', $hasNavigation = true, $metatags = '') {
 
     if ($hasNavigation) {
         $DisplayPage .= ShowTopNavigationBar($user, $planetrow);
-
-        if ($user['aktywnosc'] == 1) {
-            $activationDate = date('d.m.Y H:i', $user['time_aktyw']);
-
-            $DisplayPage .= message_simple(
-                sprintf($lang['sys_activate_acc_text'], $activationDate),
-                $lang['sys_activate_acc_title']
-            );
-        }
-
-        if ($user['db_deaktjava'] == 1) {
-            $deletionDate = date('d.m.Y H:i', $user['deltime']);
-
-            $DisplayPage .= message_simple(
-                sprintf($lang['sys_acc_deletion_text'], $deletionDate),
-                $lang['sys_acc_deletion_title']
-            );
-        }
     }
 
     $DisplayPage .= "<center>\n". $content ."\n</center>\n";

@@ -96,6 +96,22 @@ switch ($mode) {
         break;
 
     default:
+        // --- Account status messages -------------------------------------------------------------------
+        $AccountStatusMessage = '';
+
+        if ($user['aktywnosc'] == 1) {
+            $activationDate = date('d.m.Y H:i', $user['time_aktyw']);
+
+            $AccountStatusMessage .= '<tr><th colspan="4">' . sprintf($lang['ov_acc_activate'], $activationDate) . '</th></tr>';
+        }
+
+        if ($user['db_deaktjava'] == 1) {
+            $deletionDate = date('d.m.Y H:i', $user['deltime']);
+
+            $AccountStatusMessage .= '<tr><th colspan="4">' . sprintf($lang['ov_acc_deletion'], $deletionDate) . '</th></tr>';
+        }
+        // -----------------------------------------------------------------------------------------------
+
         // --- Gestion des messages ----------------------------------------------------------------------
         $Have_new_message = "";
         if ($user['new_message'] != 0) {
@@ -353,9 +369,9 @@ switch ($mode) {
         $parse['fleet_list']  = $flotten;
         $parse['energy_used'] = $planetrow["energy_max"] - $planetrow["energy_used"];
 
+        $parse['AccountStatusMessage']  = $AccountStatusMessage;
         $parse['Have_new_message']      = $Have_new_message;
         $parse['Have_new_level_mineur'] = $HaveNewLevelMineur;
-        $parse['Have_new_level_raid']   = $HaveNewLevelRaid;
         $parse['time']                  = date("D M d H:i:s");
         $parse['planet_image']          = $planetrow['image'];
         $parse['anothers_planets']      = $AllPlanets;
