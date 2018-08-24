@@ -30,12 +30,9 @@ class TopbarComposer
             $planetList .= '&amp;mode=' . request()->query('mode');
             $planetList .= '&amp;re=0">';
 
-            // Planet name and coordinates
-            $planetList .= $planetOption->name;
-            $planetList .= '&nbsp;['. $planetOption->galaxy . ':';
-            $planetList .= $planetOption->system . ':';
-            $planetList .= $planetOption->planet;
-            $planetList .= ']&nbsp;&nbsp;</option>';
+            $planetList .= $planetOption->name . '&nbsp;';
+            $planetList .= coordinates($planetOption);
+            $planetList .= '&nbsp;&nbsp;</option>';
         }
 
         // Resources numbers

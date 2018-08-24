@@ -20,6 +20,7 @@ Current version, however, misses things like:
 
 ### Added
 - Added abbility to get game config variables using `config()`
+- Added `coordinates()` helper to quickly get human readable coords of almost any row
 
 ### Changed
 - Added unique index on `config.config_name`

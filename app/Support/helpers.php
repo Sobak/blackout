@@ -1,5 +1,17 @@
 <?php
 
+/**
+ * Print planet/player/moon coordinates in human readable form.
+ *
+ * @param mixed $row Any entity which can be read as array and
+ *                   has valid set of keys.
+ * @return string
+ */
+function coordinates($row)
+{
+    return sprintf('[%d:%d:%d]', $row['galaxy'], $row['system'], $row['planet']);
+}
+
 // @todo revisit
 // once view composer loading navigation etc will be ready this function should
 // replace old message()
