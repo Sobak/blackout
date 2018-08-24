@@ -96,3 +96,7 @@ $lang['ov_fleet_from_expe'] = "Una %s proveniente dalla regione %s %s ritorna %s
 $lang['ov_debris_to'] = "un Campo di detriti";
 $lang['ov_expe_to'] = "inesplorato";
 $lang['ov_expe_from'] = "dalla regione";
+
+// Account status messages
+$lang['ov_acc_activate'] = "Please activate your account. This can only be done before %s";
+$lang['ov_acc_deletion'] = "You are in account deletion mode. Your account will be removed on %s unless you change the decision in options.";

@@ -6,9 +6,9 @@
         <a href="overview.php?mode=renameplanet" title="{Planet_menu}">{Planet} "{planet_name}"</a> ({user_username})
     </td>
 </tr>
+{AccountStatusMessage}
 {Have_new_message}
 {Have_new_level_mineur}
-{Have_new_level_raid}
 <tr>
     <th>{Server_time}</th>
     <th colspan=3>{time}</th>

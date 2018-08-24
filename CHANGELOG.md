@@ -23,6 +23,8 @@ Current version, however, misses things like:
 - Added `coordinates()` helper to quickly get human readable coords of almost any row
 
 ### Changed
+- Account activation reminder is only shown in overview now
+- Account deletion reminder is only shown in overview now
 - Added unique index on `config.config_name`
 - Started to brand script as Blackout
 
