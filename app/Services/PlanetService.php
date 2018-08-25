@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\Planet;
 use App\Models\User;
+use App\Utils\ConstantsUtils;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config as ConfigRepository;
 
@@ -53,22 +54,22 @@ class PlanetService
 
     public function updateResources(User $user, Planet $planet, $updateTime)
     {
-        $resource = Constants::$resourcesMap;
+        $resource = ConstantsUtils::$resourcesMap;
 
-        $planet['metal_max']     = (floor (Constants::BASE_STORAGE_SIZE * pow (1.5, $planet[ $resource[22] ] ))) * (1 + ($user['rpg_stockeur'] * 0.5));
-        $planet['crystal_max']   = (floor (Constants::BASE_STORAGE_SIZE * pow (1.5, $planet[ $resource[23] ] ))) * (1 + ($user['rpg_stockeur'] * 0.5));
-        $planet['deuterium_max'] = (floor (Constants::BASE_STORAGE_SIZE * pow (1.5, $planet[ $resource[24] ] ))) * (1 + ($user['rpg_stockeur'] * 0.5));
+        $planet['metal_max']     = (floor (ConstantsUtils::BASE_STORAGE_SIZE * pow (1.5, $planet[ $resource[22] ] ))) * (1 + ($user['rpg_stockeur'] * 0.5));
+        $planet['crystal_max']   = (floor (ConstantsUtils::BASE_STORAGE_SIZE * pow (1.5, $planet[ $resource[23] ] ))) * (1 + ($user['rpg_stockeur'] * 0.5));
+        $planet['deuterium_max'] = (floor (ConstantsUtils::BASE_STORAGE_SIZE * pow (1.5, $planet[ $resource[24] ] ))) * (1 + ($user['rpg_stockeur'] * 0.5));
 
         // Calculate max storage space (include possible overflows)
-        $MaxMetalStorage     = $planet['metal_max']     * Constants::MAX_STORAGE_OVERFLOW;
-        $MaxCristalStorage   = $planet['crystal_max']   * Constants::MAX_STORAGE_OVERFLOW;
-        $MaxDeuteriumStorage = $planet['deuterium_max'] * Constants::MAX_STORAGE_OVERFLOW;
+        $MaxMetalStorage     = $planet['metal_max'] * ConstantsUtils::MAX_STORAGE_OVERFLOW;
+        $MaxCristalStorage   = $planet['crystal_max'] * ConstantsUtils::MAX_STORAGE_OVERFLOW;
+        $MaxDeuteriumStorage = $planet['deuterium_max'] * ConstantsUtils::MAX_STORAGE_OVERFLOW;
 
         // Linear production calculation of various types
         $caps = [];
         $multiplier = config('blackout.resource_multiplier');
 
-        foreach (Constants::getProductionGrid() as $id => $data) {
+        foreach (ConstantsUtils::getProductionGrid() as $id => $data) {
             $level = $planet[$resource[$id]];
             $factor = $planet[$resource[$id] . '_porcent'];
 
@@ -185,7 +186,7 @@ class PlanetService
 
     public function verifyUsedFields(Planet $planet)
     {
-        $resource =  Constants::$resourcesMap;
+        $resource =  ConstantsUtils::$resourcesMap;
 
         // All buildings
         $total  = $planet[$resource[1]]  + $planet[$resource[2]]  + $planet[$resource[3]] ;

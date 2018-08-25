@@ -4,7 +4,7 @@ namespace App\Http\Composers;
 
 use App\Models\User;
 use App\Services\BlackoutService;
-use App\Services\Constants;
+use App\Utils\ConstantsUtils;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
@@ -45,7 +45,7 @@ class BaseComposer
                 'fleet' => config('blackout.fleet_speed') / 2500,
                 'game' => config('blackout.game_speed') / 2500,
                 'resources' => config('blackout.resource_multiplier'),
-                'queue' => Constants::MAX_FLEET_OR_DEFS_PER_ROW,
+                'queue' => ConstantsUtils::MAX_FLEET_OR_DEFS_PER_ROW,
             ],
             'servername' => config('blackout.game_name'),
             'user' => $user,

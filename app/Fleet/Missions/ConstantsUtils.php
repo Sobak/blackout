@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Services;
+namespace App\Utils;
 
-class Constants
+class ConstantsUtils
 {
     /** @var int Maximum number of elements in a fleet build list line and defenses */
     const MAX_FLEET_OR_DEFS_PER_ROW = 1000;

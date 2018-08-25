@@ -4,12 +4,12 @@ namespace App\Fleet\Missions;
 
 use App\Models\Fleet;
 use App\Models\Planet;
-use App\Services\FleetService;
 use App\Services\MessageService;
+use App\Utils\FleetUtils;
 
 class Transport extends AbstractMission
 {
-    protected function arrival(Fleet $fleet, FleetService $service)
+    protected function arrival(Fleet $fleet)
     {
         $sender = Planet::where('galaxy', $fleet->fleet_start_galaxy)
                         ->where('system', $fleet->fleet_start_system)
@@ -23,7 +23,7 @@ class Transport extends AbstractMission
                         ->where('planet_type', $fleet->fleet_end_type)
                         ->first();
 
-        $service->storeGoodsToPlanet($fleet, false);
+        FleetUtils::storeGoodsToPlanet($fleet, false);
 
         $message = sprintf(
             trans('fleets.messages.transport.owner'),
@@ -56,7 +56,7 @@ class Transport extends AbstractMission
         $fleet->save();
     }
 
-    protected function return(Fleet $fleet, FleetService $service)
+    protected function return(Fleet $fleet)
     {
         $sender = Planet::where('galaxy', $fleet->fleet_start_galaxy)
                         ->where('system', $fleet->fleet_start_system)
@@ -72,7 +72,7 @@ class Transport extends AbstractMission
 
         MessageService::send($fleet->fleet_owner, 0, trans('fleets.messages.sender_tower'), 5, trans('fleets.messages.subject_back'), $message, $fleet->fleet_end_time);
 
-        $service->restoreFleetToPlanet($fleet, true);
+        FleetUtils::restoreFleetToPlanet($fleet, true);
 
         $fleet->delete();
     }
