@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\Blackout;
+use App\Services\BlackoutService;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -14,7 +14,7 @@ class Controller extends BaseController
 
     public function callAction($method, $parameters)
     {
-        (new Blackout())->bootstrapGame();
+        (new BlackoutService())->bootstrapGame();
 
         return parent::callAction($method, $parameters);
     }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Middleware;
 
-use App\Services\Planet;
+use App\Services\PlanetService;
 use Closure;
 
 class SwitchPlanet
@@ -16,7 +16,7 @@ class SwitchPlanet
      */
     public function handle($request, Closure $next)
     {
-        (new Planet())->setCurrent($request);
+        (new PlanetService())->setCurrent($request);
 
         return $next($request);
     }

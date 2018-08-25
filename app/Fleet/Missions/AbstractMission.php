@@ -3,17 +3,17 @@
 namespace App\Fleet\Missions;
 
 use App\Models\Fleet;
-use App\Services\Fleets;
+use App\Services\FleetService;
 
 abstract class AbstractMission
 {
     /** @var Fleet */
     protected $fleet;
 
-    /** @var Fleets */
+    /** @var FleetService */
     protected $service;
 
-    public function __construct(Fleet $fleet, Fleets $service)
+    public function __construct(Fleet $fleet, FleetService $service)
     {
         $this->fleet = $fleet;
         $this->service = $service;
@@ -28,7 +28,7 @@ abstract class AbstractMission
         }
     }
 
-    protected abstract function arrival(Fleet $fleet, Fleets $service);
+    protected abstract function arrival(Fleet $fleet, FleetService $service);
 
-    protected abstract function return(Fleet $fleet, Fleets $service);
+    protected abstract function return(Fleet $fleet, FleetService $service);
 }

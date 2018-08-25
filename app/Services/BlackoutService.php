@@ -2,9 +2,9 @@
 
 namespace App\Services;
 
-use App\Models\Planet as PlanetModel;
+use App\Models\Planet;
 
-class Blackout
+class BlackoutService
 {
     const VERSION = '0.6.0-dev';
 
@@ -18,8 +18,8 @@ class Blackout
             return;
         }
 
-        $fleetsService = new Fleets();
-        $planetService = new Planet();
+        $fleetsService = new FleetService();
+        $planetService = new PlanetService();
 
         // Handle flying fleets
         $fleetsService->handleFlying();
@@ -30,6 +30,6 @@ class Blackout
         $user = auth()->user();
 
         // Verify number of used fields on current planet
-        $planetService->verifyUsedFields(PlanetModel::find($user->current_planet));
+        $planetService->verifyUsedFields(Planet::find($user->current_planet));
     }
 }

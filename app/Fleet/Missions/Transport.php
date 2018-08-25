@@ -4,12 +4,12 @@ namespace App\Fleet\Missions;
 
 use App\Models\Fleet;
 use App\Models\Planet;
-use App\Services\Fleets;
-use App\Services\Messages;
+use App\Services\FleetService;
+use App\Services\MessageService;
 
 class Transport extends AbstractMission
 {
-    protected function arrival(Fleet $fleet, Fleets $service)
+    protected function arrival(Fleet $fleet, FleetService $service)
     {
         $sender = Planet::where('galaxy', $fleet->fleet_start_galaxy)
                         ->where('system', $fleet->fleet_start_system)
@@ -33,7 +33,7 @@ class Transport extends AbstractMission
             $fleet->fleet_resource_deuterium, trans('resources.deuterium')
         );
 
-        Messages::send($sender->id_owner, 0, trans('fleets.messages.sender_tower'), 5, trans('fleets.messages.transport.subject'), $message, $fleet->fleet_start_time);
+        MessageService::send($sender->id_owner, 0, trans('fleets.messages.sender_tower'), 5, trans('fleets.messages.transport.subject'), $message, $fleet->fleet_start_time);
 
         if ($target->id_owner != $sender->id_owner) {
             $message = sprintf(
@@ -45,7 +45,7 @@ class Transport extends AbstractMission
                 $fleet->fleet_resource_deuterium, trans('resources.deuterium')
             );
 
-            Messages::send($target->id_owner, 0, trans('fleets.messages.sender_tower'), 5, trans('fleets.messages.transport.subject'), $message, $fleet->fleet_start_time);
+            MessageService::send($target->id_owner, 0, trans('fleets.messages.sender_tower'), 5, trans('fleets.messages.transport.subject'), $message, $fleet->fleet_start_time);
         }
 
         $fleet->fleet_resource_metal = 0;
@@ -56,7 +56,7 @@ class Transport extends AbstractMission
         $fleet->save();
     }
 
-    protected function return(Fleet $fleet, Fleets $service)
+    protected function return(Fleet $fleet, FleetService $service)
     {
         $sender = Planet::where('galaxy', $fleet->fleet_start_galaxy)
                         ->where('system', $fleet->fleet_start_system)
@@ -70,7 +70,7 @@ class Transport extends AbstractMission
             GetStartAdressLink($fleet, '')
         );
 
-        Messages::send($fleet->fleet_owner, 0, trans('fleets.messages.sender_tower'), 5, trans('fleets.messages.subject_back'), $message, $fleet->fleet_end_time);
+        MessageService::send($fleet->fleet_owner, 0, trans('fleets.messages.sender_tower'), 5, trans('fleets.messages.subject_back'), $message, $fleet->fleet_end_time);
 
         $service->restoreFleetToPlanet($fleet, true);
 

@@ -3,7 +3,7 @@
 namespace App\Http\Composers;
 
 use App\Models\User;
-use App\Services\Blackout;
+use App\Services\BlackoutService;
 use App\Services\Constants;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
@@ -49,7 +49,7 @@ class BaseComposer
             ],
             'servername' => config('blackout.game_name'),
             'user' => $user,
-            'version' => Blackout::VERSION,
+            'version' => BlackoutService::VERSION,
         ]);
     }
 }

@@ -2,18 +2,18 @@
 
 namespace App\Services;
 
-use App\Models\Planet as PlanetModel;
-use App\Models\User as UserModel;
+use App\Models\Planet;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config as ConfigRepository;
 
-class Planet
+class PlanetService
 {
-    public function getSortedList(UserModel $user, $withoutDestroyed = false)
+    public function getSortedList(User $user, $withoutDestroyed = false)
     {
         $order = $user->planet_sort_order == 1 ? 'DESC' : 'ASC';
 
-        $planets = PlanetModel::where('id_owner', $user->id);
+        $planets = Planet::where('id_owner', $user->id);
 
         if ($withoutDestroyed) {
             $planets->where('destruyed', 0);
@@ -42,7 +42,7 @@ class Planet
             /** @var \App\Models\User $user */
             $user = auth()->user();
 
-            $validPlanet = PlanetModel::where('id', $targetPlanet)->where('id_owner', $user->id)->exists();
+            $validPlanet = Planet::where('id', $targetPlanet)->where('id_owner', $user->id)->exists();
 
             if ($validPlanet) {
                 $user->current_planet = $targetPlanet;
@@ -51,7 +51,7 @@ class Planet
         }
     }
 
-    public function updateResources(UserModel $user, PlanetModel $planet, $updateTime)
+    public function updateResources(User $user, Planet $planet, $updateTime)
     {
         $resource = Constants::$resourcesMap;
 
@@ -183,7 +183,7 @@ class Planet
         $planet->save();
     }
 
-    public function verifyUsedFields(PlanetModel $planet)
+    public function verifyUsedFields(Planet $planet)
     {
         $resource =  Constants::$resourcesMap;
 

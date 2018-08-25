@@ -10,7 +10,7 @@ use App\Models\Planet;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\DB;
 
-class Fleets
+class FleetService
 {
     public function handleFlying()
     {

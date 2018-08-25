@@ -20,7 +20,7 @@ $PageTPL  = gettemplate('admin/overview_body');
 $RowsTPL  = gettemplate('admin/overview_rows');
 
 $parse                      = $lang;
-$parse['adm_ov_data_yourv'] = colorRed(\App\Services\Blackout::VERSION);
+$parse['adm_ov_data_yourv'] = colorRed(\App\Services\BlackoutService::VERSION);
 
 $Last15Mins = doquery("SELECT * FROM {{table}} WHERE `onlinetime` >= '". (time() - 15 * 60) ."' ORDER BY `". $TypeSort ."` ASC;", 'users');
 $Count      = 0;

@@ -101,7 +101,7 @@ class Constants
      * Return grid defining costs and production formulas for every resource
      * able to creating goods. Keyed by respective resource ID. For the usage
      *
-     * @see \App\Services\Planet::updateResources()
+     * @see \App\Services\PlanetService::updateResources()
      *
      * @return array
      */

@@ -2,9 +2,9 @@
 
 namespace App\Http\Composers;
 
-use App\Models\Planet as PlanetModel;
+use App\Models\Planet;
 use App\Models\User;
-use App\Services\Planet;
+use App\Services\PlanetService;
 use Illuminate\View\View;
 
 class TopbarComposer
@@ -13,9 +13,9 @@ class TopbarComposer
     {
         /** @var User $user */
         $user = auth()->user();
-        $planet = PlanetModel::find($user->current_planet);
+        $planet = Planet::find($user->current_planet);
 
-        $planetService = new Planet();
+        $planetService = new PlanetService();
 
         $planetService->updateResources($user, $planet, time());
 

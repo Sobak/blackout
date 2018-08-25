@@ -4,7 +4,7 @@ namespace App\Services;
 
 use App\Models\Message;
 
-class Messages
+class MessageService
 {
     // @todo type consts
     public static function send($recipientID, $senderID, $senderName, $type, $subject, $body, $time = null)

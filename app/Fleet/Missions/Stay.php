@@ -4,12 +4,12 @@ namespace App\Fleet\Missions;
 
 use App\Models\Fleet;
 use App\Models\Planet;
-use App\Services\Fleets;
-use App\Services\Messages;
+use App\Services\FleetService;
+use App\Services\MessageService;
 
 class Stay extends AbstractMission
 {
-    protected function arrival(Fleet $fleet, Fleets $service)
+    protected function arrival(Fleet $fleet, FleetService $service)
     {
         $target = Planet::where('galaxy', $fleet->fleet_end_galaxy)
                         ->where('system', $fleet->fleet_end_system)
@@ -28,14 +28,14 @@ class Stay extends AbstractMission
         $targetMessage = trans('fleets.messages.stay.start') ."<a href=\"galaxy.php?mode=3&galaxy=". $fleet->fleet_end_galaxy ."&system=". $fleet->fleet_end_system ."\">";
         $targetMessage .= $targetCoords . "</a>". trans('fleets.messages.stay.end') ."<br />". $targetGoods;
 
-        Messages::send($target->id_owner, 0, trans('fleets.messages.sender_hq'), 5, trans('fleets.messages.stay.subject'), $targetMessage, $fleet->fleet_start_time);
+        MessageService::send($target->id_owner, 0, trans('fleets.messages.sender_hq'), 5, trans('fleets.messages.stay.subject'), $targetMessage, $fleet->fleet_start_time);
 
         $service->restoreFleetToPlanet($fleet, false);
 
         $fleet->delete();
     }
 
-    protected function return(Fleet $fleet, Fleets $service)
+    protected function return(Fleet $fleet, FleetService $service)
     {
         $targetCoords = sprintf(trans('planet.coords'), $fleet->fleet_start_galaxy, $fleet->fleet_start_system, $fleet->fleet_start_planet);
         $targetGoods = sprintf(
@@ -48,7 +48,7 @@ class Stay extends AbstractMission
         $targetMessage = trans('fleets.messages.stay.back') ."<a href=\"galaxy.php?mode=3&galaxy=". $fleet->fleet_start_galaxy ."&system=". $fleet->fleet_start_system ."\">";
         $targetMessage .= $targetCoords . "</a>". trans('fleets.messages.stay.back_end') ."<br />". $targetGoods;
 
-        Messages::send($fleet->fleet_owner, 0, trans('fleets.messages.sender_hq'), 5, trans('fleets.messages.subject_back'), $targetMessage, $fleet->fleet_end_time);
+        MessageService::send($fleet->fleet_owner, 0, trans('fleets.messages.sender_hq'), 5, trans('fleets.messages.subject_back'), $targetMessage, $fleet->fleet_end_time);
 
         $service->restoreFleetToPlanet($fleet, true);
 
