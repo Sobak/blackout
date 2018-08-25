@@ -2,6 +2,8 @@
 
 namespace App\Services;
 
+use App\Fleet\Missions\AbstractMission;
+use App\Fleet\Missions\Stay;
 use App\Models\Fleet;
 use App\Models\Planet;
 use Illuminate\Database\Eloquent\Builder;
@@ -38,6 +40,39 @@ class Fleets
         }
     }
 
+    public function restoreFleetToPlanet(Fleet $fleet, $start = true)
+    {
+        $resource = Constants::$resourcesMap;
+
+        if ($start) {
+            $planet = Planet::where('galaxy', $fleet->fleet_start_galaxy)
+                            ->where('system', $fleet->fleet_start_system)
+                            ->where('planet', $fleet->fleet_start_planet)
+                            ->where('planet_type', $fleet->fleet_start_type)
+                            ->first();
+        } else {
+            $planet = Planet::where('galaxy', $fleet->fleet_start_galaxy)
+                            ->where('system', $fleet->fleet_end_system)
+                            ->where('planet', $fleet->fleet_end_planet)
+                            ->where('planet_type', $fleet->fleet_end_type)
+                            ->first();
+        }
+
+        foreach (explode(';', $fleet->fleet_array) as $item => $group) {
+            if ($group != '') {
+                $class = explode(',', $group);
+
+                $planet[$resource[$class[0]]] = $planet[$resource[$class[0]]] + $planet[$resource[$class[1]]];
+            }
+        }
+
+        $planet->metal = $planet->metal + $fleet->fleet_resource_metal;
+        $planet->crystal = $planet->crystal + $fleet->fleet_resource_crystal;
+        $planet->deuterium = $planet->deuterium + $fleet->fleet_resource_deuterium;
+
+        $planet->save();
+    }
+
     protected function handleFleet($planet)
     {
         $this->lockTables();
@@ -66,7 +101,6 @@ class Fleets
             switch ($fleet->fleet_mission) {
                 case 1:
                     // Attack
-                    $this->missionAttack($fleet);
                     break;
 
                 case 2:
@@ -76,33 +110,29 @@ class Fleets
 
                 case 3:
                     // Transport
-                    $this->missionTransport($fleet);
                     break;
 
                 case 4:
                     // Stay
-                    $this->missionStay($fleet);
+                    $this->handleMission($fleet, Stay::class);
                     break;
 
                 case 5:
                     // Stay at an ally
                     $fleet->delete();
-                    //$this->missionStayAlly($fleet);
+                    //$this->handleMission($fleet, StayAtAlly::class);
                     break;
 
                 case 6:
-                    // Spy fleet
-                    $this->missionSpy($fleet);
+                    // Spy
                     break;
 
                 case 7:
                     // Colonize
-                    $this->missionColonize($fleet);
                     break;
 
                 case 8:
                     // Recycle
-                    $this->missionRecycle($fleet);
                     break;
 
                 case 9:
@@ -115,7 +145,6 @@ class Fleets
 
                 case 15:
                     // Expedition
-                    $this->missionExpedition($fleet);
                     break;
 
                 default:
@@ -126,83 +155,15 @@ class Fleets
         $this->unlockTables();
     }
 
-    protected function missionAttack(Fleet $fleet)
+    protected function handleMission(Fleet $fleet, $className)
     {
-        //
-    }
-
-    protected function missionColonize(Fleet $fleet)
-    {
-        //
-    }
-
-    protected function missionExpedition(Fleet $fleet)
-    {
-        //
-    }
-
-    protected function missionRecycle(Fleet $fleet)
-    {
-        //
-    }
-
-    protected function missionSpy(Fleet $fleet)
-    {
-        //
-    }
-
-    protected function missionStay(Fleet $fleet)
-    {
-        if ($fleet->fleet_mess == 0) {
-            if ($fleet->fleet_start_time <= time()) {
-                $target = Planet::where('galaxy', $fleet->fleet_end_galaxy)
-                    ->where('system', $fleet->fleet_end_system)
-                    ->where('planet', $fleet->fleet_end_planet)
-                    ->where('planet_type', $fleet->fleet_end_type)
-                    ->first();
-
-                $targetCoords = coordinates($target);
-                $targetGoods = sprintf(
-                    trans('fleets.messages.stay.goods'),
-                    trans('resources.metal'), pretty_number($fleet->fleet_resource_metal),
-                    trans('resources.crystal'), pretty_number($fleet->fleet_resource_crystal),
-                    trans('resources.deuterium'), pretty_number($fleet->fleet_resource_deuterium)
-                );
-
-                $targetMessage = trans('fleets.messages.stay.start') ."<a href=\"galaxy.php?mode=3&galaxy=". $fleet->fleet_end_galaxy ."&system=". $fleet->fleet_end_system ."\">";
-                $targetMessage .= $targetCoords . "</a>". trans('fleets.messages.stay.end') ."<br />". $targetGoods;
-
-                Messages::send($target->id_owner, 0, trans('fleets.messages.sender'), 5, trans('fleets.messages.stay.subject'), $targetMessage, $fleet->fleet_start_time);
-
-                $this->restoreFleetToPlanet($fleet, false);
-
-                $fleet->delete();
-            }
-        } else {
-            if ($fleet->fleet_end_time <= time()) {
-                $targetCoords = sprintf(trans('planet.coords'), $fleet->fleet_start_galaxy, $fleet->fleet_start_system, $fleet->fleet_start_planet);
-                $targetGoods = sprintf(
-                    trans('fleets.messages.stay.goods'),
-                    trans('resources.metal'), pretty_number($fleet->fleet_resource_metal),
-                    trans('resources.crystal'), pretty_number($fleet->fleet_resource_crystal),
-                    trans('resources.deuterium'), pretty_number($fleet->fleet_resource_deuterium)
-                );
-
-                $targetMessage = trans('fleets.messages.stay.back') ."<a href=\"galaxy.php?mode=3&galaxy=". $fleet->fleet_start_galaxy ."&system=". $fleet->fleet_start_system ."\">";
-                $targetMessage .= $targetCoords . "</a>". trans('fleets.messages.stay.back_end') ."<br />". $targetGoods;
-
-                Messages::send($fleet->fleet_owner, 0, trans('fleets.messages.sender'), 5, trans('fleets.messages.subject_back'), $targetMessage, $fleet->fleet_end_time);
-
-                $this->restoreFleetToPlanet($fleet, true);
-
-                $fleet->delete();
-            }
+        if (is_subclass_of($className, AbstractMission::class) === false) {
+            throw new \InvalidArgumentException('Mission handler must inherit from AbstractMission class');
         }
-    }
 
-    protected function missionTransport(Fleet $fleet)
-    {
-        //
+        /** @var AbstractMission $missionHandler */
+        $missionHandler = new $className($fleet, $this);
+        $missionHandler->handle();
     }
 
     protected function lockTables()
@@ -225,38 +186,5 @@ class Fleets
     protected function unlockTables()
     {
         DB::unprepared('UNLOCK TABLES');
-    }
-
-    protected function restoreFleetToPlanet(Fleet $fleet, $start = true)
-    {
-        $resource = Constants::$resourcesMap;
-
-        if ($start) {
-            $planet = Planet::where('galaxy', $fleet->fleet_start_galaxy)
-                ->where('system', $fleet->fleet_start_system)
-                ->where('planet', $fleet->fleet_start_planet)
-                ->where('planet_type', $fleet->fleet_start_type)
-                ->first();
-        } else {
-            $planet = Planet::where('galaxy', $fleet->fleet_start_galaxy)
-                ->where('system', $fleet->fleet_end_system)
-                ->where('planet', $fleet->fleet_end_planet)
-                ->where('planet_type', $fleet->fleet_end_type)
-                ->first();
-        }
-
-        foreach (explode(';', $fleet->fleet_array) as $item => $group) {
-            if ($group != '') {
-                $class = explode(',', $group);
-
-                $planet[$resource[$class[0]]] = $planet[$resource[$class[0]]] + $planet[$resource[$class[1]]];
-            }
-        }
-
-        $planet->metal = $planet->metal + $fleet->fleet_resource_metal;
-        $planet->crystal = $planet->crystal + $fleet->fleet_resource_crystal;
-        $planet->deuterium = $planet->deuterium + $fleet->fleet_resource_deuterium;
-
-        $planet->save();
     }
 }
