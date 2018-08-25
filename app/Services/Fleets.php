@@ -137,14 +137,12 @@ class Fleets
                     break;
 
                 case 4:
-                    // Stay
                     $this->handleMission($fleet, Stay::class);
                     break;
 
                 case 5:
-                    // Stay at an ally
-                    $fleet->delete();
                     //$this->handleMission($fleet, StayAtAlly::class);
+                    $fleet->delete();
                     break;
 
                 case 6:
