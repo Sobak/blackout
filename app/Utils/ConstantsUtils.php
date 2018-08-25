@@ -126,7 +126,7 @@ class ConstantsUtils
                         return 0;
                     },
                     'energy' => function ($level, $factor) {
-                        return (10 * $level * pow(1.1, $level)) * (0.1 * $factor);
+                        return - (10 * $level * pow(1.1, $level)) * (0.1 * $factor);
                     },
                 ],
             ],
@@ -148,7 +148,7 @@ class ConstantsUtils
                         return 0;
                     },
                     'energy' => function ($level, $factor) {
-                        return (10 * $level * pow(1.1, $level)) * (0.1 * $factor);
+                        return - (10 * $level * pow(1.1, $level)) * (0.1 * $factor);
                     },
                 ],
             ],
