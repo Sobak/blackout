@@ -28,7 +28,7 @@ class Stay extends AbstractMission
         $targetMessage = trans('fleets.messages.stay.start') ."<a href=\"galaxy.php?mode=3&galaxy=". $fleet->fleet_end_galaxy ."&system=". $fleet->fleet_end_system ."\">";
         $targetMessage .= $targetCoords . "</a>". trans('fleets.messages.stay.end') ."<br />". $targetGoods;
 
-        Messages::send($target->id_owner, 0, trans('fleets.messages.sender'), 5, trans('fleets.messages.stay.subject'), $targetMessage, $fleet->fleet_start_time);
+        Messages::send($target->id_owner, 0, trans('fleets.messages.sender_hq'), 5, trans('fleets.messages.stay.subject'), $targetMessage, $fleet->fleet_start_time);
 
         $service->restoreFleetToPlanet($fleet, false);
 
@@ -48,7 +48,7 @@ class Stay extends AbstractMission
         $targetMessage = trans('fleets.messages.stay.back') ."<a href=\"galaxy.php?mode=3&galaxy=". $fleet->fleet_start_galaxy ."&system=". $fleet->fleet_start_system ."\">";
         $targetMessage .= $targetCoords . "</a>". trans('fleets.messages.stay.back_end') ."<br />". $targetGoods;
 
-        Messages::send($fleet->fleet_owner, 0, trans('fleets.messages.sender'), 5, trans('fleets.messages.subject_back'), $targetMessage, $fleet->fleet_end_time);
+        Messages::send($fleet->fleet_owner, 0, trans('fleets.messages.sender_hq'), 5, trans('fleets.messages.subject_back'), $targetMessage, $fleet->fleet_end_time);
 
         $service->restoreFleetToPlanet($fleet, true);
 

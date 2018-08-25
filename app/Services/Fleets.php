@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Fleet\Missions\AbstractMission;
 use App\Fleet\Missions\Stay;
+use App\Fleet\Missions\Transport;
 use App\Models\Fleet;
 use App\Models\Planet;
 use Illuminate\Database\Eloquent\Builder;
@@ -38,6 +39,29 @@ class Fleets
 
             $this->handleFleet($planet);
         }
+    }
+
+    public function storeGoodsToPlanet(Fleet $fleet, $start = false)
+    {
+        if ($start) {
+            $planet = Planet::where('galaxy', $fleet->fleet_start_galaxy)
+                            ->where('system', $fleet->fleet_start_system)
+                            ->where('planet', $fleet->fleet_start_planet)
+                            ->where('planet_type', $fleet->fleet_start_type)
+                            ->first();
+        } else {
+            $planet = Planet::where('galaxy', $fleet->fleet_start_galaxy)
+                            ->where('system', $fleet->fleet_end_system)
+                            ->where('planet', $fleet->fleet_end_planet)
+                            ->where('planet_type', $fleet->fleet_end_type)
+                            ->first();
+        }
+
+        $planet->metal = $planet->metal + $fleet->fleet_resource_metal;
+        $planet->crystal = $planet->crystal + $fleet->fleet_resource_crystal;
+        $planet->deuterium = $planet->deuterium + $fleet->fleet_resource_deuterium;
+
+        $planet->save();
     }
 
     public function restoreFleetToPlanet(Fleet $fleet, $start = true)
@@ -109,7 +133,7 @@ class Fleets
                     break;
 
                 case 3:
-                    // Transport
+                    $this->handleMission($fleet, Transport::class);
                     break;
 
                 case 4:

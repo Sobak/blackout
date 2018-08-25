@@ -34,6 +34,32 @@ function getAvailableSkins()
 }
 
 /**
+ * Displays a start address as a link.
+ *
+ * @param $FleetRow
+ * @param $FleetType
+ * @return string
+ */
+function GetStartAdressLink ( $FleetRow, $FleetType ) {
+    $Link  = "<a href=\"galaxy.php?mode=3&galaxy=".$FleetRow['fleet_start_galaxy']."&system=".$FleetRow['fleet_start_system']."\" ". $FleetType ." >";
+    $Link .= "[".$FleetRow['fleet_start_galaxy'].":".$FleetRow['fleet_start_system'].":".$FleetRow['fleet_start_planet']."]</a>";
+    return $Link;
+}
+
+/**
+ * Displays a target address as a link.
+ *
+ * @param $FleetRow
+ * @param $FleetType
+ * @return string
+ */
+function GetTargetAdressLink ( $FleetRow, $FleetType ) {
+    $Link  = "<a href=\"galaxy.php?mode=3&galaxy=".$FleetRow['fleet_end_galaxy']."&system=".$FleetRow['fleet_end_system']."\" ". $FleetType ." >";
+    $Link .= "[".$FleetRow['fleet_end_galaxy'].":".$FleetRow['fleet_end_system'].":".$FleetRow['fleet_end_planet']."]</a>";
+    return $Link;
+}
+
+/**
  * Make text red.
  *
  * @param $n
