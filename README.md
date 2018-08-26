@@ -24,4 +24,19 @@ between old XNova's code and Laravel application that allows to refactor the
 system step by step. To check how it's done I suggest to start the journey from
 [`index.php`][index] file.
 
+## Known issues
+### Laravel in-game controllers can't handle some fleet missions yet
+The in-game controllers ported to Laravel (so basically any URL in `routes/game.php` or
+`routes/admin.php`) are not yet capable of handling following kinds of fleet missions:
+- rocket attacks
+- attack mission
+- spy mission
+- colonisation missio
+- recycle mission
+- expedition mission
+
+It means that starting from Blackout 0.6.0 visiting any URLs mentioned above will not
+trigger mission effects even if it should just happen (because fleet arrived etc).
+Instead, the effect will take place on next user visit to any of the _"old"_ XNova files.
+
 [index]: https://github.com/Sobak/blackout/blob/master/public/index.php

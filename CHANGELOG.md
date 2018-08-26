@@ -4,20 +4,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ## [Unreleased]
-### Ported game bootstrapping to Laravel
+### Recreated game bootstrapping in Laravel
 This version features first in-game controller ported to Laravel. This is
 particullarly important because it also means that the bootstrapping part
 of XNova engine has been ported as well. That includes (re-)calculating
 current resources on the planet, checking if user is banned, handling
-fleets, attacks, logging user visit etc.
+fleets, queues, logging user visit etc.
 
-This is a fist huge step towards porting actual game content to the
+This is first huge step towards porting actual game content to the
 Laravel framework.
 
 Current version, however, misses things like:
-- handling building queue
-- handling flying fleets
 - handling rocket attacks
+- handling attack mission
+- handling spy mission
+- handling colonisation missio
+- handling recycle mission
+- handling expedition mission
 
 ### Added
 - Added abbility to get game config variables using `config()`
