@@ -33,7 +33,7 @@
         <tr><td><a href="records.php" accesskey="3">@lang('menu.records')</a></td></tr>
         <tr><td><a href="stat.php" accesskey="k">@lang('menu.statistics')</a></td></tr>
         <tr><td><a href="search.php" accesskey="b">@lang('menu.search')</a></td></tr>
-        <tr><td><a href="banned.php" accesskey="3">@lang('menu.banned')</a></td></tr>
+        <tr><td><a href="{{ route('banned') }}" accesskey="3">@lang('menu.banned')</a></td></tr>
         <tr><td><a href="annonce.php" accesskey="3">@lang('menu.announcements')</a></td></tr>
 
         <tr><th>@lang('menu.sections.communication')</th></tr>
