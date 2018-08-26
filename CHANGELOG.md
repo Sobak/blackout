@@ -22,6 +22,16 @@ Current version, however, misses things like:
 - handling recycle mission
 - handling expedition mission
 
+### Ported to Laravel
+This section contains parts of the system which were rewritten using Laravel.
+Generally speaking, with the rewrite should not come any functional changes but
+where it was unavoidable or impractical to avoid the list item denotes most notable
+changes made when rewriting. For the preliminary part of the porting process check
+section above.
+
+- Logout
+    - Logout page no longer displays navbar nor left menu
+
 ### Added
 - Added abbility to get game config variables using `config()`
 - Added `coordinates()` helper to quickly get human readable coords of almost any row

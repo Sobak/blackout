@@ -47,7 +47,7 @@
             <tr><td><a href="admin/overview.php" style="color:lime">{{ trans('menu.admin.' . $user->authlevel) }}</a></td></tr>
         @endif
 
-        <tr><td><a href="logout.php" accesskey="s" style="color:red">@lang('menu.logout')</a></td></tr>
+        <tr><td><a href="{{ route('user.logout') }}" accesskey="s" style="color:red">@lang('menu.logout')</a></td></tr>
         <tr><th>@lang('menu.sections.info')</th></tr>
         <tr>
             <td>

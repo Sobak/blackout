@@ -11,3 +11,9 @@
     </table>
 </center>
 @endsection
+
+@push('head_extras')
+    @if ($redirectTo)
+        <meta http-equiv="refresh" content="{{ $redirectTime }};URL={{ $redirectTo }}">
+    @endif
+@endpush

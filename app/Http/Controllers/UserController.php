@@ -63,4 +63,11 @@ class UserController extends Controller
 
         return show_message(trans('user.login.error_text'), trans('app.error'));
     }
+
+    public function logout()
+    {
+        Auth::logout();
+
+        return show_message(trans('user.logout.message_text'), trans('user.logout.message_title'), 'login', 2);
+    }
 }

@@ -15,11 +15,13 @@ function coordinates($row)
 // @todo revisit
 // once view composer loading navigation etc will be ready this function should
 // replace old message()
-function show_message($text, $title = 'Error')
+function show_message($text, $title = 'Error', $redirectTo = null, $redirectTime = 3)
 {
     return view('message', [
         'message' => $text,
         'title' => $title,
+        'redirectTo' => $redirectTo,
+        'redirectTime' => $redirectTime,
     ]);
 }
 

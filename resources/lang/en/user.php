@@ -28,4 +28,8 @@ return [
         'username' => 'Username:',
         'welcome' => 'Welcome to',
     ],
+    'logout' => [
+        'message_text' => 'See you again soon!',
+        'message_title' => 'Logout successful',
+    ]
 ];

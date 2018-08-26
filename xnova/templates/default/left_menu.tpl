@@ -45,7 +45,7 @@ function f(target_url) {
     <tr><td><a href="options.php" accesskey="o">{Options}</a></td></tr>
     {ADMIN_LINK}
 
-    <tr><td><a href="logout.php" accesskey="s" style="color:red">{Logout}</a></td></tr>
+    <tr><td><a href="logout" accesskey="s" style="color:red">{Logout}</a></td></tr>
     <tr><th>{infog}</th></tr>
     <tr><td>{server_info}</td></tr>
     <tr>
