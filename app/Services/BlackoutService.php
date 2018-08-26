@@ -6,7 +6,7 @@ use App\Models\Planet;
 
 class BlackoutService
 {
-    const VERSION = '0.6.0-dev';
+    const VERSION = '0.6.0';
 
     public function bootstrapGame()
     {

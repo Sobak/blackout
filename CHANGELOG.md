@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
-## [Unreleased]
+## [0.6.0] - 2018-08-26
 ### Recreated game bootstrapping in Laravel
 This version features first in-game controller ported to Laravel. This is
 particullarly important because it also means that the bootstrapping part
