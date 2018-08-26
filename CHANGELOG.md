@@ -48,6 +48,9 @@ section above.
 - Fixed installation process
 - Public controllers (e.g. login) now redirect to installer if `.env` is missing
 
+### Removed
+- Removed unused `empire.php` file
+
 ## [0.5.1] - 2018-08-19
 ### Ported to Laravel
 This section contains parts of the system which were rewritten using Laravel.
