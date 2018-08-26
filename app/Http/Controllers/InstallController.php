@@ -109,7 +109,7 @@ class InstallController extends Controller
             'planet' => 1,
             'current_planet' => 1,
             'register_time' => time(),
-            'password' => md5($request->get('password')),
+            'password' => bcrypt($request->get('password')),
         ]);
 
         Planet::unguard();

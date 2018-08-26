@@ -34,6 +34,7 @@ Current version, however, misses things like:
 
 ### Fixed
 - Fixed loading language files for unauthenticated users
+- Fixed installation process
 - Public controllers (e.g. login) now redirect to installer if `.env` is missing
 
 ## [0.5.1] - 2018-08-19

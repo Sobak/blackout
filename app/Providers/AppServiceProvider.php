@@ -22,8 +22,10 @@ class AppServiceProvider extends ServiceProvider
         error_reporting(E_ALL ^ E_NOTICE);
 
         // Expose all game settings within default Laravel config repository
-        foreach (ConfigModel::pluck('config_value', 'config_name') as $configName => $configValue) {
-            Config::set("blackout.$configName", $configValue);
+        if ($this->app->runningInConsole() === false && file_exists(base_path('.env')) && filesize(base_path('.env')) > 0) {
+            foreach (ConfigModel::pluck('config_value', 'config_name') as $configName => $configValue) {
+                Config::set("blackout.$configName", $configValue);
+            }
         }
 
         // Bind view composers
