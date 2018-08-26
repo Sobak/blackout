@@ -43,6 +43,7 @@ section above.
 - Started to brand script as Blackout
 
 ### Fixed
+- Fixed `E_WARNING` when dispatching fleet
 - Fixed loading language files for unauthenticated users
 - Fixed installation process
 - Public controllers (e.g. login) now redirect to installer if `.env` is missing
