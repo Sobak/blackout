@@ -35,7 +35,6 @@ return [
     'logout' => 'Logout',
     'merchant' => 'Merchant',
     'messages' => 'Messages',
-    'notes' => 'Notes',
     'officers' => 'Officers',
     'options' => 'Options',
     'overview' => 'Overview',

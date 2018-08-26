@@ -27,7 +27,6 @@ $lang['blocked']      = 'Banned';
 $lang['Records']      = 'Records';
 
 $lang['Messages']     = 'Messages';
-$lang['Notes']        = 'Notes';
 $lang['Buddylist']    = 'Friends';
 
 $lang['Board']        = 'Forum';

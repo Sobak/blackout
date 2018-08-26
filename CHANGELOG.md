@@ -49,6 +49,7 @@ section above.
 - Public controllers (e.g. login) now redirect to installer if `.env` is missing
 
 ### Removed
+- Removed Notes page
 - Removed unused `empire.php` file
 
 ## [0.5.1] - 2018-08-19
