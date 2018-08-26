@@ -15,7 +15,7 @@ class CreateConfigTable extends Migration
     public function up()
     {
         Schema::create('config', function (Blueprint $table) {
-            $table->string('config_name', 64)->unique();
+            $table->string('config_name', 64)->primary();
             $table->text('config_value');
         });
 

@@ -39,7 +39,7 @@ section above.
 ### Changed
 - Account activation reminder is only shown in overview now
 - Account deletion reminder is only shown in overview now
-- Added unique index on `config.config_name`
+- Added primary index on `config.config_name`
 - Started to brand script as Blackout
 
 ### Fixed
