@@ -40,10 +40,10 @@
         <tr><td><a href="#" onClick="f('buddy.php', '');" accesskey="c">@lang('menu.friends')</a></td></tr>
         <tr><td><a href="chat.php" accesskey="a">@lang('menu.chat')</a></td></tr>
         <tr><td><a href="{!! $forum_url !!}" accesskey="1">@lang('menu.forum')</a></td></tr>
-        <tr><td><a href="contact.php" accesskey="3" >@lang('menu.contact')</a></td></tr>
+        <tr><td><a href="{{ route('contact') }}" accesskey="3" >@lang('menu.contact')</a></td></tr>
         <tr><td><a href="options.php" accesskey="o">@lang('menu.options')</a></td></tr>
         @if ($user->authlevel > \App\Models\User::LEVEL_PLAYER)
-            <tr><td><a href="admin/overview.php" style="color:lime">{{ trans('menu.admin.' . $user->authlevel) }}</a></td></tr>
+            <tr><td><a href="admin/overview.php" style="color:lime">{{ trans('user.levels.' . $user->authlevel) }}</a></td></tr>
         @endif
 
         <tr><td><a href="{{ route('user.logout') }}" accesskey="s" style="color:red">@lang('menu.logout')</a></td></tr>

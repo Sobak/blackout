@@ -10,6 +10,11 @@ return [
         'success' => 'Your password has been reset. Check your email!',
         'title' => 'Forgot password?',
     ],
+    'levels' => [
+        1 => 'Game Operator',
+        2 =>'Super Game Operator',
+        3 => 'Administrator',
+    ],
     'login' => [
         'description' => 'is a <strong>free strategy game</strong> based in space. To play, all you need is an internet browser. Sign up and discover the fantastic world',
         'error_text' => 'Invalid credentials<br><a href=login>Return</a>',

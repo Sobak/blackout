@@ -9,11 +9,6 @@ return [
         'communication' => 'Communication',
         'info' => 'Info',
     ],
-    'admin' => [
-        1 => 'Game Operator',
-        2 =>'Super Game Operator',
-        3 => 'Administrator',
-    ],
     'info' => [
         'fleet' => 'Fleet',
         'game' => 'Game',

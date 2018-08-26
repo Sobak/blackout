@@ -40,7 +40,7 @@ function f(target_url) {
     <tr><td><a href="#" onClick="f('buddy.php', '');" accesskey="c">{Buddylist}</a></td></tr>
     <tr><td><a href="chat.php" accesskey="a">{Chat}</a></td></tr>
     <tr><td><a href="{forum_url}" accesskey="1">{Board}</a></td></tr>
-    <tr><td><a href="contact.php" accesskey="3" >{Contact}</a></td></tr>
+    <tr><td><a href="contact" accesskey="3" >{Contact}</a></td></tr>
     <tr><td><a href="options.php" accesskey="o">{Options}</a></td></tr>
     {ADMIN_LINK}
 

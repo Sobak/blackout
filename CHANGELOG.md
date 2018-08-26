@@ -11,6 +11,7 @@ where it was unavoidable or impractical to avoid the list item denotes most nota
 changes made when rewriting.
 
 - Banned
+- Contact
 
 ## [0.6.0] - 2018-08-26
 ### Recreated game bootstrapping in Laravel
