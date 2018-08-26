@@ -167,7 +167,15 @@ class PlanetService
             }
         }
 
-        // @todo handle buildings queue here
+        // Handle shipyard queue
+        $built = (new ShipyardService())->handleQueue($user, $planet, $ProductionTime);
+        if ($built !== []) {
+            foreach ($built as $element => $count) {
+                if ($element != '') {
+                    $planet[$resource[$element]] += $built[$element];
+                }
+            }
+        }
 
         // Fix negative values if any
         if ($planet->metal < 0) {

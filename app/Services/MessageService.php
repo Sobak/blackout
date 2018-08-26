@@ -6,7 +6,6 @@ use App\Models\Message;
 
 class MessageService
 {
-    // @todo type consts
     public static function send($recipientID, $senderID, $senderName, $type, $subject, $body, $time = null)
     {
         $message = new Message();
