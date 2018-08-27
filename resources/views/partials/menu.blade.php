@@ -38,7 +38,7 @@
 
         <tr><th>@lang('menu.sections.communication')</th></tr>
         <tr><td><a href="#" onClick="f('buddy.php', '');" accesskey="c">@lang('menu.friends')</a></td></tr>
-        <tr><td><a href="chat.php" accesskey="a">@lang('menu.chat')</a></td></tr>
+        <tr><td><a href="{{ route('chat') }}" accesskey="a">@lang('menu.chat')</a></td></tr>
         <tr><td><a href="{!! $forum_url !!}" accesskey="1">@lang('menu.forum')</a></td></tr>
         <tr><td><a href="{{ route('contact') }}" accesskey="3" >@lang('menu.contact')</a></td></tr>
         <tr><td><a href="options.php" accesskey="o">@lang('menu.options')</a></td></tr>

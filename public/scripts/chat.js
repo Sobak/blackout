@@ -10,7 +10,7 @@ function addMessage() {
 
     msg.value = msg.value.replace(/\+/g, "plus");
 
-    ajax.open("POST","chat.php?mode=add_message", true);
+    ajax.open("POST","chat", true);
     ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     ajax.send("msg=" + msg.value);
 
@@ -23,7 +23,7 @@ function addMessage() {
 function showMessages() {
     var ajax = new XMLHttpRequest();
 
-    ajax.open("POST","chat.php?mode=messages", true);
+    ajax.open("GET","chat/messages", true);
     ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     ajax.send(null);
 
