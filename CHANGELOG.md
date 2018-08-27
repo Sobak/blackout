@@ -13,6 +13,7 @@ changes made when rewriting.
 - Banned
 - Chat
 - Contact
+- Credits
 
 ## [0.6.0] - 2018-08-26
 ### Recreated game bootstrapping in Laravel

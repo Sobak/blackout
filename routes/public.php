@@ -4,6 +4,8 @@ Route::get('/', 'IndexController@index')->name('index');
 
 Route::get('contact', 'ContactController@index')->name('contact');
 
+Route::get('credits', 'CreditsController@index')->name('credits');
+
 Route::get('forgot-password', 'UserController@forgotPassword')->name('user.forgot-password');
 Route::post('forgot-password', 'UserController@forgotPasswordPost');
 

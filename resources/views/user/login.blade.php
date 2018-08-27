@@ -32,8 +32,8 @@
     <div id="mainmenu">
         <a href="reg.php">@lang('user.login.menu.register')</a>
         <a href="{{ $forum_url }}">Forum</a>
-        <a href="contact.php">Contact</a>
-        <a href="credit.php">@lang('user.login.menu.credits')</a>
+        <a href="{{ route('contact') }}">Contact</a>
+        <a href="{{ route('credits') }}">@lang('user.login.menu.credits')</a>
     </div>
     <div id="rightmenu" class="rightmenu">
         <div id="login_content">

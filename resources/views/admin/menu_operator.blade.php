@@ -19,7 +19,7 @@
 
     <tr><th>@lang('admin/menu.sections.info')</th></tr>
     <tr>
-        <td><center><a href="../credit.php" accesskey="T">Blackout &amp; XNova Teams</a>&copy; Copyright 2018</center></td>
+        <td><center><a href="{{ route('credits') }}" accesskey="T">Blackout &amp; XNova Teams</a>&copy; Copyright 2018</center></td>
     </tr>
 </table>
 </div>
