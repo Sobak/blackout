@@ -2,15 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Chat;
-use App\Models\User;
 
 class ChatController extends Controller
 {
     public function index()
     {
-        $this->restrictAccess(User::LEVEL_ADMIN);
-
         return view('admin.chat', [
             'messages' => Chat::get(),
             'title' => trans('admin/chat.title'),

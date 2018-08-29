@@ -2,16 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Planet;
-use App\Models\User;
 use Illuminate\Http\Request;
 
 class ResourceController extends Controller
 {
     public function add()
     {
-        $this->restrictAccess(User::LEVEL_SUPER_OPERATOR);
-
         return view('admin.resource', [
             'action' => 'add',
             'title' => trans('admin/resources.add.title'),
@@ -20,8 +18,6 @@ class ResourceController extends Controller
 
     public function addPost(Request $request)
     {
-        $this->restrictAccess(User::LEVEL_SUPER_OPERATOR);
-
         $planet = Planet::find($request->get('planet_id'));
 
         if ($planet) {
@@ -36,8 +32,6 @@ class ResourceController extends Controller
 
     public function subtract()
     {
-        $this->restrictAccess(User::LEVEL_SUPER_OPERATOR);
-
         return view('admin.resource', [
             'action' => 'subtract',
             'title' => trans('admin/resources.subtract.title'),
@@ -46,8 +40,6 @@ class ResourceController extends Controller
 
     public function subtractPost(Request $request)
     {
-        $this->restrictAccess(User::LEVEL_SUPER_OPERATOR);
-
         $planet = Planet::find($request->get('planet_id'));
 
         if ($planet) {

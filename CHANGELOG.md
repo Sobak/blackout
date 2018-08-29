@@ -15,6 +15,13 @@ changes made when rewriting.
 - Contact
 - Credits
 
+### Changed
+- Permission level within admin panel is now checked using middleware
+
+### Fixed
+- Clearing or truncating chat now properly checks for permission level
+- Clearing or truncating error log now properly checks for permission level
+
 ## [0.6.0] - 2018-08-26
 ### Recreated game bootstrapping in Laravel
 This version features first in-game controller ported to Laravel. This is
