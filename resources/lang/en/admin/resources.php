@@ -13,8 +13,5 @@ return [
         'success' => 'Resources subtracted for the specified planet',
         'title' => 'Subtract resources',
     ],
-    'deuterium' => 'Deuterium',
-    'crystal' => 'Crystal',
-    'metal' => 'Metal',
     'planet_id' => 'Planet ID',
 ];
