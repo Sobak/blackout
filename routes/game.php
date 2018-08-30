@@ -1,6 +1,6 @@
 <?php
 
-Route::get('banned', 'BannedController@index')->name('banned');
+Route::get('banned', 'BanController@index')->name('banned');
 
 Route::get('chat', 'ChatController@index')->name('chat');
 Route::post('chat', 'ChatController@create');

@@ -3,14 +3,14 @@
     <br>
     <table width="600" style="color:#FFFFFF">
         <tr>
-            <td class="c" colspan="6">@lang('banned.table_title')</td>
+            <td class="c" colspan="6">@lang('ban.table_title')</td>
         </tr>
         <tr>
-            <th>@lang('banned.username')</th>
-            <th>@lang('banned.reason')</th>
-            <th>@lang('banned.from')</th>
-            <th>@lang('banned.to')</th>
-            <th>@lang('banned.by')</th>
+            <th>@lang('ban.username')</th>
+            <th>@lang('ban.reason')</th>
+            <th>@lang('ban.from')</th>
+            <th>@lang('ban.to')</th>
+            <th>@lang('ban.by')</th>
         </tr>
         @foreach ($banned as $ban)
         <tr style="text-align: center">

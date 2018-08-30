@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Banned extends Model
+class Ban extends Model
 {
     public $timestamps = false;
 
