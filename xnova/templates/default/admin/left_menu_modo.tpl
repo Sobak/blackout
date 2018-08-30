@@ -10,7 +10,7 @@
         <tr><td><a href="paneladmina.php" accesskey="k">{adm_plrsch}</a></td></tr>
         <tr><td><a href="activeplanet.php" accesskey="k">{adm_actplt}</a></td></tr>
         <tr><td><a href="ShowFlyingFleets.php" accesskey="k">{adm_fleet}</a></td></tr>
-        <tr><td class="separated"><a href="banned.php" accesskey="k">{adm_ban}</a></td></tr>
+        <tr><td class="separated"><a href="ban" accesskey="k">{adm_ban}</a></td></tr>
 
         <tr><th>{tool}</th></tr>
         <tr><td><a href="statbuilder.php" accesskey="p">{adm_updpt}</a></td></tr>

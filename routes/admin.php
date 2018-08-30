@@ -15,4 +15,12 @@ Route::group(['middleware' => 'auth.level:2'], function () {
     Route::post('resources_add', 'ResourceController@addPost');
     Route::get('resources_subtract', 'ResourceController@subtract')->name('admin.resource.subtract');
     Route::post('resources_subtract', 'ResourceController@subtractPost');
+
+    Route::get('unban', 'BanController@remove')->name('admin.unban');
+    Route::post('unban', 'BanController@removePost');
+});
+
+Route::group(['middleware' => 'auth.level:1'], function () {
+    Route::get('ban', 'BanController@add')->name('admin.ban');
+    Route::post('ban', 'BanController@addPost');
 });

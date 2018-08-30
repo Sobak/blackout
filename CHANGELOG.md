@@ -10,6 +10,10 @@ Generally speaking, with the rewrite should not come any functional changes but
 where it was unavoidable or impractical to avoid the list item denotes most notable
 changes made when rewriting.
 
+- Admin: Ban
+    - Translated to English
+- Admin: Unban
+    - Translated to English
 - Banned
 - Chat
 - Contact

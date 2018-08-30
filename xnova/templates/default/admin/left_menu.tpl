@@ -18,8 +18,8 @@
     <tr><td><a href="colonies.php?type=moons" accesskey="k">{adm_moonlst}</a></td></tr>
     <tr><td><a href="add_moon.php" accesskey="k">{adm_addmoon}</a></td></tr>
     <tr><td><a href="ShowFlyingFleets.php" accesskey="k">{adm_fleet}</a></td></tr>
-    <tr><td class="separated"><a href="banned.php" accesskey="k">{adm_ban}</a></td></tr>
-    <tr><td><a href="unbanned.php" accesskey="k">{adm_unban}</a></td></tr>
+    <tr><td class="separated"><a href="ban" accesskey="k">{adm_ban}</a></td></tr>
+    <tr><td><a href="unban" accesskey="k">{adm_unban}</a></td></tr>
 
     <tr><th>{tool}</th></tr>
     <tr><td><a href="chat" accesskey="p">{adm_chat}</a></td></tr>

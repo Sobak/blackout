@@ -47,19 +47,6 @@ $lang['adm_pl_since'] = "Activit&eacute;";
 $lang['adm_pl_they']  = "Il y a";
 $lang['adm_pl_apla']  = "plan&egrave;te(s) active(s)";
 
-$lang['adm_bn_ttle']  = "Bannir un joueur";
-$lang['adm_bn_plto']  = "Joueur &agrave; bannir";
-$lang['adm_bn_name']  = "Nom du joueur";
-$lang['adm_bn_reas']  = "Raison de la sanction";
-$lang['adm_bn_time']  = "Dur&eacute;e de la sanction";
-$lang['adm_bn_days']  = "Jours";
-$lang['adm_bn_hour']  = "Heures";
-$lang['adm_bn_mins']  = "Minutes";
-$lang['adm_bn_secs']  = "Secondes";
-$lang['adm_bn_bnbt']  = "Bannir";
-$lang['adm_bn_thpl']  = "Le joueur";
-$lang['adm_bn_isbn']  = "a bien &eacute;t&eacute; banni!";
-
 $lang['adm_rz_ttle']  = "Reset the universum";
 $lang['adm_rz_done']  = " player(s) transferred";
 $lang['adm_rz_conf']  = "Confirmation";
