@@ -9,7 +9,7 @@ class ErrorController extends Controller
 {
     public function index()
     {
-        return view('admin.errors', [
+        return view('admin.error.index', [
             'errors' => Error::get(),
             'title' => trans('admin/errors.title'),
         ]);

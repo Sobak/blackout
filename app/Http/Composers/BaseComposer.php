@@ -24,9 +24,9 @@ class BaseComposer
     protected function getMenuView($user, $inAdmin)
     {
         $userLevelMenuMap = [
-            User::LEVEL_OPERATOR => 'admin.menu_operator',
-            User::LEVEL_SUPER_OPERATOR => 'admin.menu_super_operator',
-            User::LEVEL_ADMIN => 'admin.menu',
+            User::LEVEL_OPERATOR => 'admin.partials.menu_operator',
+            User::LEVEL_SUPER_OPERATOR => 'admin.partials.menu_super_operator',
+            User::LEVEL_ADMIN => 'admin.partials.menu',
         ];
 
         if (!$user) {

@@ -9,7 +9,7 @@ class ChatController extends Controller
 {
     public function index()
     {
-        return view('admin.chat', [
+        return view('admin.chat.index', [
             'messages' => Chat::get(),
             'title' => trans('admin/chat.title'),
         ]);

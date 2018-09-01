@@ -11,7 +11,7 @@ class BanController extends Controller
 {
     public function add()
     {
-        return view('admin.ban_add', [
+        return view('admin.ban.add', [
             'title' => trans('admin/ban.add.title'),
         ]);
     }
@@ -50,7 +50,7 @@ class BanController extends Controller
 
     public function remove()
     {
-        return view('admin.ban_remove', [
+        return view('admin.ban.remove', [
             'title' => trans('admin/ban.remove.title'),
         ]);
     }
