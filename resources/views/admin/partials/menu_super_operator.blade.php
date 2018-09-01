@@ -14,7 +14,7 @@
     <tr><td class="separated"><a href="{{ route('admin.planets') }}" accesskey="1">@lang('admin/menu.planets')</a></td></tr>
     <tr><td><a href="activeplanet.php" accesskey="k">@lang('admin/menu.planets-active')</a></td></tr>
     <tr><td><a href="{{ route('admin.moons') }}" accesskey="k">@lang('admin/menu.moons')</a></td></tr>
-    <tr><td><a href="add_moon.php" accesskey="k">@lang('admin/menu.moon-add')</a></td></tr>
+    <tr><td><a href="{{ route('admin.moon.add') }}" accesskey="k">@lang('admin/menu.moon-add')</a></td></tr>
     <tr><td><a href="ShowFlyingFleets.php" accesskey="k">@lang('admin/menu.fleets')</a></td></tr>
     <tr><td class="separated"><a href="{{ route('admin.ban') }}" accesskey="k">@lang('admin/menu.ban')</a></td></tr>
     <tr><td><a href="{{ route('admin.unban') }}" accesskey="k">@lang('admin/menu.unban')</a></td></tr>

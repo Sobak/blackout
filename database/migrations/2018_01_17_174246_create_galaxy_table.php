@@ -14,6 +14,7 @@ class CreateGalaxyTable extends Migration
     public function up()
     {
         Schema::create('galaxy', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('galaxy')->default(0);
             $table->integer('system')->default(0);
             $table->integer('planet')->default(0);

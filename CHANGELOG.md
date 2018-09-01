@@ -12,6 +12,8 @@ changes made when rewriting.
 
 - Admin: Ban
     - Translated to English
+- Admin: Give Moon
+    - Translated to English
 - Admin: List of moons
 - Admin: List of Planets
 - Admin: Unban
@@ -20,6 +22,9 @@ changes made when rewriting.
 - Chat
 - Contact
 - Credits
+
+### Added
+- Added primary key for the `galaxy` table
 
 ### Changed
 - Permission level within admin panel is now checked using middleware

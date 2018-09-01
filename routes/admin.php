@@ -12,6 +12,8 @@ Route::group(['middleware' => 'auth.level:3'], function () {
 
 Route::group(['middleware' => 'auth.level:2'], function () {
     Route::get('moons', 'MoonController@index')->name('admin.moons');
+    Route::get('moon_add', 'MoonController@create')->name('admin.moon.add');
+    Route::post('moon_add', 'MoonController@createPost');
 
     Route::get('planets', 'PlanetController@index')->name('admin.planets');
 

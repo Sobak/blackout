@@ -2,6 +2,8 @@
 
 namespace App\Services;
 
+use App\Models\Galaxy;
+use App\Models\Moon;
 use App\Models\Planet;
 use App\Models\User;
 use App\Utils\ConstantsUtils;
@@ -10,6 +12,72 @@ use Illuminate\Support\Facades\Config as ConfigRepository;
 
 class PlanetService
 {
+    public function createMoon($galaxy, $system, $planet, $ownerID, $moonID, $name, $chance)
+    {
+        $motherPlanet = Planet::where('galaxy', $galaxy)
+                        ->where('system', $system)
+                        ->where('planet', $planet)
+                        ->first();
+
+        $motherGalaxy = Galaxy::where('galaxy', $galaxy)
+                        ->where('system', $system)
+                        ->where('planet', $planet)
+                        ->first();
+
+        if ($motherGalaxy->id_luna == 0 && $motherPlanet->id != 0) {
+            $sizeMax = 6000 + ( $chance * 200 );
+            $sizeMin = 2000 + ( $chance * 100 );
+            $size = rand ($sizeMin, $sizeMax);
+
+            $tempMax = $motherPlanet->temp_max - rand(10, 45);
+            $tempMin = $motherPlanet->temp_min - rand(10, 45);
+
+            $lunasMoon = new Moon();
+            $lunasMoon->name = $name ?? trans('app.default_moon_name');
+            $lunasMoon->galaxy = $galaxy;
+            $lunasMoon->system = $system;
+            $lunasMoon->lunapos = $planet;
+            $lunasMoon->id_owner = $ownerID;
+            $lunasMoon->temp_max = $tempMax;
+            $lunasMoon->temp_min = $tempMin;
+            $lunasMoon->diameter = $size;
+            $lunasMoon->id_luna = $moonID;
+            $lunasMoon->save();
+
+            $motherGalaxy->id_luna = $lunasMoon->id;
+            $motherGalaxy->luna = 0;
+            $motherGalaxy->save();
+
+            $planetsMoon = new Planet();
+            $planetsMoon->name = trans('app.default_moon_name');
+            $planetsMoon->id_owner = $ownerID;
+            $planetsMoon->galaxy = $galaxy;
+            $planetsMoon->system = $system;
+            $planetsMoon->planet = $planet;
+            $planetsMoon->last_update = time();
+            $planetsMoon->planet_type = 3;
+            $planetsMoon->image = 'mond';
+            $planetsMoon->diameter = $size;
+            $planetsMoon->field_max = 1;
+            $planetsMoon->temp_max = $tempMax;
+            $planetsMoon->temp_min = $tempMin;
+            $planetsMoon->metal = 0;
+            $planetsMoon->metal_perhour = 0;
+            $planetsMoon->metal_max = ConstantsUtils::BASE_STORAGE_SIZE;
+            $planetsMoon->crystal = 0;
+            $planetsMoon->crystal_perhour = 0;
+            $planetsMoon->crystal_max = ConstantsUtils::BASE_STORAGE_SIZE;
+            $planetsMoon->deuterium = 0;
+            $planetsMoon->deuterium_perhour = 0;
+            $planetsMoon->deuterium_max = ConstantsUtils::BASE_STORAGE_SIZE;
+            $planetsMoon->save();
+
+            return $motherPlanet->name;
+        }
+
+        return '';
+    }
+
     public function getSortedList(User $user, $withoutDestroyed = false)
     {
         $order = $user->planet_sort_order == 1 ? 'DESC' : 'ASC';
