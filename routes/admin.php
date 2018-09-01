@@ -13,6 +13,8 @@ Route::group(['middleware' => 'auth.level:3'], function () {
 Route::group(['middleware' => 'auth.level:2'], function () {
     Route::get('moons', 'MoonController@index')->name('admin.moons');
 
+    Route::get('planets', 'PlanetController@index')->name('admin.planets');
+
     Route::get('resources_add', 'ResourceController@add')->name('admin.resource.add');
     Route::post('resources_add', 'ResourceController@addPost');
     Route::get('resources_subtract', 'ResourceController@subtract')->name('admin.resource.subtract');

@@ -11,7 +11,7 @@
         <tr><td><a href="paneladmina.php" accesskey="k">{adm_plrsch}</a></td></tr>
         <tr><td><a href="resources_add" accesskey="k">{adm_addres}</a></td></tr>
         <tr><td><a href="resources_subtract" accesskey="k">{adm_delres}</a></td></tr>
-        <tr><td class="separated"><a href="colonies.php" accesskey="1">{adm_pltlst}</a></td></tr>
+        <tr><td class="separated"><a href="planets" accesskey="1">{adm_pltlst}</a></td></tr>
         <tr><td><a href="activeplanet.php" accesskey="k">{adm_actplt}</a></td></tr>
         <tr><td><a href="moons" accesskey="k">{adm_moonlst}</a></td></tr>
         <tr><td><a href="add_moon.php" accesskey="k">{adm_addmoon}</a></td></tr>

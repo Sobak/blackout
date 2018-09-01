@@ -13,6 +13,7 @@ changes made when rewriting.
 - Admin: Ban
     - Translated to English
 - Admin: List of moons
+- Admin: List of Planets
 - Admin: Unban
     - Translated to English
 - Banned
