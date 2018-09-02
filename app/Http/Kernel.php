@@ -47,6 +47,11 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\SwitchPlanet::class,
         ],
 
+        'admin' => [
+            'auth',
+            \App\Http\Middleware\LogUserVisit::class,
+        ],
+
         'api' => [
             'throttle:60,1',
             'bindings',
