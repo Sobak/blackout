@@ -29,4 +29,6 @@ Route::group(['middleware' => 'auth.level:2'], function () {
 Route::group(['middleware' => 'auth.level:1'], function () {
     Route::get('ban', 'BanController@add')->name('admin.ban');
     Route::post('ban', 'BanController@addPost');
+
+    Route::get('overview', 'OverviewController@index')->name('admin.index');
 });

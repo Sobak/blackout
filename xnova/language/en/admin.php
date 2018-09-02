@@ -9,20 +9,6 @@ $lang['Welcome_to_Fix_section'] = "Bienvenue dans la section d'update";
 $lang['There_is_not_need_fix']  = "La mise &agrave; jour a bien &eacute;t&eacute; effectu&eacute;!";
 $lang['Fix_welldone']           = "La mise &agrave; jour n'a pu &ecirc;tre effectu&eacute;.";
 
-$lang['adm_ov_title'] = "Overview";
-$lang['adm_ov_infos'] = "Status";
-$lang['adm_ov_yourv'] = "Your version";
-$lang['adm_ov_lastv'] = "Version available";
-$lang['adm_ov_here']  = "here";
-$lang['adm_ov_onlin'] = "Online";
-$lang['adm_ov_ally']  = "Alliance";
-$lang['adm_ov_point'] = "Points";
-$lang['adm_ov_activ'] = "Last activity";
-$lang['adm_ov_count'] = "Players online";
-$lang['adm_ov_wrtpm'] = "Send a PM";
-$lang['adm_ov_altpm'] = "[PM]";
-
-
 $lang['adm_ul_title'] = "Players list";
 $lang['adm_ul_ttle2'] = "Registered players";
 $lang['adm_ul_id']    = "ID";

@@ -14,6 +14,7 @@ class CreateStatpointsTable extends Migration
     public function up()
     {
         Schema::create('statpoints', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->integer('id_owner');
             $table->integer('id_ally');
             $table->integer('stat_type');

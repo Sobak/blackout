@@ -4,7 +4,7 @@
         <td style="border-top: 1px #545454 solid; font-weight: bold"><center>{{ $servername }}<br>(<font color=red>{{ $version }}</font>)</td>
     </tr>
     <tr><th>@lang('admin/menu.sections.admin')</th></tr>
-    <tr><td><a href="overview.php" accesskey="v">@lang('admin/menu.overview')</a></td></tr>
+    <tr><td><a href="{{ route('admin.index') }}" accesskey="v">@lang('admin/menu.overview')</a></td></tr>
 
     <tr><th>@lang('admin/menu.sections.players')</th></tr>
     <tr><td><a href="userlist.php" accesskey="a">@lang('admin/menu.players')</a></td></tr>

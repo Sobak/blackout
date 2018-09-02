@@ -125,26 +125,6 @@ function GetFleetConsumption ($FleetArray, $SpeedFactor, $MissionDuration, $Miss
 // Mise en forme de chaines pour affichage
 //
 
-// Mise en forme de la durée sous forme xj xxh xxm xxs
-function pretty_time ($seconds) {
-    $day = floor($seconds / (24 * 3600));
-    $hs = floor($seconds / 3600 % 24);
-    $ms = floor($seconds / 60 % 60);
-    $sr = floor($seconds / 1 % 60);
-
-    if ($hs < 10) { $hh = "0" . $hs; } else { $hh = $hs; }
-    if ($ms < 10) { $mm = "0" . $ms; } else { $mm = $ms; }
-    if ($sr < 10) { $ss = "0" . $sr; } else { $ss = $sr; }
-
-    $time = '';
-    if ($day != 0) { $time .= $day . 'j '; }
-    if ($hs  != 0) { $time .= $hh . 'h ';  } else { $time .= '00h '; }
-    if ($ms  != 0) { $time .= $mm . 'm ';  } else { $time .= '00m '; }
-    $time .= $ss . 's';
-
-    return $time;
-}
-
 // Mise en forme de la durée sous forme xxxmin
 function pretty_time_hour ($seconds) {
     $min = floor($seconds / 60 % 60);

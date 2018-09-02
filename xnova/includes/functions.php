@@ -185,7 +185,7 @@ function ShowLeftMenu($template, array $user)
 
     if ($user['authlevel'] > LEVEL_PLAYER) {
         $text = $lang['user_level'][$user['authlevel']];
-        $parse['ADMIN_LINK']  = '<tr><td><a href="admin/overview.php" style="color:lime">' . $text . '</a></td></tr>';
+        $parse['ADMIN_LINK']  = '<tr><td><a href="' . route('admin.index') . '" style="color:lime">' . $text . '</a></td></tr>';
     }
 
     return parsetemplate(gettemplate($template), $parse);

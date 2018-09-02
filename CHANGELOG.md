@@ -16,6 +16,8 @@ changes made when rewriting.
     - Translated to English
 - Admin: List of moons
 - Admin: List of Planets
+- Admin: Overview
+    - Fixed displaying PM icon
 - Admin: Unban
     - Translated to English
 - Banned
@@ -25,6 +27,7 @@ changes made when rewriting.
 
 ### Added
 - Added primary key for the `galaxy` table
+- Added primary key for the `statpoints` table
 
 ### Changed
 - Permission level within admin panel is now checked using middleware
@@ -32,6 +35,7 @@ changes made when rewriting.
 ### Fixed
 - Clearing or truncating chat now properly checks for permission level
 - Clearing or truncating error log now properly checks for permission level
+- Fixed missing private message icon in admin overview
 
 ## [0.6.0] - 2018-08-26
 ### Recreated game bootstrapping in Laravel

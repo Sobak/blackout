@@ -4,7 +4,7 @@
             <td style="border-top: 1px #545454 solid; font-weight: bold"><center>{servername}<br>(<font color=red>{XNovaRelease}</font>)</td>
         </tr>
         <tr><th>{admin}</th></tr>
-        <tr><td><a href="overview.php" accesskey="v">{adm_over}</a></td></tr>
+        <tr><td><a href="overview" accesskey="v">{adm_over}</a></td></tr>
 
         <tr><th>{player}</th></tr>
         <tr><td><a href="userlist.php" accesskey="a">{adm_plrlst}</a></td></tr>
