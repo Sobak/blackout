@@ -18,6 +18,7 @@ changes made when rewriting.
 - Admin: List of Planets
 - Admin: Overview
     - Fixed displaying PM icon
+- Admin: Players list
 - Admin: Unban
     - Translated to English
 - Banned

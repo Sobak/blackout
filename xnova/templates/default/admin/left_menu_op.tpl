@@ -7,7 +7,7 @@
         <tr><td><a href="overview" accesskey="v">{adm_over}</a></td></tr>
 
         <tr><th>{player}</th></tr>
-        <tr><td><a href="userlist.php" accesskey="a">{adm_plrlst}</a></td></tr>
+        <tr><td><a href="users" accesskey="a">{adm_plrlst}</a></td></tr>
         <tr><td><a href="paneladmina.php" accesskey="k">{adm_plrsch}</a></td></tr>
         <tr><td><a href="resources_add" accesskey="k">{adm_addres}</a></td></tr>
         <tr><td><a href="resources_subtract" accesskey="k">{adm_delres}</a></td></tr>

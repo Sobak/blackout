@@ -7,7 +7,7 @@
     <tr><td><a href="{{ route('admin.index') }}" accesskey="v">@lang('admin/menu.overview')</a></td></tr>
 
     <tr><th>@lang('admin/menu.sections.players')</th></tr>
-    <tr><td><a href="userlist.php" accesskey="a">@lang('admin/menu.players')</a></td></tr>
+    <tr><td><a href="{{ route('admin.users') }}" accesskey="a">@lang('admin/menu.players')</a></td></tr>
     <tr><td><a href="paneladmina.php" accesskey="k">@lang('admin/menu.players-search')</a></td></tr>
     <tr><td><a href="{{ route('admin.resource.add') }}" accesskey="k">@lang('admin/menu.resources-add')</a></td></tr>
     <tr><td><a href="{{ route('admin.resource.subtract') }}" accesskey="k">@lang('admin/menu.resources-sub')</a></td></tr>

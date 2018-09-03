@@ -24,6 +24,9 @@ Route::group(['middleware' => 'auth.level:2'], function () {
 
     Route::get('unban', 'BanController@remove')->name('admin.unban');
     Route::post('unban', 'BanController@removePost');
+
+    Route::get('users', 'UserController@index')->name('admin.users');
+    Route::get('user/remove/{id}', 'UserController@remove')->name('admin.user.remove');
 });
 
 Route::group(['middleware' => 'auth.level:1'], function () {
