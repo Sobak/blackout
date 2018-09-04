@@ -12,7 +12,7 @@
         <tr><td><a href="resources_add" accesskey="k">{adm_addres}</a></td></tr>
         <tr><td><a href="resources_subtract" accesskey="k">{adm_delres}</a></td></tr>
         <tr><td class="separated"><a href="planets" accesskey="1">{adm_pltlst}</a></td></tr>
-        <tr><td><a href="activeplanet.php" accesskey="k">{adm_actplt}</a></td></tr>
+        <tr><td><a href="activeplanets" accesskey="k">{adm_actplt}</a></td></tr>
         <tr><td><a href="moons" accesskey="k">{adm_moonlst}</a></td></tr>
         <tr><td><a href="moon_add" accesskey="k">{adm_addmoon}</a></td></tr>
         <tr><td><a href="ShowFlyingFleets.php" accesskey="k">{adm_fleet}</a></td></tr>

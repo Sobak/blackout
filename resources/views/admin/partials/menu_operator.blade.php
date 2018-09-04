@@ -8,7 +8,7 @@
 
     <tr><th>@lang('admin/menu.sections.players')</th></tr>
     <tr><td><a href="paneladmina.php" accesskey="k">@lang('admin/menu.players-search')</a></td></tr>
-    <tr><td><a href="activeplanet.php" accesskey="k">@lang('admin/menu.planets-active')</a></td></tr>
+    <tr><td><a href="{{ route('admin.planets.active') }}" accesskey="k">@lang('admin/menu.planets-active')</a></td></tr>
     <tr><td><a href="ShowFlyingFleets.php" accesskey="k">@lang('admin/menu.fleets')</a></td></tr>
     <tr><td class="separated"><a href="{{ route('admin.ban') }}" accesskey="k">@lang('admin/menu.ban')</a></td></tr>
 

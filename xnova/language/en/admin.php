@@ -9,15 +9,6 @@ $lang['Welcome_to_Fix_section'] = "Bienvenue dans la section d'update";
 $lang['There_is_not_need_fix']  = "La mise &agrave; jour a bien &eacute;t&eacute; effectu&eacute;!";
 $lang['Fix_welldone']           = "La mise &agrave; jour n'a pu &ecirc;tre effectu&eacute;.";
 
-$lang['adm_pl_title'] = "Activit&eacute; des plan&egrave;tes";
-$lang['adm_pl_activ'] = "Plan&egrave;tes actives";
-$lang['adm_pl_name']  = "Noms des Plan&egrave;tes";
-$lang['adm_pl_posit'] = "Position";
-$lang['adm_pl_point'] = "Valeur";
-$lang['adm_pl_since'] = "Activit&eacute;";
-$lang['adm_pl_they']  = "Il y a";
-$lang['adm_pl_apla']  = "plan&egrave;te(s) active(s)";
-
 $lang['adm_rz_ttle']  = "Reset the universum";
 $lang['adm_rz_done']  = " player(s) transferred";
 $lang['adm_rz_conf']  = "Confirmation";

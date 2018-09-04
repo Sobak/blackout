@@ -16,4 +16,14 @@ class PlanetController extends Controller
             'title' => trans('admin/planet.index.title'),
         ]);
     }
+
+    public function active()
+    {
+        $planets = Planet::where('last_update', '>=', (time() - 15 * 60))->get();
+
+        return view('admin.planet.active', [
+            'planets' => $planets,
+            'title' => trans('admin/planet.active.title'),
+        ]);
+    }
 }
