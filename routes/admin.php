@@ -8,6 +8,9 @@ Route::group(['middleware' => 'auth.level:3'], function () {
     Route::get('errors', 'ErrorController@index')->name('admin.errors');
     Route::get('errors/clear', 'ErrorController@clear')->name('admin.errors.clear');
     Route::get('errors/remove/{id}', 'ErrorController@remove')->name('admin.errors.remove');
+
+    Route::get('options', 'OptionsController@index')->name('admin.options');
+    Route::post('options', 'OptionsController@update');
 });
 
 Route::group(['middleware' => 'auth.level:2'], function () {

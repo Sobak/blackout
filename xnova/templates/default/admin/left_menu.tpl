@@ -5,7 +5,7 @@
     </tr>
     <tr><th>{admin}</th></tr>
     <tr><td><a href="overview" accesskey="v">{adm_over}</a></td></tr>
-    <tr><td><a href="settings.php" accesskey="e">{adm_conf}</a></td></tr>
+    <tr><td><a href="options" accesskey="e">{adm_conf}</a></td></tr>
     <tr><td><a href="XNovaResetUnivers.php" accesskey="e">{adm_reset}</a></td></tr>
 
     <tr><th>{player}</th></tr>

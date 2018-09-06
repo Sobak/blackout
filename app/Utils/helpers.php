@@ -1,5 +1,27 @@
 <?php
 
+use Illuminate\Support\HtmlString;
+
+/**
+ * Print HTML for the checkbox field.
+ *
+ * @param string $name Input name
+ * @param bool $checked Logical value determining if checkbox is checked
+ * @return HtmlString
+ */
+function checkbox($name, $checked)
+{
+    $html = '<input name="' . $name . '" ';
+
+    if ($checked) {
+        $html .= 'checked ';
+    }
+
+    $html .= 'type="checkbox">';
+
+    return new HtmlString($html);
+}
+
 /**
  * Print planet/player/moon coordinates in human readable form.
  *

@@ -14,6 +14,7 @@ changes made when rewriting.
     - Translated to English
 - Admin: Ban
     - Translated to English
+- Admin: Configuration
 - Admin: Give Moon
     - Translated to English
 - Admin: List of moons

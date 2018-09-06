@@ -1,0 +1,32 @@
+<?php
+
+return [
+    'basic_income_crystal' => 'Basic income of Crystal',
+    'basic_income_deuterium' => 'Baisc income of Deuterium',
+    'basic_income_energy' => 'Basic income of Energy',
+    'basic_income_metal' => 'Basic income of Metal',
+    'external_chat_enabled' => 'Show external chat',
+    'fields' => 'fields',
+    'debug' => 'Debug mode',
+    'fleet_speed' => 'Fleets speed<br>(normal = 2500)',
+    'forum_url' => 'Forum URL',
+    'google_ads_enabled' => 'Google Ads',
+    'game_name' => 'Game name',
+    'game_speed' => 'Gameplay speed<br>(normal = 2500)',
+    'initial_fields' => 'Size of the<br>mother planet',
+    'maintenance_enabled' => 'Maintenance mode?',
+    'maintenance_text' => 'Maintenance message',
+    'news_enabled' => 'Show news frame',
+    'per_hour' => 'per hour',
+    'production_speed' => 'Production speed<br>(normal = 1',
+    'section' => [
+        'game' => 'Game settings',
+        'other' => 'Other info',
+        'planet' => 'Planet settings',
+    ],
+    'submit' => 'Save settings',
+    'success_text' => 'Configuration has been saved successfully',
+    'success_title' => 'Success',
+    'title' => 'Server configuration',
+    'vacations_disabled' => 'Disable 24h vacation mode',
+];

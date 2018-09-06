@@ -5,7 +5,7 @@
     </tr>
     <tr><th>@lang('admin/menu.sections.admin')</th></tr>
     <tr><td><a href="{{ route('admin.index') }}" accesskey="v">@lang('admin/menu.overview')</a></td></tr>
-    <tr><td><a href="settings.php" accesskey="e">@lang('admin/menu.config')</a></td></tr>
+    <tr><td><a href="{{ route('admin.options') }}" accesskey="e">@lang('admin/menu.config')</a></td></tr>
     <tr><td><a href="XNovaResetUnivers.php" accesskey="e">@lang('admin/menu.reset')</a></td></tr>
 
     <tr><th>@lang('admin/menu.sections.players')</th></tr>
