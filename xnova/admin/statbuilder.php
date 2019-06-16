@@ -19,7 +19,7 @@ include($ugamela_root_path . 'admin/statfunctions.php');
 
     while ($CurUser = mysql_fetch_assoc($GameUsers)) {
         // Recuperation des anciennes statistiques
-        $OldStatRecord  = doquery ("SELECT * FROM {{table}} WHERE `stat_type` = '1' AND `id_owner` = '".$CurUser['id']."';",'statpoints');
+        $OldStatRecord  = doquery ("SELECT * FROM {{table}} WHERE `stat_type` = '1' AND `id_owner` = '".$CurUser['id']."';",'statpoints', true);
         if ($OldStatRecord) {
             $OldTotalRank = $OldStatRecord['total_rank'];
             $OldTechRank  = $OldStatRecord['tech_rank'];

@@ -42,6 +42,7 @@ changes made when rewriting.
 - Fixed Laravel admin controllers not logging the user visit
 - Fixed missing private message icon in admin overview
 - Fixed `count()` calls on non-countable values
+- Fixed calculating game statistics from the admin panel
 
 ## [0.6.0] - 2018-08-26
 ### Recreated game bootstrapping in Laravel
