@@ -359,7 +359,7 @@ switch ($mode) {
         $parse['user_rank']            = $StatRecord['total_rank'];
         $parse['user_username']        = $user['username'];
 
-        if (count($fpage) > 0) {
+        if (isset($fpage) && count($fpage) > 0) {
             ksort($fpage);
             foreach ($fpage as $time => $content) {
                 $flotten .= $content . "\n";

@@ -41,6 +41,7 @@ changes made when rewriting.
 - Clearing or truncating error log now properly checks for permission level
 - Fixed Laravel admin controllers not logging the user visit
 - Fixed missing private message icon in admin overview
+- Fixed `count()` calls on non-countable values
 
 ## [0.6.0] - 2018-08-26
 ### Recreated game bootstrapping in Laravel

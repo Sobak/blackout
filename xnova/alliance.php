@@ -191,7 +191,7 @@ if ($user['ally_id'] == 0) { // Sin alianza
             // searchtext
             $search = doquery("SELECT * FROM {{table}} WHERE ally_name LIKE '%{$_POST['searchtext']}%' or ally_tag LIKE '%{$_POST['searchtext']}%' LIMIT 30", "alliance");
 
-            if (count($search) != 0) {
+            if (isset($search) && count($search) != 0) {
                 $template = gettemplate('alliance_searchresult_row');
 
                 foreach ($search->fetchAll($search) as $search) {
@@ -627,7 +627,7 @@ array(1 =>
             doquery("UPDATE {{table}} SET `ally_ranks`='{$ally['ally_rank']}' WHERE `id`={$ally['id']}", "alliance");
         }
 
-        if (count($ally_ranks) == 0 || $ally_ranks == '') { // si no hay rangos
+        if ($ally_ranks == '' || count($ally_ranks) == 0) { // si no hay rangos
             $list = "<th>{$lang['There_is_not_range']}</th>";
         } else { // Si hay rangos
             // cargamos la template de tabla
@@ -673,7 +673,7 @@ array(1 =>
                 }
             }
 
-            if (count($ally_ranks) != 0) {
+            if (isset($ally_ranks) && count($ally_ranks) != 0) {
                 $list .= parsetemplate(gettemplate('alliance_admin_laws_feet'), $lang);
             }
         }
